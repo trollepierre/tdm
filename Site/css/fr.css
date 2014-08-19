@@ -1,0 +1,47 @@
+
+.footer-base .logo-footer {
+    background: url(../img/logo-footer.png) no-repeat;
+    width: 156px;
+    height: 53px;
+    margin: -20px auto;
+    transition: .5s;
+    -o-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+}
+
+.designlicks a{
+width:100px;
+height:58px;
+text-indent:-9000px;
+display:block;
+background: url(../img/designlickCF.png) no-repeat;
+}
+
+.designlicks2 a{
+width:100px;
+height:58px;
+text-indent:-9000px;
+display:block;
+background: url(../img/designlickAF.png) no-repeat;
+}
+
+.designlicks3 a{
+width:100px;
+height:58px;
+text-indent:-9000px;
+display:block;
+background: url(../img/designlickBF.png) no-repeat;
+}
+
+
+.footer-base .logo-footer {
+    background: url(../img/logo-footer.png) no-repeat;
+    width: 156px;
+    height: 53px;
+    margin: -20px auto;
+    transition: .5s;
+    -o-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+}

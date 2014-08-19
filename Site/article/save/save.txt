@@ -1,0 +1,55 @@
+<!-- 
+<p>
+
+We thought a lot about our life/motivation.
+We read lots of blogs. <link> voyageautourdumonde
+We discover why : <link> art2
+We manage money issue <link> or not
+and so on <link> gdocs </link>
+
+</p>
+The turning point
+<p>
+We found Zipworld <link> 
+We thought a lot about destination.
+Departure should be after graduation + 1 month so November
+We wanted to live during the Summer so South Hemispher 
+We wanted to avoid to pay a lot. The plane ticket allows us to take only one direction.
+So we should South America, hence Oceania was next till April
+Then Indonesia, Thailand, Cambodia and Vietnam during the end of the Spring
+North Hemispher in Summer: so China, Tibet, Nepal would be the following destination.
+India to finish with the money we still have.
+If you have a lot, we would be treated as prince there
+If you have not money anymore, we would manage trip for few.
+Dubai and we'll be back in November
+We get 8 plane ticket for 2100€
+
+</p>
+
+The other formality
+<p>
+Time to buy stuff to pack
+Time to look for visa
+Time to get vaccinated and so one...
+Do this website...
+
+
+
+
+
+$contentArticles = array (
+	array('TITLE', 'Nb line §', '§'),
+	array('How it starts?', '4', '
+			This is an amazing story!
+			Pierre met a lot of backpackers in India.
+			After living crazy adventures there, 
+			he thought this experience could be extended to a world trip.
+		'),
+	array('How it starts?', '2', '
+		Back to France, he described his whole trip to his friends, especially Benoit.
+		Pierre and Benoit started to dream about making the world trip comes true!
+		')
+	);
+</p>
+
+ -->
