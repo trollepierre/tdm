@@ -1,0 +1,65 @@
+body, html {
+	height: 100%;
+}
+
+body {
+	font-family: 'Asap', sans-serif;
+	width: 100%;
+	background:#1c1c1d;
+}
+
+#header{
+ height: 200px;
+}
+
+
+#global
+{
+    width: 1000px;
+	height: auto;
+    border: solid yellow 5px;
+}
+ 
+#carte
+{
+    margin-left: 200px;
+	width: 500px;
+    float: left;
+    border: solid black 2px;
+}
+ 
+ #c1{
+	height: 400px;
+    border: solid green 1px;
+ }
+ 
+ #c2{
+	height: 400px;
+   	border: solid red 1px;
+ }
+ 
+ #c3{
+	height: 400px;
+   	border: solid green 1px;
+ }
+ 
+ #c4{
+	height: 400px;
+   	border: solid blue 1px;
+ }
+
+ #texte
+{
+	height: 2000px;
+	width: 500px;
+    margin-left: 300px;
+    border: solid black 1px;
+}
+ 
+.centre
+{
+    height: 100px;
+    width: 100px;
+    margin-left: 100px;
+	margin-top: 500px;
+}
