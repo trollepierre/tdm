@@ -1,4 +1,8 @@
-<?php include_once("analyticstracking.php") ?>
+<?php 
+include_once("analyticstracking.php");
+include_once("w/10dropboxAPI.php");
+?>
+
     <div class="designlicks"><a href="challenge.php"><?php echo CHALLENGE; ?></a>     </div>
     <div class="designlicks2"><a href="article.php" ><?php echo ARTICLE; ?></a>     </div>
 	<div class="designlicks3"><a href="https://docs.google.com/forms/d/1WpNKvORYfxsw0mZBSZSFPWPoqNyQ4Hor93xLSIBWicQ/viewform" target="_blank"><?php echo THANK; ?></a>     </div>
