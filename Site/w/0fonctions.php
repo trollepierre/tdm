@@ -18,7 +18,9 @@
  */
 function createTemporaryDirectLink($path)
 {
+
     Path::checkArgNonRoot("path", $path);
+
     $response = $this->doPost(
         $this->apiHost,
         $this->appendFilePath("1/media", $path));
