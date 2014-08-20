@@ -1,10 +1,8 @@
 tdm
 ===
+Visible sur l'adresse www.recontact.me
 
-www.recontact.me
-
-
-Indiquer que le site se trouve dans le dossier Site.
+Le site se trouve dans le dossier Site.
 Dans ce dossier, on trouve de nombreux dossiers et fichiers. Ainsi :
 
     article/ permet l upload automatique d articles. L appel à ce dossier vient de
