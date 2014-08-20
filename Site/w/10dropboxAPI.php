@@ -12,7 +12,7 @@ $authorizeUrl = $webAuth->start();
 echo "1. Go to: " . $authorizeUrl . "\n";
 echo "2. Click \"Allow\" (you might have to log in first).\n";
 echo "3. Copy the authorization code.\n";
-$authCode = \trim(\readline("Enter the authorization code here: "));
+$authCode = \trim(\readline("c040st4Y9SsAAAAAAAAqw4Dqd9qWRuu-iAzum6dN4hE"));
 
 list($accessToken, $dropboxUserId) = $webAuth->finish($authCode);
 print "Access Token: " . $accessToken . "\n";
