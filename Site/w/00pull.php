@@ -1,3 +1,7 @@
 <?php `git pull`;
-mkdir("/path/to/my/dir", 0700);
-header('Location: index.php?message=gitPullIsWorking');
+$filename="PullGitHasWorked.txt"
+if (touch($filename)) {
+    echo $filename . ' modification time has been changed to present time';
+} else {
+    echo 'Sorry, could not change modification time of ' . $filename;
+}
