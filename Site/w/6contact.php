@@ -3,23 +3,17 @@
 <?php	if (!isset($_POST["submit"]))  {   ?>
  <form class="form-horizontal" id="form" name="form" method="post" action="traitementrecontact.php" style="margin-top: 60px;">  
 	 <?php if ($lang=='fr' ) { ?>
-               <div><p> <br/><br/> Merci pour vos retours </p> </div>
+               <div><p class="pcontact">  Contacte-nous et nous répondrons dès que possible. Merci de contribuer à notre voyage ! </p> </div>
     <?php }else{ ?>
-              <div><p> <br/><br/> Thanks for your feedbacks </p> </div>
+              <div><p class="pcontact">  Contact us and we will reply as fast as possible. Thank you for contributing to our trip! </p> </div>
     <?php } ?>
 
 	<fieldset>  
 		<input type="hidden" name="token" id="token" value="<?php echo $token;?>"/>
 		<div class="form-group">  
-			<label class="control-label" for="firstname"> <?php echo FIRSTNAME; ?></label>  
+			<label class="control-label" for="firstname"> <?php echo FIRSTNAME; ?>, <?php echo LASTNAME; ?></label>  
 			<div class="controls">  
 				<input type="text" class="form-control" id="firstname" name="firstname">  
-			</div>  
-		</div>  
-		<div class="form-group">  
-			<label class="control-label" for="lastname"><?php echo LASTNAME; ?></label>  
-			<div class="controls">  
-				<input type="text" class="form-control" id="lastname" name="lastname">  
 			</div>  
 		</div>  
 		<div class="form-group">  
@@ -53,12 +47,10 @@
 	{ // Check if the "from" input field is filled out
 		$mail = htmlentities($email);  // virer les saloperies de code
 		$irstname = htmlentities($firstname);  // virer les saloperies de code
-		$astname = htmlentities($lastname);  // virer les saloperies de code
 		$ubject = htmlentities($subject);  // virer les saloperies de code
 		$essage = htmlentities($message);  // virer les saloperies de code
 		
 		$irstname = $_POST["irstname"];
-		$astname = $_POST["astname"];
 		$ubject = $_POST["ubject"];
 		$essage = $_POST["essage"];
 		
@@ -88,3 +80,5 @@
 ?>
 
 </div>
+<div class="vide">
+	</div>

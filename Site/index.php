@@ -74,6 +74,17 @@
             </ul>
         </div>
     </div>
+    <div class="ourArticles">
+        <h1>
+            <a class="btn btn-lg btn-primary" href="https://docs.google.com/forms/d/1haLT0oeLTtqSajX0dWijHWcxbW49N886hrpj5s_EtQQ/viewform" role="button" target="_blank"> 
+                <?php echo PYC; ?>  
+            </a> 
+             <?php echo OU; ?>  
+            <a class="btn btn-lg btn-primary" href="https://docs.google.com/spreadsheets/d/1gQNjOhUrOleH3qTK2RYkR_Fit1rnkjLZvfQJMd0tMIA/edit#gid=1537311595" role="button" target="_blank">
+                <?php echo VTEC; ?> 
+        </a>
+        </h1>
+    </div>
 
     <div class="carousel">
         <div class="ourArticles" >
@@ -84,13 +95,10 @@
         <div class="flex-slider carousel">
             <ul class="slides">
                  <?php 
-                for ($i=1; $i<=5 ; $i++) { 
+                 $max_for = get_nb_dir('article/');
+                for ($i=1; $i<=$max_for ; $i++) { 
                ImgCarroussel(''.$i.'','article','article/'.$i.'/img0.jpg');
-               }
-                // for ($i=6; $i<=8 ; $i++) { 
-                //     ImgCarroussel(''.$i.'','article','img/art.jpg');
-                // }
-                ?>
+               }?>
                 
             </ul>
         </div>
@@ -108,8 +116,12 @@
                       <li><img src="img/H9.jpg" /></li>
                      <li><img src="img/H1.jpg" /></li>
                       <li><img src="img/H2.jpg" /></li>
-<!--                  <li><img src="img/G5.jpg" /></li>
-                      <li><img src="img/G66.jpg" /></li>-->
+
+<?php
+$path = "https://www.dropbox.com/sh/mrt6fyi0py6dipj/AADLuA9PolzpoP4XHnwsXrhsa#lh:null-2013-05-16%2018.35.36.jpg";
+$url=createTemporaryDirectLink($path)[0];
+echo '<li><img src="'.$url.'" /></li>';
+?>
                     </ul>
                 </div>
             </section>

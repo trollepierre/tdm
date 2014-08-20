@@ -21,7 +21,7 @@
         <div class="flexslider">
             <ul class="slides">
                 <?php 
-                ArticlesClock();
+                ArticlesClock('article');
                 ?>
 
             </ul>
@@ -60,7 +60,7 @@
         <div class="flex-slider carousel">
             <ul class="slides">
                <?php 
-               for ($i=1; $i<=10 ; $i++) { 
+               for ($i=1; $i<=5 ; $i++) { 
                      ImgCarroussel(''.$i.'','article','img/art.jpg');
                  }
                 ?>

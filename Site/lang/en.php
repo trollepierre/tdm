@@ -10,7 +10,7 @@
 //Lightbox
 	define('CHALLENGE', 'Challenge');
 	define('ARTICLE', 'Article');
-	define('THANK', 'Thank');
+	define('THANK', 'Thanks!');
 	
 	define('PROPOSE', 'Propose');
 	define('EXISTINGCHALLENGES', 'Existing Challenges');
@@ -76,9 +76,12 @@
 
 	//Discover all our Challenges
 	define('DAOC','Discover all our Challenges');
+	define('PYC','Propose your challenge');
+	define('VTEC','View the existing challenges');
 	define('DAOA','Discover all our Articles');
 	define('VLAPDLA',"This is the other pictures of this article");
 	define('QDDM',"Which destinations discover next (work in progress)?");
+	define('OU','or');
 	
 	//Footer
 define('PIERRE', "This is Pierre
@@ -89,6 +92,7 @@ define('PIERRE', "This is Pierre
 				<br/> Practising scoutism since the youngest age, he wants to live adventures and discoveries. 
 				</p><p> This world trip will be awesome !');
 	define('NUAGE','Destination cloud');
+	define('GETIT','Get the bracelet of the trip');
 
 	 //Formulaire Contact
 	 define('LETSSTAYINTOUCH', "Restons en contact");

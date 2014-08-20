@@ -1,11 +1,20 @@
  <?php
  	$DISCOVER='D&eacute;couvre ';
-	$WITHPIERREANDBEN='avec Pierre et Beno&icirc;t.';
- 
+	$WITHPIERREANDBEN='avec Pierre et Beno&icirc;t ';
+	$VOUS='vous ?';
+	$INTRO = array ("Nous allons commencer par ", "Ensuite nous continuerons vers ", "Nous irons aussi visiter ", "Et nous irons voir ", "Et aussi nous partirons découvrir ", "Enfin nous verrons ", "Finalement nous irons voir ","Nous irons visiter ","Nous irons visiter ","Nous irons visiter ","Nous irons visiter ");
+ 	$DEBUT = array("Voici notre itinéraire envisagé","Voir le trajet détaillé","Jeu des destinations : <br/> Devinez d'où viennent ces photos de notre itinéraire");
+ 	
  	if (isset($_GET['dest'])) 	{
 		switch ($_GET['dest']) {
+			case 'ghest':
+				$DESTINATION_TEXT = array (  "le Br&eacute;sil", "l'Argentine", "le Paraguay", "la Bolivie", "le P&eacute;rou", "le Chili");
+				break;
+			case 'ghost':
+				$DESTINATION_TEXT = array ("Voici la maps","Devinez d'où viennnent ces photos",  "le Br&eacute;sil", "l'Argentine", "le Paraguay", "la Bolivie", "le P&eacute;rou", "le Chili");
+				break;
 			case 'southAmerica':
-			$DESTINATION_TEXT = array (  "le Br&eacute;sil", "l'Argentine", "le Paraguay", "la Bolivie", "le P&eacute;rou", "le Chili");
+				$DESTINATION_TEXT = array (  "le Br&eacute;sil", "l'Argentine", "le Paraguay", "la Bolivie", "le P&eacute;rou", "le Chili");
 				break;
 			case 'brazil':
 			$DESTINATION_TEXT = array ("Rio de Janeiro","Sao Paulo","les chutes de l'Iguazu");
@@ -35,7 +44,7 @@
 			$DESTINATION_TEXT = array ( "le Visa Working Holidays", "Sydney", "Les Montagnes Bleus", "Melbourne", "Brisbane", "La Grande Barri&egrave;re de Corail");
 				break;
 			case 'asia':
-			$DESTINATION_TEXT = array ("Singapour","l'Indon&eacute;sie","la Tha&iuml;lande","le Cambodge","le Vi&ecirc;tnam","le Chine","le N&eacute;pal","le Inde","les Emirats Arabes Unis");
+			$DESTINATION_TEXT = array ("Singapour","l'Indon&eacute;sie","la Tha&iuml;lande","le Cambodge","le Vi&ecirc;tnam","le Chine","le N&eacute;pal","l'Inde","les Emirats Arabes Unis");
 				break;
 			case 'indonesia':
 			$DESTINATION_TEXT = array ("Bali", "Gili Islands", "Komodo", "Borobudur", "le Mont Bromo");

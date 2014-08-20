@@ -1,15 +1,16 @@
+
 <div class="scroller_anchor"></div>
 <header class="scroller">
     <div class="menu">
         <ul>
-            <a href="WorldBracelet.png" target="_blank">
+            <a>
                  <form class="ulule" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                     <input type="hidden" name="cmd" value="_s-xclick">
                     <input type="hidden" name="hosted_button_id" value="C753VV9DE7LH8">
                         <?php if ($lang=='fr' ) { 
-                            echo '<input type="image" src="http://www.recontact.me/img/paypal-ribbon.png" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">      ';
+                            echo '<input type="image" src="http://www.recontact.me/img/paypal-ribbon_fr.png" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">      ';
                          }else{ 
-                            echo '<input type="image" src="http://www.recontact.me/img/paypal-ribbon.png" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">';
+                            echo '<input type="image" src="http://www.recontact.me/img/paypal-ribbon_en.png" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">';
                         } ?>
                     <img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
                 </form>
@@ -130,7 +131,7 @@
             </li>
 
             <li>
-                <a href="#">
+                <a href="http://www.recontact.me/destinations.php">
                     <img class="logo" src="img/avion.png" />
                 </a>
             </li>
@@ -140,8 +141,8 @@
                 </a>
             </li>
             <li>
-                <a href="http://www.recontact.me#gallery">
-                    <?php echo GALLERY; ?>
+                <a href="http://www.recontact.me/contact.php">
+                    <?php echo CONTACT; ?>
                 </a>
             </li>
         </ul>

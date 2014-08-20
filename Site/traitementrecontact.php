@@ -33,13 +33,11 @@ if(isset($_SESSION['token']) && isset($_SESSION['token_time']) && isset($_POST['
 			// Récupération des variables nécessaires au mail de confirmation	
 			$email = $_POST['email'];
  			$firstname = $_POST["firstname"];
-			$lastname = $_POST["lastname"];
 			$subject = $_POST["subject"];
 			$message = $_POST["message"];
 
 			$mail = htmlentities($email);  // virer les saloperies de code
 			$irstname = htmlentities($firstname);  // virer les saloperies de code
-			$astname = htmlentities($lastname);  // virer les saloperies de code
 			$ubject = htmlentities($subject);  // virer les saloperies de code
 			$essage = htmlentities($message);  // virer les saloperies de code
 			
@@ -61,7 +59,7 @@ if(isset($_SESSION['token']) && isset($_SESSION['token_time']) && isset($_POST['
 			$entete = "From: contact@recontact.me" ;
 	
 			// Le lien d'activation est composé du login(log) et de la clé(cle)
-			$contenu = "Super ".$irstname." ".$astname."! Tu as rejoint la communauté des gens qui suivent notre voyage !
+			$contenu = "Super ".$irstname." ! Tu as rejoint la communauté des gens qui suivent notre voyage !
  
 			Ton message a pour sujet : ".$ubject."
 			Ton message est : ".$essage."

@@ -6,12 +6,12 @@
    	 
 //Header
 	define('TITLE', 'Un tour du monde en un an');
-	define('DESCRIPTION_PAGE', 'Ils font un voyage d\'un an autour de la Terre');
+	// define('DESCRIPTION_PAGE', "Ils font un voyage d'un an autour de la Terre");
 	
 //Lightbox
 	define('CHALLENGE', 'Challenge');
 	define('ARTICLE', 'Article');
-	define('THANK', 'Merci');
+	define('THANK', 'Merci !');
 	
 	define('PROPOSE', 'Propose');
 	define('EXISTINGCHALLENGES', 'Les défis existants');
@@ -73,10 +73,13 @@
 
 	
 	//Discover all our Challenges
-	define('DAOC','Découvrez nos défis réalisés');
+	define('DAOC','Découvre nos défis réalisés');
+	define('PYC','Propose ton défi');
+	define('VTEC','Voir les défis proposés');
 	define('DAOA','Découvrez nos articles');
 	define('VLAPDLA',"Voici les autres photos de l'article");
 	define('QDDM',"Quelles destinations découvrir maintenant (site en construction) ?");
+	define('OU','ou');
 
 	//Footer
 define('PIERRE', "Voici Pierre
@@ -87,6 +90,7 @@ define('PIERRE', "Voici Pierre
 				<br/>Scout depuis l'enfance, il veut assouvir sa soif d'aventure et de découvertes. 
 				</p><p>Ce tour du monde sera inoubliable !");
 	define('NUAGE','Nuage des destinations');
+	define('GETIT','Recevez le bracelet du voyage');
 
 /*define('PIERRE', "Voici Pierre
 				<br/> Grand voyageur et entrepreneur dans l'&agrave;me, il cro&icirc;t :

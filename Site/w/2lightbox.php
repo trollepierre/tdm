@@ -45,31 +45,15 @@
         <div class="bg-lightbox"></div>
 
     </div>
-  <!--   <div id="lightbox-faq" style="display: none;">
-        <ul class="nav">
-            <li class="nav-one">
-                <div class="current">FAQ</div>
-            </li>
 
-        </ul>
-        <div id="display-faq">
-            <div class="content">
-                <?php 
-                // require( "lang/why.php"); ?>
+<div class="bar-nav">
+            <div class="clear"></div>
+        </div>
+        <div class="fixed-top">
+            <div id="left-border">
+                <a href="#lightbox" class="ellipse fancybox desktop">
+                    <?php echo CHALLENGEUS; ?>
+                </a>
             </div>
         </div>
-    </div>
-    <div id="lightbox-why" style="display: none;">
-        <ul class="nav">
-            <li class="nav-one">
-                <div class="current">why</div>
-            </li>
-
-        </ul>
-        <div id="display-why">
-            <div class="content">
-                <?php 
-                // require( "lang/why.php"); ?>
-            </div>
-        </div>
-    </div> -->
+        
