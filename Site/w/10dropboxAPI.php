@@ -1,4 +1,12 @@
 <?php
+function readline($prompt = null){
+    if($prompt){
+        echo $prompt;
+    }
+    $fp = fopen("php://stdin","r");
+    $line = rtrim(fgets($fp, 1024));
+    return $line;
+}
 
 # Include the Dropbox SDK libraries
 require_once "lib/dropbox-sdk/Dropbox/autoload.php";
