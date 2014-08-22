@@ -140,7 +140,7 @@ $query = ".jpg";
 $clientIdentifier="PHP-Example/1.0";
 $myCustomClient = new dbx\Client($accessToken, $clientIdentifier);
 
-$returnSearchFileName=$myCustomClient::searchFileNames($basePath, $query);
+$returnSearchFileName=$myCustomClient->searchFileNames($basePath, $query);
 
 echo $returnSearchFileName;
 /**/
@@ -149,7 +149,7 @@ echo $returnSearchFileName;
 require_once "lib/dropbox-sdk/Dropbox/Client.php";
 
 $path = "/mrt6fyi0py6dipj/AADLuA9PolzpoP4XHnwsXrhsa#lh:null-2013-05-16%2018.35.36.jpg";
-$url=$myCustomClient::createTemporaryDirectLink($path)[0];
+$url=$myCustomClient->createTemporaryDirectLink($path)[0];
 echo '<li><img src="'.$url.'" /></li>';
 ?>
                     </ul>
