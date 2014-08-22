@@ -131,13 +131,14 @@ use \Dropbox as dbx;
 //On cherche partout par défaut (à rectifier à l'avenir si besoin)
 $basePath = "/";
 //On cherche le dossier ArticleTdm
-$query = "ArticleTdm";
+$query = ".jpg";
 //Osef de $limit = null, $includeDeleted = false
 
 /* renvoie  list of <a href="https://www.dropbox.com/developers/core/docs#metadata-details>metadata objects</a> of files that match the search query.
 * Returns metadata for all files and folders whose filename matches the query string. */
 // See <a href="https://www.dropbox.com/developers/core/docs#search">/search</a>.
-$returnSearchFileName=dbx\Client::searchFileNames($basePath, $query);
+$myCustomClient = new dbx\Client;
+$returnSearchFileName=$myCustomClient::searchFileNames($basePath, $query);
 
 echo $returnSearchFileName;
 /**/
@@ -146,7 +147,7 @@ echo $returnSearchFileName;
 require_once "lib/dropbox-sdk/Dropbox/Client.php";
 
 $path = "/mrt6fyi0py6dipj/AADLuA9PolzpoP4XHnwsXrhsa#lh:null-2013-05-16%2018.35.36.jpg";
-$url=dbx\Client::createTemporaryDirectLink($path)[0];
+$url=$myCustomClient::createTemporaryDirectLink($path)[0];
 echo '<li><img src="'.$url.'" /></li>';
 ?>
                     </ul>
