@@ -1,5 +1,5 @@
 <?php 
-
+include_once("w/10dropboxAPI.php");
 
  /* Creates and returns a direct link to a file.  This link can be used without authentication.
  * This link will expire in a few hours.
@@ -16,6 +16,7 @@
  *
  * @throws Exception
  */
+
 function createTemporaryDirectLink($path)
 {
     Path::checkArgNonRoot("path", $path);
