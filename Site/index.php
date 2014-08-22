@@ -137,7 +137,7 @@ $query = "ArticleTdm";
 /* renvoie  list of <a href="https://www.dropbox.com/developers/core/docs#metadata-details>metadata objects</a> of files that match the search query.
 * Returns metadata for all files and folders whose filename matches the query string. */
 // See <a href="https://www.dropbox.com/developers/core/docs#search">/search</a>.
-$returnSearchFileName=dbx\Client->searchFileNames($basePath, $query);
+$returnSearchFileName=dbx\Client::searchFileNames($basePath, $query);
 
 echo $returnSearchFileName;
 /**/
