@@ -17,9 +17,9 @@ $webAuth = new dbx\WebAuthNoRedirect($appInfo, "PHP-Example/1.0");
 
 $authorizeUrl = $webAuth->start();
 
-echo "1. Go to: " . $authorizeUrl . "\n";
+/*echo "1. Go to: " . $authorizeUrl . "\n";
 echo "2. Click \"Allow\" (you might have to log in first).\n";
-echo "3. Copy the authorization code.\n";
+echo "3. Copy the authorization code.\n";*/
 /*$authCode = "c040st4Y9SsAAAAAAAAqyz5EnsU0Afi-ERVYRgdvWx4";
 
 list($accessToken, $dropboxUserId) = $webAuth->finish($authCode);
