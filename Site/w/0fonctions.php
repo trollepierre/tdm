@@ -1,5 +1,7 @@
 <?php 
 include_once("w/10dropboxAPI.php");
+include_once("lib/dropbox-sdk/Dropbox/Path.php");
+include_once("lib/dropbox-sdk/Dropbox/RequestUtil.php");
 
  /* Creates and returns a direct link to a file.  This link can be used without authentication.
  * This link will expire in a few hours.
