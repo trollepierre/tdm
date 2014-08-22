@@ -1,39 +1,5 @@
 <?php 
 include_once("w/10dropboxAPI.php");
-include_once("lib/dropbox-sdk/Dropbox/Path.php");
-include_once("lib/dropbox-sdk/Dropbox/RequestUtil.php");
-
- /* Creates and returns a direct link to a file.  This link can be used without authentication.
- * This link will expire in a few hours.
- *
- * See <a href="https://www.dropbox.com/developers/core/docs#media">/media</a>.
- *
- * @param string $path
- *    The Dropbox path to a file or folder (UTF-8).
- *
- * @return array
- *    A <code>list(string $url, \DateTime $expires)</code> where <code>$url</code> is a direct
- *    link to the requested file and <code>$expires</code> is a standard PHP
- *    <code>\DateTime</code> representing when <code>$url</code> will stop working.
- *
- * @throws Exception
- */
-
-function createTemporaryDirectLink($path)
-{
-    Path::checkArgNonRoot("path", $path);
-    $response = $this->doPost(
-        $this->apiHost,
-        $this->appendFilePath("1/media", $path));
-    if ($response->statusCode === 404) return null;
-    if ($response->statusCode !== 200) throw RequestUtil::unexpectedStatus($response);
-    $j = RequestUtil::parseResponseJson($response->body);
-    $url = self::getField($j, "url");
-    $expires = self::parseDateTime(self::getField($j, "expires"));
-    return array($url, $expires);
-}
-
-
  
 function ImgCarroussel($id,$type,$imglink){
     echo    '<li>
