@@ -1,5 +1,5 @@
 <?php 
-include_once("w/10dropboxAPI.php");
+
  
 function ImgCarroussel($id,$type,$imglink){
     echo    '<li>

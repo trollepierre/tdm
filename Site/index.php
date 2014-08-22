@@ -119,10 +119,34 @@
 
 <?php
 
+//1 Authentification Dropbox 
+include_once("w/10dropboxAPI.php");
+
+//2 Recuperer la liste des images
+
+//Accéder à la fonction Client et utiliser dbx pour Dropbox
 require_once "lib/dropbox-sdk/Dropbox/Client.php";
 use \Dropbox as dbx;
-$path = "https://www.dropbox.com/sh/mrt6fyi0py6dipj/AADLuA9PolzpoP4XHnwsXrhsa#lh:null-2013-05-16%2018.35.36.jpg";
-$url=dbx\Client::createTemporaryDirectLink($path)[0];
+
+//On cherche partout par défaut (à rectifier à l'avenir si besoin)
+$basePath = "/";
+//On cherche le dossier ArticleTdm
+$query = "ArticleTdm";
+//Osef de $limit = null, $includeDeleted = false
+
+/* renvoie  list of <a href="https://www.dropbox.com/developers/core/docs#metadata-details>metadata objects</a> of files that match the search query.
+* Returns metadata for all files and folders whose filename matches the query string. */
+// See <a href="https://www.dropbox.com/developers/core/docs#search">/search</a>.
+$returnSearchFileName=dbx\Client->searchFileNames($basePath, $query);
+
+echo $returnSearchFileName;
+/**/
+//3 Afficher les images
+
+require_once "lib/dropbox-sdk/Dropbox/Client.php";
+use \Dropbox as dbx;
+$path = "/mrt6fyi0py6dipj/AADLuA9PolzpoP4XHnwsXrhsa#lh:null-2013-05-16%2018.35.36.jpg";
+$url=dbx\Client->createTemporaryDirectLink($path)[0];
 echo '<li><img src="'.$url.'" /></li>';
 ?>
                     </ul>
