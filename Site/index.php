@@ -144,7 +144,7 @@ echo $returnSearchFileName;
 //3 Afficher les images
 
 require_once "lib/dropbox-sdk/Dropbox/Client.php";
-use \Dropbox as dbx;
+
 $path = "/mrt6fyi0py6dipj/AADLuA9PolzpoP4XHnwsXrhsa#lh:null-2013-05-16%2018.35.36.jpg";
 $url=dbx\Client::createTemporaryDirectLink($path)[0];
 echo '<li><img src="'.$url.'" /></li>';
