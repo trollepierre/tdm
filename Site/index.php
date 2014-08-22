@@ -137,7 +137,7 @@ $query = ".jpg";
 /* renvoie  list of <a href="https://www.dropbox.com/developers/core/docs#metadata-details>metadata objects</a> of files that match the search query.
 * Returns metadata for all files and folders whose filename matches the query string. */
 // See <a href="https://www.dropbox.com/developers/core/docs#search">/search</a>.
-
+$clientIdentifier="PHP-Example/1.0";
 $myCustomClient = new dbx\Client($accessToken, $clientIdentifier);
 
 $returnSearchFileName=$myCustomClient::searchFileNames($basePath, $query);
