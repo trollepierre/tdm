@@ -72,6 +72,21 @@ require("destination/destination_img.php");
 
 }
 
+function ContentRowArticles($contentRow){
+  if(isset($contentRow[2])){
+  return '    <br/>        <span id="titreArticle">     '.$contentRow[0].'   </span>
+           <br/>        <span id="sstitreArticle">   '.$contentRow[1].'   </span>
+           <br/> <br/>  <span id="texteArticle">     '.$contentRow[2].'   </span> 
+           ';
+         }else{
+ return '    <br/>        <span id="titreArticle">     '.$contentRow[0].'   </span>
+           <br/>       
+           <br/> <br/>  <span id="texteArticle">     '.$contentRow[1].'   </span> 
+           ';
+
+         }
+}
+
 function ArticlesTime($article){
   $id = getId();
   $adresse = "".$article."/".$id."/text.php";
@@ -79,10 +94,8 @@ function ArticlesTime($article){
 
   $nbArticles= count($contentArticles)-1; 
   for ($row=1; $row <= $nbArticles; $row++) { 
-    echo    '<p class="mode mode'.$row.'" data-bg="'.$row.'">
-           <br/>        <span id="titreArticle">     '.$contentArticles[$row][0].'   </span>
-           <br/>        <span id="sstitreArticle">   '.$contentArticles[$row][1].'   </span>
-           <br/> <br/>  <span id="texteArticle">     '.$contentArticles[$row][2].'   </span> 
+    echo    '<p class="mode mode'.$row.'" data-bg="'.$row.'">'.
+         ContentRowArticles($contentArticles[$row]).'
      </p>'
               ;
   }
@@ -96,10 +109,8 @@ function ArticlesClock($article){
   $nbArticles= count($contentArticles)-1; 
   for ($row=1; $row <= $nbArticles; $row++) { 
     echo    '<div class="clock">'.$id.'</div>
-                <p>
-          <br/>        <span id="titreArticle">     '.$contentArticles[$row][0].'   </span>
-           <br/>        <span id="sstitreArticle">   '.$contentArticles[$row][1].'   </span>
-           <br/> <br/>  <span id="texteArticle">     '.$contentArticles[$row][2].'   </span> 
+                <p>'.
+           ContentRowArticles($contentArticles[$row]).'
        </p>';
   }
 }
