@@ -69,37 +69,24 @@
             </ul>
         </div>
         <div class="ourArticles">
-            <!-- <a href="challenge.php"> -->
-                <h1> <?php echo VLAPDLA; ?> </h1>
-            <!-- </a> -->
+            <h1> <?php echo VLAPDLA; ?> </h1>
         </div>
         <div class="flex-slider carousel">
             <ul class="slides">
-               <?php 
-                
-                    if (isset($_GET['id']))  {
-                        $id=$_GET['id'];
-
-                      } else { 
-                        $id=1;
-                      } 
+                <?php 
+                    $id=getId();
                     $url= getImgInPath("/Chargements appareil photo/ArticleTdm/".$id."");
-
                     foreach ($url as $key => $value) {
-                    echo '<li><img src="'.$value.'" alt="Picture Album" /></li>';
+                        echo '<li><img src="'.$value.'" alt="Picture Album" /></li>';
                     }
-                   
-                    
-                
                 ?>
-                
             </ul>
         </div>
     </div>
     
 
 
-    </div>
+    
 
     <div id="caracteristiques"></div><!--INDISPENSABLE : WHY?-->
 
