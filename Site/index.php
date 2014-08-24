@@ -138,15 +138,18 @@ $query = ".jpg";
 * Returns metadata for all files and folders whose filename matches the query string. */
 // See <a href="https://www.dropbox.com/developers/core/docs#search">/search</a>.
 $clientIdentifier="PHP-Example/1.0";
+
+// creation d'un client dropbox : moi
 $myCustomClient = new dbx\Client($accessToken, $clientIdentifier);
 
+//recup des files
 $returnSearchFileName=$myCustomClient->searchFileNames($basePath, $query);
 
+//on les recup où ?
 echo $returnSearchFileName;
 /**/
 //3 Afficher les images
 
-require_once "lib/dropbox-sdk/Dropbox/Client.php";
 
 $path = "/mrt6fyi0py6dipj/AADLuA9PolzpoP4XHnwsXrhsa#lh:null-2013-05-16%2018.35.36.jpg";
 $url=$myCustomClient->createTemporaryDirectLink($path)[0];
@@ -157,6 +160,14 @@ echo '<li><img src="'.$url.'" /></li>';
             </section>
         </div>
     </div>
+        
+<p> <?php 
+//test affichage de search resultat
+echo $returnSearchFileName; 
+print_r($returnSearchFileName);
+echo $returnSearchFileName[0];
 
+?></p>
+        
 <?php require("w/8footer.php");?>
 <?php require("w/9end.php");?>
