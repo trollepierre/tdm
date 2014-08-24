@@ -170,13 +170,24 @@ echo '<br/>[0]<br/>';
 echo $returnSearchFileName[0];
 // echo '<br/>[0][0]<br/>';
 // echo $returnSearchFileName[0][0];
+
+echo '<br/>JSON<br/>';
+print $returnSearchFileName->{'path'}; // 12345
+
+
+/*
+$json = '{"a":1,"b":2,"c":3,"d":4,"e":5}';
+
+var_dump(json_decode($json));
+var_dump(json_decode($json, true));
+*/
+
 echo '<br/>Pompe StackOverFlow<br/>';
-
-
 //print_r($returnSearchFileName);
 
 $file = "search.json";
 file_put_contents($file, json_encode($returnSearchFileName));
+
 
 /*
 //http://stackoverflow.com/questions/20161723/php-successfully-runs-in-cli-but-not-show-anything-in-cgi
