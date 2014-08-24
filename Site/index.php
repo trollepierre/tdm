@@ -120,7 +120,7 @@
 <?php
 
 //1 Authentification Dropbox 
-include_once("w/10dropboxAPI.php");
+include_once("lib/10dropboxAPI.php");
 
 //2 Recuperer la liste des images
 //Accéder à la fonction Client et utiliser dbx pour Dropbox
@@ -131,8 +131,6 @@ use \Dropbox as dbx;
 $basePath = "/Chargements appareil photo/ArticleTdm";
 //On cherche le dossier ArticleTdm
 $query = ".jpg";
-
-$clientIdentifier="PHP-Example/1.0";
 
 // creation d'un client dropbox : moi
 $myCustomClient = new dbx\Client($accessToken, $clientIdentifier);
