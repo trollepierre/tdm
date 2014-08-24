@@ -79,6 +79,7 @@
 	define('VTEC','View the existing challenges');
 	define('DAOA','Discover all our Articles');
 	define('VLAPDLA',"This is the other pictures of this article");
+	define('VLAPDLA',"These are the other articles");
 	define('QDDM',"Which destinations discover next (work in progress)?");
 	define('OU','or');
 	

@@ -53,16 +53,44 @@
     <div id="lesAutresPhotos"></div>
     <div class="carousel" >
         <div class="ourArticles">
-            <a href="challenge.php">
-                <h1> <?php echo VLAPDLA; ?> </h1>
+            <a href="article.php">
+                <h1> <?php echo VLAA; ?> </h1>
             </a>
+        </div>
+         <div class="flex-slider carousel">
+            <ul class="slides">
+               <?php 
+               for ($i=1; $i<=5 ; $i++) { 
+                
+                     ImgCarroussel(''.$i.'','article','img/art.jpg');
+                 }
+                ?>
+                
+            </ul>
+        </div>
+        <div class="ourArticles">
+            <!-- <a href="challenge.php"> -->
+                <h1> <?php echo VLAPDLA; ?> </h1>
+            <!-- </a> -->
         </div>
         <div class="flex-slider carousel">
             <ul class="slides">
                <?php 
-               for ($i=1; $i<=5 ; $i++) { 
-                     ImgCarroussel(''.$i.'','article','img/art.jpg');
-                 }
+               
+                    if (isset($_GET['id']))  {
+                        $id=$_GET['id'];
+
+                      } else { 
+                        $id=1;
+                      } 
+                    $url= getImgInPath("/Chargements appareil photo/ArticleTdm/".$id."");
+
+                    foreach ($url as $key => $value) {
+                     ImgCarroussel("999",'Album',$value);
+                    }
+                   
+                    
+                
                 ?>
                 
             </ul>

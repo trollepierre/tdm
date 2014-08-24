@@ -78,6 +78,7 @@
 	define('VTEC','Voir les défis proposés');
 	define('DAOA','Découvrez nos articles');
 	define('VLAPDLA',"Voici les autres photos de l'article");
+	define('VLAA',"Voici les autres articles");
 	define('QDDM',"Quelles destinations découvrir maintenant (site en construction) ?");
 	define('OU','ou');
 
