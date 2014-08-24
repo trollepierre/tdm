@@ -76,7 +76,7 @@
         <div class="flex-slider carousel">
             <ul class="slides">
                <?php 
-               
+                
                     if (isset($_GET['id']))  {
                         $id=$_GET['id'];
 
@@ -86,7 +86,7 @@
                     $url= getImgInPath("/Chargements appareil photo/ArticleTdm/".$id."");
 
                     foreach ($url as $key => $value) {
-                     ImgCarroussel("999",'Album',$value);
+                    echo '<li><img src="'.$value.'" alt="Picture Album" /></li>';
                     }
                    
                     
