@@ -120,7 +120,7 @@
 <?php
 
 //1 Authentification Dropbox 
-include_once("lib/10dropboxAPI.php");
+include_once("lib/dropboxAPI.php");
 
 //2 Recuperer la liste des images
 //Accéder à la fonction Client et utiliser dbx pour Dropbox
