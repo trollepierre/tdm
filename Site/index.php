@@ -163,10 +163,12 @@ echo '<li><img src="'.$url.'" /></li>';
         
 <p> <?php 
 //test affichage de search resultat
+echo 'BONJOUR';
 echo $returnSearchFileName; 
-print_r($returnSearchFileName);
+//print_r($returnSearchFileName);
+echo 'RIEN';
 echo $returnSearchFileName[0];
-
+echo 'FINI';
 ?></p>
         
 <?php require("w/8footer.php");?>
