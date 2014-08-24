@@ -123,20 +123,15 @@
 include_once("w/10dropboxAPI.php");
 
 //2 Recuperer la liste des images
-
 //Accéder à la fonction Client et utiliser dbx pour Dropbox
 require_once "lib/dropbox-sdk/Dropbox/Client.php";
 use \Dropbox as dbx;
 
 //On cherche partout par défaut (à rectifier à l'avenir si besoin)
-$basePath = "/";
+$basePath = "/Chargements appareil photo/ArticleTdm";
 //On cherche le dossier ArticleTdm
 $query = ".jpg";
-//Osef de $limit = null, $includeDeleted = false
 
-/* renvoie  list of <a href="https://www.dropbox.com/developers/core/docs#metadata-details>metadata objects</a> of files that match the search query.
-* Returns metadata for all files and folders whose filename matches the query string. */
-// See <a href="https://www.dropbox.com/developers/core/docs#search">/search</a>.
 $clientIdentifier="PHP-Example/1.0";
 
 // creation d'un client dropbox : moi
@@ -145,70 +140,28 @@ $myCustomClient = new dbx\Client($accessToken, $clientIdentifier);
 //recup des files
 $returnSearchFileName=$myCustomClient->searchFileNames($basePath, $query);
 
-//on les recup où ?
-echo $returnSearchFileName;
-/**/
+//on récup le path de chaque file récupéré
+// var $paths_tab ;
+foreach ($returnSearchFileName as $id => $image) {
+  foreach ($image as $key => $value) {
+        if($key=='path'){
+            $paths_tab[]=$value;
+        }
+    }
+}
+
 //3 Afficher les images
-
-
-$path = "/mrt6fyi0py6dipj/AADLuA9PolzpoP4XHnwsXrhsa#lh:null-2013-05-16%2018.35.36.jpg";
-$url=$myCustomClient->createTemporaryDirectLink($path)[0];
+foreach ($paths_tab as $key => $value) {
+$url=$myCustomClient->createTemporaryDirectLink($value)[0];
 echo '<li><img src="'.$url.'" /></li>';
+}
+
 ?>
                     </ul>
                 </div>
             </section>
         </div>
     </div>
-        
-<p> <?php 
-//test affichage de search resultat
-echo '<br/>SIMPLE<br/>';
-echo $returnSearchFileName; 
-//print_r($returnSearchFileName);
-echo '<br/>[0]<br/>';
-echo $returnSearchFileName[0];
-// echo '<br/>[0][0]<br/>';
-// echo $returnSearchFileName[0][0];
-
-echo '<br/>JSON<br/>';
-print $returnSearchFileName->{'path'}; // 12345
-echo '<br/>JSON [0]<br/>';
-print $returnSearchFileName[0]->{'path'}; // 12345
-echo '<br/>JSON.encode <br/>';
-print json_encode($returnSearchFileName)->{'path'}; // 12345
-echo '<br/>JSON .encode[0]<br/>';
-print json_encode($returnSearchFileName[0])->{'path'}; // 12345
-
-/*
-$json = '{"a":1,"b":2,"c":3,"d":4,"e":5}';
-
-var_dump(json_decode($json));
-var_dump(json_decode($json, true));
-*/
-
-$file1 = "search2.json";
-file_put_contents($file1, $returnSearchFileName);
-
-
-echo '<br/>Pompe StackOverFlow<br/>';
-//print_r($returnSearchFileName);
-
-$file = "search.json";
-file_put_contents($file, json_encode($returnSearchFileName));
-
-
-/*
-//http://stackoverflow.com/questions/20161723/php-successfully-runs-in-cli-but-not-show-anything-in-cgi
-$searchUrl = $dbxClient->createShareableLink("/Soemarko.png");
-
-$link = "link.json";
-file_put_contents($link, json_encode($searchUrl));
-/**/
-
-
-echo '<br/>FINI<br/><br/><br/><br/><br/><br/><br/><br/><br/>';
-?></p>
         
 <?php require("w/8footer.php");?>
 <?php require("w/9end.php");?>
