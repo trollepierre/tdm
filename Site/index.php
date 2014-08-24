@@ -170,6 +170,23 @@ echo '<br/>[0]<br/>';
 echo $returnSearchFileName[0];
 echo '<br/>[0][0]<br/>';
 echo $returnSearchFileName[0][0];
+echo '<br/>Pompe StackOverFlow<br/>';
+
+
+//print_r($returnSearchFileName);
+
+$file = "search.json";
+file_put_contents($file, json_encode($returnSearchFileName));
+
+/*
+//http://stackoverflow.com/questions/20161723/php-successfully-runs-in-cli-but-not-show-anything-in-cgi
+$searchUrl = $dbxClient->createShareableLink("/Soemarko.png");
+
+$link = "link.json";
+file_put_contents($link, json_encode($searchUrl));
+/**/
+
+
 echo '<br/>FINI<br/><br/><br/><br/><br/><br/><br/><br/><br/>';
 ?></p>
         
