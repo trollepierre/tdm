@@ -11,7 +11,6 @@
 	define('CHALLENGE', 'Challenge');
 	define('ARTICLE', 'Article');
 	define('THANK', 'Thanks!');
-	
 	define('PROPOSE', 'Propose');
 	define('EXISTINGCHALLENGES', 'Existing Challenges');
 	define('WEARECHALLENGERS', 'Which CHALLENGES? ');
@@ -63,7 +62,7 @@
 	define('GALLERY', 'Gallery');
 //	define('OURGOALS', 'Our goals');
 //	define('US', 'About us');
-//	define('CONTACT', 'Contact');
+	define('CONTACT', 'Contact');
 //	define('DRAPEAU', 'img/fra.png');
 //	define('LANGUE', 'FR');
 	

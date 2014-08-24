@@ -12,7 +12,7 @@
 	define('CHALLENGE', 'Challenge');
 	define('ARTICLE', 'Article');
 	define('THANK', 'Merci !');
-	
+	define('CONTACT', 'CONTACT');
 	define('PROPOSE', 'Propose');
 	define('EXISTINGCHALLENGES', 'Les défis existants');
 	define('WEARECHALLENGERS', 'Quels défis ? ');
