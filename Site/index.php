@@ -112,46 +112,12 @@
             <section class="slider">
                 <div class="flexslider">
                     <ul class="slides">
-                      <li><img src="img/H8.jpg" /></li>
-                      <li><img src="img/H9.jpg" /></li>
-                     <li><img src="img/H1.jpg" /></li>
-                      <li><img src="img/H2.jpg" /></li>
-
+                    
 <?php
+$url= getImgInPath("/Site/gallery");
 
-//1 Authentification Dropbox 
-include_once("lib/dropboxAPI.php");
-
-//2 Recuperer la liste des images
-//Accéder à la fonction Client et utiliser dbx pour Dropbox
-require_once "lib/dropbox-sdk/Dropbox/Client.php";
-use \Dropbox as dbx;
-
-//On cherche partout par défaut (à rectifier à l'avenir si besoin)
-$basePath = "/Chargements appareil photo/ArticleTdm";
-//On cherche le dossier ArticleTdm
-$query = ".jpg";
-
-// creation d'un client dropbox : moi
-$myCustomClient = new dbx\Client($accessToken, $clientIdentifier);
-
-//recup des files
-$returnSearchFileName=$myCustomClient->searchFileNames($basePath, $query);
-
-//on récup le path de chaque file récupéré
-// var $paths_tab ;
-foreach ($returnSearchFileName as $id => $image) {
-  foreach ($image as $key => $value) {
-        if($key=='path'){
-            $paths_tab[]=$value;
-        }
-    }
-}
-
-//3 Afficher les images
-foreach ($paths_tab as $key => $value) {
-$url=$myCustomClient->createTemporaryDirectLink($value)[0];
-echo '<li><img src="'.$url.'" /></li>';
+foreach ($url as $key => $value) {
+echo '<li><img src="'.$value.'" /></li>';
 }
 
 ?>

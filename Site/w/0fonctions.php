@@ -1,5 +1,5 @@
 <?php 
-
+use \Dropbox as dbx;
  
 function ImgCarroussel($id,$type,$imglink){
     echo    '<li>
@@ -217,4 +217,32 @@ function get_nb_dir($images_dir) {
   return $count_file ;
 }
 
+
+function getImgInPath($basePath,$query=".jpg") {
+//1 Authentification Dropbox 
+include_once("lib/dropboxAPI.php");
+
+//2 Recuperer la liste des images
+//Accéder à la fonction Client et utiliser dbx pour Dropbox
+require_once "lib/dropbox-sdk/Dropbox/Client.php";
+
+
+// creation d'un client dropbox : moi
+$myCustomClient = new dbx\Client($accessToken, $clientIdentifier);
+
+//recup des files
+$returnSearchFileName=$myCustomClient->searchFileNames($basePath, $query);
+
+//on récup le path de chaque file récupéré
+// et on en fait une url publique;
+foreach ($returnSearchFileName as $id => $image) {
+  foreach ($image as $key => $value) {
+        if($key=='path'){
+          $url[]=$myCustomClient->createTemporaryDirectLink($value)[0];
+        }
+    }
+}
+
+return $url;
+}
 ?>
