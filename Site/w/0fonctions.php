@@ -1,6 +1,10 @@
 <?php 
 use \Dropbox as dbx;
  
+ function getId(){
+  return (isset($_GET['id'])) ? $_GET['id'] : 1 ;
+ }
+
 function ImgCarroussel($id,$type,$imglink){
     echo    '<li>
                 <a class="article-name" href="'.$type.'.php?id='.$id.'" title="'.$type.'">
@@ -35,7 +39,6 @@ function DestinationClock(){
                 <p>
                '.$INTRO[$key].''.$value.'
                 <br />
-                
                 <a class="btn btn-lg btn-primary" href="destination.php?dest='.$LINK[$key].'" role="button">'.$DISCOVER.''.$value.'</a>
                 <br />'.$WITHPIERREANDBEN.'  
               <!-- et <a class="btn btn-lg btn-primary" href="contact.php" role="button">'.$VOUS.'</a>-->
@@ -70,12 +73,7 @@ require("destination/destination_img.php");
 }
 
 function ArticlesTime($article){
-  if (isset($_GET['id']))  {
-    $id=$_GET['id'];
-
-  } else { 
-    $id=1;
-  } 
+  $id = getId();
   $adresse = "".$article."/".$id."/text.php";
   require($adresse);
 
@@ -91,12 +89,7 @@ function ArticlesTime($article){
 }
 
 function ArticlesClock($article){
-  if (isset($_GET['id']))  {
-    $id=$_GET['id'];
-
-  } else { 
-    $id=1;
-  } 
+  $id = getId();
   $adresse = "".$article."/".$id."/text.php";
   require($adresse);
 
@@ -107,30 +100,15 @@ function ArticlesClock($article){
           <br/>        <span id="titreArticle">     '.$contentArticles[$row][0].'   </span>
            <br/>        <span id="sstitreArticle">   '.$contentArticles[$row][1].'   </span>
            <br/> <br/>  <span id="texteArticle">     '.$contentArticles[$row][2].'   </span> 
-       </p>'
-              ;
+       </p>';
   }
-  
 }
 
 function IconBackgroundA($article){
-
-// if (isset($_GET['id']))  {
-//    $id=$_GET['id'];
-// } else { 
-//     $id=1;
-// } 
-$id = (isset($_GET['id'])) ? $_GET['id'] : 1 ;
-// $majeur = ($age >= 18) ? true : false;
-
+  $id = getId();
   $adresse = "".$article."/".$id."/text.php";
   require($adresse);
 
-  // if (strcmp($article, 'article') == 0) {
-  // $color = '#009bd3' ;
-  // }else {
-  // $color =  '#ff0000';
-  // }
    $color = (strcmp($article, 'article')) ? '#ff0000' : '#009bd3'  ;
 
   $nbArticles=count($contentArticles)+1; 
@@ -151,8 +129,6 @@ $id = (isset($_GET['id'])) ? $_GET['id'] : 1 ;
           ;
   }
 }
-
-
 
 /* function:  generates thumbnail */
 function make_thumb($src,$dest,$desired_width) {
@@ -190,34 +166,20 @@ function get_file_extension($file_name) {
   return substr(strrchr($file_name,'.'),1);
 }
 
-
 /* function:  returns nb of dir from dir */
 function get_nb_dir($images_dir) {
-/* if (is_dir($dir)) {
-    if ($dh = opendir($dir)) {
-        while (($file = readdir($dh)) !== false) {
-            echo "fichier : $file : type : " . filetype($dir . $file) . "\n";
-        }
-        closedir($dh);
-    }
-}
-}*/
  $count_file = -2;
   if($handle = opendir($images_dir)) {
     while(false !== ($file = readdir($handle))) {
       $count_file ++;
-      // echo "filename: $file : filetype: " . filetype($dir . $file) . "\n";
-      // $extension = strtolower(get_file_extension($file));
-      // if($extension && in_array($extension,$exts)) {
-      //   $files[] = $file;
-      // }
     }
     closedir($handle);
   }
   return $count_file ;
 }
 
-
+/** Dropbox API
+*/
 function getImgInPath($basePath,$query=".jpg") {
 //1 Authentification Dropbox 
 include_once("lib/dropboxAPI.php");
@@ -225,7 +187,6 @@ include_once("lib/dropboxAPI.php");
 //2 Recuperer la liste des images
 //Accéder à la fonction Client et utiliser dbx pour Dropbox
 require_once "lib/dropbox-sdk/Dropbox/Client.php";
-
 
 // creation d'un client dropbox : moi
 $myCustomClient = new dbx\Client($accessToken, $clientIdentifier);
