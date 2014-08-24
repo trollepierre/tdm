@@ -173,7 +173,12 @@ echo $returnSearchFileName[0];
 
 echo '<br/>JSON<br/>';
 print $returnSearchFileName->{'path'}; // 12345
-
+echo '<br/>JSON [0]<br/>';
+print $returnSearchFileName[0]->{'path'}; // 12345
+echo '<br/>JSON.encode <br/>';
+print json_encode($returnSearchFileName)->{'path'}; // 12345
+echo '<br/>JSON .encode[0]<br/>';
+print json_encode($returnSearchFileName[0])->{'path'}; // 12345
 
 /*
 $json = '{"a":1,"b":2,"c":3,"d":4,"e":5}';
@@ -181,6 +186,10 @@ $json = '{"a":1,"b":2,"c":3,"d":4,"e":5}';
 var_dump(json_decode($json));
 var_dump(json_decode($json, true));
 */
+
+$file1 = "search2.json";
+file_put_contents($file1, $returnSearchFileName);
+
 
 echo '<br/>Pompe StackOverFlow<br/>';
 //print_r($returnSearchFileName);
