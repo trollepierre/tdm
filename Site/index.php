@@ -14,6 +14,7 @@
 <?php require("w/3intro.php");?>
  <!-- PAGE 1/2  ===========================================================================-->
 <?php require("w/4headerScroller.php");?>
+<?php require("w/5notification.php");?>
 
     <div class="mobile-content">
         <div class="flexslider">
