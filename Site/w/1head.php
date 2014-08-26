@@ -85,4 +85,12 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="js/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
     <link rel="stylesheet" type="text/css" href="js/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="../css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="../css/ns-default.css" />
+	<link rel="stylesheet" type="text/css" href="../css/ns-style-other.css" />
+	<script src="../js/modernizr.custom.js"></script>
+	<script src="../js/snap.svg-min.js"></script>
+	<script src="../js/classie.js"></script>
+	<script src="../js/notificationFx.js"></script>
 
