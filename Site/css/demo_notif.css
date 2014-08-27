@@ -41,7 +41,7 @@
 .icon-settings:before {
 	content: "\e601";
 }
-.icon-south-america:before {
+.icon-southAmerica:before {
 	content: "\e602";
 }
 .icon-asia:before {
@@ -50,10 +50,10 @@
 .icon-oceania:before {
 	content: "\e604";
 }
-.icon-world:before {
+.icon-china:before {
 	content: "\e605";
 }
-.icon-calendar:before {
+.icon-india:before {
 	content: "\e606";
 }
 .icon-world1:before {

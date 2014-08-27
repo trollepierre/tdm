@@ -49,6 +49,7 @@
 	line-height: 5.3;
 	margin: 0.5em auto 1.25em;
 	border-radius: 50%;
+	padding-top: initial;
 }
 
 .ns-effect-cornerexpand .ns-close {

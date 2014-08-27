@@ -85,7 +85,6 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="js/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
     <link rel="stylesheet" type="text/css" href="js/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
-    <link rel="stylesheet" type="text/css" href="css/normalize_notif.css" />
 	<link rel="stylesheet" type="text/css" href="css/demo_notif.css" />
 	<link rel="stylesheet" type="text/css" href="css/ns-default_notif.css" />
 	<link rel="stylesheet" type="text/css" href="css/ns-style-other_notif.css" />

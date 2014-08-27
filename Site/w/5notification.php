@@ -28,12 +28,21 @@
 					//La petite image est gérée par une police d'écriture que je me suis amusé à modifier... 
 					//Par exemple, si tu veux changer l'image pour voir le continent Asie, il faut changer 'icon-world1' par 'icon-asia'.
 					//Ces classes sont contenues dans 'demo.css'
-					message : '<p><a href="http://planificateur.a-contresens.net/itineraire/1261#carte-itineraire/"><span class="icon icon-oceania"></span> Un petit apercu de l\'itineraire</a></p>',
+					
+					
+					<?php if (isset($_GET['dest'])) 	{
+						$jack = $_GET['dest'];
+						
+					}
+					else{
+						$jack = 'world1';
+					} ?>
+					message : '<p><a href="http://planificateur.a-contresens.net/itineraire/1261#carte-itineraire/"><span class="icon icon-<?php echo $jack;?>"></span> Un petit apercu de l\'itineraire</a></p>',
 					layout : 'other',
 					effect : 'cornerexpand',
 					type : 'notice',
 					//ttl est le temps pendant lequel la notification reste active (en millième de seconde)
-					ttl: 6000,
+					ttl: 15000,
 					onClose : function() {
 						setTimeout(function() {
 							path.animate( { 'path' : pathConfig.from }, 300, mina.easeinout );
@@ -43,6 +52,7 @@
 
 				// show the notification
 				notification.show();
+				
 				
 				})();
 			})();
