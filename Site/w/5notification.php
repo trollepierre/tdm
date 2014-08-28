@@ -6,7 +6,6 @@
 		</div>
 	
 	
-	
 		<!--Le script-->
 		<script>
 			(function() {
@@ -32,17 +31,51 @@
 					
 					<?php if (isset($_GET['dest'])) 	{
 						$jack = $_GET['dest'];
-						
+						$MESSAGE1 = MESSAGENOTIFICATION;
 					}
 					else{
 						$jack = 'world1';
+						$MESSAGE1 = MESSAGENOTIFICATIONHOME;
+						$MESSAGE2 = '';
 					} ?>
-					message : '<p><a href="http://planificateur.a-contresens.net/itineraire/1261#carte-itineraire/"><span class="icon icon-<?php echo $jack;?>"></span> Un petit apercu de l\'itineraire</a></p>',
+
+					//la référence à GMAP ne fonctionnait pas... j'ai donc mis ça ici:
+					<?php switch ($jack) 	{ 
+							    case 'southAmerica': 
+							    	$GMAP = "https://goo.gl/maps/ZmN32";  
+							    	$MESSAGE2 = SOUTHAMERICA;
+							    break;
+							    
+							    case 'oceania': 
+									$GMAP = "";
+									$MESSAGE2 = OCEANIA;
+							    break;
+							    
+							    case 'asia':
+							        $GMAP = "https://goo.gl/maps/8X5Fp";
+							        $MESSAGE2 = ASIA;
+							    break;
+							    
+							    case 'china': 
+							        $GMAP = "https://maps.google.com/maps?ll=30.997251,106.484198&z=4&t=h&hl=fr&gl=US&mapclient=embed&saddr=Pingxiang,+Chongzuo,+Guangxi,+Chine&daddr=Yunnan,+Chine+to:Sichuan,+Chine+to:Vall%C3%A9e+de+Jiuzhaigou,+Jiuzhaigou,+Sichuan,+Chine+to:Guilin,+Guangxi,+Chine+to:Tianzi+Mountain+to:Mt+Huangshan+to:Zhejiang,+Chine+to:Panjin,+Liaoning,+Chine+to:Zhangye,+Gansu,+Chine+to:Lhassa,+R%C3%A9gion+autonome+du+Tibet,+Chine&dg=feature";
+							        $MESSAGE2 = CHINA;
+							    break;
+							    
+							    case 'india':
+							        $GMAP = "https://www.google.com/maps/preview?ll=26.834994,79.636975&z=4&t=m&hl=fr&gl=US&mapclient=embed&saddr=Katmandou,+N%C3%A9pal&daddr=Gorakhpur,+Uttar+Pradesh,+Inde+to:Varanasi,+Uttar+Pradesh,+Inde+to:Calcutta,+Bengale-Occidental,+Inde+to:Bombay,+Maharashtra,+Inde+to:Udaipur,+Rajasthan,+Inde+to:Jaisalmer,+Rajasthan,+Inde+to:26.1167418,+72.8951152+to:New+Delhi,+Delhi,+Inde+to:Leh";
+							        $MESSAGE2 = INDIA;
+								break;
+							    
+							   	default:
+							        $GMAP = "http://planificateur.a-contresens.net/itineraire/1733#.U_-L_Pl_v9V";
+					}?>
+
+					message : '<p><a target="_blank" href="<?php echo $GMAP;?>"><span class="icon icon-<?php echo $jack;?>"></span><?php echo $MESSAGE1;?> <?php echo $MESSAGE2;?></a></p>',
 					layout : 'other',
 					effect : 'cornerexpand',
 					type : 'notice',
 					//ttl est le temps pendant lequel la notification reste active (en millième de seconde)
-					ttl: 15000,
+					ttl: 1500000,
 					onClose : function() {
 						setTimeout(function() {
 							path.animate( { 'path' : pathConfig.from }, 300, mina.easeinout );
@@ -54,6 +87,8 @@
 				notification.show();
 				
 				
+				
+
 				})();
 			})();
 		</script>

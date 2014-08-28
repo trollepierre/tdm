@@ -27,6 +27,10 @@
 	define('CTECTFNO', 'Check the existing challenges to find new ones!');
 	define('VIEWCHALLENGES', 'VIEW CHALLENGES');
 
+//notification
+	define('MESSAGENOTIFICATION', "A small overview of the route in");
+	define('MESSAGENOTIFICATION', "A small overview of the all route");
+
 //Homepage
 	define('RETRIEVE', 'Retrieve all the <span id="confort">adventures</span> of
                     <br><span id="enGros">Beno&icirc;t </span> and

@@ -28,6 +28,10 @@
 	define('CTECTFNO', 'Regarde les défis existants pour en trouver de nouveaux !');
 	define('VIEWCHALLENGES', 'VOIR LES D&Eacute;FIS');
 
+//notification
+	define('MESSAGENOTIFICATION', "Un petit aperçu de l\'itinéraire en");
+	define('MESSAGENOTIFICATIONHOME', "Un aperçu de l\'itinéraire complet");
+
 //Homepage
 	define('CHALLENGEUS', 'Défie-nous!');
 	define('RETRIEVE', 'Retrouvez toutes les <span id="confort">aventures</span> de

@@ -125,7 +125,7 @@
 			default:
 				$LINK = array ('lost');
 				$COLORS='#bbbbbb';
-				$GMAP = '';
+				$GMAP = "http://planificateur.a-contresens.net/itineraire/1733#.U_-L_Pl_v9V";
 				break;
 		}
 	}else{ 
