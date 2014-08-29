@@ -1,0 +1,13 @@
+Options +FollowSymlinks
+RewriteEngine on
+RewriteRule ^/Site/(.*)$ http://dev.recontact.me/$1 [NC,L,R=301]
+
+RewriteRule ^index.php$ http://dev.recontact.me/ [NC,L,R=301]
+ 
+RewriteCond %{THE_REQUEST} ^(.+)\.php([#?][^\ ]*)?\ HTTP/
+RewriteCond %{HTTPS} !on
+RewriteRule ^(.+)\.php$ http://dev.recontact.me/$1 [R=301,L]
+  
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
