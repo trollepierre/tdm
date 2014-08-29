@@ -1,6 +1,8 @@
 Options +FollowSymlinks
 RewriteEngine on
-RewriteRule ^/Site/(.*)$ http://dev.recontact.me/$1 [NC,L,R=301]
+RedirectMatch ^/$ http://dev.recontact.me/Site/index.php
+
+RewriteRule ^/Site/(.*)$ http://dev.recontact.me/$1 [NC,L=301,R=301]
 
 RewriteRule ^index.php$ http://dev.recontact.me/ [NC,L,R=301]
  
