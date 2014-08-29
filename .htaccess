@@ -15,7 +15,8 @@ RewriteCond %{HTTP_HOST} !^www\.recontact\.me [NC]
 RewriteCond %{HTTP_HOST} !^$
 RewriteRule ^/?(.*) http://www.recontact.me/$1 [L,R,NE] 
 
-RewriteRule ^/$ /Site/ [L] 
+
+RedirectMatch permanent ^/(index\.html|index\.php)?$ http://dev.recontact.me/Site/
 
 RewriteRule ^article-([0-9]+)\.html$ article.php?id=$1 [L] 
 RewriteRule ^destination-([0-9]+)\.html$ destination.php?dest=$1 [L] 
