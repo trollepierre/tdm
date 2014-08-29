@@ -17,14 +17,13 @@ RewriteRule ^/?(.*) http://www.recontact.me/$1 [L,R,NE]
 
 RewriteRule ^/$ /Site/ [R] 
 
-RewriteCond %{THE_REQUEST} ^(.+)\.php([#?][^\ ]*)?\ HTTP/
-RewriteCond %{HTTP} !on
-RewriteRule ^(.+)\.php$ http://dev.recontact.me/$1 [R=301,L]
-
 RewriteRule ^article-([0-9]+)\.html$ article.php?id=$1 [L] 
 RewriteRule ^destination-([0-9]+)\.html$ destination.php?dest=$1 [L] 
 RewriteRule ^challenge-([0-9]+)\.html$ challenge.php?id=$1 [L] 
 
-RewriteRule ^index.php$ http://dev.recontact.me/ [NC,L,R=301]
+RewriteRule ^index.php$ http://dev.recontact.me/Site [NC,R=301]
 
+RewriteCond %{THE_REQUEST} ^(.+)\.php([#?][^\ ]*)?\ HTTP/
+RewriteCond %{HTTP} !on
+RewriteRule ^(.+)\.php$ http://dev.recontact.me/$1 [R=301]
 
