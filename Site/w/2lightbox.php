@@ -1,4 +1,8 @@
-<?php include_once("analyticstracking.php") ?>
+<?php 
+include_once("analyticstracking.php");
+
+?>
+
     <div class="designlicks"><a href="challenge.php"><?php echo CHALLENGE; ?></a>     </div>
     <div class="designlicks2"><a href="article.php" ><?php echo ARTICLE; ?></a>     </div>
 	<div class="designlicks3"><a href="https://docs.google.com/forms/d/1WpNKvORYfxsw0mZBSZSFPWPoqNyQ4Hor93xLSIBWicQ/viewform" target="_blank"><?php echo THANK; ?></a>     </div>
@@ -45,31 +49,15 @@
         <div class="bg-lightbox"></div>
 
     </div>
-  <!--   <div id="lightbox-faq" style="display: none;">
-        <ul class="nav">
-            <li class="nav-one">
-                <div class="current">FAQ</div>
-            </li>
 
-        </ul>
-        <div id="display-faq">
-            <div class="content">
-                <?php 
-                // require( "lang/why.php"); ?>
+<div class="bar-nav">
+            <div class="clear"></div>
+        </div>
+        <div class="fixed-top">
+            <div id="left-border">
+                <a href="#lightbox" class="ellipse fancybox desktop">
+                    <?php echo CHALLENGEUS; ?>
+                </a>
             </div>
         </div>
-    </div>
-    <div id="lightbox-why" style="display: none;">
-        <ul class="nav">
-            <li class="nav-one">
-                <div class="current">why</div>
-            </li>
-
-        </ul>
-        <div id="display-why">
-            <div class="content">
-                <?php 
-                // require( "lang/why.php"); ?>
-            </div>
-        </div>
-    </div> -->
+        

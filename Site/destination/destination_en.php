@@ -1,8 +1,11 @@
  <?php
  	$DISCOVER='Discover ';
 	$WITHPIERREANDBEN='with Pierre and Beno&icirc;t.';
-
- 	if (isset($_GET['dest'])) 	{
+	$VOUS='you?';
+	$INTRO = array ("We will start with ", "Then we continue in ", "We will visit also ", "And we will see ", "And also we will discover ", "Finally we will see ", "Lastly we see ","We visit ","We will visit ", "We will visit ","We will visit ","We will visit ");
+	$DEBUT = array("This is the planified itinerary","View the detailled map","Destination game: <br/> Guess where do these pictures on the itinerary come from");
+	
+	if (isset($_GET['dest'])) 	{
 		switch ($_GET['dest']) {
 			case 'southAmerica':
 				$DESTINATION_TEXT = array ('Brazil','Argentina', 'Paraguay', 'Bolivia', 'Peru', 'Chile');

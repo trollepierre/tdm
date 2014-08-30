@@ -21,7 +21,7 @@
         <div class="flexslider">
             <ul class="slides">
                 <?php 
-                ArticlesClock();
+                ArticlesClock('article');
                 ?>
 
             </ul>
@@ -53,25 +53,40 @@
     <div id="lesAutresPhotos"></div>
     <div class="carousel" >
         <div class="ourArticles">
-            <a href="challenge.php">
-                <h1> <?php echo VLAPDLA; ?> </h1>
+            <a href="article.php">
+                <h1> <?php echo VLAA; ?> </h1>
             </a>
         </div>
-        <div class="flex-slider carousel">
+         <div class="flex-slider carousel">
             <ul class="slides">
                <?php 
-               for ($i=1; $i<=10 ; $i++) { 
+               for ($i=1; $i<=5 ; $i++) { 
+                
                      ImgCarroussel(''.$i.'','article','img/art.jpg');
                  }
                 ?>
                 
             </ul>
         </div>
+        <div class="ourArticles">
+            <h1> <?php echo VLAPDLA; ?> </h1>
+        </div>
+        <div class="flex-slider carousel">
+            <ul class="slides">
+                <?php 
+                    $id=getId();
+                    $url= getImgInPath("/Chargements appareil photo/ArticleTdm/".$id."");
+                    foreach ($url as $key => $value) {
+                        echo '<li><img src="'.$value.'" alt="Picture Album" /></li>';
+                    }
+                ?>
+            </ul>
+        </div>
     </div>
     
 
 
-    </div>
+    
 
     <div id="caracteristiques"></div><!--INDISPENSABLE : WHY?-->
 

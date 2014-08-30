@@ -13,6 +13,7 @@
 }
 
 .clear {    clear: both;}
+
 .hide { display: block; }
 * { margin:0; padding:0; }
 body { background-color: #389bd3 !important; height:100%; }
@@ -25,11 +26,37 @@ img { border:none; }
     right: 20px;
     z-index: 999999;
 }
-
+#gros{
+    font-size: 380px; 
+}
+.vide{
+    margin-bottom: 30px;
+    margin-top: : 30px;
+}
+.pcontact{
+    font-size: 30px;
+    font-style: italic;
+}
 .contacta{
     font-size: 30px;
-    color: aliceblue;
+    color: white;
+    margin-right: 30px;
 }
+.article-name{
+    font-size: 22px;
+}
+.fancybox-iframe{
+    width: 100%;
+    height: 100%;
+}
+
+.contacta:visited{
+    color: white;
+}
+
+.photo-link     { padding:5px; margin:5px; border:1px solid #ccc; display:block; width:200px; float:left; }
+.photo-link:hover   { border-color:#999; }
+
 
 .text-align{
     text-align: center;
@@ -206,6 +233,7 @@ header ul ul li{
     text-decoration: none;
     margin: 0 10px;
     text-align: center;
+
 }
 
 header ul ul li:first{
@@ -213,7 +241,8 @@ header ul ul li:first{
 }
 
 header ul ul li a, header ul ul li a:visited {
-    font-family: 'dosis', arial, sans-serif;
+    font-size: 16px;
+     font-family: 'dosis', arial, sans-serif;
     text-transform: uppercase;
     display: inline-block;
     color: #404040;
@@ -223,10 +252,12 @@ header ul ul li a, header ul ul li a:visited {
     -o-transition: .3s;
     -moz-transition: .3s;
     -webkit-transition: .3s;
+
 }
 
 header ul ul li a:hover {
     color: #2993d9;
+       font-size: 14px;
 }
 
 
@@ -316,7 +347,7 @@ div.flag-carroussel{
 }
 
 .triplet{
-   margin-top: 40px; 
+   margin-top: 20px; 
 }
 
 .col-lg-4 {
@@ -786,8 +817,8 @@ font-size: 50px;
     padding-bottom:164px
 }
 
-#date{
-    font-size: 27px;
+#sstitreArticle{
+    font-size: 23px;
     font-style: italic;
 }
 #titreArticle{
@@ -817,14 +848,6 @@ font-size: 20px;
 
 /*================================= Valeurs ==============================*/
  
- .goals h1{
- text-align:center;
- }
- 
- .goals .col-lg-4 {
-  margin-bottom: 20px;
-  text-align: center;
-}
  
 
 .circle h2 {
@@ -1026,6 +1049,10 @@ html[xmlns] .slides {
 
 .carousel li {
     margin-right: 5px;
+    text-align: center;
+    width: 50px;
+     float: left; 
+     display: block;
 }
 
 #lesArticles{
@@ -1138,6 +1165,7 @@ padding-top: 70px;
 }
 
 .flex-slider img {
+    height: 160px;
     filter: url(filters.svg#grayscale); /* Firefox 3.5+ */
     filter: gray; /* IE6-9 */
     -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
@@ -1476,6 +1504,9 @@ padding-top: 70px;
 
 }
 
+header ul ul li a, header ul ul li a:visited {
+    font-size: 15px;
+}
 
 .scroller_anchor{height:0px; margin:0; padding:0;}
 
@@ -1494,6 +1525,7 @@ padding-top: 70px;
 @media screen and (min-width: 980px){
     body{min-width: 980px;}
 }
+
 .mobile-content{display:none;}
 .phone{display:none;}
 .desktop{display: block;}
@@ -1501,13 +1533,19 @@ padding-top: 70px;
 @media screen and (max-width: 1024px){
     .mobile-media { display: block;}
     .fancybox-media {display: none;}
+
+
+header ul ul li a, header ul ul li a:visited {
+    font-size: 12px;
+}
 }
 
 @media screen and (max-width: 980px){
 
 .ourArticles{  font-size: 30px;} /* par Pierre*/
 .carousel{ padding-top: 5px;}
-
+   #beno{display: none;}
+    #piro{display: none;}
     .fixed-top #left-border {width: 100%;}
     .timeline{display:none;}
     .mobile-content{
@@ -1538,10 +1576,11 @@ padding-top: 70px;
         width: 450px;
         margin: auto;
     }
+    .font20{         display: none;     }
     #footer_drop #footer_content {
         height: auto;
         float: none;
-        width: 650px;
+        
         margin: 0 auto;
         margin-bottom: 20px;
     }
@@ -1565,9 +1604,22 @@ padding-top: 70px;
     .contact {
         padding-right: 0;
     }
+    header ul ul li a, header ul ul li a:visited {
+    font-size: 10px;
+}
 }
 
 @media screen and (max-width: 650px){
+    
+header ul ul li a, header ul ul li a:visited {
+    font-size: 10px;
+}
+    
+    .designlicks{display: none;}
+    .designlicks2{display: none;}
+    .designlicks3{display: none;}
+    .jack{display: none;}
+    .pierre{display: none;}
     .phone{display:block;}
     .desktop{display: none;}
     header .menu{

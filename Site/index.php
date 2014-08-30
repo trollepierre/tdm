@@ -74,6 +74,17 @@
             </ul>
         </div>
     </div>
+    <div class="ourArticles">
+        <h1>
+            <a class="btn btn-lg btn-primary" href="https://docs.google.com/forms/d/1haLT0oeLTtqSajX0dWijHWcxbW49N886hrpj5s_EtQQ/viewform" role="button" target="_blank"> 
+                <?php echo PYC; ?>  
+            </a> 
+             <?php echo OU; ?>  
+            <a class="btn btn-lg btn-primary" href="https://docs.google.com/spreadsheets/d/1gQNjOhUrOleH3qTK2RYkR_Fit1rnkjLZvfQJMd0tMIA/edit#gid=1537311595" role="button" target="_blank">
+                <?php echo VTEC; ?> 
+        </a>
+        </h1>
+    </div>
 
     <div class="carousel">
         <div class="ourArticles" >
@@ -84,13 +95,10 @@
         <div class="flex-slider carousel">
             <ul class="slides">
                  <?php 
-                for ($i=1; $i<=5 ; $i++) { 
+                 $max_for = get_nb_dir('article/');
+                for ($i=1; $i<=$max_for ; $i++) { 
                ImgCarroussel(''.$i.'','article','article/'.$i.'/img0.jpg');
-               }
-                // for ($i=6; $i<=8 ; $i++) { 
-                //     ImgCarroussel(''.$i.'','article','img/art.jpg');
-                // }
-                ?>
+               }?>
                 
             </ul>
         </div>
@@ -104,17 +112,20 @@
             <section class="slider">
                 <div class="flexslider">
                     <ul class="slides">
-                      <li><img src="img/H8.jpg" /></li>
-                      <li><img src="img/H9.jpg" /></li>
-                     <li><img src="img/H1.jpg" /></li>
-                      <li><img src="img/H2.jpg" /></li>
-<!--                  <li><img src="img/G5.jpg" /></li>
-                      <li><img src="img/G66.jpg" /></li>-->
+                    
+<?php
+$url= getImgInPath("/Site/gallery");
+
+foreach ($url as $key => $value) {
+echo '<li><img src="'.$value.'" /></li>';
+}
+
+?>
                     </ul>
                 </div>
             </section>
         </div>
     </div>
-
+        
 <?php require("w/8footer.php");?>
 <?php require("w/9end.php");?>

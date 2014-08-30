@@ -213,3 +213,5 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+Site/lib/dropboxAPI.php
+Site/lib/app-info.json
