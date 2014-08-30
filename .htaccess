@@ -12,17 +12,17 @@ RewriteCond %{HTTP_REFERER} !^http://dev.recontact.me/.*$ [NC]
 RewriteCond %{HTTP_REFERER} !^http://www.recontact.me/.*$ [NC]
 RewriteCond %{HTTP_REFERER} !^http://lost.recontact.me/.*$ [NC]
 RewriteCond %{HTTP_REFERER} !^http://pipo.recontact.me/.*$ [NC]
-ReWriteRule .*\.(gif|png|jpe?g)$ - [F]
+RewriteRule .*\.(gif|png|jpe?g)$ - [F]
 
-## Régler un seul site sur Google Analytics
+## Régler un seul site sur Google Analytics ==> renvoi direct sur www.rec.me tjr
 ##RewriteCond %{HTTP_HOST} !^www\.recontact\.me [NC]
 ##RewriteCond %{HTTP_HOST} !^$
 ##RewriteRule ^/?(.*) http://www.recontact.me/$1 [L,R,NE] 
 
-## La base est / à la place de /Site/ ???
+## La base est / à la place de /Site/ ??? => Initialisation => / =>  Site
 RewriteBase /
 
-
+## le .php qui disparait
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php [L]
