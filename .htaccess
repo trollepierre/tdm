@@ -15,9 +15,9 @@ RewriteCond %{HTTP_REFERER} !^http://pipo.recontact.me/.*$ [NC]
 ReWriteRule .*\.(gif|png|jpe?g)$ - [F]
 
 ## Régler un seul site sur Google Analytics
-RewriteCond %{HTTP_HOST} !^www\.recontact\.me [NC]
-RewriteCond %{HTTP_HOST} !^$
-RewriteRule ^/?(.*) http://www.recontact.me/$1 [L,R,NE] 
+##RewriteCond %{HTTP_HOST} !^www\.recontact\.me [NC]
+##RewriteCond %{HTTP_HOST} !^$
+##RewriteRule ^/?(.*) http://www.recontact.me/$1 [L,R,NE] 
 
 ## La base est / à la place de /Site/ ???
 RewriteBase /
