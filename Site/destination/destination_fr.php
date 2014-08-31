@@ -3,7 +3,7 @@
 	$WITHPIERREANDBEN='avec Pierre et Beno&icirc;t ';
 	$VOUS='vous ?';
 	$INTRO = array ("Nous allons commencer par ", "Ensuite nous continuerons vers ", "Nous irons aussi visiter ", "Et nous irons voir ", "Et aussi nous partirons découvrir ", "Enfin nous verrons ", "Finalement nous irons voir ","Nous irons visiter ","Nous irons visiter ","Nous irons visiter ","Nous irons visiter ");
- 	$DEBUT = array("Voici notre itinéraire envisagé","Voir le trajet détaillé","Jeu des destinations : <br/> Devinez d'où viennent ces photos de notre itinéraire");
+ 	$DEBUT = array ("Voici notre itinéraire envisagé","Voir le trajet détaillé","Jeu des destinations : <br/> Devinez d'où viennent ces photos de notre itinéraire");
  	
  	if (isset($_GET['dest'])) 	{
 		switch ($_GET['dest']) {
@@ -56,10 +56,10 @@
 			$DESTINATION_TEXT = array ( "Sichuan", "Jiuzhaigou", "Guilin", "le Mont Huang","La Cit&eacute; Interdite - P&eacute;kin", "La Grande Muraille de Chine", "Zhangye","Lhassa", "Le Palais Potala", "Paysages Tib&eacute;tains", "Trekking", "Le Mont Everest");
 				break;
 			case 'tibet':
-			$DESTINATION_TEXT = array ("Lhassa", "Le Palais Potala", "Paysages Tib&eacute;tains", "Trekking", "Le Mont Everest");
+			$DESTINATION_TEXT = array ("Le Palais Potala", "Paysages Tib&eacute;tains", "Le Mont Everest");
 				break;
 			case 'nepal':
-			$DESTINATION_TEXT = array (  "Trekking", "Le Mont Everest", "Kathmandou");
+			$DESTINATION_TEXT = array (  "Le Mont Everest", "Kathmandou");
 				break;
 			case 'india':
 			$DESTINATION_TEXT = array (  "Varanasi", "Calcutta", "Rajasthan", "Taj Mahal, Agra", "Leh Ladakh", "New Delhi");

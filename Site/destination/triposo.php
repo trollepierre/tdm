@@ -142,14 +142,8 @@ if (isset($_GET['dest'])) {
         case 'lhasa' :
             header('Location: http://www.triposo.com/loc/Lhasa');
             break;
-        case 'potala':
-            header('Location: http://www.triposo.com/poi/W__31475419');
-            break;
         case 'tibetan':
             header('Location: http://www.tibetdiscovery.com/tibet-landscape/');
-            break;
-        case 'trekking':
-            header('Location: http://www.windhorsetibet.com/trekking_adventures.html');
             break;
         case 'everest':
             header('Location: http://www.triposo.com/loc/Mount_Everest');
@@ -172,7 +166,7 @@ if (isset($_GET['dest'])) {
         case 'ladakh':
             header('Location: http://www.triposo.com/loc/Ladakh');
             break;
-        case 'newDehli':
+        case 'newDelhi':
             header('Location: http://www.triposo.com/loc/New_Delhi');
             break;
         case 'dubai':

@@ -88,17 +88,17 @@
 				$GMAP = 'https://maps.google.com/maps?ll=30.997251,106.484198&z=4&t=h&hl=fr&gl=US&mapclient=embed&saddr=Pingxiang,+Chongzuo,+Guangxi,+Chine&daddr=Yunnan,+Chine+to:Sichuan,+Chine+to:Vall%C3%A9e+de+Jiuzhaigou,+Jiuzhaigou,+Sichuan,+Chine+to:Guilin,+Guangxi,+Chine+to:Tianzi+Mountain+to:Mt+Huangshan+to:Zhejiang,+Chine+to:Panjin,+Liaoning,+Chine+to:Zhangye,+Gansu,+Chine+to:Lhassa,+R%C3%A9gion+autonome+du+Tibet,+Chine&dg=feature';
 				break;
 			case 'tibet':
-				$LINK = array ('lhasa','potala','tibetan','trekking','everest');
+				$LINK = array ('lhasa','tibetan','everest');
 				$COLORS='#C5DA07';
 				$GMAP = '';
 				break;
 			case 'nepal':
-				$LINK = array ('trekking','everest','kathmandu');
+				$LINK = array ('everest','kathmandu');
 				$COLORS='#C5D955';
 				$GMAP = 'https://www.google.com/maps/preview?ll=26.834994,79.636975&z=4&t=m&hl=fr&gl=US&mapclient=embed&saddr=Katmandou,+N%C3%A9pal&daddr=Gorakhpur,+Uttar+Pradesh,+Inde+to:Varanasi,+Uttar+Pradesh,+Inde+to:Calcutta,+Bengale-Occidental,+Inde+to:Bombay,+Maharashtra,+Inde+to:Udaipur,+Rajasthan,+Inde+to:Jaisalmer,+Rajasthan,+Inde+to:26.1167418,+72.8951152+to:New+Delhi,+Delhi,+Inde+to:Leh';
 				break;
 			case 'india':
-				$LINK = array ('varanasi','kolkata','rajasthan','agra','ladakh','newDehli');
+				$LINK = array ('varanasi','kolkata','rajasthan','agra','ladakh','newDelhi');
 				$COLORS='#DDC631';
 				$GMAP = 'https://www.google.com/maps/preview?ll=26.834994,79.636975&z=4&t=m&hl=fr&gl=US&mapclient=embed&saddr=Katmandou,+N%C3%A9pal&daddr=Gorakhpur,+Uttar+Pradesh,+Inde+to:Varanasi,+Uttar+Pradesh,+Inde+to:Calcutta,+Bengale-Occidental,+Inde+to:Bombay,+Maharashtra,+Inde+to:Udaipur,+Rajasthan,+Inde+to:Jaisalmer,+Rajasthan,+Inde+to:26.1167418,+72.8951152+to:New+Delhi,+Delhi,+Inde+to:Leh';
 				break;

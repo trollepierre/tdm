@@ -49,11 +49,11 @@
 			case 'china':
 				$DESTINATION_TEXT = array ('Sichuan','Jiuzhaigou', 'Guilin', 'Mount Huang','Forbidden City in Beijing', 'Great Wall of China', 'Zhangye','Lhasa','Potala Palace', 'Tibetan landscapes', 'Trekking', 'Mount Everest');
 				break;
-			case 'china':
-				$DESTINATION_TEXT = array ('Lhasa','Potala Palace', 'Tibetan landscapes', 'Trekking', 'Mount Everest');
+			case 'tibet':
+				$DESTINATION_TEXT = array ('Lhasa Potala Palace','Tibetan landscapes', 'Mount Everest');
 				break;
 			case 'nepal':
-				$DESTINATION_TEXT = array ('Trekking', 'Mount Everest', 'Kathmandu');
+				$DESTINATION_TEXT = array ('Mount Everest', 'Kathmandu');
 				break;
 			case 'india':
 				$DESTINATION_TEXT = array ('Varanasi','Kolkata', 'Rajasthan', 'Taj Mahal, Agra', 'Leh Ladakh', 'Delhi');
