@@ -148,6 +148,9 @@ if (isset($_GET['dest'])) {
         case 'everest':
             header('Location: http://www.triposo.com/loc/Mount_Everest');
             break;
+        case 'everest2':
+            header('Location: http://www.triposo.com/loc/Mount_Everest');
+            break;
         case 'kathmandu':
             header('Location: http://www.triposo.com/loc/Kathmandu');
             break;

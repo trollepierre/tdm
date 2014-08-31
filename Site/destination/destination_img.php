@@ -93,7 +93,7 @@
 				$GMAP = '';
 				break;
 			case 'nepal':
-				$LINK = array ('everest','kathmandu');
+				$LINK = array ('everest2','kathmandu');
 				$COLORS='#C5D955';
 				$GMAP = 'https://www.google.com/maps/preview?ll=26.834994,79.636975&z=4&t=m&hl=fr&gl=US&mapclient=embed&saddr=Katmandou,+N%C3%A9pal&daddr=Gorakhpur,+Uttar+Pradesh,+Inde+to:Varanasi,+Uttar+Pradesh,+Inde+to:Calcutta,+Bengale-Occidental,+Inde+to:Bombay,+Maharashtra,+Inde+to:Udaipur,+Rajasthan,+Inde+to:Jaisalmer,+Rajasthan,+Inde+to:26.1167418,+72.8951152+to:New+Delhi,+Delhi,+Inde+to:Leh';
 				break;
