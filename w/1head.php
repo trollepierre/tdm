@@ -14,11 +14,11 @@
     <link rel="pingback" href="xmlrpc.php">
 
     <link rel="icon" href="img/terre.ico" type="image/x-icon">
-    <link rel="canonical" href="http://voyage.recontact.fr/" />
+    <link rel="canonical" href="http://www.recontact.fr/" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="One year around the world" />
-    <meta property="og:url" content="http://voyage.recontact.me/" />
+    <meta property="og:url" content="http://www.recontact.me/" />
     <meta property="og:site_name" content="WORLDTRIP" />
     <!--<meta name="google-site-verification" content="UA-48903636-1" />-->
    
@@ -26,7 +26,7 @@
         //<![CDATA[
          // Google Analytics for WordPress by Yoast v4.3.5 | http://yoast.com/wordpress/google-analytics/
  /*       var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-48903636-1']);
+        _gaq.push(['_setAccount', 'UA-489031636-1']);
         _gaq.push(['_trackPageview']);
         (function () {
             var ga = document.createElement('script');
@@ -50,7 +50,7 @@
     </style>
 <!--fin cumulus-->
 
-    <link rel="alternate" type="application/rss+xml" title="Home Comments Feed" href="http://voyage.recontact.me" />
+    <link rel="alternate" type="application/rss+xml" title="Home Comments Feed" href="http://www.recontact.me" />
     <link rel='stylesheet' id='style-css' href='style.css' type='text/css' media='all' />
 
     <link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc.php?rsd" />
@@ -83,6 +83,4 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="js/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
-    <link rel="stylesheet" type="text/css" href="js/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
-
+   
