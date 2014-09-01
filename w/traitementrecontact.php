@@ -23,7 +23,7 @@ if(isset($_SESSION['token']) && isset($_SESSION['token_time']) && isset($_POST['
 				$bdd = new PDO('mysql:host=' . $host . ';dbname=' . $database , $user , $pass);
 				}catch(Exception $e){
 				die('Erreur : '.$e->getMessage());
-				// header('Location: index.php?bug=OK7');
+				// header('Location: ../index.php?bug=OK7');
 				}
 
 			// Insertion du message à l'aide d'une requête préparée
@@ -50,7 +50,7 @@ if(isset($_SESSION['token']) && isset($_SESSION['token_time']) && isset($_POST['
 			$stmt->bindParam(':email', $email);
 			$stmt->execute();
  			
- 			// header('Location: index.php?bug=OK8');
+ 			// header('Location: ../index.php?bug=OK8');
  
 			// Préparation du mail contenant le lien d'activation
 			$destinataire = "benoit@recontact.me";
@@ -84,39 +84,39 @@ if(isset($_SESSION['token']) && isset($_SESSION['token_time']) && isset($_POST['
 
 			// Redirection du visiteur vers la page du minichat
 			echo "<script>alert('Mon alerte dit ".$mail." apres ce mail : ".$irstname." ok');</script>";
-			header('Location: index.php?done=OK');
+			header('Location: ../index.php?done=OK');
 			}else{
-			header('Location: index.php?bug=OK6');	
+			header('Location: ../index.php?bug=OK6');	
 			}
 		}else{
-		header('Location: index.php?bug=OK5');	
+		header('Location: ../index.php?bug=OK5');	
 		}
 	}else{
-	header('Location: index.php?bug=OK4');	
+	header('Location: ../index.php?bug=OK4');	
 	}
 }else{
 if((isset($_SESSION['token']))){
-// header('Location: index.php?bug=OK11');
+// header('Location: ../index.php?bug=OK11');
 
 }else{
-header('Location: index.php?bug=OK12');	
+header('Location: ../index.php?bug=OK12');	
 } 
 if((isset($_SESSION['token_time']))) {
-// header('Location: index.php?bug=OK21');
+// header('Location: ../index.php?bug=OK21');
 
 }else{
-header('Location: index.php?bug=OK22');
+header('Location: ../index.php?bug=OK22');
 
 
 }
 
 if ((isset($_POST['token']))){
-// header('Location: index.php?bug=OK31');
+// header('Location: ../index.php?bug=OK31');
 }else{
-	header('Location: index.php?bug=OK32');
+	header('Location: ../index.php?bug=OK32');
 }
 // require("langchange.php");
-// header('Location: index.php?bug=OK4');
+// header('Location: ../index.php?bug=OK4');
 //SINON, ON RAJOUTE DES ELSE ET DES MESSAGES D'ERREUR
 }
 ?>
