@@ -23,7 +23,7 @@
 								};
 								var params = { menu: "false" };
 								var attributes = {};
-								swfobject.embedSWF( "tagcloud.swf", "tagcloud2", "900", "600", "10.0.0", "expressInstall.swf", flashvars, params, attributes );
+								swfobject.embedSWF( "lib/cumulus/tagcloud.swf", "tagcloud2", "900", "600", "10.0.0", "lib/cumulus/expressInstall.swf", flashvars, params, attributes );
 							</script>
 </div>	
 					</div>

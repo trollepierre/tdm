@@ -103,7 +103,7 @@ package com.roytanck.wpcumulus
 			// assemble the path to load the tags cloud data from (relative path for securoty reasons (NEEDS WORK!)
 			var a:Array = this.loaderInfo.url.split("/");
 			a.pop();
-			var baseURL:String = a.join("/") + "/";
+			var baseURL:String = a.join("/") + "lib/cumulus/";
 			var cloudpath:String = ( this.loaderInfo.parameters.cloudpath == null ) ? "tagcloud.xml" : this.loaderInfo.parameters.cloudpath;
 			var reqUrl:String = ( this.loaderInfo.url.substr( 0, 4 ) == "http" ) ? baseURL + cloudpath : cloudpath;
 			var req:URLRequest = new URLRequest( reqUrl );

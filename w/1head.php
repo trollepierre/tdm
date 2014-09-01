@@ -42,7 +42,7 @@
 	<!-- super utile -->
 
 <!-- cumulus-->
-    <script type="text/javascript" src="swfobject.js"></script>
+    <script type="text/javascript" src="lib/cumulus/swfobject.js"></script>
     <style type="text/css">
         body, html { height: 100%; background-color:#eee; }
         div.tagcloud { margin: 0px; }
