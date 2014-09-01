@@ -51,7 +51,7 @@
 <!--fin cumulus-->
 
     <link rel="alternate" type="application/rss+xml" title="Home Comments Feed" href="http://www.recontact.me" />
-    <link rel='stylesheet' id='style-css' href='style.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='style-css' href='css/style.css' type='text/css' media='all' />
 
     <link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc.php?rsd" />
  
