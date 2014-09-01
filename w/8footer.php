@@ -14,7 +14,7 @@
 				</div>
 				<div class="oss col-xs-12 col-sm-12 col-md-4 col-lg-4">
 					<div class="triple">
-						<img class="col-xs-12 col-sm-12 col-md-12 col-lg-12" src="WorldBracelet.png" alt="Voir notre bracelet" title="Voir notre bracelet" />
+						<img class="col-xs-12 col-sm-12 col-md-12 col-lg-12" src="img/WorldBracelet.png" alt="Voir notre bracelet" title="Voir notre bracelet" />
                         <div class="triplet col-xs-12 col-sm-12 col-md-12 col-lg-12">
 							<a  href="contact.php" class="contacta"><?php echo GETIT; ?></a>
 						</div>
