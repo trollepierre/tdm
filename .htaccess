@@ -29,7 +29,8 @@ RewriteRule ^(.*)$ $1.php [L]
 
 ##RedirectMatch ^/$ http://dev.recontact.me/Site/index.php
   
-
+RedirectMatch permanent ^/.gitignore http://www.google.com [NC]
+RedirectMatch permanent ^/.git/info/exclude http://www.google.com [NC]
 
 ##RewriteCond %{THE_REQUEST} ^(.+)\.php([#?][^\ ]*)?\ HTTP/
 ##RewriteCond %{HTTP} !on
