@@ -1,2 +1,3 @@
 RewriteEngine on
+## Test
 RewriteRule ^/.gitignore http://dev.recontact.me/ [F]
