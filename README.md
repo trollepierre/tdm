@@ -1,16 +1,17 @@
 tdm
 ===
-Visible sur l'adresse www.recontact.me
+*Visible sur l'adresse www.recontact.me*
 
 
-Le site raconte notre voyage et se remplira au fur et à mesure de notre synchronisation sur Dropbox.
-On utilise PHP (avec l'extension php_curl)
-et l'interface avec Dropbox se fait avec la Core API Dropbox.(cf lib)
+Le site raconte notre voyage et se remplira au fur et à mesure de notre synchronisation sur Dropbox.  
+On utilise PHP (avec l'extension php_curl)  
+et l'interface avec Dropbox se fait avec la Core API Dropbox. (cf le dossier lib)
 
 
 
+---
 
-Indiquer que le site se trouve dans le dossier Site.
+**Contenu**
 
 Dans ce dossier, on trouve de nombreux dossiers et fichiers. Ainsi :
 
@@ -18,6 +19,6 @@ Dans ce dossier, on trouve de nombreux dossiers et fichiers. Ainsi :
     article.php, le modèle de page des articles
     challenge/ idem
     challenge.php idem
-    destination/ contient le contenu des pages dedtinations c'est à dire img et le fichier d import image : destination_img. Également le contenu textuel séparé entre les différentes langues
+    destination/ contient le contenu des pages destinations c'est à dire img et le fichier d import image : destination_img. Également le contenu textuel séparé entre les différentes langues
     destination.php pour l appel de ses destinations
     ...
