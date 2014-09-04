@@ -1,50 +1,6 @@
-Options +FollowSymlinks
 RewriteEngine on
-
-## virer l'host laurion qui pompe les sites web ; exemple de badhost et d'ip
-RewriteCond %{REMOTE_HOST}  \.laurion\.(com|net)$  [OR]
-RewriteCond %{REMOTE_HOST} ^badhost\.baddomain\.com$ [OR]
-RewriteCond %{REMOTE_ADDR}  ^123\.45\.67\.12[5-9]$ 
-
-## autoriser que ces sites à accéder à mes img
-RewriteCond %{HTTP_REFERER} !^$
-RewriteCond %{HTTP_REFERER} !^http://dev.recontact.me/.*$ [NC]
-RewriteCond %{HTTP_REFERER} !^http://www.recontact.me/.*$ [NC]
-RewriteCond %{HTTP_REFERER} !^http://lost.recontact.me/.*$ [NC]
-RewriteCond %{HTTP_REFERER} !^http://pipo.recontact.me/.*$ [NC]
-RewriteRule .*\.(gif|png|jpe?g)$ - [F]
-
-## Régler un seul site sur Google Analytics ==> renvoi direct sur www.rec.me tjr
-##RewriteCond %{HTTP_HOST} !^www\.recontact\.me [NC]
-##RewriteCond %{HTTP_HOST} !^$
-##RewriteRule ^/?(.*) http://www.recontact.me/$1 [L,R,NE] 
-
-## La base est / à la place de /Site/ ??? => Initialisation => / =>  Site
-RewriteBase /
-
-## le .php qui disparait
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}\.php -f
-RewriteRule ^(.*)$ $1.php [L]
-
-##RedirectMatch ^/$ http://dev.recontact.me/Site/index.php
-  
-
-
-##RewriteCond %{THE_REQUEST} ^(.+)\.php([#?][^\ ]*)?\ HTTP/
-##RewriteCond %{HTTP} !on
-##RewriteRule ^(.+)\.php$ http://dev.recontact.me/$1 [R=301]
-
-
-##RedirectMatch permanent ^/(index\.html|index\.php)?$ http://dev.recontact.me/Site/
-
-##RewriteRule ^article-([0-9]+)\.html$ article.php?id=$1 [L] 
-##RewriteRule ^destination-([0-9]+)\.html$ destination.php?dest=$1 [L] 
-##RewriteRule ^challenge-([0-9]+)\.html$ challenge.php?id=$1 [L] 
-
-##RewriteRule ^index.php$ http://dev.recontact.me/Site [NC,L,R=301]
-
-
-##RewriteCond %{THE_REQUEST} ^(.+)\.php([#?][^\ ]*)?\ HTTP/
-##RewriteCond %{HTTP} !on
-##RewriteRule ^(.+)\.php$ http://dev.recontact.me/$1 [R=301]
+## Test
+## RewriteRule ^/.gitignore http://dev.recontact.me/ [F]
+RedirectMatch 404 /.gitignore$
+RedirectMatch 404 lib/dropboxAPI.php$
+RedirectMatch 404 lib/app-info.json$
