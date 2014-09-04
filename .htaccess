@@ -1,14 +1,22 @@
 RewriteEngine on
 
+## Fichier caché ==> 404
 RedirectMatch 404 /.gitignore$
 RedirectMatch 404 lib/dropboxAPI.php$
 RedirectMatch 404 lib/app-info.json$
 
-##A partir d'avant ça marche
+## Index.php ==> /
 RewriteRule ^(.*)index\.(php|html?)$ /$1 [R=301,NC,L]
 
 
-##RedirectMatch http://dev.recontact.me /index.php$ 
+##A partir d'avant ça marche
+
+## le .php qui disparait
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
+
+
 ##
 ##  
 ##
