@@ -19,7 +19,7 @@ RewriteCond %{HTTP_REFERER} !^http://lost.recontact.me/.*$ [NC]
 RewriteCond %{HTTP_REFERER} !^http://pipo.recontact.me/.*$ [NC]
 RewriteRule .*\.(gif|png|jpe?g)$ - [F]
 
-RewriteEngine on
+
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule . index.php [L]
