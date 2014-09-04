@@ -12,9 +12,8 @@ RewriteCond %{REMOTE_HOST} ^badhost\.baddomain\.com$ [OR]
 RewriteCond %{REMOTE_ADDR} ^123\.45\.67\.12[5-9]$
 
 
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule . index.php [L]
+RewriteCond %{THE_REQUEST} ^.*/index\.php 
+RewriteRule ^(.*)index.php$ /$1 [R=301,L]
 
 ## autoriser que ces sites à accéder à mes img
 RewriteCond %{HTTP_REFERER} !^$
