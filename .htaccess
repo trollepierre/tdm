@@ -5,9 +5,7 @@ RedirectMatch 404 lib/dropboxAPI.php$
 RedirectMatch 404 lib/app-info.json$
 
 ##A partir d'avant ça marche
-
-RewriteCond %{THE_REQUEST} ^.*/index\.php 
-RewriteRule ^(.*)index.php$ /$1 [R=301,L]
+RewriteRule ^(.*)index\.(php|html?)$ /$1 [R=301,NC,L]
 
 
 ##RedirectMatch http://dev.recontact.me /index.php$ 
