@@ -15,7 +15,7 @@ RewriteRule ^(.*)index\.(php|html?)$ /$1 [R=301,NC,L]
 ##A partir d'avant ça marche
 
 ## le .php qui disparait
-RewriteRule ^(.*)\.php$ /$1 [L]
+##RewriteRule ^(.*)\.php$ /$1 [L]
 
 
 ##RewriteCond %{REQUEST_FILENAME}.php -f
