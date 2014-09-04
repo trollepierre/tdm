@@ -20,7 +20,7 @@ RewriteCond %{HTTP_REFERER} !^http://pipo.recontact.me/.*$ [NC]
 RewriteRule .*\.(gif|png|jpe?g)$ - [F]
 
 
-RedirectMatch http://dev.recontact.me/index.php http://dev.recontact.me/
+RedirectMatch http://dev.recontact.me http://dev.recontact.me/index.php$ 
 ##
 ##  
 ##
