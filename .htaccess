@@ -11,6 +11,11 @@ RewriteCond %{REMOTE_HOST} \.laurion\.(com|net)$ [OR]
 RewriteCond %{REMOTE_HOST} ^badhost\.baddomain\.com$ [OR]
 RewriteCond %{REMOTE_ADDR} ^123\.45\.67\.12[5-9]$
 
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule . index.php [L]
+
 ## autoriser que ces sites à accéder à mes img
 RewriteCond %{HTTP_REFERER} !^$
 RewriteCond %{HTTP_REFERER} !^http://dev.recontact.me/.*$ [NC]
@@ -18,11 +23,6 @@ RewriteCond %{HTTP_REFERER} !^http://www.recontact.me/.*$ [NC]
 RewriteCond %{HTTP_REFERER} !^http://lost.recontact.me/.*$ [NC]
 RewriteCond %{HTTP_REFERER} !^http://pipo.recontact.me/.*$ [NC]
 RewriteRule .*\.(gif|png|jpe?g)$ - [F]
-
-
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule . index.php [L]
 
 ##RedirectMatch http://dev.recontact.me /index.php$ 
 ##
