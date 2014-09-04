@@ -19,6 +19,8 @@ RewriteCond %{HTTP_REFERER} !^http://lost.recontact.me/.*$ [NC]
 RewriteCond %{HTTP_REFERER} !^http://pipo.recontact.me/.*$ [NC]
 RewriteRule .*\.(gif|png|jpe?g)$ - [F]
 
+
+RedirectMatch http://dev.recontact.me/index.php http://dev.recontact.me/
 ##
 ##  
 ##
@@ -33,7 +35,6 @@ RewriteRule .*\.(gif|png|jpe?g)$ - [F]
 ##RewriteCond %{REQUEST_FILENAME}\.php -f
 ##RewriteRule ^(.*)$ $1.php [L]
 
-##RedirectMatch ^/$ http://dev.recontact.me/Site/index.php
 
 
 ##RewriteCond %{THE_REQUEST} ^(.+)\.php([#?][^\ ]*)?\ HTTP/
