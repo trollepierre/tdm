@@ -9,7 +9,7 @@ RedirectMatch 404 lib/dropboxAPI.php$
 RedirectMatch 404 lib/app-info.json$
 
 ## Index.php ==> /
-## RewriteRule ^(.*)index\.(php|html?)$ /$1 [R=301,NC,L]
+RewriteRule ^(.*)index\.(php|html?)$ /$1 [R=301,NC,L]
 
 
 ##A partir d'avant ça marche
