@@ -84,7 +84,7 @@ if(isset($_SESSION['token']) && isset($_SESSION['token_time']) && isset($_POST['
 
 			// Redirection du visiteur vers la page du minichat
 			echo "<script>alert('Mon alerte dit ".$mail." apres ce mail : ".$irstname." ok');</script>";
-			header('Location: ../merci.php');
+			header('Location: ../index.php?done=OK');
 			}else{
 			header('Location: ../index.php?bug=OK6');	
 			}
