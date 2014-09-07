@@ -1,2 +1,12 @@
 User-agent: *
-Disallow: /
+Disallow: /article/
+Disallow: /challenge/
+Disallow: /css/
+Disallow: /destination/
+Disallow: /fonts/
+Disallow: /img/
+Disallow: /js/
+Disallow: /lang/
+Disallow: /lib/
+Disallow: /preload-images/
+Disallow: /w/
