@@ -1,5 +1,6 @@
 <div class="container col-sm-6 col-sm-offset-2 col-lg-6 col-lg-offset-2">
-
+<br/>
+<br/>
 <?php	if (!isset($_POST["submit"]))  {   ?>
  <form class="form-horizontal" id="form" name="form" method="post" action="w/traitementrecontact.php" style="margin-top: 60px;">  
 	 <?php if ($lang=='fr' ) { ?>
