@@ -29,6 +29,11 @@ img { border:none; }
 #gros{
     font-size: 380px; 
 }
+
+.paddingZero{
+padding-top: 0px;
+}
+
 .vide{
     margin-bottom: 30px;
     margin-top: : 30px;
