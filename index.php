@@ -89,7 +89,7 @@
     <div class="carousel">
         <div class="ourArticles" >
             <a href="article.php">
-                <h1> <?php echo DAOA; ?></h1>
+                <h1 class="paddingZero"> <?php echo DAOA; ?></h1>
             </a>
         </div>
         <div class="flex-slider carousel">
