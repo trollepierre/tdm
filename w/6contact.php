@@ -82,4 +82,6 @@
 
 </div>
 <div class="vide">
-	</div>
+<br/>
+<br/>
+</div>
