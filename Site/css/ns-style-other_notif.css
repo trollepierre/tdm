@@ -21,8 +21,8 @@
 
 /* Expand SVG corner */
 .ns-effect-cornerexpand {
-	width: 200px;
-	min-height: 200px;
+	width: 170px;
+	min-height: 170px;
 	background: #5a7d98;
 	text-align: center;
 	position: relative;
@@ -32,8 +32,8 @@
 .shape-box {
 	top: 0;
 	right: 0;
-	width: 200px;
-	min-height: 200px;
+	width: 170px;
+	min-height: 170px;
 }
 
 .shape-box path {
@@ -53,8 +53,8 @@
 }
 
 .ns-effect-cornerexpand .ns-close {
-	top: 15px;
-	right: 15px;
+	top: 12px;
+	right: 12px;
 }
 
 .ns-effect-cornerexpand .ns-close::before,
