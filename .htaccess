@@ -1,6 +1,6 @@
-# Le serveur doit suivre les liens symboliques :
-Options +FollowSymlinks
-# Activation du module de réécriture d'URL :
+## Le serveur doit suivre les liens symboliques :
+## Options +FollowSymlinks
+## Activation du module de réécriture d'URL :
 RewriteEngine on
 
 ## Fichier caché ==> 404

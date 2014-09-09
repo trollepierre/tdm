@@ -18,22 +18,22 @@
 	define('WEARECHALLENGERS', 'Quels défis ? ');
 	define('CHAEWW', '<li>Nous aimons les défis !
 					<br/> Chaque semaine, nous réaliserons un défi !
-                    <br/>Suggérez-nous des défis sur ce site !</li>
-                    <li>Et revenez voir les défis relevés dans la rubrique Challenge</li>');
-	define('YOUHAVECHALLENGES', '​Proposez-nous vos défis ?');
+                    <br/>Suggère-nous des défis sur ce site !</li>
+                    <li>Et reviens voir les défis relevés dans la rubrique Challenge</li>');
+	define('YOUHAVECHALLENGES', '​Propose-nous tes défis ?');
 	define('READYTODO', 'Nous sommes pr&ecirc;ts à les relever !');
 	define('PROPOSEACHALLENGE', 'PROPOSE UN DEFI');
-	define('GALTTEC', "Jetez un coup d'oeil aux défis existants");
+	define('GALTTEC', "Jette un coup d'oeil aux défis existants");
 	define('NEEDINSPIRATION', "Besoin d'inspiration");
 	define('CTECTFNO', 'Regarde les défis existants pour en trouver de nouveaux !');
 	define('VIEWCHALLENGES', 'VOIR LES D&Eacute;FIS');
 
 //Homepage
 	define('CHALLENGEUS', 'Défie-nous!');
-	define('RETRIEVE', 'Retrouvez toutes les <span id="confort">aventures</span> de
+	define('RETRIEVE', 'Retrouve toutes les <span id="confort">aventures</span> de
                     <br><span id="enGros">Beno&icirc;t </span> et
                     <span id="enGros">Pierre</span>!');
-	define('SCROLL', 'Scrollez pour découvrir');
+	define('SCROLL', 'Scrolle pour découvrir');
 	
 	
 //Menus
@@ -76,7 +76,7 @@
 	define('DAOC','Découvre nos défis réalisés');
 	define('PYC','Propose ton défi');
 	define('VTEC','Voir les défis proposés');
-	define('DAOA','Découvrez nos articles');
+	define('DAOA','Découvre nos articles');
 	define('VLAPDLA',"Voici les autres photos de l'article");
 	define('VLAA',"Voici les autres articles");
 	define('QDDM',"Quelles destinations découvrir maintenant (site en construction) ?");
@@ -91,7 +91,7 @@ define('PIERRE', "Voici Pierre
 				<br/>Scout depuis l'enfance, il veut assouvir sa soif d'aventure et de découvertes. 
 				</p><p>Ce tour du monde sera inoubliable !");
 	define('NUAGE','Nuage des destinations');
-	define('GETIT','Recevez le bracelet du voyage');
+	define('GETIT','Reçois le bracelet du voyage');
 
 /*define('PIERRE', "Voici Pierre
 				<br/> Grand voyageur et entrepreneur dans l'&agrave;me, il cro&icirc;t :
@@ -126,7 +126,7 @@ define('PIERRE', "Voici Pierre
 	 define('LN','Nom');
 
 	//Donation
-	define('DON','Vous pouvez nous aider par don
+	define('DON','Tu peux nous aider par don
 					<br/>Notre budget est tr&egrave;s serré. Vos dons nous permettront d\'&ecirc;tre s&ucirc;r de pouvoir mener &agrave; bien notre aventure jusqu\'au bout');
 	 
    

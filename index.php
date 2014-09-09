@@ -74,7 +74,7 @@
             </ul>
         </div>
     </div>
-    <div class="ourArticles">
+<!--    <div class="ourArticles">
         <h1>
             <a class="btn btn-lg btn-primary" href="https://docs.google.com/forms/d/1haLT0oeLTtqSajX0dWijHWcxbW49N886hrpj5s_EtQQ/viewform" role="button" target="_blank"> 
                 <?php echo PYC; ?>  
@@ -84,12 +84,12 @@
                 <?php echo VTEC; ?> 
         </a>
         </h1>
-    </div>
+    </div>-->
 
     <div class="carousel">
         <div class="ourArticles" >
             <a href="article.php">
-                <h1> <?php echo DAOA; ?></h1>
+                <h1 class="paddingZero"> <?php echo DAOA; ?></h1>
             </a>
         </div>
         <div class="flex-slider carousel">

@@ -1,11 +1,12 @@
 <div class="container col-sm-6 col-sm-offset-2 col-lg-6 col-lg-offset-2">
-
+<br/>
+<br/>
 <?php	if (!isset($_POST["submit"]))  {   ?>
  <form class="form-horizontal" id="form" name="form" method="post" action="w/traitementrecontact.php" style="margin-top: 60px;">  
 	 <?php if ($lang=='fr' ) { ?>
-               <div><p class="pcontact">  Contacte-nous et nous répondrons dès que possible. Merci de contribuer à notre voyage ! </p> </div>
+               <div class="pcontact">  Contacte-nous et nous répondrons dès que possible. Merci de contribuer à notre voyage ! </div>
     <?php }else{ ?>
-              <div><p class="pcontact">  Contact us and we will reply as fast as possible. Thank you for contributing to our trip! </p> </div>
+              <div class="pcontact">  Contact us and we will reply as fast as possible. Thank you for contributing to our trip! </div>
     <?php } ?>
 
 	<fieldset>  
@@ -81,4 +82,6 @@
 
 </div>
 <div class="vide">
-	</div>
+<br/>
+<br/>
+</div>
