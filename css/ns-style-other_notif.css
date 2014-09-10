@@ -1,0 +1,105 @@
+.notification-shape {
+	position: fixed;
+	z-index: 1000;
+}
+
+.notification-shape svg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+[class^="ns-effect-"].ns-other.ns-hide,
+[class*=" ns-effect-"].ns-other.ns-hide {
+	-webkit-animation-direction: reverse;
+	animation-direction: reverse;
+}
+
+/* Individual Effects */
+
+/* Expand SVG corner */
+.ns-effect-cornerexpand {
+	width: 170px;
+	min-height: 170px;
+	background: #5a7d98;
+	text-align: center;
+	position: relative;
+	z-index: 100;
+}
+
+.shape-box {
+	top: 0;
+	right: 0;
+	width: 170px;
+	min-height: 170px;
+}
+
+.shape-box path {
+	fill: #3b5163;
+}
+
+.ns-effect-cornerexpand .icon {
+	color: #5a7d98;
+	background: #fff;
+	display: block;
+	width: 4em;
+	height: 4em;
+	line-height: 5.3;
+	margin: 0.5em auto 1.25em;
+	border-radius: 50%;
+	padding-top: initial;
+}
+
+.ns-effect-cornerexpand .ns-close {
+	top: 12px;
+	right: 12px;
+}
+
+.ns-effect-cornerexpand .ns-close::before,
+.ns-effect-cornerexpand .ns-close::after {
+    background: #3b5163;
+}
+
+.ns-effect-cornerexpand .ns-close:hover::before,
+.ns-effect-cornerexpand .ns-close:hover::after {
+    background: #fff;
+}
+
+.ns-effect-cornerexpand a {
+	color: #3b5163;
+	opacity: 1;
+}
+
+.ns-effect-cornerexpand a:hover,
+.ns-effect-cornerexpand a:focus {
+	color: #fff;
+}
+
+.ns-effect-cornerexpand.ns-show,
+.ns-effect-cornerexpand.ns-hide {
+	-webkit-animation-name: animScale;
+	animation-name: animScale;
+	-webkit-animation-duration: 0.3s;
+	animation-duration: 0.3s;
+}
+
+.ns-effect-cornerexpand.ns-show {
+	opacity: 0;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 0.2s;
+	animation-delay: 0.2s;
+}
+
+@-webkit-keyframes animScale {
+	0% { opacity: 0; -webkit-transform: scale3d(0.4,0.4,1); }
+	100% { opacity: 1; -webkit-transform: scale3d(1,1,1); }
+}
+
+@keyframes animScale {
+	0% { opacity: 0; -webkit-transform: scale3d(0.4,0.4,1); transform: scale3d(0.4,0.4,1); }
+	100% { opacity: 1; -webkit-transform: scale3d(1,1,1); transform: scale3d(1,1,1); }
+}
+
