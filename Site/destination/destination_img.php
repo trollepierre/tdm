@@ -1,21 +1,5 @@
 <?php
-	
-
 	if (isset($_GET['dest'])) 	{
-		switch ($_GET['dest']) {
-			case 'ghest':
-				$LINK = array ('brazil', 'argentina', 'paraguay', 'bolivia', 'peru', 'chile');
-				$GMAP = 'http://www.google.fr';
-				$MAP = 'gmap';
-				$COLORS='#009bd3';
-				break;
-			
-			case 'ghost':
-				$LINK = array ('gmap','brazil', 'argentina', 'paraguay', 'bolivia', 'peru', 'chile','gmap');
-				$COLORS='#009bd3';
-				$GMAP = '';
-				$MAP = '';
-				break;
 			case 'southAmerica':
 				$LINK = array ('brazil', 'argentina', 'paraguay', 'bolivia', 'peru', 'chile');
 				$GMAP = 'https://goo.gl/maps/ZmN32';
