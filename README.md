@@ -2,8 +2,6 @@ tdm
 ===
 Visible sur l'adresse www.recontact.me
 
-J'aime les patates !!
-
 Le site se trouve dans le dossier Site.
 Dans ce dossier, on trouve de nombreux dossiers et fichiers. Ainsi :
 
