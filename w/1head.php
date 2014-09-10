@@ -83,4 +83,11 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
-   
+    <link rel="stylesheet" type="text/css" href="css/demo_notif.css" />
+   <link rel="stylesheet" type="text/css" href="css/ns-default_notif.css" />
+   <link rel="stylesheet" type="text/css" href="css/ns-style-other_notif.css" />
+   <script src="js/modernizr.custom.js"></script>
+   <script src="js/snap.svg-min.js"></script>
+   <script src="js/classie.js"></script>
+   <script src="js/notificationFx.js"></script>
+         

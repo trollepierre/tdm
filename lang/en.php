@@ -7,6 +7,11 @@
 	define('TITLE', 'One year around the world.');
 //	define('DESCRIPTION_PAGE', 'These guys travel around the world for one whole year');
 
+//notification
+	define('MESSAGENOTIFICATION', "A small overview of the route in");
+	define('MESSAGENOTIFICATION', "A small overview of the all route");
+
+
 //Lightbox
 	define('CHALLENGE', 'Challenge');
 	define('ARTICLE', 'Article');

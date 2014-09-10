@@ -8,6 +8,11 @@
 	define('TITLE', 'Un tour du monde en un an');
 	// define('DESCRIPTION_PAGE', "Ils font un voyage d'un an autour de la Terre");
 	
+//notification
+	define('MESSAGENOTIFICATION', "Un petit aperçu de l\'itinéraire en");
+	define('MESSAGENOTIFICATIONHOME', "Un aperçu de l\'itinéraire complet");
+
+
 //Lightbox
 	define('CHALLENGE', 'Challenge');
 	define('ARTICLE', 'Article');
