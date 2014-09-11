@@ -51,15 +51,17 @@
 
 
     <!-- ajout inutile -->
-     <div id="lesAutresPhotos"></div>
+<!--     <div id="lesAutresPhotos"></div>
     <div class="carousel" >
         <div class="ourArticles">
             <a href="challenge.php">
-                <h1> <?php echo VLAPDLA; ?> </h1>
+                <h1> 
+                        php echo VLAPDLA; ?> </h1>
             </a>
         </div>
 
-             <?php   /** settings **/
+                php   /** settings **/
+
 $images_dir = 'preload-images/';
 $thumbs_dir = 'preload-images/';
 // $thumbs_dir = 'preload-images-thumbs/';
