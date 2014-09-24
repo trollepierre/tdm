@@ -20,10 +20,6 @@ body { background-color: #389bd3 !important; height:100%; }
 body.noscroll{position:fixed;overlay-x:hidden;}
 img { border:none; }
 
-.mode1{
-    margin-top: 400px;
-}
-
 .car{
     text-align: center;
     padding-top: 100px;
