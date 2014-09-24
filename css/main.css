@@ -21,7 +21,7 @@ body.noscroll{position:fixed;overlay-x:hidden;}
 img { border:none; }
 
 .mode1{
-    margin-top: 400px !important;
+    margin-top: 400px;
 }
 
 .car{
