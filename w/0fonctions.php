@@ -214,9 +214,8 @@ foreach ($returnSearchFileName as $id => $image) {
             $position= intval(substr($value, -6,2));
             $img[$position]=$myCustomClient->createTemporaryDirectLink($value)[0];
           }else if(substr($value,-9,4)== "/img"){
-            $position= intval(substr($value, -5,1))+1;
+            $position= intval(substr($value, -5,1));
             $img[$position]=$myCustomClient->createTemporaryDirectLink($value)[0];
-            $img[]=$myCustomClient->createTemporaryDirectLink($value)[0];
           }
           else{          
           $url[]=$myCustomClient->createTemporaryDirectLink($value)[0];
@@ -224,12 +223,14 @@ foreach ($returnSearchFileName as $id => $image) {
         }
     }
 }
-
+$zero = 0;
 foreach ($img as $key => $value) {
-  $resultat[$key] = $value;  
+  $resultat[] = $img[$zero];  
+  $zero++;
 }
+
 foreach ($url as $key => $value) {
- $resultat[$key] = $value;  
+ $resultat[] = $value;  
 }
 
 return $resultat;
