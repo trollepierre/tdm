@@ -1,5 +1,14 @@
 <?php 
 use \Dropbox as dbx;
+//1 Authentification Dropbox 
+include_once("lib/dropboxAPI.php");
+
+//2 Recuperer la liste des images
+//Accéder à la fonction Client et utiliser dbx pour Dropbox
+require_once "lib/dropbox-sdk/Dropbox/Client.php";
+
+// creation d'un client dropbox : moi
+$myCustomClient = new dbx\Client($accessToken, $clientIdentifier);
  
  function getId(){
   return (isset($_GET['id'])) ? $_GET['id'] : 1 ;
@@ -192,7 +201,7 @@ function get_nb_dir($images_dir) {
 /** Dropbox API
 */
 function getImgInPath($basePath,$query=".jpg") {
-//1 Authentification Dropbox 
+/*//1 Authentification Dropbox 
 include_once("lib/dropboxAPI.php");
 
 //2 Recuperer la liste des images
@@ -200,7 +209,17 @@ include_once("lib/dropboxAPI.php");
 require_once "lib/dropbox-sdk/Dropbox/Client.php";
 
 // creation d'un client dropbox : moi
-$myCustomClient = new dbx\Client($accessToken, $clientIdentifier);
+$myCustomClient = new dbx\Client($accessToken, $clientIdentifier);*/
+
+// //recup des txt et img0
+// $returnSearchFileName=$myCustomClient->searchFileNames($basePath, ".txt");
+
+// */ bug !
+// var i = 0;
+// while (noresult){
+// $quer= "img".$i.".jpg";
+// $returnSearchFileName=$myCustomClient->searchFileNames($basePath, $quer);
+// }
 
 //recup des files
 $returnSearchFileName=$myCustomClient->searchFileNames($basePath, $query);
