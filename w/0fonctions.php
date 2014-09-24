@@ -216,6 +216,7 @@ foreach ($returnSearchFileName as $id => $image) {
           }else if(substr($value,-9,4)== "/img"){
             $position= intval(substr($value, -5,1))+$position+15;
             $img[$position]=$myCustomClient->createTemporaryDirectLink($value)[0];
+            $img[]=$myCustomClient->createTemporaryDirectLink($value)[0];
           }
           //else{          si on retire les images de la timeline
           $url[]=$myCustomClient->createTemporaryDirectLink($value)[0];
