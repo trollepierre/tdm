@@ -41,7 +41,7 @@
 			$DESTINATION_TEXT = array ("Auckland", "le Lac Tekapo", "le Mont Cook", "Queenstown", "Milford Sound", "le Haast Pass");
 				break;
 			case 'australia':
-			$DESTINATION_TEXT = array ( "le Visa Working Holidays", "Sydney", "Les Montagnes Bleus", "Melbourne", "Brisbane", "La Grande Barri&egrave;re de Corail");
+			$DESTINATION_TEXT = array (  "Sydney", "Les Montagnes Bleus", "Melbourne", "Brisbane", "La Grande Barri&egrave;re de Corail");
 				break;
 			case 'asia':
 			$DESTINATION_TEXT = array ("Singapour","l'Indon&eacute;sie","la Tha&iuml;lande","le Cambodge","le Vi&ecirc;tnam","le Chine","le N&eacute;pal","l'Inde","les Emirats Arabes Unis");
@@ -56,7 +56,7 @@
 			$DESTINATION_TEXT = array ( "Sichuan", "Jiuzhaigou", "Guilin", "le Mont Huang","La Cit&eacute; Interdite - P&eacute;kin", "La Grande Muraille de Chine", "Zhangye","Lhassa", "Le Palais Potala", "Paysages Tib&eacute;tains", "Trekking", "Le Mont Everest");
 				break;
 			case 'tibet':
-			$DESTINATION_TEXT = array ("Le Palais Potala", "Paysages Tib&eacute;tains", "Le Mont Everest");
+			$DESTINATION_TEXT = array ("Le Palais Potala", "des Paysages Tib&eacute;tains", "Le Mont Everest");
 				break;
 			case 'nepal':
 			$DESTINATION_TEXT = array (  "Le Mont Everest", "Kathmandou");

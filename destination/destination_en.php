@@ -35,7 +35,7 @@
 				$DESTINATION_TEXT = array ('Auckland','Lake Tekapo', 'Mount Cook', 'Queenstown', 'Milford Sound', 'Haast Pass');
 				break;
 			case 'australia':
-				$DESTINATION_TEXT = array ('Working Holidays Visa','Sydney', 'Blue Mountains', 'Melbourne', 'Brisbane', 'Great barrier reef');
+				$DESTINATION_TEXT = array ('Sydney', 'Blue Mountains', 'Melbourne', 'Brisbane', 'Great barrier reef');
 				break;
 			case 'asia':
 				$DESTINATION_TEXT = array ('Singapore','Indonesia','Thailand','Cambodia','Vietnam','China','Nepal','India','United Arab Emirates');
