@@ -115,7 +115,7 @@ function ArticlesClock($article){
   }
 }
 
-function IconBackgroundA($article){
+function IconBackgroundA($article,$urlImg){
   $id = getId();
   $adresse = "".$article."/".$id."/text.php";
   require($adresse);
@@ -123,11 +123,14 @@ function IconBackgroundA($article){
    $color = (strcmp($article, 'article')) ? '#ff0000' : '#009bd3'  ;
 
   $nbArticles=count($contentArticles)+1; 
+
+
+ 
   for ($row=0; $row <= $nbArticles; $row++) { 
-      echo '.timeline .timeline-controller .mode-icon'.$row.'{
+    echo '.timeline .timeline-controller .mode-icon'.$row.'{
             height:600px;
             width:468px;
-           background:url("'.$article.'/'.$id.'/img'.$row.'.jpg");
+           background:url("'.$urlImg[$row].'");
             background-size: auto 530px;
             background-repeat: no-repeat;
             background-position: center;
@@ -212,18 +215,18 @@ foreach ($returnSearchFileName as $id => $image) {
         if($key=='path'){
           if(substr($value,-9,3)=='img'){
             $position= intval(substr($value, -6,2));
-            $img[$position]=$myCustomClient->createTemporaryDirectLink($value)[0];
+            $url[0][$position]=$myCustomClient->createTemporaryDirectLink($value)[0];
           }else if(substr($value,-9,4)== "/img"){
             $position= intval(substr($value, -5,1));
-            $img[$position]=$myCustomClient->createTemporaryDirectLink($value)[0];
+            $url[0][$position]=$myCustomClient->createTemporaryDirectLink($value)[0];
           }
           else{          
-          $url[]=$myCustomClient->createTemporaryDirectLink($value)[0];
+          $url[1][]=$myCustomClient->createTemporaryDirectLink($value)[0];
           }
         }
     }
 }
-$zero = 0;
+/*$zero = 0;
 foreach ($img as $key => $value) {
   $resultat[] = $img[$zero];  
   $zero++;
@@ -232,7 +235,7 @@ foreach ($img as $key => $value) {
 foreach ($url as $key => $value) {
  $resultat[] = $value;  
 }
-
-return $resultat;
+*/
+return $url;
 }
 ?>
