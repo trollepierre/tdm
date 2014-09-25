@@ -5,9 +5,9 @@
 <style type="text/css">
     <?php    
    $id=getId();
-   $url= getImgInPath("/Chargements appareil photo/ArticleTdm/".$id."");
-    $urlImg = $url[0];               
-    IconBackgroundA('article',$urlImg);
+   $url= getImgImgInPath("/Chargements appareil photo/ArticleTdm/".$id."");
+   
+    IconBackgroundA('article',$url);
    
     ?>
 </style>
@@ -76,10 +76,11 @@
         </div>
         <div class="flex-slider carousel">
             <ul class="slides">
-                <?php 
-                    
-                     $urlVrai = $url[1];
-                    foreach ($urlVrai as $key => $value) {
+                <?php
+                  $id=getId();
+                  $url= getImgInPath("/Chargements appareil photo/ArticleTdm/".$id."");
+                  
+                    foreach ($url as $key => $value) {
                         echo '<li><img src="'.$value.'" alt="Picture Album" /></li>';
                     }
                 ?>

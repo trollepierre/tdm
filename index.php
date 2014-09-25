@@ -5,7 +5,6 @@
 <style type="text/css">
     <?php    
     IconBackground();
-   
     ?>
 </style>
 </head>
@@ -20,12 +19,8 @@
         <div class="flexslider">
             <ul class="slides">
                 <?php 
-               
-                
                 DestinationClock();
-                
                 ?>
-
             </ul>
         </div>
     </div>
@@ -42,15 +37,10 @@
                 </div>
             </div>
 
-
             <div class='modes' id="dest" titre="index">
                 <?php 
-               
-                
                 DestinationTime();
-             
                 ?>
-      
             </div>
         </div>
     </div>

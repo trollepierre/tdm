@@ -1,10 +1,16 @@
 <?php 
 use \Dropbox as dbx;
  
+/**
+* return l'id dans l'url
+*/
  function getId(){
   return (isset($_GET['id'])) ? $_GET['id'] : 1 ;
  }
 
+/**
+* affiche les images du carroussel. Donne moi un lien.
+*/
 function ImgCarroussel($id,$type,$imglink){
     echo    '<li>
                 <a class="article-name" href="'.$type.'.php?id='.$id.'" title="'.$type.'">
@@ -72,6 +78,9 @@ require("destination/destination_img.php");
 
 }
 
+/**
+*mettre en forme le contenu de l'article écrit sous forme d'array
+*/
 function ContentRowArticles($contentRow){
   if(isset($contentRow[2])){
   return '    <br/>        <span id="titreArticle">     '.$contentRow[0].'   </span>
@@ -87,45 +96,51 @@ function ContentRowArticles($contentRow){
          }
 }
 
-function ArticlesTime($article){
+/*
+* récupère le text.php dropbox et renvoi l'adresse
+*/
+function RecupAdresse($article){
   $id = getId();
-  $adresse = "".$article."/".$id."/text.php";
-  require($adresse);
-
-  $nbArticles= count($contentArticles)-1; 
-  for ($row=1; $row <= $nbArticles; $row++) { 
-    echo    '<p class="mode mode'.$row.'" data-bg="'.$row.'">'.
-         ContentRowArticles($contentArticles[$row]).'
-     </p>'
-              ;
-  }
+  include("lib/dropboxAPI.php");
+  $client = new dbx\ Client($accessToken, $clientIdentifier);
+    $adresse = "".$article."/1/text.php";
+    $fd = fopen($adresse, "w");
+    $metadata = $client->getFile("/Chargements appareil photo/ArticleTdm/".$id."/text.php", $fd);
+    fclose($fd);
+    return $adresse;
 }
 
+/*
+* gère le text de la timeline des articles
+*/
+function ArticlesTime($article) {
+    require(RecupAdresse($article));
+    $nbArticles = count($contentArticles) - 1;
+    for ($row = 1; $row <= $nbArticles; $row++) {
+        echo '<p class="mode mode'.$row.'" data-bg="'.$row.'">'.ContentRowArticles($contentArticles[$row]).'</p>';
+    }
+}
+
+/*
+* gère le text de la clock [responsive] des articles
+*/
 function ArticlesClock($article){
-  $id = getId();
-  $adresse = "".$article."/".$id."/text.php";
-  require($adresse);
+   require(RecupAdresse($article));
 
   $nbArticles= count($contentArticles)-1; 
   for ($row=1; $row <= $nbArticles; $row++) { 
-    echo    '<div class="clock">'.$id.'</div>
-                <p>'.
-           ContentRowArticles($contentArticles[$row]).'
-       </p>';
+    echo    '<div class="clock">'.$id.'</div><p>'.ContentRowArticles($contentArticles[$row]).'</p>';
   }
 }
 
+/*
+* affiche les img de gauche des articles
+*/
 function IconBackgroundA($article,$urlImg){
-  $id = getId();
-  $adresse = "".$article."/".$id."/text.php";
-  require($adresse);
-
-   $color = (strcmp($article, 'article')) ? '#ff0000' : '#009bd3'  ;
-
+  require(RecupAdresse($article));
+  $color = (strcmp($article, 'article')) ? '#ff0000' : '#009bd3'  ;
   $nbArticles=count($contentArticles)+1; 
 
-
- 
   for ($row=0; $row <= $nbArticles; $row++) { 
     echo '.timeline .timeline-controller .mode-icon'.$row.'{
             height:600px;
@@ -192,17 +207,37 @@ function get_nb_dir($images_dir) {
   return $count_file ;
 }
 
-/** Dropbox API
+/*
+* Récupère les Img du dossier basepath
 */
 function getImgInPath($basePath,$query=".jpg") {
-//1 Authentification Dropbox 
-include_once("lib/dropboxAPI.php");
+// creation d'un client dropbox 
+include("lib/dropboxAPI.php");
+$myCustomClient = new dbx\Client($accessToken, $clientIdentifier);
 
-//2 Recuperer la liste des images
-//Accéder à la fonction Client et utiliser dbx pour Dropbox
-require_once "lib/dropbox-sdk/Dropbox/Client.php";
+//recup des files
+$returnSearchFileName=$myCustomClient->searchFileNames($basePath, $query);
 
-// creation d'un client dropbox : moi
+//on récup le path de chaque file récupéré 
+// et on en fait une url publique;
+foreach ($returnSearchFileName as $id => $image) {
+  foreach ($image as $key => $value) {
+        if($key=='path'){
+          /*if(substr($value,-9,3)=='img'){}else if(substr($value,-9,4)== "/img"){        
+          }else{ /**/         
+          $url[]=$myCustomClient->createTemporaryDirectLink($value)[0];
+          /*}/**/
+        }
+    }
+}
+return $url;
+}
+
+/*
+* récupère les img dont au nom "imgX.jpg"
+*/
+function getImgImgInPath($basePath,$query=".jpg") {
+include("lib/dropboxAPI.php");
 $myCustomClient = new dbx\Client($accessToken, $clientIdentifier);
 
 //recup des files
@@ -215,27 +250,16 @@ foreach ($returnSearchFileName as $id => $image) {
         if($key=='path'){
           if(substr($value,-9,3)=='img'){
             $position= intval(substr($value, -6,2));
-            $url[0][$position]=$myCustomClient->createTemporaryDirectLink($value)[0];
+            $url[$position]=$myCustomClient->createTemporaryDirectLink($value)[0];
           }else if(substr($value,-9,4)== "/img"){
             $position= intval(substr($value, -5,1));
-            $url[0][$position]=$myCustomClient->createTemporaryDirectLink($value)[0];
+            $url[$position]=$myCustomClient->createTemporaryDirectLink($value)[0];
           }
           else{          
-          $url[1][]=$myCustomClient->createTemporaryDirectLink($value)[0];
           }
         }
     }
 }
-/*$zero = 0;
-foreach ($img as $key => $value) {
-  $resultat[] = $img[$zero];  
-  $zero++;
-}
-
-foreach ($url as $key => $value) {
- $resultat[] = $value;  
-}
-*/
 return $url;
 }
 ?>
