@@ -5,7 +5,7 @@ use \Dropbox as dbx;
 * return l'id dans l'url
 */
  function getId(){
-  return (isset($_GET['id'])) ? $_GET['id'] : 1 ;
+  return (isset($_GET['id'])) ? $_GET['id'] : count(getImg0InPath("/Chargements appareil photo/ArticleTdm")) ;
  }
 
 /**
@@ -258,6 +258,28 @@ foreach ($returnSearchFileName as $id => $image) {
           else{          
           }
         }
+    }
+}
+return $url;
+}
+
+
+function getImg0InPath($basePath,$query="img0.jpg") {
+include("lib/dropboxAPI.php");
+$myCustomClient = new dbx\Client($accessToken, $clientIdentifier);
+
+//recup des files
+$returnSearchFileName=$myCustomClient->searchFileNames($basePath, $query);
+
+//on récup le path de chaque file récupéré
+// et on en fait une url publique;
+foreach ($returnSearchFileName as $id => $image) {
+  foreach ($image as $key => $value) {
+        if($key=='path'){
+          $position= intval(substr($value, 39,strlen($value)-48));
+          $url[$position]=$myCustomClient->createTemporaryDirectLink($value)[0];
+          }
+
     }
 }
 return $url;

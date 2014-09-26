@@ -85,12 +85,12 @@
         </div>
         <div class="flex-slider carousel">
             <ul class="slides">
-                 <?php 
-                 $max_for = get_nb_dir('article/');
-                for ($i=1; $i<=$max_for ; $i++) { 
-               ImgCarroussel(''.$i.'','article','article/'.$i.'/img0.jpg');
-               }?>
-                
+                <?php 
+                $url=getImg0InPath("/Chargements appareil photo/ArticleTdm");
+                for ($i=1; $i <= count($url) ; $i++) { 
+                    ImgCarroussel(''.$i.'','article',$url[$i]);    
+                }
+                ?>
             </ul>
         </div>
     </div>
