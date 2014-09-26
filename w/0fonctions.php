@@ -7,7 +7,7 @@ use \Dropbox as dbx;
  function getId(){
   return (isset($_GET['id'])) ? $_GET['id'] : count(getImg0InPath("/Chargements appareil photo/ArticleTdm")) ;
  }
-global $id;
+
 $id=getId();
 
 /**
@@ -102,7 +102,8 @@ function ContentRowArticles($contentRow){
 * récupère le text.php dropbox et renvoi l'adresse
 */
 function RecupAdresse($article){
-  // $id = getId();
+ global $id;
+ // $id = getId();
   include("lib/dropboxAPI.php");
   $client = new dbx\ Client($accessToken, $clientIdentifier);
     $adresse = "".$article."/1/text.php";
