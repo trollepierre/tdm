@@ -8,14 +8,15 @@ use \Dropbox as dbx;
   return (isset($_GET['id'])) ? $_GET['id'] : count(getImg0InPath("/Chargements appareil photo/ArticleTdm")) ;
  }
 
+
 /**
 * affiche les images du carroussel. Donne moi un lien.
 */
-function ImgCarroussel($id,$type,$imglink){
+function ImgCarroussel($idArticles,$type,$imglink){
     echo    '<li>
-                <a class="article-name" href="'.$type.'.php?id='.$id.'" title="'.$type.'">
+                <a class="article-name" href="'.$type.'.php?id='.$idArticles.'" title="'.$type.'">
                     <img src="'.$imglink.'" alt="Picture of one '.$type.'" /> <br/>
-                    '.$type.' n°'.$id.'
+                    '.$type.' n°'.$idArticles.'
                 </a>
             </li>';
 }
@@ -24,8 +25,8 @@ function DestinationTime(){
    require("destination/destination_img.php");
   
   foreach ($DESTINATION_TEXT as $key => $value) {
-   $id=$key+1;
-    echo    '<p class="mode mode'.$id.'" data-bg="'.$id.'">'.$INTRO[$key].''.$value.'
+   $id2=$key+1;
+    echo    '<p class="mode mode'.$id2.'" data-bg="'.$id2.'">'.$INTRO[$key].''.$value.'
                 <br />
                 
                 <a class="btn btn-lg btn-primary" href="destination.php?dest='.$LINK[$key].'" role="button">'.$DISCOVER.''.$value.'</a>
@@ -39,9 +40,9 @@ function DestinationClock(){
    require("destination/destination_img.php");
 
   foreach ($DESTINATION_TEXT as $key => $value) {
-   $id=$key+1;
+   $id2=$key+1;
     echo    '<li>
-                <div class="clock">'.$id.'</div>
+                <div class="clock">'.$id2.'</div>
                 <p>
                '.$INTRO[$key].''.$value.'
                 <br />
@@ -57,9 +58,9 @@ function IconBackground(){
 require("destination/destination_img.php");
 
   foreach ($LINK as $key => $value) {
-   $id=$key+1;
+   $id2=$key+1;
    $color=$COLORS;
-    echo '.timeline .timeline-controller .mode-icon'.$id.'{
+    echo '.timeline .timeline-controller .mode-icon'.$id2.'{
           height: 532px;
           width: 416px;
           border: 1px solid black;
@@ -70,7 +71,7 @@ require("destination/destination_img.php");
           top:0px;
           left:0px;  
           }
-          .timeline .timeline-bg.timeline-bg'.$id.'{
+          .timeline .timeline-bg.timeline-bg'.$id2.'{
            background:'.$color.';
           }'
         ;
@@ -220,7 +221,7 @@ $returnSearchFileName=$myCustomClient->searchFileNames($basePath, $query);
 
 //on récup le path de chaque file récupéré 
 // et on en fait une url publique;
-foreach ($returnSearchFileName as $id => $image) {
+foreach ($returnSearchFileName as $idFake => $image) {
   foreach ($image as $key => $value) {
         if($key=='path'){
           /*if(substr($value,-9,3)=='img'){}else if(substr($value,-9,4)== "/img"){        
@@ -245,7 +246,7 @@ $returnSearchFileName=$myCustomClient->searchFileNames($basePath, $query);
 
 //on récup le path de chaque file récupéré
 // et on en fait une url publique;
-foreach ($returnSearchFileName as $id => $image) {
+foreach ($returnSearchFileName as $idFake => $image) {
   foreach ($image as $key => $value) {
         if($key=='path'){
           if(substr($value,-9,3)=='img'){
@@ -273,7 +274,7 @@ $returnSearchFileName=$myCustomClient->searchFileNames($basePath, $query);
 
 //on récup le path de chaque file récupéré
 // et on en fait une url publique;
-foreach ($returnSearchFileName as $id => $image) {
+foreach ($returnSearchFileName as $idFake => $image) {
   foreach ($image as $key => $value) {
         if($key=='path'){
           $position= intval(substr($value, 39,strlen($value)-48));
