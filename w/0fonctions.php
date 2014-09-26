@@ -7,7 +7,7 @@ use \Dropbox as dbx;
  function getId(){
   return (isset($_GET['id'])) ? $_GET['id'] : count(getImg0InPath("/Chargements appareil photo/ArticleTdm")) ;
  }
-
+global $id;
 $id=getId();
 
 /**
