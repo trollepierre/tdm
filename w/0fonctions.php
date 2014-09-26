@@ -8,6 +8,7 @@ use \Dropbox as dbx;
   return (isset($_GET['id'])) ? $_GET['id'] : count(getImg0InPath("/Chargements appareil photo/ArticleTdm")) ;
  }
 
+$id=getId();
 
 /**
 * affiche les images du carroussel. Donne moi un lien.
@@ -101,7 +102,7 @@ function ContentRowArticles($contentRow){
 * récupère le text.php dropbox et renvoi l'adresse
 */
 function RecupAdresse($article){
-  $id = getId();
+  // $id = getId();
   include("lib/dropboxAPI.php");
   $client = new dbx\ Client($accessToken, $clientIdentifier);
     $adresse = "".$article."/1/text.php";
