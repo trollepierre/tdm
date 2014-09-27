@@ -3,9 +3,7 @@
 function getImgInPath($basePath,$query=".jpg") {
 
 // $id=getId();
-	global $id;
-	$id=1;
-$basePath="/Chargements appareil photo/ArticleTdm/".$id."";
+
 
 // creation d'un client dropbox 
 include("lib/dropboxAPI.php");
@@ -29,5 +27,8 @@ foreach ($returnSearchFileName as $idFake => $image) {
 return $url;
 }
 
-echo json_encode($url);
+	global $id;
+	$id=1;
+$basePath="/Chargements appareil photo/ArticleTdm/".$id."";
+echo json_encode(getImgInPath($basePath));
 ?>
