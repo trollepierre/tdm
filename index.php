@@ -52,6 +52,7 @@
         <div class="flex-slider carousel">
             <ul class="slides">
                <?php 
+
                for ($i=1; $i<=2 ; $i++) { 
                ImgCarroussel(''.$i.'','challenge','challenge/'.$i.'/img0.jpg');
                }
@@ -84,9 +85,9 @@
         <div class="flex-slider carousel">
             <ul class="slides">
                 <?php 
-                $url=getImg0InPath("/Chargements appareil photo/ArticleTdm");
-                for ($i=1; $i <= count($url) ; $i++) { 
-                    ImgCarroussel(''.$i.'','article',$url[$i]);    
+//Nico 
+                foreach ($urlDropbox as $key => $value) {
+                    ImgCarroussel(''.$key.'','article', $value['img']['0']);
                 }
                 ?>
             </ul>

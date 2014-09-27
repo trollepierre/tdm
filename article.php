@@ -1,8 +1,13 @@
 <?php   require("w/0fonctions.php");
         require("w/1head.php");
     echo '<style type="text/css">';
-    $url= getImgImgInPath("/Chargements appareil photo/ArticleTdm/".$id."");
-    IconBackgroundA('article',$url);
+    
+    if ($urlDropbox[$id]["updated"]) {
+        $url = $urlDropbox[$id]['img'];
+        IconBackgroundA('article',$url);
+    } else{
+//à voir avec Nico => chargement des photos et pourquoi recharger la page ?        
+    }
 ?>
     </style>
 </head>
@@ -44,13 +49,10 @@
          <div class="flex-slider carousel">
             <ul class="slides">
                <?php 
-                for ($i=1; $i<=5 ; $i++) { 
-                    ImgCarroussel(''.$i.'','article','img/art.jpg');
+//Nico 
+                foreach ($urlDropbox as $key => $value) {
+                    ImgCarroussel(''.$key.'','article', $value['img']['0']);
                 }
-                /*$url=getImg0InPath("/Chargements appareil photo/ArticleTdm");
-                for ($i=1; $i <= count($url) ; $i++) { 
-                    ImgCarroussel(''.$i.'','article',$url[$i]);    
-                }*/
                 ?>
             </ul>
         </div>

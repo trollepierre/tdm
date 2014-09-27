@@ -7,7 +7,7 @@ use \Dropbox as dbx;
 */
 function getId(){
   global $urlDropbox;
-  $id =(isset($_GET['id'])) ? $_GET['id'] : count(getImg0InPath("/Chargements appareil photo/ArticleTdm")) ;
+  $id =(isset($_GET['id'])) ? $_GET['id'] : count($urlDropbox) ;
   return  min([$id, count($urlDropbox)]);
 }
 
