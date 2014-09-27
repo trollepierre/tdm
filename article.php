@@ -68,7 +68,7 @@
                      ImgCarroussel(''.$i.'','article','img/art.jpg');
                  }
                 ?>
-                
+
             </ul>
         </div>
         <div class="ourArticles">
@@ -83,7 +83,7 @@
 <script>
 
                   // $.getJSON( "ajax/url.php?id=" <?php global $id; echo "+".$id.""; ?>, function( data ) {
-                    $.getJSON( "ajax/url.php", function( data ) {
+                    $.getJSON( "lib/ajax/url.php", function( data ) {
                     //alert à virer
                     alert( "Data Loaded: " + data ); 
                     var items = [];
