@@ -92,6 +92,7 @@
                         items.push( '<li><img src="'+val+'" alt="Picture Album" /></li>')
                       });
                     $("#galery-article > ul").append(items.join(""));
+                    $('#galery-article').addClass("flex-slider")
                     $('#galery-article').flexslider();
                     });
 </script>
