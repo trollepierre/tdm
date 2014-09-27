@@ -33,5 +33,6 @@ return $url;
 	global $id;
 	$id=1;
 $basePath="/Chargements appareil photo/ArticleTdm/".$id."";
-echo json_encode(getImgInPath($basePath));
+$urlDropbox = getImgInPath($basePath);
+echo json_encode($urlDropbox);
 ?>

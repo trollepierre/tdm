@@ -106,7 +106,7 @@ function RecupAdresse($article){
  // $id = getId();
   include("lib/dropboxAPI.php");
   $client = new dbx\ Client($accessToken, $clientIdentifier);
-    $adresse = "text.php";
+    $adresse = "w/text.php";
     $fd = fopen($adresse, "w");
     $metadata = $client->getFile("/Chargements appareil photo/ArticleTdm/".$id."/text.php", $fd);
     fclose($fd);
@@ -117,7 +117,7 @@ function RecupAdresse($article){
 * gère le text de la timeline des articles
 */
 function ArticlesTime($article) {
-    require("text.php");
+    require("w/text.php");
     $nbArticles = count($contentArticles) - 1;
     for ($row = 1; $row <= $nbArticles; $row++) {
         echo '<p class="mode mode'.$row.'" data-bg="'.$row.'">'.ContentRowArticles($contentArticles[$row]).'</p>';
@@ -128,7 +128,7 @@ function ArticlesTime($article) {
 * gère le text de la clock [responsive] des articles
 */
 function ArticlesClock($article){
-   require("text.php");
+   require("w/text.php");
 
   $nbArticles= count($contentArticles)-1; 
   for ($row=1; $row <= $nbArticles; $row++) { 
