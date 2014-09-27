@@ -92,8 +92,9 @@
                         items.push( '<li><img src="'+val+'" alt="Picture Album" /></li>')
                       });
                     $("#galery-article > ul").append(items.join(""));
-                    $('#galery-article').addClass("flex-slider")
-                    $('#galery-article').flexslider();
+                    $('#galery-article').addClass("flex-slider");
+                    $('#galery-article').flexslider({animation:"slide",animationLoop:true,itemWidth:210,itemMargin:5,minItems:2,maxItems:5});
+                    $('#galery-article').show();
                     });
 </script>
          <!--          $url= getImgInPath("/Chargements appareil photo/ArticleTdm/".$id."");
