@@ -6,7 +6,7 @@ function getImgInPath($basePath,$query=".jpg") {
 
 
 // creation d'un client dropbox 
-include("lib/dropboxAPI.php");
+include("../dropboxAPI.php");
 $myCustomClient = new dbx\Client($accessToken, $clientIdentifier);
 
 //recup des files
