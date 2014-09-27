@@ -77,14 +77,37 @@
         <div class="flex-slider carousel">
             <ul class="slides">
                 <?php
-                  $id=getId();
-                  $url= getImgInPath("/Chargements appareil photo/ArticleTdm/".$id."");
+                /*  $id=getId();
+                  $basePath="/Chargements appareil photo/ArticleTdm/".$id."";*/
+?>
+<script>
+
+                  // $.getJSON( "ajax/url.php?id=" <?php global $id; echo "+".$id.""; ?>, function( data ) {
+                    $.getJSON( "ajax/url.php", function( data ) {
+                    //alert à virer
+                    alert( "Data Loaded: " + data ); 
+                    var items = [];
+                      $.each( data, function( key, val ) {
+                        // items.push( "<li id='" + key + "'>" + val + "</li>" );
+                        items.push( '<li><img src="'+val+'" alt="Picture Album" /></li>')
+                      });
+                    
+                    //je fais quoi de ça !        
+                      $( "<ul/>", {
+                        "class": "my-new-list",
+                        html: items.join( "" )
+                      }).appendTo( "body" );
+                    });
+</script>
+         <!--          $url= getImgInPath("/Chargements appareil photo/ArticleTdm/".$id."");
                   
+                    //ou peut-être (je pense pas) <li> </li> < - - -
                     foreach ($url as $key => $value) {
                         echo '<li><img src="'.$value.'" alt="Picture Album" /></li>';
                     }
-                ?>
+                ?> -->
             </ul>
+            <!-- position discutable du script -->
         </div>
     </div>
     
