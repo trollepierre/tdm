@@ -108,14 +108,6 @@
                         <li><img src="img/gallery/H2.jpg" /></li>
                         <li><img src="img/gallery/H11.jpg" /></li>
                         <li><img src="img/gallery/H23.jpg" /></li>
-     <!--                   <li><img src="img/gallery/H1.jpg" /></li>
-                        <li><img src="img/gallery/H2.jpg" /></li>  -->                  
-<?php
-/*$url= getImgInPath("/Site/gallery");
-foreach ($url as $key => $value) {
-echo '<li><img src="'.$value.'" /></li>';
-}*/?>
-
                     </ul>
                 </div>
             </section>
