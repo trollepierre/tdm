@@ -85,7 +85,7 @@
                   // $.getJSON( "ajax/url.php?id=" <?php global $id; echo "+".$id.""; ?>, function( data ) {
                     $.getJSON( "lib/ajax/url.php", function( data ) {
                     //alert à virer
-                    alert( "Data Loaded: " + data ); 
+                   // alert( "Data Loaded: " + data ); 
                     var items = [];
                       $.each( data, function( key, val ) {
                         // items.push( "<li id='" + key + "'>" + val + "</li>" );
