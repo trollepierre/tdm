@@ -1,6 +1,7 @@
 <?php
 
 chdir("../..");
+use \Dropbox as dbx;
 
 function getImgInPath($basePath,$query=".jpg") {
 
