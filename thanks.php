@@ -1,6 +1,15 @@
 <?php require("w/0fonctions.php");
       require("w/1head.php");
 ?>
+<!-- cumulus-->
+    <script type="text/javascript" src="lib/cumulus/swfobject.js"></script>
+    <style type="text/css">
+        body, html { height: 100%; background-color:#eee; }
+        div.tagcloud { margin: 0px; }
+        div.tagcloud2  {text-align:center;}
+    </style>
+<!--fin cumulus-->
+
 </head>
 <body class="home page page-id-4 page-template page-template-page-home-php custom-background">
 <?php require("w/2lightbox.php");?>

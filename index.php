@@ -3,9 +3,7 @@
 ?>
 
 <style type="text/css">
-    <?php    
-    IconBackground();
-    ?>
+    <?php  IconBackground(); ?>
 </style>
 </head>
 <body class="home page page-id-4 page-template page-template-page-home-php custom-background">

@@ -1,7 +1,4 @@
-<?php 
-include_once("analyticstracking.php");
-
-?>
+<?php include_once("analyticstracking.php");?>
 
     <div class="designlicks"><a href="challenge.php"><?php echo CHALLENGE; ?></a>     </div>
     <div class="designlicks2"><a href="article.php" ><?php echo ARTICLE; ?></a>     </div>
@@ -43,21 +40,18 @@ include_once("analyticstracking.php");
                     </a>
                 </div>
             </div>
-
         </div>
-        <!-- END List Wrap -->
         <div class="bg-lightbox"></div>
-
     </div>
 
-<div class="bar-nav">
-            <div class="clear"></div>
+    <div class="bar-nav">
+        <div class="clear"></div>
+    </div>
+    <div class="fixed-top">
+        <div id="left-border">
+            <a href="#lightbox" class="ellipse fancybox desktop">
+                <?php echo CHALLENGEUS; ?>
+            </a>
         </div>
-        <div class="fixed-top">
-            <div id="left-border">
-                <a href="#lightbox" class="ellipse fancybox desktop">
-                    <?php echo CHALLENGEUS; ?>
-                </a>
-            </div>
-        </div>
+    </div>
         

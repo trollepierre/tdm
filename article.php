@@ -1,19 +1,10 @@
 <?php   require("w/0fonctions.php");
         require("w/1head.php");
-        
-?>
-<style type="text/css">
-    <?php    
-   $id=getId();
-   $url= getImgImgInPath("/Chargements appareil photo/ArticleTdm/".$id."");
-   
+    echo '<style type="text/css">';
+    $url= getImgImgInPath("/Chargements appareil photo/ArticleTdm/".$id."");
     IconBackgroundA('article',$url);
-   
-    ?>
-</style>
-
-
-
+?>
+    </style>
 </head>
 
 <body class="home page page-id-4 page-template page-template-page-home-php custom-background">
@@ -23,10 +14,7 @@
     <div class="mobile-content">
         <div class="flexslider">
             <ul class="slides">
-                <?php 
-                ArticlesClock('article');
-                ?>
-
+                <?php ArticlesClock('article');?>
             </ul>
         </div>
     </div>
@@ -34,22 +22,15 @@
         <div class='timeline-bg timeline-bg1 show'></div>
         <div class='timeline-controller'>
             <div class='mode-icon mode-icon1 show' ></div>
-
-             
         </div>
-
         <div class='inside'>
             <div class='clocks'>
                 <div class='time'>
                     <span class='hours'>1</span>
                 </div>
             </div>
-
-
             <div class='modes' id="dest" titre="article">
-                <?php 
-               ArticlesTime('article');
-                ?>
+                <?php ArticlesTime('article');?>
             </div>
         </div>
     </div>
@@ -63,12 +44,14 @@
          <div class="flex-slider carousel">
             <ul class="slides">
                <?php 
-               for ($i=1; $i<=5 ; $i++) { 
-                
-                     ImgCarroussel(''.$i.'','article','img/art.jpg');
-                 }
+                for ($i=1; $i<=5 ; $i++) { 
+                    ImgCarroussel(''.$i.'','article','img/art.jpg');
+                }
+                /*$url=getImg0InPath("/Chargements appareil photo/ArticleTdm");
+                for ($i=1; $i <= count($url) ; $i++) { 
+                    ImgCarroussel(''.$i.'','article',$url[$i]);    
+                }*/
                 ?>
-
             </ul>
         </div>
         <div class="ourArticles">
@@ -79,24 +62,20 @@
                 <?php
                 /*  $id=getId();
                   $basePath="/Chargements appareil photo/ArticleTdm/".$id."";*/
-?>
-<script>
-
-                  // $.getJSON( "ajax/url.php?id=" <?php global $id; echo "+".$id.""; ?>, function( data ) {
+                ?>
+                <script>
                     $.getJSON( "lib/ajax/url.php", function( data ) {
-                    //alert à virer
-                   // alert( "Data Loaded: " + data ); 
                     var items = [];
                       $.each( data, function( key, val ) {
-                        // items.push( "<li id='" + key + "'>" + val + "</li>" );
-                        items.push( '<li><img src="'+val+'" alt="Picture Album" /></li>')
+                         items.push( '<li><img src="'+val+'" alt="Picture Album" /></li>')
                       });
                     $("#galery-article > ul").append(items.join(""));
                     $('#galery-article').addClass("flex-slider");
                     $('#galery-article').flexslider({animation:"slide",animationLoop:true,itemWidth:210,itemMargin:5,minItems:2,maxItems:5});
                     $('#galery-article').show();
                     });
-</script>
+                </script>
+
          <!--          $url= getImgInPath("/Chargements appareil photo/ArticleTdm/".$id."");
                   
                     //ou peut-être (je pense pas) <li> </li> < - - -
