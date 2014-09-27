@@ -74,7 +74,7 @@
         <div class="ourArticles">
             <h1> <?php echo VLAPDLA; ?> </h1>
         </div>
-        <div id="galery-article" class="flex-slider carousel">
+        <div id="galery-article">
             <ul class="slides">
                 <?php
                 /*  $id=getId();
