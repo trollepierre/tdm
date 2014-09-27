@@ -74,8 +74,8 @@
         <div class="ourArticles">
             <h1> <?php echo VLAPDLA; ?> </h1>
         </div>
-        <div class="flex-slider carousel">
-            <ul id="galery-article" class="slides">
+        <div id="galery-article" class="flex-slider carousel">
+            <ul class="slides">
                 <?php
                 /*  $id=getId();
                   $basePath="/Chargements appareil photo/ArticleTdm/".$id."";*/
@@ -91,7 +91,8 @@
                         // items.push( "<li id='" + key + "'>" + val + "</li>" );
                         items.push( '<li><img src="'+val+'" alt="Picture Album" /></li>')
                       });
-                    $("#galery-article").append(items.join(""))
+                    $("#galery-article > ul").append(items.join(""));
+                    $('#galery-article').flexslider();
                     });
 </script>
          <!--          $url= getImgInPath("/Chargements appareil photo/ArticleTdm/".$id."");
