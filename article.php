@@ -57,14 +57,28 @@
         <div class="ourArticles">
             <h1> <?php echo VLAPDLA; ?> </h1>
         </div>
+        
+        <?php
+        if ($urlDropbox[$id]["updated"]) {
+        ?>
+        <div class="flex-slider carousel">
+            <ul class="slides">
+               <?php
+                $url = $urlDropbox[$id]['gal'];
+                foreach ($url as $key => $value) {
+                    echo '<li><img src="'.$value.'" alt="Picture Album" /></li>';
+                }
+            ?>   
+            </ul>
+        </div>
+<?php } else{ ?>
         <div id="galery-article" class="carousel">
             <ul class="slides">
-                <?php
-                /*  $id=getId();
-                  $basePath="/Chargements appareil photo/ArticleTdm/".$id."";*/
-                ?>
-                <script>
-                    $.getJSON( "lib/ajax/url.php", function( data ) {
+              <script>
+                    alert("Chargement des photos. Merci de patienter.");
+                    var id = <?=$id?>;
+                    $.getJSON( "lib/ajax/url.php?id="+ id, function( data ) {
+                    alert( "Merci d'avoir patienté" ); 
                     var items = [];
                       $.each( data, function( key, val ) {
                          items.push( '<li><img src="'+val+'" alt="Picture Album" /></li>')
@@ -75,17 +89,9 @@
                     $('#galery-article').show();
                     });
                 </script>
-
-         <!--          $url= getImgInPath("/Chargements appareil photo/ArticleTdm/".$id."");
-                  
-                    //ou peut-être (je pense pas) <li> </li> < - - -
-                    foreach ($url as $key => $value) {
-                        echo '<li><img src="'.$value.'" alt="Picture Album" /></li>';
-                    }
-                ?> -->
             </ul>
-            <!-- position discutable du script -->
-        </div>
+        </div> 
+        <?php } ?>
     </div>
     
 

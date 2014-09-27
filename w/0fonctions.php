@@ -1,12 +1,15 @@
 <?php 
+require("w/dropboxURL.php");
 use \Dropbox as dbx;
  
 /**
 * return l'id dans l'url
 */
- function getId(){
-  return (isset($_GET['id'])) ? $_GET['id'] : count(getImg0InPath("/Chargements appareil photo/ArticleTdm")) ;
- }
+function getId(){
+  global $urlDropbox;
+  $id =(isset($_GET['id'])) ? $_GET['id'] : count(getImg0InPath("/Chargements appareil photo/ArticleTdm")) ;
+  return  min([$id, count($urlDropbox)]);
+}
 
 $id=getId();
 
