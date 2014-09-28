@@ -54,7 +54,7 @@
                <?php 
 
                for ($i=1; $i<=2 ; $i++) { 
-               ImgCarroussel(''.$i.'','challenge','challenge/'.$i.'/img0.jpg');
+               ImgCarroussel('un challenge',''.$i.'','challenge','challenge/'.$i.'/img0.jpg');
                }
                 // for ($i=3; $i<=10 ; $i++) { 
                 //     ImgCarroussel(''.$i.'','challenge','img/art.jpg');
@@ -86,10 +86,10 @@
             <ul class="slides">
                 <?php
                   include("lib/creerBdd.php");
-$reponse = $bdd->query('SELECT id,img_link FROM article ORDER BY id');
+$reponse = $bdd->query('SELECT name,article_uid,img_link FROM article ORDER BY article_uid');
 while ($donnees = $reponse->fetch())
     {
-        ImgCarroussel(''.htmlspecialchars($donnees['id']).'','article', htmlspecialchars($donnees['img_link']));
+        ImgCarroussel(htmlspecialchars($donnees['name']),htmlspecialchars($donnees['article_uid']),'article', htmlspecialchars($donnees['img_link']));
     }
     $reponse->closeCursor();
                 ?>

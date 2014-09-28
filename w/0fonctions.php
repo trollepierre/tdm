@@ -2,11 +2,11 @@
 /**
 * affiche les images du carroussel. Donne moi un lien.
 */
-function ImgCarroussel($idArticles,$type,$imglink){
+function ImgCarroussel($name,$idArticles,$type,$imglink){
     echo    '<li>
                 <a class="article-name" href="'.$type.'.php?id='.$idArticles.'" title="'.$type.'">
                     <img src="'.$imglink.'" alt="Picture of one '.$type.'" /> <br/>
-                    '.$type.' n°'.$idArticles.'
+                    '.$name.'
                 </a>
             </li>';
 }

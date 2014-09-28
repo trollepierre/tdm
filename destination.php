@@ -61,7 +61,7 @@ require("w/5notification.php");
         </div>
     </div>
 
- <div id="lesAutresPhotos"></div>
+ <!-- <div id="lesAutresPhotos"></div>
     <div class="carousel" >
         <div class="ourArticles">
             <a href="challenge.php">
@@ -71,14 +71,14 @@ require("w/5notification.php");
         <div class="flex-slider carousel">
             <ul class="slides">
                <?php 
-               for ($i=1; $i<=10 ; $i++) { 
-                     ImgCarroussel(''.$i.'','article','img/art.jpg');
-                 }
+              /* for ($i=1; $i<=10 ; $i++) { 
+                    ImgCarroussel('Article',$i,'article','img/art.jpg');
+                }/**/
                 ?>
                 
             </ul>
         </div>
-    </div>
+    </div> -->
 
     <div id="caracteristiques"></div><!--INDISPENSABLE : WHY?-->
 
