@@ -12,6 +12,7 @@ use \Dropbox as dbx;
             $id= $donnees['count'] ;
         }
         $reponse->closeCursor();
+    }
 $articleUid=$id;
 
 include("lib/creerBdd.php");
