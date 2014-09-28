@@ -1,15 +1,18 @@
-<?php   require("w/0fonctions.php");
-        require("w/1head.php");
+<?php   
+    if (isset($_GET['id'])) {
+        $id=$_GET['id'];
+    }else{
+        include("lib/creerBdd.php");
+        $reponse = $bdd->query('SELECT count(*) AS count FROM article');
+        while ($donnees = $reponse->fetch()){
+            $id= $donnees['count'] ;
+        }
+        $reponse->closeCursor();
+    }
+    require("w/0fonctions.php");
+    require("w/1head.php");
     echo '<style type="text/css">';
-    
     IconBackgroundA('article');
-
-   /* if ($urlDropbox[$id]["updated"]) {
-        $url = $urlDropbox[$id]['img'];
-        IconBackgroundA('article',$url);
-    } else{
-//à voir avec Nico => chargement des photos et pourquoi recharger la page ?        
-    }/**/
 ?>
     </style>
 </head>
@@ -51,10 +54,13 @@
          <div class="flex-slider carousel">
             <ul class="slides">
                <?php 
-//Nico 
-                foreach ($urlDropbox as $key => $value) {
-                    ImgCarroussel(''.$key.'','article', $value['img']['0']);
-                }
+               include("lib/creerBdd.php");
+$reponse = $bdd->query('SELECT id,img_link FROM article ORDER BY id');
+while ($donnees = $reponse->fetch())
+    {
+        ImgCarroussel(''.htmlspecialchars($donnees['id']).'','article', htmlspecialchars($donnees['img_link']));
+    }
+    $reponse->closeCursor();
                 ?>
             </ul>
         </div>
@@ -68,10 +74,14 @@
         <div class="flex-slider carousel">
             <ul class="slides">
                <?php
-                $url = $urlDropbox[$id]['gal'];
-                foreach ($url as $key => $value) {
-                    echo '<li><img src="'.$value.'" alt="Picture Album" /></li>';
-                }
+include("lib/creerBdd.php");
+global $id;
+$reponse = $bdd->query('SELECT img_link FROM article_galerie WHERE article_uid = '.$id.' ORDER BY id');
+while ($donnees = $reponse->fetch())
+    {
+        echo '<li><img src="'.htmlspecialchars($donnees['img_link']).'" alt="Picture Album" /></li>';
+    }
+    $reponse->closeCursor();
             ?>   
             </ul>
         </div>

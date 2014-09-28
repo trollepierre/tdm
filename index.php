@@ -84,11 +84,14 @@
         </div>
         <div class="flex-slider carousel">
             <ul class="slides">
-                <?php 
-//Nico 
-                foreach ($urlDropbox as $key => $value) {
-                    ImgCarroussel(''.$key.'','article', $value['img']['0']);
-                }
+                <?php
+                  include("lib/creerBdd.php");
+$reponse = $bdd->query('SELECT id,img_link FROM article ORDER BY id');
+while ($donnees = $reponse->fetch())
+    {
+        ImgCarroussel(''.htmlspecialchars($donnees['id']).'','article', htmlspecialchars($donnees['img_link']));
+    }
+    $reponse->closeCursor();
                 ?>
             </ul>
         </div>
