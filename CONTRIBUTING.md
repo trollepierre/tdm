@@ -35,5 +35,8 @@ Ubuntu: apt-get install php5-curl
 Fedora / Amazon Linux: yum install php-curl  
 from [http://mtdowling.com/blog/2013/05/02/requiring-curl-in-your-php-library/][1]
 
+** and php_pdo_mysql
+from [http://fr.openclassrooms.com/informatique/cours/concevez-votre-site-web-avec-php-et-mysql/lire-des-donnees-2][2]
 
   [1]: http://mtdowling.com/blog/2013/05/02/requiring-curl-in-your-php-library/
+  [2]: http://fr.openclassrooms.com/informatique/cours/concevez-votre-site-web-avec-php-et-mysql/lire-des-donnees-2
