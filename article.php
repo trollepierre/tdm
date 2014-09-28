@@ -2,7 +2,7 @@
         require("w/1head.php");
     echo '<style type="text/css">';
     
-   // IconBackgroundA('article');
+    IconBackgroundA('article');
 
    /* if ($urlDropbox[$id]["updated"]) {
         $url = $urlDropbox[$id]['img'];
