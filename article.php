@@ -68,20 +68,17 @@ while ($donnees = $reponse->fetch())
             <h1> <?php echo VLAPDLA; ?> </h1>
         </div>
         
-        <?php
-        if ($urlDropbox[$id]["updated"]) {
-        ?>
+<?php if (TRUE) { ?>
         <div class="flex-slider carousel">
             <ul class="slides">
-               <?php
-include("lib/creerBdd.php");
-global $id;
-$reponse = $bdd->query('SELECT img_link FROM article_galerie WHERE article_uid = '.$id.' ORDER BY id');
-while ($donnees = $reponse->fetch())
-    {
-        echo '<li><img src="'.htmlspecialchars($donnees['img_link']).'" alt="Picture Album" /></li>';
-    }
-    $reponse->closeCursor();
+            <?php
+            include("lib/creerBdd.php");
+            global $id;
+            $reponse = $bdd->query('SELECT img_link FROM article_galerie WHERE article_uid = '.$id.' ORDER BY id');
+            while ($donnees = $reponse->fetch()){
+                echo '<li><img src="'.htmlspecialchars($donnees['img_link']).'" alt="Picture Album" /></li>';   
+            }
+            $reponse->closeCursor();
             ?>   
             </ul>
         </div>
@@ -105,7 +102,7 @@ while ($donnees = $reponse->fetch())
                 </script>
             </ul>
         </div> 
-        <?php } ?>
+<?php } ?>
     </div>
     
 
