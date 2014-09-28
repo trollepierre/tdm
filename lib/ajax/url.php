@@ -3,8 +3,15 @@
 chdir("../..");
 use \Dropbox as dbx;
 
-include("w/dropboxURL.php");
-$id =(isset($_GET['id'])) ? $_GET['id'] : count($urlDropbox) ;
+    if (isset($_GET['id'])) {
+        $id=$_GET['id'];
+    }else{
+        include("lib/creerBdd.php");
+        $reponse = $bdd->query('SELECT count(*) AS count FROM article');
+        while ($donnees = $reponse->fetch()){
+            $id= $donnees['count'] ;
+        }
+        $reponse->closeCursor();
 $articleUid=$id;
 
 include("lib/creerBdd.php");
