@@ -2,12 +2,14 @@
         require("w/1head.php");
     echo '<style type="text/css">';
     
-    if ($urlDropbox[$id]["updated"]) {
+    IconBackgroundA('article');
+
+   /* if ($urlDropbox[$id]["updated"]) {
         $url = $urlDropbox[$id]['img'];
         IconBackgroundA('article',$url);
     } else{
 //à voir avec Nico => chargement des photos et pourquoi recharger la page ?        
-    }
+    }/**/
 ?>
     </style>
 </head>

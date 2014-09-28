@@ -105,6 +105,21 @@ function ContentRowArticles($contentRow){
 * récupère le text.php dropbox et renvoi l'adresse
 */
 function RecupAdresse($article){
+
+
+try
+{
+$resu = '';
+$pdm = '';
+include("lib/alwaysdata.php");
+$bdd = new PDO('mysql:host=mysql1.alwaysdata.com;dbname=recontact_world_articles', $resu, $pdm);
+// $reponse = $bdd->query('Tapez votre requête SQL ici');
+}
+catch (Exception $e)
+{
+        die('Erreur : ' . $e->getMessage());
+}
+
  global $id;
  // $id = getId();
   include("lib/dropboxAPI.php");
@@ -142,27 +157,40 @@ function ArticlesClock($article){
 /*
 * affiche les img de gauche des articles
 */
-function IconBackgroundA($article,$urlImg){
-  require(RecupAdresse($article));
-  $color = (strcmp($article, 'article')) ? '#ff0000' : '#009bd3'  ;
-  $nbArticles=count($contentArticles)+1; 
+function IconBackgroundA($article){
+try{
+  $resu = '';
+  $pdm = '';
+  include("lib/alwaysdata.php");
+  $bdd = new PDO('mysql:host=mysql1.alwaysdata.com;dbname=recontact_world_articles', $resu, $pdm);
+}catch (Exception $e){
+  die('Erreur : ' . $e->getMessage());
+}
+global $id;
+$reponse = $bdd->query('SELECT position, img_link FROM article_contenu WHERE article_uid = '.$id.' ORDER BY position');
 
-  for ($row=0; $row <= $nbArticles; $row++) { 
-    echo '.timeline .timeline-controller .mode-icon'.$row.'{
+$color = (strcmp($article, 'article')) ? '#ff0000' : '#009bd3'  ;
+$nbArticles=count($contentArticles)+1; 
+
+// Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
+while ($donnees = $reponse->fetch())
+  {
+    echo '.timeline .timeline-controller .mode-icon'. htmlspecialchars($donnees['position']).'{
             height:600px;
             width:468px;
-           background:url("'.$urlImg[$row].'");
+           background:url("'.htmlspecialchars($donnees['img_link']).'");
             background-size: auto 530px;
             background-repeat: no-repeat;
             background-position: center;
             top:0px;
             left:0px;  
             }
-            .timeline .timeline-bg.timeline-bg'.$row.'{
+            .timeline .timeline-bg.timeline-bg'.htmlspecialchars($donnees['position']).'{
             background:'.$color.';
             }'
           ;
   }
+$reponse->closeCursor();
 }
 
 /* function:  generates thumbnail */
