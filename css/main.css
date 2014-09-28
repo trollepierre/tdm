@@ -77,12 +77,7 @@ padding-top: 0px;
 
 /*======================= Awards + Ulule ======================*/
 
-.paypal {
-    position: absolute;
-    z-index: 100;
-    margin-top: -20px;
-    margin-left: -150px
-}
+
 
 .designlicks{
 position:fixed;
