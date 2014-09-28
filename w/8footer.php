@@ -14,10 +14,11 @@
 				</div>
 				<div class="oss col-xs-12 col-sm-12 col-md-4 col-lg-4">
 					<div class="triple">
-						<img class="col-xs-12 col-sm-12 col-md-12 col-lg-12" src="img/WorldBracelet.png" alt="Voir notre bracelet" title="Voir notre bracelet" />
-                        <div class="triplet col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div class="triplet col-xs-12 col-sm-12 col-md-12 col-lg-12">
 							<a  href="contact.php" class="contacta"><?php echo GETIT; ?></a>
 						</div>
+						<img class="col-xs-12 col-sm-12 col-md-12 col-lg-12" src="img/WorldBracelet.png" alt="Voir notre bracelet" title="Voir notre bracelet" />
+                        
 <!--                         <div class="triplet col-xs-12 col-sm-12 col-md-12 col-lg-12">
 							<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 								<input type="hidden" name="cmd" value="_s-xclick">
