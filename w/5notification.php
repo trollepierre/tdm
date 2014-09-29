@@ -30,7 +30,7 @@
 					
 					
 					<?php if (isset($_GET['dest'])) 	{
-						$jack = $_GET['dest'];
+						$jack = htmlspecialchars($_GET['dest']);
 						$MESSAGE1 = MESSAGENOTIFICATION;
 					}
 					else{

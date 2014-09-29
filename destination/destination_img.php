@@ -1,6 +1,6 @@
 <?php
 	if (isset($_GET['dest'])) 	{
-		switch ($_GET['dest']) {
+		switch (htmlspecialchars($_GET['dest'])) {
 			case 'southAmerica':
 				$LINK = array ('brazil', 'argentina', 'paraguay', 'bolivia', 'peru', 'chile');
 				$GMAP = 'https://goo.gl/maps/ZmN32';

@@ -4,12 +4,12 @@ chdir("../..");
 use \Dropbox as dbx;
 
     if (isset($_GET['id'])) {
-        $id=$_GET['id'];
+        $id=htmlspecialchars($_GET['id']);
     }else{
         include("lib/creerBdd.php");
         $reponse = $bdd->query('SELECT count(*) AS count FROM article');
         while ($donnees = $reponse->fetch()){
-            $id= $donnees['count'] ;
+            $id= htmlspecialchars($donnees['count']) ;
         }
         $reponse->closeCursor();
     }

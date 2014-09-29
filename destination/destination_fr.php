@@ -6,7 +6,7 @@
  	$DEBUT = array ("Voici notre itinéraire envisagé","Voir le trajet détaillé","Jeu des destinations : <br/> Devinez d'où viennent ces photos de notre itinéraire");
  	
  	if (isset($_GET['dest'])) 	{
-		switch ($_GET['dest']) {
+		switch (htmlspecialchars($_GET['dest'])) {
 			case 'ghest':
 				$DESTINATION_TEXT = array (  "le Br&eacute;sil", "l'Argentine", "le Paraguay", "la Bolivie", "le P&eacute;rou", "le Chili");
 				break;
