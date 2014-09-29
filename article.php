@@ -1,14 +1,24 @@
 <?php   
-    if (isset($_GET['id'])) { //id bien défini
-        $id=htmlspecialchars($_GET['id']);
-    }else{ //id non défini => dernier article existant
-        include("lib/creerBdd.php");
-        $reponse = $bdd->query('SELECT count(*) AS count FROM article');
-        while ($donnees = $reponse->fetch()){
-            $id= htmlspecialchars($donnees['count']) ;
-        }
-        $reponse->closeCursor();
+    include("lib/creerBdd.php");
+    $reponse = $bdd->query('SELECT count(*) AS count FROM article');
+    while ($donnees = $reponse->fetch()){
+        $count= htmlspecialchars($donnees['count']) ;
     }
+    $id = (isset($_GET['id'])) ? htmlspecialchars($_GET['id']) : $count ;    
+    if ($id>$count) {
+        //launch url.php?id=$id
+        ?>
+        <script>
+            alert("Nouvel article : Chargement des photos en cours. \nMerci de patienter.");
+            var id = <?=$id?>;
+//Nico : Ce get ne marche pas
+            $.get( "lib/ajax/url.php?id="+ id, function( data ) {
+            alert( "Merci d'avoir patienté" ); 
+            });
+        </script>
+    <?php
+    }
+    $reponse->closeCursor();
     require("w/0fonctions.php");
     require("w/1head.php");
     echo '<style type="text/css">';
