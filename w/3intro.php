@@ -1,31 +1,20 @@
-
 <div class="intro">
     <div class="inside">
         <div class="car" id="compte_a_rebours"><noscript>Départ le 1er novembre 2014 à 10:40.</noscript></div>
-
-   <!-- <div class="car col-ls-8 col-ls-offset-2">
-
-    </div>-->
-
 
 <script type="text/javascript">
 function compte_a_rebours()
 {
     var compte_a_rebours = document.getElementById("compte_a_rebours");
-
     var date_actuelle = new Date();
     var date_evenement = new Date("Nov 1 9:40:00 2014");
     var total_secondes = (date_evenement - date_actuelle) / 1000;
-
     var prefixe = "Départ dans : ";
     if (total_secondes < 0)
     {
         prefixe = "Départ il y a : "; // On modifie le préfixe si la différence est négatif
-
         total_secondes = Math.abs(total_secondes); // On ne garde que la valeur absolue
-
     }
-
     if (total_secondes > 0)
     {
         var jours = Math.floor(total_secondes / (60 * 60 * 24));
@@ -91,14 +80,11 @@ function compte_a_rebours()
     {
         compte_a_rebours.innerHTML = 'Compte à rebours terminé.';
     }
-
     var actualisation = setTimeout("compte_a_rebours();", 1000);
 }
 compte_a_rebours();
 </script>
-
-
-                <a href="http://www.youtube.com/watch?v=11GYvfYjyV0&feature=kp" class="play mobile-media" target="_blank"></a>
+        <a href="http://www.youtube.com/watch?v=11GYvfYjyV0&feature=kp" class="play mobile-media" target="_blank"></a>
         <a href="http://www.youtube.com/watch?v=11GYvfYjyV0&feature=kp" class="play fancybox-media" target="_blank"></a>
         <div class="right">
             <p>
@@ -112,5 +98,5 @@ compte_a_rebours();
                 <?php echo SCROLL; ?>
             </p>
         </div>
-                    </div>
+    </div>
 </div>
