@@ -48,13 +48,9 @@ foreach ($returnSearchFileName as $idFake => $texte) {
   }
 }
 // echo $file;
-// $file =$basePath."/".$query;
-$data = file_get_contents($file); //read the file
-// echo $data;
-$convert = explode("*", $data); //create array separate by new line
+$data = file_get_contents($file); 
+$convert = explode("*", $data); //create array separate by *
 $name = $convert[0];
-
-$basePath="/Chargements appareil photo/ArticleTdm/".$id."";
 $query = "jpg";
 
 //recup des files
@@ -72,28 +68,32 @@ foreach ($returnSearchFileName as $idFake => $image) {
             $titre=$convert[3*$position-2];
             $soustitre=$convert[3*$position-1];
             $paragraphe=$convert[3*$position];
-            $img=$myCustomClient->createTemporaryDirectLink($value)[0];
+            $img=$myCustomClient->createShareableLink($value);
+            $img[strlen($img)-1]='1';
             $reqI->execute(array( 'articleUid' => $articleUid, 'position' => $position,'titre' => $titre,'soustitre' => $soustitre, 'paragraphe' => $paragraphe, 'img' => $img));
-            // $url[$position]=$myCustomClient->createTemporaryDirectLink($value)[0];
+            // $url[$position]=$myCustomClient->createShareableLink($value);
            }else if(substr($value,-9,4)== "/img"){
             if(substr($value, -5)==0) {
-              $img0 = $myCustomClient->createTemporaryDirectLink($value)[0];
+              $img0 = $myCustomClient->createShareableLink($value);
+              $img0[strlen($img0)-1]='1';
               $req->execute(array( 'articleUid' => $articleUid, 'name' => $name, 'img0' => $img0));
           }else{
             $position= intval(substr($value, -5,1));
             $titre=$convert[3*$position-2];
             $soustitre=$convert[3*$position-1];
             $paragraphe=$convert[3*$position];
-            $img=$myCustomClient->createTemporaryDirectLink($value)[0];
+            $img=$myCustomClient->createShareableLink($value);
+            $img[strlen($img)-1]='1';
             $reqI->execute(array( 'articleUid' => $articleUid, 'position' => $position,'titre' => $titre,'soustitre' => $soustitre, 'paragraphe' => $paragraphe, 'img' => $img));
-            // $url[$position]=$myCustomClient->createTemporaryDirectLink($value)[0];
+            // $url[$position]=$myCustomClient->createShareableLink($value);
             
             }
           }
           else{
-             $urlGallery= $myCustomClient->createTemporaryDirectLink($value)[0];
+             $urlGallery= $myCustomClient->createShareableLink($value);
+           $urlGallery[strlen($urlGallery)-1]='1';
            $reqG->execute(array( 'articleUid' => $articleUid, 'urlGallery' => $urlGallery));
-           // $urlGallery[]=$myCustomClient->createTemporaryDirectLink($value)[0];          
+           // $urlGallery[]=$myCustomClient->createShareableLink($value);          
           }
         }
     }
