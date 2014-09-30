@@ -24,7 +24,6 @@
 
     <link rel="alternate" type="application/rss+xml" title="Home Comments Feed" href="http://www.recontact.me" />
     <link rel='stylesheet' id='style-css' href='css/style.css' type='text/css' media='all' />
-    <link rel="stylesheet" href="css/css.css">
 <?php if ($lang == 'fr') {  
 echo '<link rel = "stylesheet"    href = "css/fr.css" >';
 } else { 
