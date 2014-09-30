@@ -43,7 +43,28 @@
         </div>
     </div>
     <div id="lesArticles"></div>
-    <div class="carousel" >
+      <div class="carousel">
+        <div class="ourArticles" >
+            <a href="article.php">
+                <h1 class="paddingZero"> <?php echo DAOA; ?></h1>
+            </a>
+        </div>
+        <div class="flex-slider carousel">
+            <ul class="slides">
+                <?php
+                  include("lib/creerBdd.php");
+$reponse = $bdd->query('SELECT name,article_uid,img_link FROM article ORDER BY article_uid');
+while ($donnees = $reponse->fetch())
+    {
+        ImgCarroussel(htmlspecialchars($donnees['name']),htmlspecialchars($donnees['article_uid']),'article', htmlspecialchars($donnees['img_link']));
+    }
+    $reponse->closeCursor();
+                ?>
+            </ul>
+        </div>
+    </div>
+    
+     <div class="carousel" >
         <div class="ourArticles">
             <a href="challenge.php">
                 <h1> <?php echo DAOC; ?> </h1>
@@ -76,27 +97,7 @@
         </h1>
     </div>-->
 
-    <div class="carousel">
-        <div class="ourArticles" >
-            <a href="article.php">
-                <h1 class="paddingZero"> <?php echo DAOA; ?></h1>
-            </a>
-        </div>
-        <div class="flex-slider carousel">
-            <ul class="slides">
-                <?php
-                  include("lib/creerBdd.php");
-$reponse = $bdd->query('SELECT name,article_uid,img_link FROM article ORDER BY article_uid');
-while ($donnees = $reponse->fetch())
-    {
-        ImgCarroussel(htmlspecialchars($donnees['name']),htmlspecialchars($donnees['article_uid']),'article', htmlspecialchars($donnees['img_link']));
-    }
-    $reponse->closeCursor();
-                ?>
-            </ul>
-        </div>
-    </div>
-    
+ 
         <div id="caracteristiques"></div><!--INDISPENSABLE : WHY?-->
   
 
