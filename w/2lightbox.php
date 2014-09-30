@@ -30,13 +30,13 @@
             <div id="professionnel" class="hide">
                 
                 <h2><?php echo GALTTEC; ?></h2>
-                <ul id="addresses">
+                <ul id="addresses2">
                     <?php echo CHAEWW; ?>
                 </ul>
                 <div class="answer">
                     <h2><?php echo NEEDINSPIRATION; ?><span style="font-weight:normal"><?php echo CTECTFNO; ?> </span></h2>
                     <a href="https://docs.google.com/spreadsheets/d/1gQNjOhUrOleH3qTK2RYkR_Fit1rnkjLZvfQJMd0tMIA/edit#gid=1537311595" target="_blank">
-                        <div id="answer-button"><?php echo VIEWCHALLENGES; ?></div>
+                        <div id="answer-button2"><?php echo VIEWCHALLENGES; ?></div>
                     </a>
                 </div>
             </div>

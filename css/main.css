@@ -1289,10 +1289,12 @@ padding-top: 70px;
     overflow-y: scroll;
 }
 
-#particulier{
+#particulier, #professionnel{
     line-height: 30px;
 }
-#particulier li, #maincontent{
+
+
+#particulier li, #professionnel li{
     text-align: center;
     font-weight: bold;
     font-size: 19px;
@@ -1301,12 +1303,12 @@ padding-top: 70px;
     line-height: 35px;
 }
 
-#particulier #addresses{
+#particulier #addresses, #professionnel #addresses2{
     width: 60%;
     margin: auto;
 }
 
-.answer #answer-button{
+.answer #answer-button,.answer #answer-button2{
     -webkit-box-shadow: 0 4px 0 0 rgba(40,40,40,1);
     box-shadow: 0 4px 0 0 rgba(40,40,40,1);
     -webkit-border-radius: 5px 5px 5px 5px;
@@ -1316,14 +1318,14 @@ padding-top: 70px;
     height: 38px;
     margin: auto;
     color: white;
-    font-weight: bold;
+    /*font-weight: bold;*/
     padding: 6px;
     text-align: center;
     font-family: 'dosis', arila, sans-serif;
     letter-spacing: 1px;
 }
 
-.answer #answer-button:hover{
+.answer #answer-button:hover, #answer-button2:hover{
     -webkit-box-shadow: 0 0px 0 0 rgba(40,40,40,1);
     box-shadow: 0 0px 0 0 rgba(40,40,40,1);
     margin-top:4px;
@@ -1472,28 +1474,7 @@ padding-top: 70px;
     margin: 0 auto;
 }
 
-#professionnel{
-    text-align:center;
-    font-family:arial, sans-serif;
-    font-size: 20px;
-}
 
-#professionnel span{
-    text-transform: uppercase;
-    display: block;
-}
-
-#professionnel a{
-    color: #444;
-    text-decoration:underline;
-}
-
-#maincontent{
-    font-size: 28px;
-    line-height: 40px;
-    margin-bottom: 35px;
-    font-family: dosis, sans-serif;
-}
 
 /*======================================= Media Queries ==================================*/
 
@@ -1704,7 +1685,7 @@ header ul ul li a, header ul ul li a:visited {
     #lightbox .list-wrap {
         width: auto;
     }
-    .answer #answer-button {
+    .answer #answer-button, .answer #answer-button2 {
         width: 90%;
         padding-bottom: 30px;
         height: auto;
