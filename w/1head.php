@@ -6,7 +6,7 @@
     <script type="text/javascript" src="js/b9.js"></script>
     <script type="text/javascript" src="js/M0.js"></script>
     <script type="text/javascript" src="js/b5.js"></script>
-    <script async src="js/bootstrap.min.js"></script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php echo TITLE; ?></title>

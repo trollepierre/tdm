@@ -103,7 +103,7 @@ while ($donnees = $reponse->fetch())
 
     <div class="galery" id="gallery">
         <div class="inside">
-            <section class="slider" titre="section">
+            <div class="slider">
                 <div class="flexslider">
                     <ul class="slides">
                         <li><img alt="Pangong Tso Lake, India" src="img/gallery/H8.jpg" /></li>
@@ -114,7 +114,7 @@ while ($donnees = $reponse->fetch())
                         <li><img alt="Passerelle Simone de Beauvoir, Paris, France" src="img/gallery/H23.jpg" /></li>
                     </ul>
                 </div>
-            </section>
+            </div>
         </div>
     </div>
         
