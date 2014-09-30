@@ -8,11 +8,11 @@
                     <input type="hidden" name="cmd" value="_s-xclick">
                     <input type="hidden" name="hosted_button_id" value="C753VV9DE7LH8">
                         <?php if ($lang=='fr' ) { 
-                            echo '<input type="image" src="http://www.recontact.me/img/paypal-ribbon_fr.png" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">      ';
+                            echo '<input type="image" src="http://www.recontact.me/img/paypal-ribbon_fr.png" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">      ';
                          }else{ 
-                            echo '<input type="image" src="http://www.recontact.me/img/paypal-ribbon_en.png" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">';
+                            echo '<input type="image" src="http://www.recontact.me/img/paypal-ribbon_en.png" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">';
                         } ?>
-                    <img alt="" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" border="0" width="1" height="1">
+                    <img alt="" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
                 </form>
             </li>
             <li>
@@ -26,7 +26,7 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li class="dropdown-header">
-                        <a href="destination.php?dest=southAmerica"//>
+                        <a href="destination.php?dest=southAmerica"/>
                             <?php echo SOUTHAMERICA; ?>
                     </li>
                     <li>
