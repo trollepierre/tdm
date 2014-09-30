@@ -33,9 +33,9 @@
 
     <div class="mobile-content">
         <div class="flexslider">
-            <ul class="slides">
+            <div class="slides">
                 <?php ArticlesClock('article');?>
-            </ul>
+            </div>
         </div>
     </div>
     <div class='timeline' style="">
