@@ -63,6 +63,7 @@
                     <li class="dropdown-header">
                         <a href="destination.php?dest=oceania">
                             <?php echo OCEANIA; ?>
+                        </a>
                     </li>
                     <li>
                         <a href="destination.php?dest=newZealand">
@@ -77,6 +78,7 @@
                     <li class="dropdown-header">
                         <a href="destination.php?dest=asia">
                             <?php echo ASIA; ?>
+                        </a>
                     </li>
                     <li>
                         <a href="destination.php?dest=singapore">
