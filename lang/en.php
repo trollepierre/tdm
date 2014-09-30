@@ -33,8 +33,8 @@
 
 //Homepage
 	define('RETRIEVE', 'Retrieve all the <span id="confort">adventures</span> of
-                    <br><span id="enGros">Beno&icirc;t </span> and
-                    <span id="enGros">Pierre</span>!');
+                    <br><span class="enGros">Beno&icirc;t </span> and
+                    <span class="enGros">Pierre</span>!');
 	define('SCROLL', 'Scroll to discover');
 	
 	define('CHALLENGEUS', 'Challenge us!');

@@ -80,7 +80,7 @@ padding-top: 0px;
 .paypal {
     position: absolute;
     z-index: 100;
-    margin-top: -20px;
+    margin-top: -40px;
     margin-left: -150px
 }
 
@@ -535,7 +535,7 @@ border: 0px solid #C0C0C0 !important;
     text-align: center;
 }
 
-#enGros{
+.enGros{
     font-size: 87px;
     line-height: 68px;
 }
@@ -1488,7 +1488,7 @@ padding-top: 70px;
         font-size: 25px;
     }
 
-    #enGros {
+    .enGros {
         font-size: 83px;
         line-height: 49px;
     }
@@ -1628,7 +1628,7 @@ header ul ul li a, header ul ul li a:visited {
     #confort {
         font-size: 26px;
     }
-    #enGros {
+    .enGros {
         font-size: 54px;
         line-height: 40px;
     }

@@ -36,8 +36,8 @@
 //Homepage
 	define('CHALLENGEUS', 'Défie-nous!');
 	define('RETRIEVE', 'Retrouve toutes les <span id="confort">aventures</span> de
-                    <br><span id="enGros">Beno&icirc;t </span> et
-                    <span id="enGros">Pierre</span>!');
+                    <br><span class="enGros">Beno&icirc;t </span> et
+                    <span class="enGros">Pierre</span>!');
 	define('SCROLL', 'Scrolle pour découvrir');
 	
 	
