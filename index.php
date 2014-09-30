@@ -35,7 +35,7 @@
                 </div>
             </div>
 
-            <div class='modes' id="dest" titre="index">
+            <div class='modes' id="dest">
                 <?php 
                 DestinationTime();
                 ?>
@@ -103,15 +103,15 @@ while ($donnees = $reponse->fetch())
 
     <div class="galery" id="gallery">
         <div class="inside">
-            <section class="slider">
+            <section class="slider" titre="section">
                 <div class="flexslider">
                     <ul class="slides">
-                        <li><img src="img/gallery/H8.jpg" /></li>
-                        <li><img src="img/gallery/H9.jpg" /></li>
-                        <li><img src="img/gallery/H1.jpg" /></li>
-                        <li><img src="img/gallery/H2.jpg" /></li>
-                        <li><img src="img/gallery/H11.jpg" /></li>
-                        <li><img src="img/gallery/H23.jpg" /></li>
+                        <li><img alt="Pangong Tso Lake, India" src="img/gallery/H8.jpg" /></li>
+                        <li><img alt="Canebière Marseille, France" src="img/gallery/H9.jpg" /></li>
+                        <li><img alt="Hunder, Kashmir, India" src="img/gallery/H1.jpg" /></li>
+                        <li><img alt="Nubra Valley, Kashmir, India" src="img/gallery/H2.jpg" /></li>
+                        <li><img alt="Bibliothèque F. Mitterrand, Paris, France" src="img/gallery/H11.jpg" /></li>
+                        <li><img alt="Passerelle Simone de Beauvoir, Paris, France" src="img/gallery/H23.jpg" /></li>
                     </ul>
                 </div>
             </section>

@@ -135,7 +135,7 @@
 
             <li>
                 <a href="http://www.recontact.me/destinations.php">
-                    <img class="logo" src="img/avion.png" />
+                    <img alt="nos destinations" class="logo" src="img/avion.png" />
                 </a>
             </li>
             <li>

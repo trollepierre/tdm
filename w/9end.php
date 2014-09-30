@@ -13,5 +13,5 @@
 </body>
 </html>
 
-<script async src="js/bootstrap.min.js"></script>
+
 
