@@ -62,7 +62,6 @@ require("destination/destination_img.php");
           }'
         ;
   }
-
 }
 
 /*
@@ -75,9 +74,9 @@ $reponse = $bdd->query('SELECT position, titre, soustitre, paragraphe FROM artic
 while ($donnees = $reponse->fetch())
   {
     echo ' <p class="mode mode'.htmlspecialchars($donnees['position']).'" data-bg="'.htmlspecialchars($donnees['position']).'">
-           <br/>        <span id="titreArticle">     '.htmlspecialchars($donnees['titre']).'      </span>
-           <br/>        <span id="sstitreArticle">   '.htmlspecialchars($donnees['soustitre']).'  </span>
-           <br/> <br/>  <span id="texteArticle">     '.htmlspecialchars($donnees['paragraphe']).' </span> 
+           <br/>        <span class="titreArticle">     '.htmlspecialchars($donnees['titre']).'      </span>
+           <br/>        <span class="sstitreArticle">   '.htmlspecialchars($donnees['soustitre']).'  </span>
+           <br/> <br/>  <span class="texteArticle">     '.htmlspecialchars($donnees['paragraphe']).' </span> 
            </p>';
     }
     $reponse->closeCursor();

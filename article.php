@@ -49,7 +49,7 @@
                     <span class='hours'>1</span>
                 </div>
             </div>
-            <div class='modes' id="dest" titre="article">
+            <div class='modes' id="dest">
                 <?php ArticlesTime('article');?>
             </div>
         </div>
