@@ -26,104 +26,105 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li class="dropdown-header">
-                        <a href="destination.php?dest=southAmerica"/>
+                        <a href="destination.php?dest=southAmerica">
                             <?php echo SOUTHAMERICA; ?>
+                        </a>
                     </li>
                     <li>
-                        <a href="destination.php?dest=brazil"/>
+                        <a href="destination.php?dest=brazil">
                             <?php echo BRAZIL; ?>
                         </a>
                     </li>
                     <li>
-                        <a href="destination.php?dest=argentina"/>
+                        <a href="destination.php?dest=argentina">
                             <?php echo ARGENTINA; ?>
                         </a>
                     </li>
                     <li>
-                        <a href="destination.php?dest=paraguay"/>
+                        <a href="destination.php?dest=paraguay">
                             <?php echo PARAGUAY; ?>
                         </a>
                     </li>
                     <li>
-                        <a href="destination.php?dest=bolivia"/>
+                        <a href="destination.php?dest=bolivia">
                             <?php echo BOLIVIA ?>
                         </a>
                     </li>
                     <li>
-                        <a href="destination.php?dest=peru"/>
+                        <a href="destination.php?dest=peru">
                             <?php echo PERU; ?>
                         </a>
                     </li>
                     <li>
-                        <a href="destination.php?dest=chile"/>
+                        <a href="destination.php?dest=chile">
                             <?php echo CHILE; ?>
                         </a>
                     </li>
                     <li class="dropdown-header">
-                        <a href="destination.php?dest=oceania"/>
+                        <a href="destination.php?dest=oceania">
                             <?php echo OCEANIA; ?>
                     </li>
                     <li>
-                        <a href="destination.php?dest=newZealand"/>
+                        <a href="destination.php?dest=newZealand">
                             <?php echo NZ; ?>
                         </a>
                     </li>
                     <li>
-                        <a href="destination.php?dest=australia"/>
+                        <a href="destination.php?dest=australia">
                             <?php echo AUSTRALIA; ?>
                         </a>
                     </li>
                     <li class="dropdown-header">
-                        <a href="destination.php?dest=asia"/>
+                        <a href="destination.php?dest=asia">
                             <?php echo ASIA; ?>
                     </li>
                     <li>
-                        <a href="destination.php?dest=singapore"/>
+                        <a href="destination.php?dest=singapore">
                             <?php echo SINGAPOUR; ?>
                         </a>
                     </li>
                     <li>
-                        <a href="destination.php?dest=indonesia"/>
+                        <a href="destination.php?dest=indonesia">
                             <?php echo INDONESIA; ?>
                         </a>
                     </li>
                     <li>
-                        <a href="destination.php?dest=thailand"/>
+                        <a href="destination.php?dest=thailand">
                             <?php echo THAILAND; ?>
                         </a>
                     </li>
                     <li>
-                        <a href="destination.php?dest=cambodia"/>
+                        <a href="destination.php?dest=cambodia">
                             <?php echo CAMBODIA; ?>
                         </a>
                     </li>
                     <li>
-                        <a href="destination.php?dest=vietnam"/>
+                        <a href="destination.php?dest=vietnam">
                             <?php echo VIETNAM; ?>
                         </a>
                     </li>
                     <li>
-                        <a href="destination.php?dest=china"/>
+                        <a href="destination.php?dest=china">
                             <?php echo CHINA; ?>
                         </a>
                     </li>
                     <li>
-                        <a href="destination.php?dest=tibet"/>
+                        <a href="destination.php?dest=tibet">
                             <?php echo TIBET; ?>
                         </a>
                     </li>
                     <li>
-                        <a href="destination.php?dest=nepal"/>
+                        <a href="destination.php?dest=nepal">
                             <?php echo NEPAL; ?>
                         </a>
                     </li>
                     <li>
-                        <a href="destination.php?dest=india"/>
+                        <a href="destination.php?dest=india">
                             <?php echo INDIA; ?>
                         </a>
                     </li>
                     <li>
-                        <a href="destination.php?dest=uae"/>
+                        <a href="destination.php?dest=uae">
                             <?php echo UAE; ?>
                         </a>
                     </li>
