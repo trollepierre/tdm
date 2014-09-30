@@ -23,7 +23,7 @@
 							<img src="img/icon-mail.png" alt="" />
 						</div>
 						<div class="triplet col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Frecontact.me&amp;width=280&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=80&amp;appId=661854923873753" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:280px; height:80px;" allowTransparency="true"></iframe>
+							<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Frecontact.me&amp;width=280&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=80&amp;appId=661854923873753"  style="border:none; overflow:hidden; width:280px; height:80px;" ></iframe>
 						</div>
 					</div>	
                 </div>
