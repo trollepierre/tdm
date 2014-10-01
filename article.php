@@ -75,7 +75,9 @@ while ($donnees = $reponse->fetch())
             </ul>
         </div>
         <div class="ourArticles">
-            <h1> <?php echo VLAPDLA; ?> </h1>
+           <a href="">
+                 <h1> <?php echo VLAPDLA; ?> </h1>
+            </a>
         </div>
         
 <?php if (TRUE) { ?>
