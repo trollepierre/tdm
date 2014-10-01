@@ -860,6 +860,11 @@ font-size: 50px;
     background: url(../img/bg-timeline.png) ;
 }
 
+
+.mode1{
+    margin-top: -300px !important;
+}
+
 .timeline .modes .mode{
     width:81%;
     font-size:30px;
@@ -869,6 +874,7 @@ font-size: 50px;
     text-align: center;
     font-weight: bold;
 }
+
 
 .timeline .modes[title="article"]{
     font-size: inherit;
