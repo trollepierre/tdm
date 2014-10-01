@@ -33,12 +33,12 @@
 
     <div class="mobile-content">
         <div class="flexslider">
-            <ul class="slides">
+            <div class="slides">
                 <?php 
                 ArticlesClock('challenge');
                 ?>
 
-            </ul>
+            </div>
         </div>
     </div>
     <div class='timeline' style="">
@@ -57,7 +57,7 @@
             </div>
 
 
-            <div class='modes' id="dest" titre="challenge">
+            <div class='modes' id="dest">
                 <?php 
                ArticlesTime('challenge');
                 ?>
