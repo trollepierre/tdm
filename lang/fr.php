@@ -84,6 +84,8 @@
 	define('DAOA','Découvre nos articles');
 	define('VLAPDLA',"Voici les autres photos de l'article");
 	define('VLAA',"Voici les autres articles");
+	define('VLAPDD',"Voici les autres photos du défi");
+	define('VLAD',"Voici les autres défis");
 	define('QDDM',"Quelles destinations découvrir maintenant (site en construction) ?");
 	define('OU','ou');
 

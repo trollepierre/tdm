@@ -85,6 +85,8 @@
 	define('DAOA','Discover all our Articles');
 	define('VLAPDLA',"This is the other pictures of this article");
 	define('VLAPDLA',"These are the other articles");
+	define('VLAPDD',"This is the other pictures of this challenge");
+	define('VLAD',"These are the other challenges");
 	define('QDDM',"Which destinations discover next (work in progress)?");
 	define('OU','or');
 	

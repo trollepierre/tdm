@@ -70,7 +70,7 @@ require("destination/destination_img.php");
 function ArticlesTime($article) {
 include("lib/creerBdd.php");
 global $id;
-$reponse = $bdd->query('SELECT position, titre, soustitre, paragraphe FROM article_contenu WHERE article_uid = '.$id.' ORDER BY position');
+$reponse = $bdd->query('SELECT position, titre, soustitre, paragraphe FROM '.$article.'_contenu WHERE '.$article.'_uid = '.$id.' ORDER BY position');
 while ($donnees = $reponse->fetch())
   {
     echo ' <p class="mode mode'.htmlspecialchars($donnees['position']).'" data-bg="'.htmlspecialchars($donnees['position']).'">
@@ -88,7 +88,7 @@ while ($donnees = $reponse->fetch())
 function ArticlesClock($article){
 include("lib/creerBdd.php");
 global $id;
-$reponse = $bdd->query('SELECT position, titre, soustitre, paragraphe FROM article_contenu WHERE article_uid = '.$id.' ORDER BY position');
+$reponse = $bdd->query('SELECT position, titre, soustitre, paragraphe FROM '.$article.'_contenu WHERE '.$article.'_uid = '.$id.' ORDER BY position');
 while ($donnees = $reponse->fetch())
   {  
     echo    ' <div class="clock">'.htmlspecialchars($donnees['position']).'</div><p>
@@ -106,7 +106,7 @@ while ($donnees = $reponse->fetch())
 function IconBackgroundA($article){
 include("lib/creerBdd.php");
 global $id;
-$reponse = $bdd->query('SELECT position, img_link FROM article_contenu WHERE article_uid = '.$id.' ORDER BY position');
+$reponse = $bdd->query('SELECT position, img_link FROM '.$article.'_contenu WHERE '.$article.'_uid = '.$id.' ORDER BY position');
 
 $color = (strcmp($article, 'article')) ? '#ff0000' : '#009bd3'  ;
 $nbArticles=count($contentArticles)+1; 
