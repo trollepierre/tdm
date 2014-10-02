@@ -6,7 +6,7 @@
 	$DEBUT = array("This is the planified itinerary","View the detailled map","Destination game: <br/> Guess where do these pictures on the itinerary come from");
 	
 	if (isset($_GET['dest'])) 	{
-		switch ($_GET['dest']) {
+		switch (htmlspecialchars($_GET['dest'])) {
 			case 'southAmerica':
 				$DESTINATION_TEXT = array ('Brazil','Argentina', 'Paraguay', 'Bolivia', 'Peru', 'Chile');
 				break;
@@ -35,7 +35,7 @@
 				$DESTINATION_TEXT = array ('Auckland','Lake Tekapo', 'Mount Cook', 'Queenstown', 'Milford Sound', 'Haast Pass');
 				break;
 			case 'australia':
-				$DESTINATION_TEXT = array ('Working Holidays Visa','Sydney', 'Blue Mountains', 'Melbourne', 'Brisbane', 'Great barrier reef');
+				$DESTINATION_TEXT = array ('Sydney', 'Blue Mountains', 'Melbourne', 'Brisbane', 'Great barrier reef');
 				break;
 			case 'asia':
 				$DESTINATION_TEXT = array ('Singapore','Indonesia','Thailand','Cambodia','Vietnam','China','Nepal','India','United Arab Emirates');

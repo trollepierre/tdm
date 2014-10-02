@@ -3,18 +3,18 @@
 <header class="scroller">
     <div class="menu">
         <ul>
-            <a>
-                 <form class="ulule" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <li>
+                 <form class="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                     <input type="hidden" name="cmd" value="_s-xclick">
                     <input type="hidden" name="hosted_button_id" value="C753VV9DE7LH8">
                         <?php if ($lang=='fr' ) { 
-                            echo '<input type="image" src="http://www.recontact.me/img/paypal-ribbon_fr.png" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">      ';
+                            echo '<input type="image" src="http://www.recontact.me/img/paypal-ribbon_fr.png" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">      ';
                          }else{ 
-                            echo '<input type="image" src="http://www.recontact.me/img/paypal-ribbon_en.png" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">';
+                            echo '<input type="image" src="http://www.recontact.me/img/paypal-ribbon_en.png" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">';
                         } ?>
-                    <img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+                    <img alt="" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
                 </form>
-            </a>
+            </li>
             <li>
                 <a href="http://www.recontact.me">
                     <?php echo HOME; ?>
@@ -28,6 +28,7 @@
                     <li class="dropdown-header">
                         <a href="destination.php?dest=southAmerica">
                             <?php echo SOUTHAMERICA; ?>
+                        </a>
                     </li>
                     <li>
                         <a href="destination.php?dest=brazil">
@@ -62,6 +63,7 @@
                     <li class="dropdown-header">
                         <a href="destination.php?dest=oceania">
                             <?php echo OCEANIA; ?>
+                        </a>
                     </li>
                     <li>
                         <a href="destination.php?dest=newZealand">
@@ -76,6 +78,7 @@
                     <li class="dropdown-header">
                         <a href="destination.php?dest=asia">
                             <?php echo ASIA; ?>
+                        </a>
                     </li>
                     <li>
                         <a href="destination.php?dest=singapore">
@@ -132,7 +135,7 @@
 
             <li>
                 <a href="http://www.recontact.me/destinations.php">
-                    <img class="logo" src="img/avion.png" />
+                    <img alt="nos destinations" class="logo" src="img/avion.png" />
                 </a>
             </li>
             <li>

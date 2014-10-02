@@ -1,6 +1,6 @@
 <?php
 if (isset($_GET['dest'])) {
-    switch ($_GET['dest']) {
+    switch (htmlspecialchars($_GET['dest'])) {
         case 'rio':
             header('Location: https://www.triposo.com/loc/Rio_de_Janeiro');
             break;

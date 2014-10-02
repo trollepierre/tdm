@@ -33,8 +33,8 @@
 
 //Homepage
 	define('RETRIEVE', 'Retrieve all the <span id="confort">adventures</span> of
-                    <br><span id="enGros">Beno&icirc;t </span> and
-                    <span id="enGros">Pierre</span>!');
+                    <br><span class="enGros">Beno&icirc;t </span> and
+                    <span class="enGros">Pierre</span>!');
 	define('SCROLL', 'Scroll to discover');
 	
 	define('CHALLENGEUS', 'Challenge us!');
@@ -85,6 +85,8 @@
 	define('DAOA','Discover all our Articles');
 	define('VLAPDLA',"This is the other pictures of this article");
 	define('VLAPDLA',"These are the other articles");
+	define('VLAPDD',"This is the other pictures of this challenge");
+	define('VLAD',"These are the other challenges");
 	define('QDDM',"Which destinations discover next (work in progress)?");
 	define('OU','or');
 	

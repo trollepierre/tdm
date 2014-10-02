@@ -10,8 +10,9 @@
             }
         }(document, "script", "twitter-wjs");
     </script>
+    <script async src="js/bootstrap.min.js"></script>
 </body>
 </html>
 
-<script async src="js/bootstrap.min.js"></script>
+
 

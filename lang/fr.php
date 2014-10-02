@@ -36,8 +36,8 @@
 //Homepage
 	define('CHALLENGEUS', 'Défie-nous!');
 	define('RETRIEVE', 'Retrouve toutes les <span id="confort">aventures</span> de
-                    <br><span id="enGros">Beno&icirc;t </span> et
-                    <span id="enGros">Pierre</span>!');
+                    <br><span class="enGros">Beno&icirc;t </span> et
+                    <span class="enGros">Pierre</span>!');
 	define('SCROLL', 'Scrolle pour découvrir');
 	
 	
@@ -84,6 +84,8 @@
 	define('DAOA','Découvre nos articles');
 	define('VLAPDLA',"Voici les autres photos de l'article");
 	define('VLAA',"Voici les autres articles");
+	define('VLAPDD',"Voici les autres photos du défi");
+	define('VLAD',"Voici les autres défis");
 	define('QDDM',"Quelles destinations découvrir maintenant (site en construction) ?");
 	define('OU','ou');
 

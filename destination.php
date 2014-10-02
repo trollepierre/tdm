@@ -16,17 +16,13 @@
 <?php require("w/2lightbox.php");?>
 <?php require("w/4headerScroller.php");?>
 
-<?php if (isset($_GET['dest']))     {
-                        $show_notif = $_GET['dest'];
-                        
-}
+<?php 
+$show_notif = (isset($_GET['dest'])) ? htmlspecialchars($_GET['dest']) : "" ;
 ?>
 
 <?php if (($show_notif =="southAmerica")||($show_notif =="oceania")||($show_notif =="asia")||($show_notif =="china")||($show_notif =="india"))     {
 require("w/5notification.php");
-
 } ?>
-
     <div class="mobile-content">
         <div class="flexslider">
             <ul class="slides">
@@ -41,8 +37,6 @@ require("w/5notification.php");
         <div class='timeline-bg timeline-bg1 show'></div>
         <div class='timeline-controller'>
             <div class='mode-icon mode-icon1 show' ></div>
-
-             
         </div>
 
         <div class='inside'>
@@ -51,8 +45,6 @@ require("w/5notification.php");
                     <span class='hours'>1</span>
                 </div>
             </div>
-
-
             <div class='modes' id="dest">
                 <?php 
                DestinationTime();
@@ -61,7 +53,7 @@ require("w/5notification.php");
         </div>
     </div>
 
- <div id="lesAutresPhotos"></div>
+ <!-- <div id="lesAutresPhotos"></div>
     <div class="carousel" >
         <div class="ourArticles">
             <a href="challenge.php">
@@ -71,14 +63,14 @@ require("w/5notification.php");
         <div class="flex-slider carousel">
             <ul class="slides">
                <?php 
-               for ($i=1; $i<=10 ; $i++) { 
-                     ImgCarroussel(''.$i.'','article','img/art.jpg');
-                 }
+              /* for ($i=1; $i<=10 ; $i++) { 
+                    ImgCarroussel('Article',$i,'article','img/art.jpg');
+                }/**/
                 ?>
                 
             </ul>
         </div>
-    </div>
+    </div> -->
 
     <div id="caracteristiques"></div><!--INDISPENSABLE : WHY?-->
 
