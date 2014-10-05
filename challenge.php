@@ -76,10 +76,11 @@
             <ul class="slides">
                <?php 
                include("lib/creerBdd.php");
-$reponse = $bdd->query('SELECT name,challenge_uid,img_link FROM challenge ORDER BY challenge_uid');
+$reponse = $bdd->query('SELECT nom, name,challenge_uid,img_link FROM challenge ORDER BY challenge_uid');
 while ($donnees = $reponse->fetch())
     {
-        ImgCarroussel(htmlspecialchars($donnees['name']),htmlspecialchars($donnees['challenge_uid']),'challenge', htmlspecialchars($donnees['img_link']));
+        $nome = ($lang==='fr') ? 'nom' : 'name' ;
+        ImgCarroussel(htmlspecialchars($donnees[$nome]),htmlspecialchars($donnees['challenge_uid']),'challenge', htmlspecialchars($donnees['img_link']));
     }
     $reponse->closeCursor();
                 ?>

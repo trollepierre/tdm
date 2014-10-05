@@ -53,10 +53,11 @@
             <ul class="slides">
                 <?php
                   include("lib/creerBdd.php");
-$reponse = $bdd->query('SELECT name,article_uid,img_link FROM article ORDER BY article_uid');
+$reponse = $bdd->query('SELECT nom, name,article_uid,img_link FROM article ORDER BY article_uid');
 while ($donnees = $reponse->fetch())
     {
-        ImgCarroussel(htmlspecialchars($donnees['name']),htmlspecialchars($donnees['article_uid']),'article', htmlspecialchars($donnees['img_link']));
+       $nome = ($lang==='fr') ? 'nom' : 'name' ;
+        ImgCarroussel(htmlspecialchars($donnees[$nome]),htmlspecialchars($donnees['article_uid']),'article', htmlspecialchars($donnees['img_link']));
     }
     $reponse->closeCursor();
                 ?>
