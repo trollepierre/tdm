@@ -7,7 +7,7 @@
 </style>
 </head>
 <body class="home page page-id-4 page-template page-template-page-home-php custom-background">
-<?php require("w/2lightbox.php");?>
+
 <?php require("w/3intro.php");?>
  <!-- PAGE 1/2  ===========================================================================-->
 <?php require("w/4headerScroller.php");?>
