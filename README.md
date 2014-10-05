@@ -1,7 +1,7 @@
 tdm
 ===
 *Visible sur l'adresse www.recontact.me*
-
+*et jack.rec.me*
 
 Le site raconte notre voyage et se remplira au fur et à mesure de notre synchronisation sur Dropbox.  
 On utilise PHP (avec l'extension php_curl)  
