@@ -53,7 +53,7 @@
             <ul class="slides">
                 <?php
                   include("lib/creerBdd.php");
-$reponse = $bdd->query('SELECT nom, name,article_uid,img_link FROM article ORDER BY article_uid');
+$reponse = $bdd->query('SELECT nom, name,article_uid,img_link FROM article ORDER BY article_uid DESC');
 while ($donnees = $reponse->fetch())
     {
        $nome = ($lang==='fr') ? 'nom' : 'name' ;
@@ -74,14 +74,15 @@ while ($donnees = $reponse->fetch())
         <div class="flex-slider carousel">
             <ul class="slides">
                <?php 
-
-               for ($i=1; $i<=2 ; $i++) { 
-               ImgCarroussel('un challenge',''.$i.'','challenge','challenge/'.$i.'/img0.jpg');
-               }
-                // for ($i=3; $i<=10 ; $i++) { 
-                //     ImgCarroussel(''.$i.'','challenge','img/art.jpg');
-                // }
-                // ?>
+ include("lib/creerBdd.php");
+$reponse = $bdd->query('SELECT nom, name,challenge_uid,img_link FROM challenge ORDER BY challenge_uid DESC');
+while ($donnees = $reponse->fetch())
+    {
+       $nome = ($lang==='fr') ? 'nom' : 'name' ;
+        ImgCarroussel(htmlspecialchars($donnees[$nome]),htmlspecialchars($donnees['challenge_uid']),'challenge', htmlspecialchars($donnees['img_link']));
+    }
+    $reponse->closeCursor();
+ ?>
                 
             </ul>
         </div>
