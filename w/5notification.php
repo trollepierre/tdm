@@ -53,7 +53,7 @@
 							    
 							    case 'asia':
 							        $GMAP = "https://goo.gl/maps/8X5Fp";
-							        $MESSAGE2 = CHINA;
+							        $MESSAGE2 = ASIA;
 							    break;
 							    
 							    case 'china': 
