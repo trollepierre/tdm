@@ -132,14 +132,10 @@ $nbArticles=count($contentArticles)+1;
 // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
 while ($donnees = $reponse->fetch())
   {
-    $dest='img.jpg';
-    make_thumb(htmlspecialchars($donnees['img_link']),$dest);
-    
-
     echo '.timeline .timeline-controller .mode-icon'. htmlspecialchars($donnees['position']).'{
             height:600px;
             width:468px;
-           background:url("'.$dest.'");
+           background:url("'.htmlspecialchars($donnees['img_link']).'");
             background-size: auto 530px;
             background-repeat: no-repeat;
             background-position: center;
@@ -154,23 +150,23 @@ while ($donnees = $reponse->fetch())
 $reponse->closeCursor();
 }
 
-/*/* function:  generates thumbnail */
-function make_thumb($src,$dest,$desired_width=640) {
-  /* read the source image */
-  $source_image = imagecreatefromjpeg($src);
-  $width = imagesx($source_image);
-  $height = imagesy($source_image);
-  /* find the "desired height" of this thumbnail, relative to the desired width  */
-  $desired_height = floor($height*($desired_width/$width));
-  /* create a new, "virtual" image */
-  $virtual_image = imagecreatetruecolor($desired_width,$desired_height);
-  /* copy source image at a resized size */
-  imagecopyresized($virtual_image,$source_image,0,0,0,0,$desired_width,$desired_height,$width,$height);
-  /* create the physical thumbnail image to its destination */
-  imagejpeg($virtual_image,$dest);
-}
+// /*/* function:  generates thumbnail */
+// function make_thumb($src,$dest,$desired_width) {
+//   /* read the source image */
+//   $source_image = imagecreatefromjpeg($src);
+//   $width = imagesx($source_image);
+//   $height = imagesy($source_image);
+//   /* find the "desired height" of this thumbnail, relative to the desired width  */
+//   $desired_height = floor($height*($desired_width/$width));
+//   /* create a new, "virtual" image */
+//   $virtual_image = imagecreatetruecolor($desired_width,$desired_height);
+//   /* copy source image at a resized size */
+//   imagecopyresized($virtual_image,$source_image,0,0,0,0,$desired_width,$desired_height,$width,$height);
+//   /* create the physical thumbnail image to its destination */
+//   imagejpeg($virtual_image,$dest);
+// }
 
- /*function:  returns files from dir */
+//  function:  returns files from dir 
 // function get_files($images_dir,$exts = array('jpg')) {
 //   $files = array();
 //   if($handle = opendir($images_dir)) {
@@ -185,12 +181,12 @@ function make_thumb($src,$dest,$desired_width=640) {
 //   return $files;
 // }
 
-//  function:  returns a file's extension 
+// /* function:  returns a file's extension */
 // function get_file_extension($file_name) {
 //   return substr(strrchr($file_name,'.'),1);
 // }
 
-// /* function:  returns nb of dir from dir 
+// /* function:  returns nb of dir from dir */
 // function get_nb_dir($images_dir) {
 //  $count_file = -2;
 //   if($handle = opendir($images_dir)) {
