@@ -132,7 +132,8 @@ $nbArticles=count($contentArticles)+1;
 // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
 while ($donnees = $reponse->fetch())
   {
-    $dest='img.jpg';
+    $point= htmlspecialchars($donnees['position']);
+    $dest='img.jpg'.$point;
     make_thumb(htmlspecialchars($donnees['img_link']),$dest);
     
 
