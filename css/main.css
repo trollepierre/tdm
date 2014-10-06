@@ -866,7 +866,7 @@ font-size: 50px;
 }
 
 .timeline .modes .mode{
-    width:77%;
+    width:81%;
     font-size:30px;
     color:white;
     padding-top:164px;
@@ -896,9 +896,11 @@ font-size: 50px;
 .titreArticle{
     font-size: 45px;
     line-height: 36px;
-    
 }
 
+.texteArticle {
+font-size: 20px;
+}
 
 .minutes {
     display: none;

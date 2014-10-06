@@ -76,20 +76,10 @@ while ($donnees = $reponse->fetch())
     echo ' <p class="mode mode'.htmlspecialchars($donnees['position']).'" data-bg="'.htmlspecialchars($donnees['position']).'">
            <br/>        <span class="titreArticle">     '.htmlspecialchars($donnees['titre']).'      </span>
            <br/>        <span class="sstitreArticle">   '.htmlspecialchars($donnees['soustitre']).'  </span>
-           <br/> <br/>  <span style="display:block; text-align:justify;  font-size: 20px; font-weight: normal;font-family: inherit;">     '.slashN(htmlspecialchars($donnees['paragraphe'])).' </span> 
+           <br/> <br/>  <span class="texteArticle">     '.htmlspecialchars($donnees['paragraphe']).' </span> 
            </p>';
     }
     $reponse->closeCursor();
-}
-
-function slashN($paragraphe){ //Séparateur de & en <br/>
-  $resultat="";
-  $convert = explode("#", $paragraphe); //create array separate by &
-  foreach ($convert as $key => $value) {
-    $resultat .= $value;
-    $resultat .= '<br/>';
-  }
-  return $resultat;
 }
 
 /*
