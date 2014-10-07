@@ -6,7 +6,7 @@
 function verify(){
     // '''Respond to the webhook verification (GET request) by echoing back the challenge parameter.'''
     // return request.args.get('challenge')
-echo $_GET['challenge'];
+printf( $_GET['challenge']);
 }
     verify();
 ?>
