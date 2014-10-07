@@ -65,7 +65,7 @@
             <ul class="slides">
                <?php 
                include("lib/creerBdd.php");
-$reponse = $bdd->query('SELECT nom, name,article_uid,img_link FROM article ORDER BY article_uid');
+$reponse = $bdd->query('SELECT nom, name,article_uid,img_link FROM article ORDER BY article_uid DESC');
 while ($donnees = $reponse->fetch())
     {
        $nome = ($lang==='fr') ? 'nom' : 'name' ;
@@ -89,6 +89,9 @@ while ($donnees = $reponse->fetch())
             global $id;
             $reponse = $bdd->query('SELECT img_link FROM article_galerie WHERE article_uid = '.$id.' ORDER BY id');
             while ($donnees = $reponse->fetch()){
+                // $dest='img.jpg';
+                // make_thumb(htmlspecialchars($donnees['img_link']),$dest);
+                // echo '<li><img src="'.$dest.'" alt="Picture Album" /></li>';   
                 echo '<li><img src="'.htmlspecialchars($donnees['img_link']).'" alt="Picture Album" /></li>';   
             }
             $reponse->closeCursor();
