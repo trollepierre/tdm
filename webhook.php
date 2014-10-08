@@ -28,9 +28,9 @@ function webhook(){
 if(isset($_GET['challenge'])){
 	verify();
 }
-elseif (isset($_GET['X-Dropbox-Signature'])) {
+else{ //if (isset($_GET['X-Dropbox-Signature'])) {
 	webhook();
-}else{
+}/*else{
 	echo 'pourquoi on appelle ?';
 }
 /*
