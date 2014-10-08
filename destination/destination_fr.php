@@ -14,7 +14,7 @@
 				$DESTINATION_TEXT = array ("Voici la maps","Devinez d'où viennnent ces photos",  "le Br&eacute;sil", "l'Argentine", "le Paraguay", "la Bolivie", "le P&eacute;rou", "le Chili");
 				break;
 			case 'southAmerica':
-				$DESTINATION_TEXT = array (  "le Br&eacute;sil", "l'Argentine", "le Paraguay", "la Bolivie", "le P&eacute;rou", "le Chili");
+			$DESTINATION_TEXT = array (  "le Br&eacute;sil", "l'Argentine", "le Paraguay", "la Bolivie", "le P&eacute;rou", "le Chili");
 				break;
 			case 'brazil':
 			$DESTINATION_TEXT = array ("Rio de Janeiro","Sao Paulo","les chutes de l'Iguazu");
@@ -53,7 +53,7 @@
 			$DESTINATION_TEXT = array (  "Bangkok", "Angkor", "Phnom Penh", "H&ocirc;-Chi-Minh-Ville", "Hano&iuml;", "la Baie de Ha Long");
 				break;
 			case 'china':
-			$DESTINATION_TEXT = array ( "Sichuan", "Jiuzhaigou", "Guilin", "le Mont Huang","La Cit&eacute; Interdite - P&eacute;kin", "La Grande Muraille de Chine", "Zhangye","Lhassa", "Le Palais Potala", "Paysages Tib&eacute;tains", "Trekking", "Le Mont Everest");
+			$DESTINATION_TEXT = array ( "Sichuan", "Jiuzhaigou", "Guilin", "le Mont Huang","La Cit&eacute; Interdite - P&eacute;kin", "La Grande Muraille de Chine", "Zhangye","Lhassa", "Le Palais Potala", "Paysages Tib&eacute;tains",, "Le Mont Everest");
 				break;
 			case 'tibet':
 			$DESTINATION_TEXT = array ("Le Palais Potala", "des Paysages Tib&eacute;tains", "Le Mont Everest");

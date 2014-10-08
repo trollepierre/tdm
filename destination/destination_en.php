@@ -47,7 +47,7 @@
 				$DESTINATION_TEXT = array ('Bangkok','Angkor', 'Phnom Penh', 'H&ocirc;-Chi-Minh-Ville', 'Hano&iuml;', 'Ha Long Bay');
 				break;
 			case 'china':
-				$DESTINATION_TEXT = array ('Sichuan','Jiuzhaigou', 'Guilin', 'Mount Huang','Forbidden City in Beijing', 'Great Wall of China', 'Zhangye','Lhasa','Potala Palace', 'Tibetan landscapes', 'Trekking', 'Mount Everest');
+				$DESTINATION_TEXT = array ('Sichuan','Jiuzhaigou', 'Guilin', 'Mount Huang','Forbidden City in Beijing', 'Great Wall of China', 'Zhangye','Lhasa','Potala Palace', 'Tibetan landscapes', 'Mount Everest');
 				break;
 			case 'tibet':
 				$DESTINATION_TEXT = array ('Lhasa Potala Palace','Tibetan landscapes', 'Mount Everest');

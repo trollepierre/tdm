@@ -67,7 +67,7 @@
 								break;
 							    
 							   	default:
-							        $GMAP = "http://planificateur.a-contresens.net/itineraire/1733#.U_-L_Pl_v9V";
+							        $GMAP = "http://www.recontact.me/planif.php";
 					}?>
 
 					message : '<p><a target="_blank" href="<?php echo $GMAP;?>"><span class="icon icon-<?php echo $jack;?>"></span><?php echo $MESSAGE1;?> <?php echo $MESSAGE2;?></a></p>',

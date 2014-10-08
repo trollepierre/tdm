@@ -5,7 +5,7 @@
  	     // si aucune langue n'est déclarée on tente de reconnaitre la langue par défaut du navigateur
 	     $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2); 
  	}
-
+// $lang = 'en';
  	 //script d'origine
  	 if ($lang=='fr') {           // si la langue est 'fr' (français) on inclut le fichier fr-lang.php
  	     include('lang/fr.php'); 

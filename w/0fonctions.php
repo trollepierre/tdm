@@ -70,24 +70,28 @@ require("destination/destination_img.php");
 function ArticlesTime($article) {
 include("lib/creerBdd.php");
 global $id;
-$reponse = $bdd->query('SELECT position, titre, soustitre, paragraphe FROM '.$article.'_contenu WHERE '.$article.'_uid = '.$id.' ORDER BY position');
+global $lang;
+$titre = ($lang==='fr') ? 'titre' : 'title' ;
+$soustitre = ($lang==='fr') ? 'soustitre' : 'subtitle' ;
+$paragraphe = ($lang==='fr') ? 'paragraphe' : 'paragraph' ;
+$reponse = $bdd->query('SELECT position, titre, soustitre, paragraphe, title, subtitle, paragraph FROM '.$article.'_contenu WHERE '.$article.'_uid = '.$id.' ORDER BY position');
 while ($donnees = $reponse->fetch())
   {
     echo ' <p class="mode mode'.htmlspecialchars($donnees['position']).'" data-bg="'.htmlspecialchars($donnees['position']).'">
-           <br/>        <span class="titreArticle">     '.htmlspecialchars($donnees['titre']).'      </span>
-           <br/>        <span class="sstitreArticle">   '.htmlspecialchars($donnees['soustitre']).'  </span>
-           <br/> <br/>  <span style="display:block; text-align:justify;  font-size: 20px; font-weight: normal;font-family: inherit;">     '.slashN(htmlspecialchars($donnees['paragraphe'])).' </span>  
+           <br/>        <span class="titreArticle">     '.htmlspecialchars($donnees[$titre]).'      </span>
+           <br/>        <span class="sstitreArticle">   '.htmlspecialchars($donnees[$soustitre]).'  </span>
+           <br/> <br/>  <span style="display:block; text-align:justify;  font-size: 20px; font-weight: normal;font-family: inherit;">     '.slashN(htmlspecialchars($donnees[$paragraphe])).' </span> 
            </p>';
     }
     $reponse->closeCursor();
 }
 
-function slashN($paragraphe){ //Séparateur de & en <br/>
+function slashN($paragraphe){ //Séparateur de # en <br/>
   $resultat="";
-  $convert = explode("#", $paragraphe); //create array separate by &
+  $convert = explode("#", $paragraphe); //create array separate by #
   foreach ($convert as $key => $value) {
     $resultat .= $value;
-    $resultat .= '<br/>';
+    $resultat .= '<br/><br/>';
   }
   return $resultat;
 }
@@ -98,13 +102,17 @@ function slashN($paragraphe){ //Séparateur de & en <br/>
 function ArticlesClock($article){
 include("lib/creerBdd.php");
 global $id;
-$reponse = $bdd->query('SELECT position, titre, soustitre, paragraphe FROM '.$article.'_contenu WHERE '.$article.'_uid = '.$id.' ORDER BY position');
+global $lang;
+$titre = ($lang==='fr') ? 'titre' : 'title' ;
+$soustitre = ($lang==='fr') ? 'soustitre' : 'subtitle' ;
+$paragraphe = ($lang==='fr') ? 'paragraphe' : 'paragraph' ;
+$reponse = $bdd->query('SELECT position, titre, soustitre, paragraphe, title, subtitle, paragraph FROM '.$article.'_contenu WHERE '.$article.'_uid = '.$id.' ORDER BY position');
 while ($donnees = $reponse->fetch())
   {  
     echo    ' <div class="clock">'.htmlspecialchars($donnees['position']).'</div><p>
-              <br/>        <span class="titreArticle">     '.htmlspecialchars($donnees['titre']).'      </span>
-              <br/>        <span class="sstitreArticle">   '.htmlspecialchars($donnees['soustitre']).'  </span>
-              <br/> <br/>  <span class="texteArticle">     '.htmlspecialchars($donnees['paragraphe']).' </span> 
+              <br/>        <span class="titreArticle">     '.htmlspecialchars($donnees[$titre]).'      </span>
+              <br/>        <span class="sstitreArticle">   '.htmlspecialchars($donnees[$soustitre]).'  </span> 
+              <br/> <br/>  <span class="texteArticle">     '.slashN(htmlspecialchars($donnees[$paragraphe])).' </span> 
               </p>';
   }
   $reponse->closeCursor();
