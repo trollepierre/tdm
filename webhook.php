@@ -4,37 +4,39 @@ function verify(){
 	echo $_GET['challenge'];
 }
 
-verify();
-echo "\nchallenge sent\n";
-/*
-from hashlib import sha256
-import hmac
-import threading
-*/
 
 function webhook(){
 	#'''Receive a list of changed user IDs from Dropbox and process each.'''
 
 	//1 recup de l'header et verifie si signature dropbox
 	$signature = $_GET['X-Dropbox-Signature'];
-	echo "sign n";
-	echo $signature;
+	// echo $signature;
 	//comment vérifier la signature ? (non facultatif)
 
 	//2 recup du json
-	$json = $POST['data'];
-	$json2 = $POST['delta'];
-	$json3 = 	echo $json;
+	$json = (isset($POST['data'])) ? $POST['data'] : "pas de data" ;
+	$json2 = (isset($POST['delta'])) ? $POST['delta'] : "pas de delta" ;
+	$json3 = (isset($POST['json'])) ? $POST['json'] : "pas de json" ;
 	$texte = $signature."\n<br/>\n".$json."\n<br/>\n".$json2."\n<br/>\n".$json3;
 	file_put_contents('dblog.txt',$texte);
 
 	//3 repondre rapidement
 	//je sais pas
-
 	
 }
 
-/*@app.route('/webhook', methods=['POST'])
+if(isset($_GET['challenge'])){
+	verify();
+}
+elseif (isset($_GET['X-Dropbox-Signature']) {
+	webhook();
+}
+/*
+from hashlib import sha256
+import hmac
+import threading
+
+@app.route('/webhook', methods=['POST'])
 def webhook():
    # '''Receive a list of changed user IDs from Dropbox and process each.'''
 
@@ -52,5 +54,4 @@ $POST['json'];
         threading.Thread(target=process_user, args=(uid,)).start()
     return ''
 /**/
-webhook();
 ?>
