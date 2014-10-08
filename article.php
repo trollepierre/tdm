@@ -9,12 +9,12 @@
         //launch url.php?id=$id
         ?>
         <script>
-            alert("Nouvel article : Chargement des photos en cours. \nMerci de patienter.");
+  /*          alert("Nouvel article : Chargement des photos en cours. \nMerci de patienter.");
             var id = <?=$id?>;
 //Nico : Ce get ne marche pas
             $.get( "lib/ajax/url.php?id="+ id, function( data ) {
             alert( "Merci d'avoir patienté" ); 
-            });
+            });*/
         </script>
     <?php
     }
