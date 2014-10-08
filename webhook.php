@@ -26,7 +26,9 @@ $alpha =(get_headers($url));
 $beta= (get_headers($url, 1));
 
 $gamma = getallheaders();
-$texte.= "\n".$alpha."\n".$beta."\n\n\n".$gamma;
+$texte.= "\n\n".json_encode($alpha);
+$texte.= "\n\n".json_encode($beta);
+$texte.= "\n\n".json_encode($gamma);
 	file_put_contents('dblog.txt',$texte);
 	//3 repondre rapidement
 	//je sais pas
