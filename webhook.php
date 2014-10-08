@@ -20,6 +20,19 @@ function webhook(){
 	$allHeaders = getallheaders();
 	
 	$texte.= "\n\n".json_encode($allHeaders)."\n\n"."la signature est ".$signature;
+	
+	
+	$data = file_get_contents("php://input"); 
+	$texte.= "\n\n".json_encode($data)."\n\n";/**/
+	
+	$data = $_SERVER; 
+	$texte.= "\n\n".json_encode($data)."\n\n";/**/
+	
+	foreach(getallheaders() as $key=>$value)  {
+	   $data .= $key.': '.$value."<br />";
+	}
+	$texte.= "\n\n".json_encode($data)."\n\n";/**/
+	
 	file_put_contents('dblog.txt','set data membete');	
 	$data= HttpResponse::setData($texte);
 	
