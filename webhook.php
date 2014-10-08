@@ -7,7 +7,7 @@ function webhook(){
 	#'''Receive a list of changed user IDs from Dropbox and process each.'''
 
 	//1 recup de l'header et verifie si signature dropbox
-	$signature = (isset($_GET['X-Dropbox-Signature'])) ? $_GET['X-Dropbox-Signature'] : "signature invalide" ;
+	$signature = (isset(getallheaders()['X-Dropbox-Signature'])) ? getallheaders()['X-Dropbox-Signature'] : "signature invalide" ;
 	// echo $signature;
 	//comment vérifier la signature ? (non facultatif)
 
@@ -15,11 +15,15 @@ function webhook(){
 	$json = (isset($POST['data'])) ? $POST['data'] : "pas de data" ;
 	$json2 = (isset($POST['delta'])) ? $POST['delta'] : "pas de delta" ;
 	$json3 = (isset($POST['json'])) ? $POST['json'] : "pas de json" ;
-	$texte = $signature."\n\n".$json."\n\n".$json2."\n\n".$json3;
+	$texte = "la signature est ".$signature."\n\n".$json."\n\n".$json2."\n\n".$json3;
 	
-	$gamma = getallheaders();
-	$texte.= "\n\n".json_encode($gamma)."\n\n";
+	$allHeaders = getallheaders();
 	
+	$texte.= "\n\n".json_encode($allHeaders)."\n\n"."la signature est ".$signature;
+	
+	$data= HttpResponse::getData();
+	$texte.= "\n\n".json_encode($data)."\n\n";
+
 	file_put_contents('dblog.txt',$texte);
 	
 	//3 repondre rapidement
@@ -29,7 +33,7 @@ function webhook(){
 
 if(isset($_GET['challenge'])){
 	verify();
-}else/*if (isset($_GET['X-Dropbox-Signature']))*/ {
+}else/*if (isset(getallheaders()['X-Dropbox-Signature']))*/ {
 	webhook();
 }
 /*
