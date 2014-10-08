@@ -13,74 +13,97 @@ function webhook(){
 
 	//2 recup du json
 	$data = file_get_contents("php://input"); 
-	file_put_contents('dblog.txt',$data);
+	$uidList = json_decode($data);
+	file_put_contents('dblog.txt',$data."\n".$uidList);
 
-/*
-	$json = (isset($POST['data'])) ? $POST['data'] : "pas de data" ;
-	$json2 = (isset($POST['delta'])) ? $POST['delta'] : "pas de delta" ;
-	$json3 = (isset($POST['json'])) ? $POST['json'] : "pas de json" ;
-	$texte = "la signature est ".$signature."\n\n".$json."\n\n".$json2."\n\n".$json3;
-	
-	$allHeaders = getallheaders();
-	
-	$texte.= "\n\n".json_encode($allHeaders)."\n\n"."la signature est ".$signature;
-	
-	
-	$data = file_get_contents("php://input"); 
-	$texte.= "\n\n".json_encode($data)."\n\n";/**/
-	
-/*	$data = $_SERVER; 
-	$texte.= "\n\n".json_encode($data)."\n\n";/**/
-	
-	/*$data="";
-	foreach(getallheaders() as $key=>$value)  {
-	   $data .= $key.': '.$value."";
-	}
-	$texte.= "\n\n".json_encode($data)."\n\n";/**/
-	
-/*	file_put_contents('dblog.txt','set data membete');	
-	$data= HttpResponse::setData($texte);
-	
-	file_put_contents('dblog.txt','httpresponseget membete');	
-	$data= HttpResponse::getData();
-	$texte.= "\n\n".json_encode($data)."\n\n";/**/
-/*file_put_contents('dblog.txt','httpget membete');	
-	$data= http_get_request_body();
-	$texte.= "\n\n".json_encode($data)."\n\n";
-	/**/
-	// file_put_contents('dblog.txt',$texte);
-	
 	//3 repondre rapidement
-	//je sais pas
+	foreach ($uidList as $key => $uid) {
+		echo 'Lancer process_user avec en arg uid';
+		# threading.Thread(target=process_user, args=(uid,)).start()
+		# code...
+	}
 	
 }
+
+function process_user($uid){
+	#'''Call /delta for the given user ID and process any changes.'''
+	
+	//1 identification ?
+	/* # OAuth token for the user token = redis_client.hget('tokens', uid)
+    # /delta cursor for the user (None the first time) cursor = redis_client.hget('cursors', uid)/***/
+
+	//2  Suite
+#    client = DropboxClient(token)
+#    has_more = True
+// creation d'un client dropbox 
+	include("lib/dropboxAPI.php");
+	$myCustomClient = new dbx\Client($accessToken, $clientIdentifier);
+
+ 	$hasMore = TRUE;
+ 	$pathPrefix="/Chargements appareil photo/ArticleTdm/";
+ 	while ($hasMore) {
+ 		$result = $myCustomClient.getDelta($cursor = null, $pathPrefix);
+
+		$uidList = json_decode($result);
+		file_put_contents('delta.txt',$delta."\n".$uidList);
+		$hasMore = FALSE;
+ 	}
+/*
+def process_user(uid):
+    '''Call /delta for the given user ID and process any changes.'''
+
+    # OAuth token for the user
+    token = redis_client.hget('tokens', uid)
+
+    # /delta cursor for the user (None the first time)
+    cursor = redis_client.hget('cursors', uid)
+
+    client = DropboxClient(token)
+    has_more = True
+
+    while has_more:
+        result = client.delta(cursor)
+
+        for path, metadata in result['entries']:
+
+            # Ignore deleted files, folders, and non-markdown files
+            if (metadata is None or
+                    metadata['is_dir'] or
+                    not path.endswith('.md')):
+                continue
+
+            # Convert to Markdown and store as <basename>.html
+            html = markdown(client.get_file(path).read())
+            client.put_file(path[:-3] + '.html', html, overwrite=True)
+
+        # Update cursor
+        cursor = result['cursor']
+        redis_client.hset('cursors', uid, cursor)
+
+        # Repeat only if there's more to do
+        has_more = result['has_more']
+/**/
+
+
+
+
+
+
+
+
+
+
+
+
 
 if(isset($_GET['challenge'])){
 	verify();
-}else/*if (isset(getallheaders()['X-Dropbox-Signature']))*/ {
+}elseif (isset(getallheaders()['X-Dropbox-Signature'])) {
 	webhook();
+}else {
+	echo 'ERROR';
 }
-/*
-from hashlib import sha256
-import hmac
-import threading
 
-@app.route('/webhook', methods=['POST'])
-def webhook():
-   # '''Receive a list of changed user IDs from Dropbox and process each.'''
 
-    # Make sure this is a valid request from Dropbox
-    signature = request.headers.get('X-Dropbox-Signature')
-$POST['json'];
-    if signature != hmac.new(APP_SECRET, request.data, sha256).hexdigest():
-        abort(403)
 
-    for uid in json.loads(request.data)['delta']['users']:
-        # We need to respond quickly to the webhook request, so we do the
-        # actual work in a separate thread. For more robustness, it's a
-        # good idea to add the work to a reliable queue and process the queue
-        # in a worker process.
-        threading.Thread(target=process_user, args=(uid,)).start()
-    return ''
-/**/
 ?>
