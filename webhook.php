@@ -28,7 +28,7 @@ function webhook(){
 	$data = $_SERVER; 
 	$texte.= "\n\n".json_encode($data)."\n\n";/**/
 	
-	foreach(getallheaders() as $key=>$value)  {
+/*	foreach(getallheaders() as $key=>$value)  {
 	   $data .= $key.': '.$value."<br />";
 	}
 	$texte.= "\n\n".json_encode($data)."\n\n";/**/
