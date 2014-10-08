@@ -1,9 +1,7 @@
 <?php 
-
 function verify(){
 	echo $_GET['challenge'];
 }
-
 
 function webhook(){
 	#'''Receive a list of changed user IDs from Dropbox and process each.'''
@@ -18,18 +16,12 @@ function webhook(){
 	$json2 = (isset($POST['delta'])) ? $POST['delta'] : "pas de delta" ;
 	$json3 = (isset($POST['json'])) ? $POST['json'] : "pas de json" ;
 	$texte = $signature."\n\n".$json."\n\n".$json2."\n\n".$json3;
-
-$url = 'http://dev.recontact.me/webhook.php';
-
-$alpha =(get_headers($url));
-
-$beta= (get_headers($url, 1));
-
-$gamma = getallheaders();
-$texte.= "\n\n".json_encode($alpha);
-$texte.= "\n\n".json_encode($beta);
-$texte.= "\n\n".json_encode($gamma);
+	
+	$gamma = getallheaders();
+	$texte.= "\n\n".json_encode($gamma)."\n\n";
+	
 	file_put_contents('dblog.txt',$texte);
+	
 	//3 repondre rapidement
 	//je sais pas
 	
@@ -37,8 +29,7 @@ $texte.= "\n\n".json_encode($gamma);
 
 if(isset($_GET['challenge'])){
 	verify();
-}
-else/*if (isset($_GET['X-Dropbox-Signature']))*/ {
+}else/*if (isset($_GET['X-Dropbox-Signature']))*/ {
 	webhook();
 }
 /*
