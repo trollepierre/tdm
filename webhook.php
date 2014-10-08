@@ -22,7 +22,9 @@ function webhook(){
 	//2 recup du json
 	$json = $POST['json'];
 	echo $json;
-
+	$texte = $signature."\n<br/>\n".$json;
+	file_put_contents('dblog.txt',$texte);
+	
 	/*	  for uid in json.loads(request.data)['delta']['users']:
         # We need to respond quickly to the webhook request, so we do the
         # actual work in a separate thread. For more robustness, it's a
