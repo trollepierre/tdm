@@ -1,3 +1,18 @@
+Skip to content
+ This repository
+Explore
+Gist
+Blog
+Help
+trollepierre trollepierre
+ 
+4  Unwatch 
+  Star 0
+ Fork 2trollepierre/tdm PRIVATE
+ branch: dev  tdm / webhook.php
+trollepierretrollepierre just now Update webhook.php
+1 contributor
+82 lines (64 sloc)  2.532 kb RawBlameHistory   
 <?php 
 function verify(){
 	echo $_GET['challenge'];
@@ -12,6 +27,10 @@ function webhook(){
 	//comment vérifier la signature ? (non facultatif)
 
 	//2 recup du json
+	$data = file_get_contents("php://input"); 
+	file_put_contents('dblog.txt',$data);
+
+/*
 	$json = (isset($POST['data'])) ? $POST['data'] : "pas de data" ;
 	$json2 = (isset($POST['delta'])) ? $POST['delta'] : "pas de delta" ;
 	$json3 = (isset($POST['json'])) ? $POST['json'] : "pas de json" ;
@@ -25,17 +44,16 @@ function webhook(){
 	$data = file_get_contents("php://input"); 
 	$texte.= "\n\n".json_encode($data)."\n\n";/**/
 	
-	$data = $_SERVER; 
+/*	$data = $_SERVER; 
 	$texte.= "\n\n".json_encode($data)."\n\n";/**/
 	
-/*	foreach(getallheaders() as $key=>$value)  {
-	   $data .= $key.': '.$value."<br />";
+	/*$data="";
+	foreach(getallheaders() as $key=>$value)  {
+	   $data .= $key.': '.$value."";
 	}
 	$texte.= "\n\n".json_encode($data)."\n\n";/**/
 	
-	file_put_contents('dblog.txt',$texte);	
-	
-	//file_put_contents('dblog.txt','set data membete');	
+/*	file_put_contents('dblog.txt','set data membete');	
 	$data= HttpResponse::setData($texte);
 	
 	file_put_contents('dblog.txt','httpresponseget membete');	
@@ -45,7 +63,7 @@ function webhook(){
 	$data= http_get_request_body();
 	$texte.= "\n\n".json_encode($data)."\n\n";
 	/**/
-	file_put_contents('dblog.txt',$texte);
+	// file_put_contents('dblog.txt',$texte);
 	
 	//3 repondre rapidement
 	//je sais pas
