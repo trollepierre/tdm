@@ -9,7 +9,7 @@ function webhook(){
 	#'''Receive a list of changed user IDs from Dropbox and process each.'''
 
 	//1 recup de l'header et verifie si signature dropbox
-	$signature = $_GET['X-Dropbox-Signature'];
+	$signature = (isset($_GET['X-Dropbox-Signature'])) ? $_GET['X-Dropbox-Signature'] : "signature invalide" ;
 	// echo $signature;
 	//comment vérifier la signature ? (non facultatif)
 
@@ -17,7 +17,7 @@ function webhook(){
 	$json = (isset($POST['data'])) ? $POST['data'] : "pas de data" ;
 	$json2 = (isset($POST['delta'])) ? $POST['delta'] : "pas de delta" ;
 	$json3 = (isset($POST['json'])) ? $POST['json'] : "pas de json" ;
-	$texte = $signature."\n<br/>\n".$json."\n<br/>\n".$json2."\n<br/>\n".$json3;
+	$texte = $signature."\n\n".$json."\n\n".$json2."\n\n".$json3;
 	file_put_contents('dblog.txt',$texte);
 
 	//3 repondre rapidement
@@ -30,6 +30,8 @@ if(isset($_GET['challenge'])){
 }
 elseif (isset($_GET['X-Dropbox-Signature'])) {
 	webhook();
+}else{
+	echo 'pourquoi on appelle ?';
 }
 /*
 from hashlib import sha256
