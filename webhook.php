@@ -18,8 +18,16 @@ function webhook(){
 	$json2 = (isset($POST['delta'])) ? $POST['delta'] : "pas de delta" ;
 	$json3 = (isset($POST['json'])) ? $POST['json'] : "pas de json" ;
 	$texte = $signature."\n\n".$json."\n\n".$json2."\n\n".$json3;
-	file_put_contents('dblog.txt',$texte);
 
+$url = 'http://dev.recontact.me/webhook.php';
+
+$alpha =(get_headers($url));
+
+$beta= (get_headers($url, 1));
+
+$gamma = getallheaders();
+$texte.= "\n".$alpha."\n".$beta."\n\n\n".$gamma;
+	file_put_contents('dblog.txt',$texte);
 	//3 repondre rapidement
 	//je sais pas
 	
@@ -28,10 +36,8 @@ function webhook(){
 if(isset($_GET['challenge'])){
 	verify();
 }
-else{ //if (isset($_GET['X-Dropbox-Signature'])) {
+else/*if (isset($_GET['X-Dropbox-Signature']))*/ {
 	webhook();
-}/*else{
-	echo 'pourquoi on appelle ?';
 }
 /*
 from hashlib import sha256
