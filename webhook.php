@@ -1,18 +1,3 @@
-Skip to content
- This repository
-Explore
-Gist
-Blog
-Help
-trollepierre trollepierre
- 
-4  Unwatch 
-  Star 0
- Fork 2trollepierre/tdm PRIVATE
- branch: dev  tdm / webhook.php
-trollepierretrollepierre just now Update webhook.php
-1 contributor
-82 lines (64 sloc)  2.532 kb RawBlameHistory   
 <?php 
 function verify(){
 	echo $_GET['challenge'];
