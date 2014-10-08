@@ -1,4 +1,6 @@
 <?php 
+use \Dropbox as dbx;
+
 function verify(){
 	echo $_GET['challenge'];
 }
@@ -8,102 +10,69 @@ function webhook(){
 
 	//1 recup de l'header et verifie si signature dropbox
 	$signature = (isset(getallheaders()['X-Dropbox-Signature'])) ? getallheaders()['X-Dropbox-Signature'] : "signature invalide" ;
-	// echo $signature;
 	//comment vérifier la signature ? (non facultatif)
 
 	//2 recup du json
 	$data = file_get_contents("php://input"); 
 	$uidList = json_decode($data);
-	file_put_contents('dblog.txt',$data."\n".$uidList);
+	// file_put_contents('dblog.txt',$data."\n".$uidList);
 
 	//3 repondre rapidement
-	foreach ($uidList as $key => $uid) {
-		echo 'Lancer process_user avec en arg uid';
-		# threading.Thread(target=process_user, args=(uid,)).start()
-		# code...
-	}
-	
+	echo 'Lancement process_user';
+	process_user();
+	//nb  : on n'utilise pas les uid donc cette fonction pourrait se résumer en process_user();
 }
 
-function process_user($uid){
-	#'''Call /delta for the given user ID and process any changes.'''
-	
-	//1 identification ?
-	/* # OAuth token for the user token = redis_client.hget('tokens', uid)
-    # /delta cursor for the user (None the first time) cursor = redis_client.hget('cursors', uid)/***/
+function delta($myCustomClient ,$cursortxt, $url, $pathPrefix){
+	$cursor=file_get_contents($cursortxt);
+	// echo $cursor;
+	$deltaPage = $myCustomClient->getDelta($cursor,$pathPrefix);
+	$numAdds = 0;
+	$numRemoves = 0;
+	foreach ($deltaPage["entries"] as $entry) {
+	    list($lcPath, $metadata) = $entry;
+	    if ($metadata === null) {
+	        echo "- $lcPath\n";
+	        $numRemoves++;
+	    } else {
+	        echo "+ $lcPath\n";
+	        $numAdds++;
+	    }
+	    $id = explode("/", substr($lcPath, strlen($pathPrefix)+1, 4))[0]; //create array separate by *
+		echo $id;
+	}
+	file_put_contents($cursortxt,$deltaPage["cursor"]);
 
-	//2  Suite
-#    client = DropboxClient(token)
-#    has_more = True
+	if($numAdds+$numRemoves>0){
+		 header('Location: lib/ajax/'.$url.'.php?id='.$id);
+	}
+}
+
+
+function process_user(){
+	#'''Call /delta for the given user ID and process any changes.'''
 // creation d'un client dropbox 
 	include("lib/dropboxAPI.php");
 	$myCustomClient = new dbx\Client($accessToken, $clientIdentifier);
 
- 	$hasMore = TRUE;
- 	$pathPrefix="/Chargements appareil photo/ArticleTdm/";
- 	while ($hasMore) {
- 		$result = $myCustomClient.getDelta($cursor = null, $pathPrefix);
+	//Articles
+ 	$pathPrefix="/Chargements appareil photo/ArticleTdm";
+ 	$cursortxt = "lib/cursor.txt";
+ 	$url="url";
+ 	delta($myCustomClient ,$cursortxt, $url, $pathPrefix);
 
-		$uidList = json_decode($result);
-		file_put_contents('delta.txt',$delta."\n".$uidList);
-		$hasMore = FALSE;
- 	}
-/*
-def process_user(uid):
-    '''Call /delta for the given user ID and process any changes.'''
-
-    # OAuth token for the user
-    token = redis_client.hget('tokens', uid)
-
-    # /delta cursor for the user (None the first time)
-    cursor = redis_client.hget('cursors', uid)
-
-    client = DropboxClient(token)
-    has_more = True
-
-    while has_more:
-        result = client.delta(cursor)
-
-        for path, metadata in result['entries']:
-
-            # Ignore deleted files, folders, and non-markdown files
-            if (metadata is None or
-                    metadata['is_dir'] or
-                    not path.endswith('.md')):
-                continue
-
-            # Convert to Markdown and store as <basename>.html
-            html = markdown(client.get_file(path).read())
-            client.put_file(path[:-3] + '.html', html, overwrite=True)
-
-        # Update cursor
-        cursor = result['cursor']
-        redis_client.hset('cursors', uid, cursor)
-
-        # Repeat only if there's more to do
-        has_more = result['has_more']
-/**/
-
-
-
-
-
-
-
-
-
-
-
-
+ 	//Challenge
+	$pathPrefix="/Chargements appareil photo/ChallengeTdm";
+ 	$cursortxt = "lib/cursorC.txt";
+ 	$url="challenge_update";
+	delta($myCustomClient , $cursortxt, $url, $pathPrefix);
+}
 
 if(isset($_GET['challenge'])){
 	verify();
 }elseif (isset(getallheaders()['X-Dropbox-Signature'])) {
 	webhook();
 }else {
-	echo 'ERROR';
+	process_user();
 }
-
-
-
 ?>
