@@ -21,6 +21,9 @@ function webhook(){
 	
 	$texte.= "\n\n".json_encode($allHeaders)."\n\n"."la signature est ".$signature;
 	file_put_contents('dblog.txt','httpresponse membete');	
+	$data= HttpResponse::status();
+	
+	file_put_contents('dblog.txt','httpresponseget membete');	
 	$data= HttpResponse::getData();
 	$texte.= "\n\n".json_encode($data)."\n\n";
 file_put_contents('dblog.txt','httpget membete');	
