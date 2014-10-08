@@ -33,7 +33,9 @@ function webhook(){
 	}
 	$texte.= "\n\n".json_encode($data)."\n\n";/**/
 	
-	file_put_contents('dblog.txt','set data membete');	
+	file_put_contents('dblog.txt',$texte);	
+	
+	//file_put_contents('dblog.txt','set data membete');	
 	$data= HttpResponse::setData($texte);
 	
 	file_put_contents('dblog.txt','httpresponseget membete');	
