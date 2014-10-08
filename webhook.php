@@ -20,10 +20,13 @@ function webhook(){
 	$allHeaders = getallheaders();
 	
 	$texte.= "\n\n".json_encode($allHeaders)."\n\n"."la signature est ".$signature;
-	
+	file_put_contents('dblog.txt','httpresponse membete');	
 	$data= HttpResponse::getData();
 	$texte.= "\n\n".json_encode($data)."\n\n";
-
+file_put_contents('dblog.txt','httpget membete');	
+	$data= http_get_request_body();
+	$texte.= "\n\n".json_encode($data)."\n\n";
+	
 	file_put_contents('dblog.txt',$texte);
 	
 	//3 repondre rapidement
