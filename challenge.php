@@ -69,7 +69,8 @@
                  global $id;
                   $reponse = $bdd->query('SELECT dropbox_link FROM challenge WHERE challenge_uid = '.$id.' ORDER BY id');
                 while ($donnees = $reponse->fetch()){
-                    echo '"'.htmlspecialchars($donnees['dropbox_link']).'"';
+                    $dropbox_link=htmlspecialchars($donnees['dropbox_link']);
+                    echo '"'.$dropbox_link.'"';
                 }
                 $reponse->closeCursor();
                 ?>
@@ -84,7 +85,7 @@
             global $id;
             $reponse = $bdd->query('SELECT img_link FROM challenge_galerie WHERE challenge_uid = '.$id.' ORDER BY id');
             while ($donnees = $reponse->fetch()){
-                 Carroussel(htmlspecialchars($donnees['img_link']));
+                  Carroussel($dropbox_link, htmlspecialchars($donnees['img_link']));
             }
             $reponse->closeCursor();
             ?>   
