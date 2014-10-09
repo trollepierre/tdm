@@ -1,5 +1,11 @@
 <?php   
     include("lib/creerBdd.php");
+    $reponse = $bdd->query('SELECT count(*) AS count FROM article');
+    while ($donnees = $reponse->fetch()){
+        $count= htmlspecialchars($donnees['count']) ;
+    }
+    $id = (isset($_GET['id'])) ? htmlspecialchars($_GET['id']) : $count ;    
+    $reponse->closeCursor();
     require("w/0fonctions.php");
     require("w/1head.php");
     echo '<style type="text/css">';
@@ -44,14 +50,15 @@
         </div>
          <div class="flex-slider carousel">
             <ul class="slides">
-                <?php 
-                include("lib/creerBdd.php");
-                $reponse = $bdd->query('SELECT nom, name,article_uid,img_link FROM article ORDER BY article_uid DESC');
-                while ($donnees = $reponse->fetch()){
-                    $nome = ($lang==='fr') ? 'nom' : 'name' ;
-                    ImgCarroussel(htmlspecialchars($donnees[$nome]),htmlspecialchars($donnees['article_uid']),'article', htmlspecialchars($donnees['img_link']));
-                }
-                $reponse->closeCursor();
+               <?php 
+               include("lib/creerBdd.php");
+$reponse = $bdd->query('SELECT nom, name,article_uid,img_link FROM article ORDER BY article_uid DESC');
+while ($donnees = $reponse->fetch())
+    {
+       $nome = ($lang==='fr') ? 'nom' : 'name' ;
+        ImgCarroussel(htmlspecialchars($donnees[$nome]),htmlspecialchars($donnees['article_uid']),'article', htmlspecialchars($donnees['img_link']));
+    }
+    $reponse->closeCursor();
                 ?>
             </ul>
         </div>
@@ -60,6 +67,7 @@
                  <h1> <?php echo VLAPDLA; ?> </h1>
             </a>
         </div>
+
         <div class="flex-slider carousel">
             <ul class="slides">
             <?php
@@ -76,5 +84,6 @@
     </div>
     <div id="caracteristiques"></div><!--INDISPENSABLE : WHY?-->
     <div class="galery" id="gallery"></div>
+
 <?php require("w/8footer.php");?>
 <?php require("w/9end.php");?>

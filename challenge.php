@@ -1,5 +1,11 @@
 <?php   
     include("lib/creerBdd.php");
+    $reponse = $bdd->query('SELECT count(*) AS count FROM challenge');
+    while ($donnees = $reponse->fetch()){
+        $count= htmlspecialchars($donnees['count']) ;
+    }
+    $id = (isset($_GET['id'])) ? htmlspecialchars($_GET['id']) : $count ;    
+    $reponse->closeCursor();
     require("w/0fonctions.php");
     require("w/1head.php");
     echo '<style type="text/css">';
