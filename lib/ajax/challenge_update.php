@@ -24,7 +24,7 @@ while ($donnees = $reponse->fetch()){
     }
 $reponse->closeCursor(); // Termine le traitement de la requête
 
-$req = $bdd->prepare('INSERT INTO challenge(challenge_uid, nom, name, img_link) VALUES(:challengeUid, :nom, :name, :img0)');
+$req = $bdd->prepare('INSERT INTO challenge(challenge_uid, nom, name, img_link, dropbox_link) VALUES(:challengeUid, :nom, :name, :img0, dropbox_link)');
 $reqG = $bdd->prepare('INSERT INTO challenge_galerie(challenge_uid, img_link) VALUES(:challengeUid, :urlGallery)');
 $reqI = $bdd->prepare('INSERT INTO challenge_contenu(challenge_uid, position, titre, soustitre, paragraphe, title, subtitle, paragraph, img_link) VALUES(:challengeUid, :position, :titre, :soustitre , :paragraphe, :title, :subtitle , :paragraph, :img)');
 
@@ -36,8 +36,11 @@ include("lib/dropboxAPI.php");
 $myCustomClient = new dbx\Client($accessToken, $clientIdentifier);
 
 
-//Francais
 $basePath="/Chargements appareil photo/ChallengeTdm/".$id."";
+//Dropbox_link
+$dropbox_link=$myCustomClient->createShareableLink($basePath);
+
+//Francais
 $query = "r.php";
 $returnSearchFileName=$myCustomClient->searchFileNames($basePath, $query);
 foreach ($returnSearchFileName as $idFake => $texte) {
@@ -90,7 +93,7 @@ foreach ($returnSearchFileName as $idFake => $image) {
             if(substr($value, -5)==0) {
               $img0 = $myCustomClient->createShareableLink($value);
               $img0[strlen($img0)-1]='1';
-              $req->execute(array( 'challengeUid' => $challengeUid, 'nom' => $nom, 'name' => $name, 'img0' => $img0));
+              $req->execute(array( 'challengeUid' => $challengeUid, 'nom' => $nom, 'name' => $name, 'img0' => $img0, 'dropbox_link' => $dropbox_link));
           }else{
             $position= intval(substr($value, -5,1));
             $titre=$convert[3*$position-2];

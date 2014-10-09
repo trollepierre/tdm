@@ -63,7 +63,17 @@ while ($donnees = $reponse->fetch())
             </ul>
         </div>
         <div class="ourArticles">
-           <a href="">
+            <a href=
+                <?php 
+                include("lib/creerBdd.php");
+                 global $id;
+                  $reponse = $bdd->query('SELECT dropbox_link FROM challenge WHERE challenge_uid = '.$id.' ORDER BY id');
+                while ($donnees = $reponse->fetch()){
+                    echo '"'.htmlspecialchars($donnees['dropbox_link']).'"';
+                }
+                $reponse->closeCursor();
+                ?>
+                >
                  <h1> <?php echo VLAPDLA; ?> </h1>
             </a>
         </div>
