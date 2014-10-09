@@ -20,7 +20,7 @@
 			$DESTINATION_TEXT = array ("Rio de Janeiro","Sao Paulo","les chutes de l'Iguazu");
 				break;	
 			case 'argentina':
-			$DESTINATION_TEXT = array ("les chutes l'Iguazu","les étangs de l'Iber&aacute;",'Resistencia','Salta');
+			$DESTINATION_TEXT = array ("les chutes l'Iguazu","les étangs de l'Iberà",'Resistencia','Salta');
 				break;
 			case 'paraguay':
 			$DESTINATION_TEXT = array ("Trinidad");
@@ -41,16 +41,16 @@
 			$DESTINATION_TEXT = array ("Auckland", "le Lac Tekapo", "le Mont Cook", "Queenstown", "Milford Sound", "le Haast Pass");
 				break;
 			case 'australia':
-			$DESTINATION_TEXT = array (  "Sydney", "Les Montagnes Bleus", "Melbourne", "Brisbane", "La Grande Barri&egrave;re de Corail");
+			$DESTINATION_TEXT = array (  "Sydney", "Les Montagnes Bleus", "Melbourne", "Brisbane", "La Grande Barrière de Corail");
 				break;
 			case 'asia':
-			$DESTINATION_TEXT = array ("Singapour","l'Indonésie","la Tha&iuml;lande","le Cambodge","le Vi&ecirc;tnam","le Chine","le Népal","l'Inde","les Emirats Arabes Unis");
+			$DESTINATION_TEXT = array ("Singapour","l'Indonésie","la Thaïlande","le Cambodge","le Viêt Nam","le Chine","le Népal","l'Inde","les Emirats Arabes Unis");
 				break;
 			case 'indonesia':
 			$DESTINATION_TEXT = array ("Bali", "Gili Islands", "Komodo", "Borobudur", "le Mont Bromo");
 				break;
 			case 'indochina':
-			$DESTINATION_TEXT = array (  "Bangkok", "Angkor", "Phnom Penh", "H&ocirc;-Chi-Minh-Ville", "Hano&iuml;", "la Baie de Ha Long");
+			$DESTINATION_TEXT = array (  "Bangkok", "Angkor", "Phnom Penh", "Hô-Chi-Minh-Ville", "Hano&iuml;", "la Baie de Ha Long");
 				break;
 			case 'china':
 			$DESTINATION_TEXT = array ( "Sichuan", "Jiuzhaigou", "Guilin", "le Mont Huang","La Cité Interdite - Pékin", "La Grande Muraille de Chine", "Zhangye","Lhassa", "Le Palais Potala", "Paysages Tibétains", "Le Mont Everest");
@@ -74,10 +74,10 @@
 			$DESTINATION_TEXT = array ("Angkor","Phnom Penh");
 				break;
 			case 'vietnam':
-			$DESTINATION_TEXT = array ("H&ocirc;-Chi-Minh-Ville","Hano&iuml;","la Baie de Ha Long");
+			$DESTINATION_TEXT = array ("Hô-Chi-Minh-Ville","Hanoï","la Baie de Ha Long");
 				break;
 			default:
-			$DESTINATION_TEXT = array (  "Vous &ecirc;tes Perdu ? Désolé cette page n'existe pas.");
+			$DESTINATION_TEXT = array (  "Vous êtes Perdu ? Désolé cette page n'existe pas.");
 				break;
 		}
 	}else{ 
