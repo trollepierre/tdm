@@ -1590,9 +1590,24 @@ header ul ul li a, header ul ul li a:visited {
    #beno{display: none;}
     #piro{display: none;}
     .fixed-top #left-border {width: 100%;}
-    .timeline{display:none;}
+    /*.timeline{display:none;}
     .mobile-content{
-        display:block;}
+        display:block;}*/
+    .timeline .timeline-controller{
+        display: none;
+    }    
+    .clocks{
+        display: none !important;
+    }    
+    .modes{
+        width: 100% !important;
+    }
+    .mode{
+        width: 70% !important;
+    }
+    .mode1{
+        padding-top: 401px !important;
+    }
     .mobile-content .flexslider{
         background: #389bd3;
         height: 430px;
@@ -1657,7 +1672,9 @@ header ul ul li a, header ul ul li a:visited {
 header ul ul li a, header ul ul li a:visited {
     font-size: 10px;
 }
-    
+    .mode{
+        width: 70% !important;
+    }
     .designlicks{display: none;}
     .designlicks2{display: none;}
     .designlicks3{display: none;}
@@ -1740,9 +1757,9 @@ header ul ul li a, header ul ul li a:visited {
         height: auto;
     }
 
-    .scroller {
+    /*.scroller {
         display: none;
-    }
+    }*/
     .produit {
         width: 100%;
     }
