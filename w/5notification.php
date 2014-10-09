@@ -47,12 +47,12 @@
 							    break;
 							    
 							    case 'oceania': 
-									$GMAP = "https://www.google.com/maps/d/edit?mid=zXLF-N9yPKCg.kM0szFZUMN_Q";
+									$GMAP = "";
 									$MESSAGE2 = OCEANIA;
 							    break;
 							    
 							    case 'asia':
-							        $GMAP = "https://www.google.com/maps/d/edit?mid=zXLF-N9yPKCg.k5LAq2qsz5_8";
+							        $GMAP = "https://goo.gl/maps/8X5Fp";
 							        $MESSAGE2 = ASIA;
 							    break;
 							    
