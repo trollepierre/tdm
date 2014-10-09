@@ -7,11 +7,17 @@
 </style>
 </head>
 <body class="home page page-id-4 page-template page-template-page-home-php custom-background">
-<?php require("w/2lightbox.php");?>
-<?php require("w/3intro.php");?>
- <!-- PAGE 1/2  ===========================================================================-->
-<?php require("w/4headerScroller.php");?>
-<?php require("w/5notification.php");?>
+<?php 
+    require("w/2lightbox.php");
+    if ($lang=='fr') {           
+        require("w/3intro.php");
+    }  else {                      
+        require("w/3introen.php");
+    }
+#  PAGE 1/2  ===========================================================================-->
+    require("w/4headerScroller.php");
+    require("w/5notification.php");
+    ?>
 
     <div class="mobile-content">
         <div class="flexslider">
@@ -83,26 +89,10 @@ while ($donnees = $reponse->fetch())
     }
     $reponse->closeCursor();
  ?>
-                
             </ul>
         </div>
     </div>
-<!--    <div class="ourArticles">
-        <h1>
-            <a class="btn btn-lg btn-primary" href="https://docs.google.com/forms/d/1haLT0oeLTtqSajX0dWijHWcxbW49N886hrpj5s_EtQQ/viewform" role="button" target="_blank"> 
-                <?php echo PYC; ?>  
-            </a> 
-             <?php echo OU; ?>  
-            <a class="btn btn-lg btn-primary" href="https://docs.google.com/spreadsheets/d/1gQNjOhUrOleH3qTK2RYkR_Fit1rnkjLZvfQJMd0tMIA/edit#gid=1537311595" role="button" target="_blank">
-                <?php echo VTEC; ?> 
-        </a>
-        </h1>
-    </div>-->
-
- 
-        <div id="caracteristiques"></div><!--INDISPENSABLE : WHY?-->
-  
-
+    <div id="caracteristiques"></div><!--INDISPENSABLE : WHY?-->
     <div class="galery" id="gallery">
         <div class="inside">
             <div class="slider">
