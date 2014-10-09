@@ -11,9 +11,11 @@ function ImgCarroussel($name,$idArticles,$type,$imglink){
             </li>';
 }
 
-function Carroussel($imglink){
-  $imglink2=$imglink;
-  $imglink2[strlen($imglink)-1]='0';
+function Carroussel($dropbox_link, $imglink){
+  $convert = explode("/", $imglink); //create array separate by #
+  $convert=$convert[count($convert)-1];
+  $nomImage = substr($convert, 0, -5);
+  $imglink2 = $dropbox_link . '#lh:null-'.$nomImage;
     echo    '<li>
                 <a class="article-name" href="'.$imglink2.'">
                     <img src="'.$imglink.'" alt="One Picture" /> <br/>
