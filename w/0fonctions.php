@@ -11,6 +11,16 @@ function ImgCarroussel($name,$idArticles,$type,$imglink){
             </li>';
 }
 
+function Carroussel($imglink){
+  $imglink2=$imglink;
+  $imglink2[strlen($imglink)-1]='0';
+    echo    '<li>
+                <a class="article-name" href="'.$imglink2.'">
+                    <img src="'.$imglink.'" alt="One Picture" /> <br/>
+                </a>
+            </li>';
+}
+
 function DestinationTime(){
    require("destination/destination_img.php");
   foreach ($DESTINATION_TEXT as $key => $value) {

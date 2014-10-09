@@ -1,24 +1,5 @@
 <?php   
     include("lib/creerBdd.php");
-    $reponse = $bdd->query('SELECT count(*) AS count FROM article');
-    while ($donnees = $reponse->fetch()){
-        $count= htmlspecialchars($donnees['count']) ;
-    }
-    $id = (isset($_GET['id'])) ? htmlspecialchars($_GET['id']) : $count ;    
-    if ($id>$count) {
-        //launch url.php?id=$id
-        ?>
-        <script>
-  /*          alert("Nouvel article : Chargement des photos en cours. \nMerci de patienter.");
-            var id = <?=$id?>;
-//Nico : Ce get ne marche pas
-            $.get( "lib/ajax/url.php?id="+ id, function( data ) {
-            alert( "Merci d'avoir patienté" ); 
-            });*/
-        </script>
-    <?php
-    }
-    $reponse->closeCursor();
     require("w/0fonctions.php");
     require("w/1head.php");
     echo '<style type="text/css">';
@@ -63,15 +44,14 @@
         </div>
          <div class="flex-slider carousel">
             <ul class="slides">
-               <?php 
-               include("lib/creerBdd.php");
-$reponse = $bdd->query('SELECT nom, name,article_uid,img_link FROM article ORDER BY article_uid DESC');
-while ($donnees = $reponse->fetch())
-    {
-       $nome = ($lang==='fr') ? 'nom' : 'name' ;
-        ImgCarroussel(htmlspecialchars($donnees[$nome]),htmlspecialchars($donnees['article_uid']),'article', htmlspecialchars($donnees['img_link']));
-    }
-    $reponse->closeCursor();
+                <?php 
+                include("lib/creerBdd.php");
+                $reponse = $bdd->query('SELECT nom, name,article_uid,img_link FROM article ORDER BY article_uid DESC');
+                while ($donnees = $reponse->fetch()){
+                    $nome = ($lang==='fr') ? 'nom' : 'name' ;
+                    ImgCarroussel(htmlspecialchars($donnees[$nome]),htmlspecialchars($donnees['article_uid']),'article', htmlspecialchars($donnees['img_link']));
+                }
+                $reponse->closeCursor();
                 ?>
             </ul>
         </div>
@@ -80,8 +60,6 @@ while ($donnees = $reponse->fetch())
                  <h1> <?php echo VLAPDLA; ?> </h1>
             </a>
         </div>
-        
-<?php if (TRUE) { ?>
         <div class="flex-slider carousel">
             <ul class="slides">
             <?php
@@ -89,45 +67,14 @@ while ($donnees = $reponse->fetch())
             global $id;
             $reponse = $bdd->query('SELECT img_link FROM article_galerie WHERE article_uid = '.$id.' ORDER BY id');
             while ($donnees = $reponse->fetch()){
-                // $dest='img.jpg';
-                // make_thumb(htmlspecialchars($donnees['img_link']),$dest);
-                // echo '<li><img src="'.$dest.'" alt="Picture Album" /></li>';   
-                echo '<li><img src="'.htmlspecialchars($donnees['img_link']).'" alt="Picture Album" /></li>';   
+                Carroussel(htmlspecialchars($donnees['img_link']));
             }
             $reponse->closeCursor();
             ?>   
             </ul>
         </div>
-<?php } else{ ?>
-        <div id="galery-article" class="carousel">
-            <ul class="slides">
-              <script>
-                    alert("Chargement des photos. Merci de patienter.");
-                    var id = <?=$id?>;
-                    $.getJSON( "lib/ajax/url.php?id="+ id, function( data ) {
-                    alert( "Merci d'avoir patienté" ); 
-                    var items = [];
-                      $.each( data, function( key, val ) {
-                         items.push( '<li><img src="'+val+'" alt="Picture Album" /></li>')
-                      });
-                    $("#galery-article > ul").append(items.join(""));
-                    $('#galery-article').addClass("flex-slider");
-                    $('#galery-article').flexslider({animation:"slide",animationLoop:true,itemWidth:210,itemMargin:5,minItems:2,maxItems:5});
-                    $('#galery-article').show();
-                    });
-                </script>
-            </ul>
-        </div> 
-<?php } ?>
     </div>
-    
-
-
-    
-
     <div id="caracteristiques"></div><!--INDISPENSABLE : WHY?-->
-
     <div class="galery" id="gallery"></div>
-
 <?php require("w/8footer.php");?>
 <?php require("w/9end.php");?>
