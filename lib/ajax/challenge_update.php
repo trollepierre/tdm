@@ -24,7 +24,7 @@ while ($donnees = $reponse->fetch()){
     }
 $reponse->closeCursor(); // Termine le traitement de la requête
 
-$req = $bdd->prepare('INSERT INTO challenge(challenge_uid, nom, name, img_link, dropbox_link) VALUES(:challengeUid, :nom, :name, :img0, dropbox_link)');
+$req = $bdd->prepare('INSERT INTO challenge(challenge_uid, nom, name, img_link, dropbox_link) VALUES(:challengeUid, :nom, :name, :img0, :dropbox_link)');
 $reqG = $bdd->prepare('INSERT INTO challenge_galerie(challenge_uid, img_link) VALUES(:challengeUid, :urlGallery)');
 $reqI = $bdd->prepare('INSERT INTO challenge_contenu(challenge_uid, position, titre, soustitre, paragraphe, title, subtitle, paragraph, img_link) VALUES(:challengeUid, :position, :titre, :soustitre , :paragraphe, :title, :subtitle , :paragraph, :img)');
 

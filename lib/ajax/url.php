@@ -24,7 +24,7 @@ while ($donnees = $reponse->fetch()){
     }
 $reponse->closeCursor(); // Termine le traitement de la requête
 
-$req = $bdd->prepare('INSERT INTO article(article_uid, nom, name, img_link, dropbox_link) VALUES(:articleUid, :nom, :name, :img0, dropbox_link)');
+$req = $bdd->prepare('INSERT INTO article(article_uid, nom, name, img_link, dropbox_link) VALUES(:articleUid, :nom, :name, :img0, :dropbox_link)');
 $reqG = $bdd->prepare('INSERT INTO article_galerie(article_uid, img_link) VALUES(:articleUid, :urlGallery)');
 $reqI = $bdd->prepare('INSERT INTO article_contenu(article_uid, position, titre, soustitre, paragraphe, title, subtitle, paragraph, img_link) VALUES(:articleUid, :position, :titre, :soustitre , :paragraphe, :title, :subtitle , :paragraph, :img)');
 

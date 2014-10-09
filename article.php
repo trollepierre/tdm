@@ -67,7 +67,7 @@ while ($donnees = $reponse->fetch())
                 <?php 
                 include("lib/creerBdd.php");
                  global $id;
-                  $reponse = $bdd->query('SELECT dropbox_link FROM challenge WHERE challenge_uid = '.$id.' ORDER BY id');
+                  $reponse = $bdd->query('SELECT dropbox_link FROM article WHERE article_uid = '.$id.' ORDER BY id');
                 while ($donnees = $reponse->fetch()){
                     echo '"'.htmlspecialchars($donnees['dropbox_link']).'"';
                 }
