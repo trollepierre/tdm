@@ -20,7 +20,7 @@ var interpolateTime=function(start,finish,position){var diff=finish.getTime()-st
                 imgIconEl.onload = function (){
                     this.width = this.width * 2;
                     this.height = this.height * 2;
-                 document.getElementById('imgIconEl').appendChild(this);   
+                 iconEl.append(imgIconEl);
                 }
 // 
 	iconEl.className+='mode-icon mode-icon'+current.data('bg');controllerContainer.append(iconEl);setTimeout(function(){bgEl.className+=' show';},20);setTimeout(function(){iconEl.className+=' show';},300);}
