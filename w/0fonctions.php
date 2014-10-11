@@ -62,7 +62,7 @@ require("destination/destination_img.php");
           height: 532px;
           width: 416px;
           border: 1px solid black;
-          background:url("http://www.recontact.me/img/dest_img/'.$value.'.jpg");
+          /*background:url("http://www.recontact.me/img/dest_img/'.$value.'.jpg");*/
           background-size: auto 530px;
           background-repeat: no-repeat;
           background-position: center;
