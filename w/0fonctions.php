@@ -12,15 +12,18 @@ function ImgCarroussel($name,$idArticles,$type,$imglink){
 }
 
 function Carroussel($dropbox_link, $imglink){
-  $convert = explode("/", $imglink); //create array separate by #
+  $convert = explode("/", $imglink); 
   $convert=$convert[count($convert)-1];
   $nomImage = substr($convert, 0, -5);
   $imglink2 = $dropbox_link . '#lh:null-'.$nomImage;
-    echo    '<li>
+  if (substr($imglink, -8,3) === "mp4" ) {
+    $imglink = "http://www.recontact.me/img/btn-play.png";
+  }
+  echo    '<li>
                 <a class="article-name" href="'.$imglink2.'">
                     <img src="'.$imglink.'" alt="One Picture" /> <br/>
                 </a>
-            </li>';
+            </li>';     
 }
 
 function RemplirWindowImage($article){

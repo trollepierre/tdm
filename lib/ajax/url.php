@@ -71,7 +71,11 @@ $convert_en = explode("*", $data); //create array separate by *
 $name = $convert_en[0];
 
 $query = "jpg";
-$returnSearchFileName=$myCustomClient->searchFileNames($basePath, $query);
+$returnSearchFileName1=$myCustomClient->searchFileNames($basePath, $query);
+$query = "mp4";
+$returnSearchFileName2=$myCustomClient->searchFileNames($basePath, $query);
+$returnSearchFileName= array_merge($returnSearchFileName1,$returnSearchFileName2);
+print_r($returnSearchFileName2);
 
 //on récup le path de chaque file récupéré
 // et on en fait une url publique;
@@ -113,27 +117,28 @@ function convert($convert, $convert_en,$position){
 foreach ($returnSearchFileName as $idFake => $image) {
   foreach ($image as $key => $value) {
         if($key=='path'){
-          if(substr($value,-9,3)=='img'){
+          if(substr($value,-9,3)=='img'){//cas imgXX.jpg
             $position= intval(substr($value, -6,2));
             convert($convert,$convert_en,$position);
             $img=$myCustomClient->createShareableLink($value);
             $img[strlen($img)-1]='1';
             $reqI->execute(array( 'articleUid' => $articleUid, 'position' => $position,'titre' => $titre,'soustitre' => $soustitre, 'paragraphe' => $paragraphe, 'title' => $title,'subtitle' => $subtitle, 'paragraph' => $paragraph, 'img' => $img));
-           }else if(substr($value,-9,4)== "/img"){
-            if(substr($value, -5)==0) {
+           }else if(substr($value,-9,4)== "/img"){//cas imgX.jpg
+            if(substr($value, -5)==0) {//cas img0.jpg
               $img0 = $myCustomClient->createShareableLink($value);
               $img0[strlen($img0)-1]='1';
               $req->execute(array( 'articleUid' => $articleUid, 'nom' => $nom, 'name' => $name, 'img0' => $img0, 'dropbox_link' => $dropbox_link));
-          }else{
+            }else{
             $position= intval(substr($value, -5,1));
             convert($convert,$convert_en,$position);
             $img=$myCustomClient->createShareableLink($value);
             $img[strlen($img)-1]='1';
             $reqI->execute(array( 'articleUid' => $articleUid, 'position' => $position,'titre' => $titre,'soustitre' => $soustitre, 'paragraphe' => $paragraphe, 'title' => $title,'subtitle' => $subtitle, 'paragraph' => $paragraph, 'img' => $img));
             }
-          }
-          else{
+          }else{// gallery  name alea video
+             echo $value;
              $urlGallery= $myCustomClient->createShareableLink($value);
+             echo $urlGallery;
            $urlGallery[strlen($urlGallery)-1]='1';
            $reqG->execute(array( 'articleUid' => $articleUid, 'urlGallery' => $urlGallery));
           }
