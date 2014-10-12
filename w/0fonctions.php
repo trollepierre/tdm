@@ -23,6 +23,20 @@ function Carroussel($dropbox_link, $imglink){
             </li>';
 }
 
+function RemplirWindowImage($article){
+  include("lib/creerBdd.php");
+  global $id;
+  $reponse = $bdd->query('SELECT img_link FROM '.$article.'_contenu WHERE '.$article.'_uid = '.$id.' ORDER BY position');
+  // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
+  while ($donnees = $reponse->fetch())
+    {
+      echo 'alert("I am an alert box!");
+      window.images = '.htmlspecialchars($donnees['img_link']).';';
+    }
+  // window.images = ["http://image1", "http://........."];
+    $reponse->closeCursor();
+}
+
 function DestinationTime(){
    require("destination/destination_img.php");
   foreach ($DESTINATION_TEXT as $key => $value) {
@@ -75,6 +89,9 @@ require("destination/destination_img.php");
         ;
   }
 }
+
+
+
 
 /*
 * gère le text de la timeline des articles
@@ -147,7 +164,7 @@ while ($donnees = $reponse->fetch())
     echo '.timeline .timeline-controller .mode-icon'. htmlspecialchars($donnees['position']).'{
             height:600px;
             width:468px;
-           background:url("'.htmlspecialchars($donnees['img_link']).'");
+           /*background:url("'.htmlspecialchars($donnees['img_link']).'");*/
             background-size: auto 530px;
             background-repeat: no-repeat;
             background-position: center;
