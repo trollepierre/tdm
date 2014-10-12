@@ -17,13 +17,10 @@ var interpolateTime=function(start,finish,position){var diff=finish.getTime()-st
 				var images;
 				if (window.images) {
 				    images = window.images;
-				    alert('gégé');
 				} else {
-				    alert('c est pas bon');
 				    images = ["http://www.recontact.me/img/dest_img/southAmerica.jpg",  'http://www.google.com/intl/en_ALL/images/logo.gif', "http://www.recontact.me/img/dest_img/southAmerica.jpg"];
 				}				
-				// var images = ["http://www.recontact.me/img/dest_img/southAmerica.jpg",  'http://www.google.com/intl/en_ALL/images/logo.gif', "http://www.recontact.me/img/dest_img/southAmerica.jpg"];
-                iconEl.id += 'imgIconEl';
+			    iconEl.id += 'imgIconEl';
                 var imgIconEl = new Image();
                 imgIconEl.src = images[current.data('bg') - 1]; 
                 imgIconEl.onload = function (){

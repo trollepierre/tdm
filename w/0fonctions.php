@@ -30,8 +30,7 @@ function RemplirWindowImage($article){
   // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
   while ($donnees = $reponse->fetch())
     {
-      echo "alert('I am an alert box!');
-      window.images = '".htmlspecialchars($donnees['img_link'])."';
+      echo "window.images = '".htmlspecialchars($donnees['img_link'])."';
       ";
     }
   // window.images = ["http://image1", "http://........."];
@@ -77,7 +76,7 @@ require("destination/destination_img.php");
           height: 532px;
           width: 416px;
           border: 1px solid black;
-          /*background:url("http://www.recontact.me/img/dest_img/'.$value.'.jpg");*/
+          
           background-size: auto 530px;
           background-repeat: no-repeat;
           background-position: center;

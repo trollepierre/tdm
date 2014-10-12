@@ -8,10 +8,8 @@
     $reponse->closeCursor();
     require("w/0fonctions.php");
 ?>
-     <script type="text/javascript">
-        window.images = ["http://www.recontact.me/img/dest_img/asia.jpg",  'http://www.google.com/intl/en_ALL/images/logo.gif', "http://www.recontact.me/img/dest_img/peru.jpg"];
+    <script type="text/javascript">
         <?php RemplirWindowImage('article'); ?>
-        window.images = ["http://www.recontact.me/img/dest_img/asia.jpg",  "http://www.recontact.me/img/dest_img/australia.jpg", "http://www.recontact.me/img/dest_img/peru.jpg"];
     </script>
 <?php    
     require("w/1head.php");
