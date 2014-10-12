@@ -18,7 +18,7 @@ var interpolateTime=function(start,finish,position){var diff=finish.getTime()-st
 				if (window.images) {
 				    images = window.images;
 				} else {
-				    images = ["http://www.recontact.me/img/dest_img/southAmerica.jpg",  'http://www.google.com/intl/en_ALL/images/logo.gif', "http://www.recontact.me/img/dest_img/southAmerica.jpg"];
+				    images = ['http://www.recontact.me/img/dest_img/southAmerica.jpg',  'http://www.google.com/intl/en_ALL/images/logo.gif', 'http://www.recontact.me/img/dest_img/southAmerica.jpg'];
 				}				
 			    iconEl.id += 'imgIconEl';
                 var imgIconEl = new Image();
