@@ -31,7 +31,7 @@ function RemplirWindowImage($article){
   while ($donnees = $reponse->fetch())
     {
       echo "alert('I am an alert box!');
-      window.images = ".htmlspecialchars($donnees['img_link']).";
+      window.images = '".htmlspecialchars($donnees['img_link'])."';
       ";
     }
   // window.images = ["http://image1", "http://........."];
