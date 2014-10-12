@@ -31,11 +31,12 @@ function RemplirWindowImage($article){
   global $id;
   $reponse = $bdd->query('SELECT img_link FROM '.$article.'_contenu WHERE '.$article.'_uid = '.$id.' ORDER BY position');
   // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
-  while ($donnees = $reponse->fetch())
+  $images = array();
+  while ($donness = $reponse->fetch())
     {
-      echo "window.images = '".htmlspecialchars($donnees['img_link'])."';
-      ";
+      $images[] = htmlspecialchars($donnees['img_link']);
     }
+  echo 'window.image = ' . json_encode($images) . ';';
   // window.images = ["http://image1", "http://........."];
     $reponse->closeCursor();
 }
