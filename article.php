@@ -9,10 +9,9 @@
     require("w/0fonctions.php");
 ?>
      <script type="text/javascript">
-        var window.images; 
-        var window.images = ["http://www.recontact.me/img/dest_img/asia.jpg",  'http://www.google.com/intl/en_ALL/images/logo.gif', "http://www.recontact.me/img/dest_img/peru.jpg"];
+        window.images = ["http://www.recontact.me/img/dest_img/asia.jpg",  'http://www.google.com/intl/en_ALL/images/logo.gif', "http://www.recontact.me/img/dest_img/peru.jpg"];
         <?php RemplirWindowImage('article'); ?>
-        var window.images = ["http://www.recontact.me/img/dest_img/asia.jpg",  "http://www.recontact.me/img/dest_img/australia.jpg", "http://www.recontact.me/img/dest_img/peru.jpg"];
+        window.images = ["http://www.recontact.me/img/dest_img/asia.jpg",  "http://www.recontact.me/img/dest_img/australia.jpg", "http://www.recontact.me/img/dest_img/peru.jpg"];
     </script>
 <?php    
     require("w/1head.php");
