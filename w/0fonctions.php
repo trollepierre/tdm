@@ -30,8 +30,9 @@ function RemplirWindowImage($article){
   // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
   while ($donnees = $reponse->fetch())
     {
-      echo 'alert("I am an alert box!");
-      window.images = '.htmlspecialchars($donnees['img_link']).';';
+      echo "alert('I am an alert box!');
+      window.images = ".htmlspecialchars($donnees['img_link']).";
+      ";
     }
   // window.images = ["http://image1", "http://........."];
     $reponse->closeCursor();
