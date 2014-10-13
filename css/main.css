@@ -875,6 +875,16 @@ font-size: 50px;
     font-weight: bold;
 }
 
+.timeline .timeline-controller .mode-icon{
+            height:600px;
+            width:468px;
+           /*background:url("'.htmlspecialchars($donnees['img_link']).'");*/
+            background-size: auto 530px;
+            background-repeat: no-repeat;
+            background-position: center;
+            top:0px;
+            left:0px;  
+}
 
 .timeline .modes[title="article"]{
     font-size: inherit;

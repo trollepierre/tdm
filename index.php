@@ -1,4 +1,9 @@
 <?php require("w/0fonctions.php");
+?>
+ <script type="text/javascript">
+         <?php /*RemplirWindowImage('challenge');*/ ?>
+    </script>
+<?php
       require("w/1head.php");
 ?>
 
