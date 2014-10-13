@@ -22,13 +22,154 @@ var interpolateTime=function(start,finish,position){var diff=finish.getTime()-st
 				   	images = window.images;
 			    	iconEl.id += 'imgIconEl';
                 	var imgIconEl = new Image();
-                	// imgIconEl.src = images[current.data('bg') - 1];
-                	imgIconEl.id +='imagesNico' ;
-                	/*imgIconEl.onload = function (){
-                    	this.width = this.width * 2;
-                    	this.height = this.height * 2;
-                	}*/
-                	var imageUrl = images[current.data('bg') - 1];
+                	imgIconEl.src = images[current.data('bg') - 1];
+					imgIconEl.id +='imagesNico' ;
+					var urlDeLImage = images[current.data('bg') - 1];
+					imgIconEl.onload = function (){
+//1 Créer un canvas
+	var tagName ='canvasName';
+	var canvas = document.createElement(tagName);
+						// if (this.status == 200) {  //CETTE CONDITION NE MARCHE PAS 
+							// Note: .response instead of .responseText
+       						console.log ("got image");
+       						// var blob = this.response; => pas besoin
+       						// console.log("about to parse blob:" + _.pairs(this.response));
+//2) Rotationner le canvas en fonction de l'exif
+      					    //Dans ta fonction loadImage.parseMetaData, tu dois mettre en paramètre l'url de l'image à la place de blob
+      					    loadImage.parseMetaData(urlDeLImage, function (data) {
+						    	// console.log("EXIF:" + _.pairs(data))  // CE TRUC NE MARCHE PAS
+						    	var ori ="initial";
+	   							if (data.exif)
+						    		{
+						    	        ori = data.exif.get('Orientation');
+						    alert("troll : Ori vient d etre defini");
+						    	    }
+						    	    console.log("ori is:" + ori);
+						    	}
+						    );
+      					    	alert("troll : Avez-vous recu le mess annoncant que Ori vient d etre defini ????");
+							var loadingImage = loadImage(
+						    urlDeLImage,
+						    function (img) {
+						        console.log("in loadingImage");
+						        alert("troll : Image loaded");
+//			3) Dessiner l'image dans le canvas
+							//Pour dessiner une image dans le canvas, voici la doc: https://developer.mozilla.org/en/docs/Web/API/CanvasRenderingContext2D
+
+// recopiage ***********************************************************************************
+/**
+ * Module dependencies.
+ */
+
+var rotate = require('rotate');
+var flip = require('flip');
+
+/**
+ * Expose `orient`.
+ */
+
+module.exports = orient;
+
+/**
+ * Orientations.
+ */
+
+var orientations = [
+  { op: 'none', degrees: 0 },
+  { op: 'flip-x', degrees: 0 },
+  { op: 'none', degrees: 180 },
+  { op: 'flip-y', degrees: 0 },
+  { op: 'flip-x', degrees: 90 },
+  { op: 'none', degrees: 90 },
+  { op: 'flip-x', degrees: -90 },
+  { op: 'none', degrees: -90 }
+];
+
+/**
+ * Rotate `img` with orientation `n` when necessary.
+ *
+ * The `img` dimensions are updated as necessary to
+ * reflect the rotation applied.
+ *
+ * @param {Image} img
+ * @param {Number} n
+ * @return {String} data uri
+ */
+
+function orient(img, n) {
+  var o = orientations[n - 1];
+
+  // canvas
+  var canvas = document.createElement('canvas');
+  var ctx = canvas.getContext('2d');
+
+  // dims
+  if (rotated(n)) {
+    canvas.height = img.width;
+    canvas.width = img.height;
+  } else {
+    canvas.width = img.width;
+    canvas.height = img.height;
+  }
+
+  // flip
+  if ('flip-x' == o.op) flip(canvas, true, false);
+  if ('flip-y' == o.op) flip(canvas, false, true);
+
+  // rotate
+  if (o.degrees) {
+    rotate(ctx, {
+      degrees: o.degrees,
+      x: canvas.width / 2,
+      y: canvas.height / 2
+    });
+
+    if (rotated(n)) {
+      var d = canvas.width - canvas.height;
+      ctx.translate(d / 2, -d / 2);
+    }
+  }
+
+  ctx.drawImage(img, 0, 0);
+  return canvas.toDataURL('image/jpeg');
+}
+
+/**
+ * Check if we need to change dims.
+ */
+
+function rotated(n) {
+  return !! ~[5,6,7,8].indexOf(n);
+}
+//fin recopiage ****************************************************************************
+
+// var canvas = document.getElementById('mycanvas');
+								var ctx = canvas.getContext('2d');
+// CanvasRenderingContext2D.drawImage(img,dx,dy);
+// https://developer.mozilla.org/en/docs/Web/API/CanvasRenderingContext2D#drawImage()
+								var n = ori;
+								orient(img,n);
+								CanvasRenderingContext2D.drawImage(img,canvas.height,canvas.width);
+// Draws the specified image. This method is available in multiple formats, providing a great deal of flexibility in its use.
+								alert('troll : le canvas est happy');
+						        document.body.appendChild(img);
+						    },
+					        {	maxWidth: 600,
+						        orientation: 3, 
+			//4) Ajouter le canvas
+						        canvas: true,
+						        crossOrigin:'anonymous'
+						        }
+						    );
+						    if (!loadingImage) {
+						            // Alternative code ...
+						    }
+							alert('troll : fin de loading - Pourquoi ce message arrive avant Image loaded???	');
+						}
+                    /*	this.width = this.width * 2;
+                    	this.height = this.height * 2;*/
+                	}
+                	/*var imageUrl = images[current.data('bg') - 1];
                 	loadImage(
 				    	imageUrl,
 				    	function (imgIconEl) {
@@ -41,10 +182,11 @@ var interpolateTime=function(start,finish,position){var diff=finish.getTime()-st
 				    	},
 				    	{maxWidth: 600
 				   		}
-					);
-				}				
+					);*/
+				//}				
                 
 // 
+						alert("troll : Pourquoi ce message arrive en premier");
 	iconEl.className+='mode-icon mode-icon'+current.data('bg');controllerContainer.append(iconEl);setTimeout(function(){bgEl.className+=' show';},20);setTimeout(function(){iconEl.className+=' show';},300);}
 if(currentIndex<0){$time.html(formatAMPM(dates[0]));return;}
 if(scrollTop-50>lastSectionPosition+timelineTop){$time.html('0');$time.addClass('0');return;}
