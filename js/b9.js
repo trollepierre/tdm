@@ -15,19 +15,35 @@ var ampm=hours>=12?'':'';hours=hours%12;hours=hours?hours:0;minutes=minutes<10?'
 var interpolateTime=function(start,finish,position){var diff=finish.getTime()-start.getTime();return new Date(start.getTime()+diff*position);};var initializeTimeline=function(){var dates=[new Date(2013,11,5,1,0,0),new Date(2013,11,5,2,0,0),new Date(2013,11,5,3,0,0),new Date(2013,11,5,4,0,0),new Date(2013, 11, 5, 5, 0, 0),new Date(2013, 11, 5, 6, 0, 0),new Date(2013, 11, 5, 7, 0, 0),new Date(2013, 11, 5, 8, 0, 0),new Date(2013, 11, 5, 9, 0, 0),new Date(2013, 11, 5, 10, 0, 0),];var timeline=$('.timeline');var timelineTop=timeline.offset().top;var timelineHeight=timeline[0].scrollHeight;var timelineBottom=timelineTop+timelineHeight;var timelineSections=$('.mode');var positions=timelineSections.map(function(){return $(this).position().top;});var $time=$('.clocks');var lastSection=timelineSections.last();var lastSectionPosition=lastSection.position().top;$(window).scroll(function(){var scrollTop=$(window).scrollTop();if(scrollTop>timelineTop-window.innerHeight&&scrollTop<timelineBottom){var a=positions.filter(function(i,item){return scrollTop-timelineTop>item;});var currentIndex=a.length-1;var nextIndex=currentIndex+1;var current=timelineSections.eq(currentIndex);var next=timelineSections.eq(nextIndex);var controllerContainer=$('.timeline-controller');if(!$('.timeline-bg').hasClass('timeline-bg'+current.data('bg'))&&scrollTop>timelineTop){var prevBg=timeline.find('.timeline-bg');var prevIcon=controllerContainer.find('.mode-icon');prevIcon.removeClass('show');setTimeout(function(){prevIcon.remove();},350);setTimeout(function(){prevBg.remove();},850);var bgEl=document.createElement('div');bgEl.className+='timeline-bg timeline-bg'+current.data('bg');timeline.append(bgEl);var iconEl=document.createElement('div');
 // 
 				var images;
-				if (window.images) {
-				    images = window.images;
-				} else {
+				if (!(window.images)) {
+				    alert(window.images);
 				    images = ['http://www.recontact.me/img/dest_img/southAmerica.jpg',  'http://www.google.com/intl/en_ALL/images/logo.gif', 'http://www.recontact.me/img/dest_img/southAmerica.jpg'];
+				} else {
+				   	images = window.images;
+			    	iconEl.id += 'imgIconEl';
+                	var imgIconEl = new Image();
+                	// imgIconEl.src = images[current.data('bg') - 1];
+                	imgIconEl.id +='imagesNico' ;
+                	/*imgIconEl.onload = function (){
+                    	this.width = this.width * 2;
+                    	this.height = this.height * 2;
+                	}*/
+                	var imageUrl = images[current.data('bg') - 1];
+                	loadImage(
+				    	imageUrl,
+				    	function (imgIconEl) {
+				        	if(imgIconEl.type === "error") {
+				            	console.log("Error loading image " + imageUrl);
+				        	} else {
+				            	//document.body.appendChild(img);
+				            	iconEl.appendChild(imgIconEl);
+				        	}
+				    	},
+				    	{maxWidth: 600
+				   		}
+					);
 				}				
-			    iconEl.id += 'imgIconEl';
-                var imgIconEl = new Image();
-                imgIconEl.src = images[current.data('bg') - 1]; 
-                imgIconEl.onload = function (){
-                    this.width = this.width * 2;
-                    this.height = this.height * 2;
-                }
-                iconEl.appendChild(imgIconEl);
+                
 // 
 	iconEl.className+='mode-icon mode-icon'+current.data('bg');controllerContainer.append(iconEl);setTimeout(function(){bgEl.className+=' show';},20);setTimeout(function(){iconEl.className+=' show';},300);}
 if(currentIndex<0){$time.html(formatAMPM(dates[0]));return;}
