@@ -3,8 +3,7 @@
 <html lang="en-US" prefix="og: http://ogp.me/ns#">
 
 <head>
- 
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php echo TITLE; ?></title>
@@ -23,9 +22,15 @@
     <link rel="alternate" type="application/rss+xml" title="Home Comments Feed" href="http://www.recontact.me" />
     <link rel='stylesheet' id='style-css' href='css/style.css' type='text/css' media='all' />
 <?php if ($lang == 'fr') {  
-echo '<link rel = "stylesheet"    href = "css/fr.css" >';
-} else { 
-echo '<link rel = "stylesheet"    href = "css/en.css" >';
+echo '
+    <link rel = "stylesheet"    href = "css/fr.css" >
+    <script src="js/comptearebours.js"></script>  
+    ';
+    } else { 
+echo '
+    <link rel = "stylesheet"    href = "css/en.css" > 
+    <script src="js/comptearebours_en.js"></script>  
+';
 } ?>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/normalize.css">
