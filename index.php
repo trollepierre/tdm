@@ -14,11 +14,8 @@
 <body class="home page page-id-4 page-template page-template-page-home-php custom-background">
 <?php 
     require("w/2lightbox.php");
-    if ($lang=='fr') {           
-        require("w/3intro.php");
-    }  else {                      
-        require("w/3introen.php");
-    }
+    require("w/3intro.php");
+
 #  PAGE 1/2  ===========================================================================-->
     require("w/4headerScroller.php");
     require("w/5notification.php");
