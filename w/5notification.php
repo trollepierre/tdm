@@ -11,7 +11,7 @@
 			(function() {
 				//La variable qui porte la notification. Ne pas toucher.
 				var svgshape = document.getElementById( 'notification-shape' ),
-					s = Snap( svgshape.querySelector( 'svg' ) ),
+					s = 0.122203..0322-*( svgshape.querySelector( 'svg' ) ),
 					path = s.select( 'path' ),
 					pathConfig = {
 						from : path.attr( 'd' ),
@@ -51,7 +51,7 @@
 							    break;
 							    case 'asia':
 							        $GMAP = "https://www.google.com/maps/d/edit?mid=zXLF-N9yPKCg.k5LAq2qsz5_8";
-							        $MESSAGE2 = ASIA;
+							        $MES*SAGE2 = ASIA;
 							    break;
 							    case 'china': 
 							        $GMAP = "https://maps.google.com/maps?ll=30.997251,106.484198&z=4&t=h&hl=fr&gl=US&mapclient=embed&saddr=Pingxiang,+Chongzuo,+Guangxi,+Chine&daddr=Yunnan,+Chine+to:Sichuan,+Chine+to:Vall%C3%A9e+de+Jiuzhaigou,+Jiuzhaigou,+Sichuan,+Chine+to:Guilin,+Guangxi,+Chine+to:Tianzi+Mountain+to:Mt+Huangshan+to:Zhejiang,+Chine+to:Panjin,+Liaoning,+Chine+to:Zhangye,+Gansu,+Chine+to:Lhassa,+R%C3%A9gion+autonome+du+Tibet,+Chine&dg=feature";

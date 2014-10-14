@@ -5,11 +5,10 @@
    	 
 //Header
 	define('TITLE', 'One year around the world.');
-//	define('DESCRIPTION_PAGE', 'These guys travel around the world for one whole year');
 
 //notification
-	
-	define('MESSAGENOTIFICATION', "A small overview of the all route");
+	define('MESSAGENOTIFICATION', "A small overview of the road in");
+	define('MESSAGENOTIFICATIONHOME', "A overview of the whole road");
 
 
 //Lightbox
@@ -64,12 +63,17 @@
 	define('INDIA', 'India');
 	define('UAE', 'United Arab Emirates');
 	define('ARTICLES', 'Articles');
+	define('ALTARTICLES', 'Find all our articles');
 	define('GALLERY', 'Gallery');
-//	define('OURGOALS', 'Our goals');
-//	define('US', 'About us');
 	define('CONTACT', 'Contact');
-//	define('DRAPEAU', 'img/fra.png');
-//	define('LANGUE', 'FR');
+	define('ALTCONTACT','Send us a message');
+	define('ALTAVION','Look at our itinerary');
+	define('ALTHOME',"Return to homepage");
+	define('ALTPAYPAL',"Help us!");
+	define('ALTDEST',"Admire the destinations of our trip!");
+	define('ALTCHAL',"Get a look to our last challenge");
+	define('ALTART',"Get a look to our last article");
+	define('ALTPROP',"Propose a challenge");
 	
 //CONTACT.php
 	define('SUJET','Subject');
