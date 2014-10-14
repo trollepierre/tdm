@@ -56,7 +56,7 @@
     <div id="lesArticles"></div>
       <div class="carousel">
         <div class="ourArticles" >
-            <a href="article.php" class="discover">
+            <a href="article.php" class="discover" title="<?php echo ALTDAOA; ?>">
                 <h1 class="paddingZero"> <?php echo DAOA; ?></h1>
             </a>
         </div>
@@ -78,7 +78,7 @@ while ($donnees = $reponse->fetch())
     
      <div class="carousel" >
         <div class="ourArticles">
-            <a href="challenge.php" class="discover">
+            <a href="challenge.php" class="discover"  title="<?php echo ALTDAOC; ?>">
                 <h1> <?php echo DAOC; ?> </h1>
             </a>
         </div>

@@ -81,14 +81,20 @@
 
 	
 	//Discover all our Challenges
-	define('DAOC','Découvre nos défis réalisés');
 	define('PYC','Propose ton défi');
 	define('VTEC','Voir les défis proposés');
 	define('DAOA','Découvre nos articles');
+	define('DAOC','Découvre nos défis réalisés');
 	define('VLAPDLA',"Voici les autres photos de l'article");
 	define('VLAA',"Voici les autres articles");
 	define('VLAPDD',"Voici les autres photos du défi");
 	define('VLAD',"Voici les autres défis");
+	define('ALTDAOA','Aller à la page de tous nos articles');
+	define('ALTDAOC','Aller à la page de tous nos défis réalisés');
+	define('ALTVLAPDLA',"Aller à la page Dropbox de tous les autres photos de l'article");
+	define('ALTVLAA',"Aller à la page de tous les autres articles");
+	define('ALTVLAPDD',"Aller à la page Dropbox de tous les autres photos du défi");
+	define('ALTVLAD',"Aller à la page de tous les autres défis");
 	define('QDDM',"Quelles destinations découvrir maintenant (site en construction) ?");
 	define('OU','ou');
 

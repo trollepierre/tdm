@@ -78,14 +78,23 @@
 	 define('CANCEL','Cancel');
 
 	//Discover all our Challenges
-	define('DAOC','Discover all our Challenges');
 	define('PYC','Propose your challenge');
 	define('VTEC','View the existing challenges');
+	
 	define('DAOA','Discover all our Articles');
+	define('DAOC','Discover all our Challenges');
 	define('VLAPDLA',"This is the other pictures of this article");
 	define('VLAA',"These are the other articles");
 	define('VLAPDD',"This is the other pictures of this challenge");
 	define('VLAD',"These are the other challenges");
+	define('ALTDAOA','Click here to go to the Articles page');
+	define('ALTDAOC','Click here to go to the Challenges page');
+	define('ALTVLAPDLA',"Click here to see the other pictures of this article on Dropbox");
+	define('ALTVLAA',"Click here to see the other articles");
+	define('ALTVLAPDD',"Click here to see the other pictures of this challenge on Dropbox");
+	define('ALTVLAD',"Click here to see the other challenges");
+		
+
 	define('QDDM',"Which destinations discover next (work in progress)?");
 	define('OU','or');
 	
