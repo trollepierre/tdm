@@ -44,7 +44,13 @@ echo '
             background-color: #ffffff;
         }
     </style>     
-   <script src="js/modernizr.custom.js"></script>
+    <script src="js/load-image.js"></script>
+        <script src="js/load-image-meta.js"></script>
+    <script src="js/load-image-orientation.js"></script>
+   <script type="text/javascript" src="js/b9.js"></script>
+    <script type="text/javascript" src="js/M0.js"></script>
+    <script type="text/javascript" src="js/b5.js"></script>
+       <script src="js/modernizr.custom.js"></script>
     <script src="js/snap.svg-min.js"></script>
     <script src="js/classie.js"></script>
     <script src="js/notificationFx.js"></script>  
