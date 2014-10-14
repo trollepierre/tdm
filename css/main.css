@@ -22,6 +22,9 @@ body {
     background:#1c1c1d;
 }
 
+.discover:hover{
+    color: #2a6496;
+}
 #header{
  height: 200px;
 }

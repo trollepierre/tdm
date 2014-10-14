@@ -1,15 +1,10 @@
  <?php
-   	/* Pour ma gouverne, ç = &ccedil; 	Ô = &Ocirc; é = &eacute;
-	à = &agrave; define('DRAPEAU', 'img/fra.png');
-   	 */
-   	 
 //Header
 	define('TITLE', 'One year around the world.');
 
 //notification
-	define('MESSAGENOTIFICATION', "A small overview of the road in");
-	define('MESSAGENOTIFICATIONHOME', "A overview of the whole road");
-
+	define('MESSAGENOTIFICATION', "Click here to get a small overview of the road in");
+	define('MESSAGENOTIFICATIONHOME', "Click here to get an overview of the whole road");
 
 //Lightbox
 	define('CHALLENGE', 'Challenge');
@@ -110,38 +105,16 @@ define('PIERRE', "This is Pierre
 
 //Index
 	define('WHO_ARE_WE', 'Who are we?');
-	
 
-	//our goals
-	define('GS1', 'Travelling');
-	define('G1', 'Discover the world. That sounds like a dream. <br/>
-						For us, it is just a worthy opportunity to take. <br/>
-						Get a look to our plans about this world trip.');
-	define('GS2', 'Meeting');
-	define('G2', 'Keep in Touch with friends is valuable. <br/>
-						Meeting people everywhere in the world . <br/>
-						and stay in touch!');
-	define('GS3', 'Having Fun');
-	define('G3', "Feel the excitement. <br/>
-						Going somewhere without knowing where you gonna to sleep tonight <br/>
-						that's exciting! ");
-	//pourquoi partir
-	define('WHY', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-
-	
 	 //Formulaire Contact
-	 // define('LETSSTAYINTOUCH', "Let's stay in touch");
 	 define('FN','First Name');
 	 define('LN','Last Name');
-//	 define('SUJET','Subject');
 	
 	//Donation
 	define('DON','You can also help us with donation
 					<br/>We will thank you by bringing/sending souvenir for you');
-	 
    	
 //DROITE
 	define('FOOTER', 'Website by Pierre T.     Explore my creation on my <a href="http://pierre.recontact.me">website</a>');
 	define('BACK_TO_TOP', 'Back to top');
-	
   ?>

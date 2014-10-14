@@ -60,7 +60,7 @@
     <div id="lesAutresPhotos"></div>
     <div class="carousel" >
         <div class="ourArticles">
-            <a href="article.php">
+            <a href="article.php" class="discover">
                 <h1> <?php echo VLAA; ?> </h1>
             </a>
         </div>
@@ -79,7 +79,7 @@ while ($donnees = $reponse->fetch())
             </ul>
         </div>
         <div class="ourArticles">
-            <a href=
+            <a  class="discover" href=
                 <?php 
                 include("lib/creerBdd.php");
                  global $id;

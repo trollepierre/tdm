@@ -1,17 +1,10 @@
  <?php
-   	/* Pour ma gouverne, ç; = &ccedil; 	Ô = &Ocirc; é; = é
-	à; = &agrave; define('DRAPEAU', 'img/fra.png'); ' = \'
-	erreurs trouvées: Dehli (Delhi) ; Rajashtan (Rajasthan); 
-   	 */
-   	 
 //Header
 	define('TITLE', 'Un tour du monde en un an');
-	// define('DESCRIPTION_PAGE', "Ils font un voyage d'un an autour de la Terre");
 	
 //notification
-	define('MESSAGENOTIFICATION', "Un petit aperçu de l\'itinéraire en");
-	define('MESSAGENOTIFICATIONHOME', "Un aperçu de l\'itinéraire complet");
-
+	define('MESSAGENOTIFICATION', "Cliquer ici pour avoir un petit aperçu de l\'itinéraire en");
+	define('MESSAGENOTIFICATIONHOME', "Cliquer ici pour avoir un aperçu de l\'itinéraire complet");
 
 //Lightbox
 	define('CHALLENGE', 'Challenge');
@@ -110,47 +103,17 @@ define('PIERRE', "Voici Pierre
 	define('NUAGE','Nuage des destinations');
 	define('GETIT','Reçois le bracelet du voyage');
 
-/*define('PIERRE', "Voici Pierre
-				<br/> Grand voyageur et entrepreneur dans l'&agrave;me, il cro&icirc;t :
-				 // <br/> Pierre est revenu d'Inde avec une idée :
-				</p>
-<p class=\"bg-danger\"><br/> Le bonheur ne provient pas de notre fortune personnelle.
-				<br/> Vivre est plus important que de suivre 
-				<br/> le chemin tracé pour lui par la société.");
-*/
-
 	 //Formulaire Contact
 	 define('LETSSTAYINTOUCH', "Restons en contact");
-//Index
 	
-	//our goals
-	define('GS1', 'Voyager');
-	define('G1', 'Découvrir le monde, ce peut &ecirc;tre le r&ecirc;ve de chacun. <br/>
-						Pour nous, c\'est une opportunité &agrave; saisir ! <br/>
-						Jetez un coup d\'oeil &agrave; notre itinéraire...');
-	define('GS2', 'Rencontrer');
-	define('G2', 'Garder le contact avec ses amis autour du monde,<br/>
-						en rencontrer d\'autres sur notre route.');
-	define('GS3', 'Vivre l\'aventure');
-	define('G3', 'Sentir cette sensation <br/>
-						Aller au devant de l\'inconnu sans savoir &agrave; l\'avance o&ugrave; dormir,<br/>
-						c\'est &ccedil;a l\'aventure !');
-	//pourquoi partir
-	define('WHY', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-
-
 	 define('FN','Prénom');
 	 define('LN','Nom');
 
 	//Donation
 	define('DON','Tu peux nous aider par don
 					<br/>Notre budget est tr&egrave;s serré. Vos dons nous permettront d\'&ecirc;tre s&ucirc;r de pouvoir mener &agrave; bien notre aventure jusqu\'au bout');
-	 
    
 //DROITE
 	define('FOOTER', 'Site par Pierre T.     Découvrez ma création sur mon <a href="http://pierre.recontact.me">site</a>');
 	define('BACK_TO_TOP', 'Haut de la page');
-	
-     //---------------------------------------------------------
-     // Fin  
-     //---------------------------------------------------------
+?>

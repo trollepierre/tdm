@@ -59,7 +59,7 @@
      <div id="lesAutresPhotos"></div>
     <div class="carousel" >
         <div class="ourArticles">
-            <a href="challenge.php">
+            <a href="challenge.php" class="discover">
                 <h1> <?php echo VLAD; ?> </h1>
             </a>
         </div>
@@ -78,7 +78,7 @@
             </ul>
         </div>
         <div class="ourArticles">
-           <a href=
+           <a class="discover" href=
                 <?php 
                 include("lib/creerBdd.php");
                  global $id;
