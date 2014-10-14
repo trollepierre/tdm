@@ -9,6 +9,9 @@
 
 <style type="text/css">
     <?php  IconBackground(); ?>
+    .ns-effect-cornerexpand .icon{
+    padding-top: 10px;
+    }
 </style>
 </head>
 <body class="home page page-id-4 page-template page-template-page-home-php custom-background">
