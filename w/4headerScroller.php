@@ -4,7 +4,7 @@
     <div class="menu">
         <ul>
             <li>
-                 <form class="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"  title="<?php echo ALTPAYPAL; ?>">
+                 <form class="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                     <input type="hidden" name="cmd" value="_s-xclick">
                     <input type="hidden" name="hosted_button_id" value="C753VV9DE7LH8">
                         <?php if ($lang=='fr' ) { 
@@ -16,12 +16,12 @@
                 </form>
             </li>
             <li>
-                <a href="http://www.recontact.me"  title="<?php echo ALTHOME; ?>">
+                <a href="http://www.recontact.me">
                     <?php echo HOME; ?>
                 </a>
             </li>
              <li class="dropdown">
-                <a href="" class="dropdown-toggle" data-toggle="dropdown"  title="<?php echo ALTDEST; ?>">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown">
                     <?php echo DESTINATION; ?><b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
@@ -134,17 +134,17 @@
             </li>
 
             <li>
-                <a href="http://www.recontact.me/destinations.php" title="<?php echo ALTAVION; ?>">
+                <a href="http://www.recontact.me/destinations.php">
                     <img alt="nos destinations" class="logo" src="img/avion.png" />
                 </a>
             </li>
             <li>
-                <a href="http://www.recontact.me#lesArticles"  title="<?php echo ALTARTICLES; ?>">
+                <a href="http://www.recontact.me#lesArticles">
                     <?php echo ARTICLES; ?>
                 </a>
             </li>
             <li>
-                <a href="http://www.recontact.me/contact.php" title="<?php echo ALTCONTACT; ?>">
+                <a href="http://www.recontact.me/contact.php">
                     <?php echo CONTACT; ?>
                 </a>
             </li>

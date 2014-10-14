@@ -1,8 +1,8 @@
 <?php include_once("analyticstracking.php");?>
 
-    <div class="designlicks2"><a href="article.php" title="<?php echo ALTART; ?>" ><?php echo ARTICLE; ?></a>     </div>
-    <div class="designlicks"><a href="challenge.php" title="<?php echo ALTCHAL; ?>"><?php echo CHALLENGE; ?></a>     </div>
-    <div class="designlicks3"><a href="https://docs.google.com/forms/d/1haLT0oeLTtqSajX0dWijHWcxbW49N886hrpj5s_EtQQ/viewform"  title="<?php echo ALTPROP; ?>" target="_blank"><?php echo THANK; ?></a>     </div>
+    <div class="designlicks"><a href="challenge.php"><?php echo CHALLENGE; ?></a>     </div>
+    <div class="designlicks2"><a href="article.php" ><?php echo ARTICLE; ?></a>     </div>
+	<div class="designlicks3"><a href="https://docs.google.com/forms/d/1haLT0oeLTtqSajX0dWijHWcxbW49N886hrpj5s_EtQQ/viewform" target="_blank"><?php echo THANK; ?></a>     </div>
     
     <div id="lightbox" style="display: none;">
         <ul class="nav">

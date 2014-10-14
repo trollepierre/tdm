@@ -18,7 +18,6 @@
 	define('ARTICLE', 'Article');
 	define('THANK', 'Merci !');
 	define('CONTACT', 'CONTACT');
-	define('ALTCONTACT','Envoie-nous un message');
 	define('PROPOSE', 'Propose');
 	define('EXISTINGCHALLENGES', 'Les défis existants');
 	define('WEARECHALLENGERS', 'Quels défis ? ');
@@ -67,15 +66,6 @@
 	define('INDIA', 'Inde     ');
 	define('UAE', 'Emirats Arabes Unis');
 	define('ARTICLES', 'Articles');
-	define('ALTARTICLES', 'Retrouve tous nos articles');
-	define('ALTAVION','Voir notre itinéraire');
-	define('ALTHOME',"Retourne à la page d'accueil");
-	define('ALTPAYPAL',"Aide-nous !");
-	define('ALTDEST',"Admire les destinations de notre voyage !");
-	define('ALTCHAL',"Voir notre dernier défi");
-	define('ALTART',"Voir notre dernier article");
-	define('ALTPROP',"Propose un défi");
-
 	define('GALLERY', 'Galerie');
 
 	
@@ -101,7 +91,7 @@
 
 	//Footer
 define('PIERRE', "Voici Pierre
-				<br/>Grand voyageur et entrepreneur dans l'âme.
+				<br/>Grand voyageur et entrepreneur dans l'&agrave;me.
 				</p><p>
 				Vivre est plus important que de suivre le chemin tracé pour lui par la société.");
 	define('BENOIT', "Benoit Alias Jack.
