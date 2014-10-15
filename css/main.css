@@ -22,6 +22,9 @@ body {
     background:#1c1c1d;
 }
 
+.espace{
+    margin-bottom: 15px;
+}
 .discover:hover{
     color: #2a6496;
 }

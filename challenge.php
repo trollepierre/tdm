@@ -59,26 +59,7 @@
      <div id="lesAutresPhotos"></div>
     <div class="carousel" >
         <div class="ourArticles">
-            <a href="challenge.php" class="discover" title="<?php echo ALTVLAD; ?>">
-                <h1> <?php echo VLAD; ?> </h1>
-            </a>
-        </div>
-
- <div class="flex-slider carousel">
-            <ul class="slides">
-                <?php 
-                include("lib/creerBdd.php");
-                $reponse = $bdd->query('SELECT nom, name,challenge_uid,img_link FROM challenge ORDER BY challenge_uid');
-                while ($donnees = $reponse->fetch()){
-                    $nome = ($lang==='fr') ? 'nom' : 'name' ;
-                    ImgCarroussel(htmlspecialchars($donnees[$nome]),htmlspecialchars($donnees['challenge_uid']),'challenge', htmlspecialchars($donnees['img_link']));
-                }
-                $reponse->closeCursor();
-                ?>
-            </ul>
-        </div>
-        <div class="ourArticles">
-           <a class="discover" title="<?php echo ALTVLAPDD; ?>" href=
+            <a class="discover" title="<?php echo ALTVLAPDD; ?>" href=
                 <?php 
                 include("lib/creerBdd.php");
                  global $id;
@@ -93,6 +74,7 @@
                  <h1> <?php echo VLAPDD; ?> </h1>
             </a>
         </div>
+
         <div class="flex-slider carousel">
             <ul class="slides">
             <?php
@@ -106,7 +88,26 @@
             ?>   
             </ul>
         </div>
+        <div class="ourArticles">
+           <a href="challenge.php" class="discover" title="<?php echo ALTVLAD; ?>">
+                <h1> <?php echo VLAD; ?> </h1>
+            </a>
+        </div>
+ <div class="flex-slider carousel">
+            <ul class="slides">
+                <?php 
+                include("lib/creerBdd.php");
+                $reponse = $bdd->query('SELECT nom, name,challenge_uid,img_link FROM challenge ORDER BY challenge_uid DESC');
+                while ($donnees = $reponse->fetch()){
+                    $nome = ($lang==='fr') ? 'nom' : 'name' ;
+                    ImgCarroussel(htmlspecialchars($donnees[$nome]),htmlspecialchars($donnees['challenge_uid']),'challenge', htmlspecialchars($donnees['img_link']));
+                }
+                $reponse->closeCursor();
+                ?>
+            </ul>
+        </div>
     </div>
+    <div class="espace">. </div>
     <div id="caracteristiques"></div><!--INDISPENSABLE : WHY?-->
     <div class="galery" id="gallery"></div>
 <?php require("w/8footer.php");?>

@@ -60,7 +60,36 @@
     <div id="lesAutresPhotos"></div>
     <div class="carousel" >
         <div class="ourArticles">
-            <a href="article.php" class="discover" title="<?php echo ALTVLAA; ?>">
+           <a  class="discover"  title="<?php echo ALTVLAPDLA; ?>" href=
+                <?php 
+                include("lib/creerBdd.php");
+                 global $id;
+                  $reponse = $bdd->query('SELECT dropbox_link FROM article WHERE article_uid = '.$id.' ORDER BY id');
+                while ($donnees = $reponse->fetch()){
+                    $dropbox_link=htmlspecialchars($donnees['dropbox_link']);
+                    echo '"'.$dropbox_link.'"';
+                }
+                $reponse->closeCursor();
+                ?>
+                >
+                 <h1> <?php echo VLAPDLA; ?> </h1>
+            </a>
+        </div>
+        <div class="flex-slider carousel">
+            <ul class="slides">
+            <?php
+            include("lib/creerBdd.php");
+            global $id;
+            $reponse = $bdd->query('SELECT img_link FROM article_galerie WHERE article_uid = '.$id.' ORDER BY id');
+            while ($donnees = $reponse->fetch()){
+                Carroussel($dropbox_link, htmlspecialchars($donnees['img_link']));
+            }
+            $reponse->closeCursor();
+            ?>   
+            </ul>
+        </div>
+        <div class="ourArticles">
+             <a href="article.php" class="discover" title="<?php echo ALTVLAA; ?>">
                 <h1> <?php echo VLAA; ?> </h1>
             </a>
         </div>
@@ -78,37 +107,9 @@ while ($donnees = $reponse->fetch())
                 ?>
             </ul>
         </div>
-        <div class="ourArticles">
-            <a  class="discover"  title="<?php echo ALTVLAPDLA; ?>" href=
-                <?php 
-                include("lib/creerBdd.php");
-                 global $id;
-                  $reponse = $bdd->query('SELECT dropbox_link FROM article WHERE article_uid = '.$id.' ORDER BY id');
-                while ($donnees = $reponse->fetch()){
-                    $dropbox_link=htmlspecialchars($donnees['dropbox_link']);
-                    echo '"'.$dropbox_link.'"';
-                }
-                $reponse->closeCursor();
-                ?>
-                >
-                 <h1> <?php echo VLAPDLA; ?> </h1>
-            </a>
-        </div>
 
-        <div class="flex-slider carousel">
-            <ul class="slides">
-            <?php
-            include("lib/creerBdd.php");
-            global $id;
-            $reponse = $bdd->query('SELECT img_link FROM article_galerie WHERE article_uid = '.$id.' ORDER BY id');
-            while ($donnees = $reponse->fetch()){
-                Carroussel($dropbox_link, htmlspecialchars($donnees['img_link']));
-            }
-            $reponse->closeCursor();
-            ?>   
-            </ul>
-        </div>
     </div>
+    <div class="espace">. </div>
     <div id="caracteristiques"></div><!--INDISPENSABLE : WHY?-->
     <div class="galery" id="gallery"></div>
 

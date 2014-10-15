@@ -83,9 +83,9 @@
 	
 	define('DAOA','Discover all our Articles');
 	define('DAOC','Discover all our Challenges');
-	define('VLAPDLA',"This is the other pictures of this article");
+	define('VLAPDLA',"These are the other pictures of this article");
 	define('VLAA',"These are the other articles");
-	define('VLAPDD',"This is the other pictures of this challenge");
+	define('VLAPDD',"These are the other pictures of this challenge");
 	define('VLAD',"These are the other challenges");
 	define('ALTDAOA','Click here to go to the Articles page');
 	define('ALTDAOC','Click here to go to the Challenges page');
