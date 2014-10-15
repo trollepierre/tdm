@@ -72,73 +72,42 @@ $name = $convert_en[0];
 
 $query = "jpg";
 $returnSearchFileName=$myCustomClient->searchFileNames($basePath, $query);
+$query = "mp4";
+$returnSearchFileName2=$myCustomClient->searchFileNames($basePath, $query);
+$returnSearchFileName= array_merge($returnSearchFileName1,$returnSearchFileName2);
+// print_r($returnSearchFileName2);
 
 //on récup le path de chaque file récupéré
 // et on en fait une url publique;
 $urlGallery = array( );
 $url = array( );
 
-function convert($convert, $convert_en,$position){
-  if (count($convert)<=(1+3*$position)) {
-    $titre=$convert[3*$position-2];
-    $soustitre=$convert[3*$position-1];
-    $paragraphe=$convert[3*$position];
-    if (count($convert_en)<=(1+3*$position)) {
-      $title=$convert_en[3*$position-2];
-      $subtitle=$convert_en[3*$position-1];
-      $paragraph=$convert_en[3*$position];
-    }else{
-      $title=$titre;
-      $subtitle=$soustitre;
-      $paragraph=$paragraphe;
-    }
+foreach ($returnSearchFileName as $idFake => $image) {
+  $value = $image['path'];
+  if(substr($value,-9,3)=='img'){
+    $position= intval(substr($value, -6,2));
+    require("lib/ajax/convert.php");
+    $img=$myCustomClient->createShareableLink($value);
+    $img[strlen($img)-1]='1';
+    $reqI->execute(array( 'challengeUid' => $challengeUid, 'position' => $position,'titre' => $titre,'soustitre' => $soustitre, 'paragraphe' => $paragraphe, 'title' => $title,'subtitle' => $subtitle, 'paragraph' => $paragraph, 'img' => $img));
+   }else if(substr($value,-9,4)== "/img"){
+    if(substr($value, -5)==0) {
+      $img0 = $myCustomClient->createShareableLink($value);
+      $img0[strlen($img0)-1]='1';
+      $req->execute(array( 'challengeUid' => $challengeUid, 'nom' => $nom, 'name' => $name, 'img0' => $img0, 'dropbox_link' => $dropbox_link));
   }else{
-    if (count($convert_en)<=(1+3*$position))  {
-      $title=$convert_en[3*$position-2];
-      $subtitle=$convert_en[3*$position-1];
-      $paragraph=$convert_en[3*$position];
-      $titre=$title;
-      $soustitre=$subtitle;
-      $paragraphe=$paragraph;
-    }else{
-      $title = "Article not written yet";
-      $titre = "Article pas encore rédigé";
-      $paragraph = "To make you wait, find the first pictures below";
-      $paragraphe = "Pour vous faire patienter, retrouver les photos de l'challenge ci-dessous";
+    $position= intval(substr($value, -5,1));
+    require("lib/ajax/convert.php");
+    $img=$myCustomClient->createShareableLink($value);
+    $img[strlen($img)-1]='1';
+    $reqI->execute(array( 'challengeUid' => $challengeUid, 'position' => $position,'titre' => $titre,'soustitre' => $soustitre, 'paragraphe' => $paragraphe, 'title' => $title,'subtitle' => $subtitle, 'paragraph' => $paragraph, 'img' => $img));
     }
   }
-}
-
-
-foreach ($returnSearchFileName as $idFake => $image) {
-  foreach ($image as $key => $value) {
-        if($key=='path'){
-          if(substr($value,-9,3)=='img'){
-            $position= intval(substr($value, -6,2));
-            convert($convert,$convert_en,$position);
-            $img=$myCustomClient->createShareableLink($value);
-            $img[strlen($img)-1]='1';
-            $reqI->execute(array( 'challengeUid' => $challengeUid, 'position' => $position,'titre' => $titre,'soustitre' => $soustitre, 'paragraphe' => $paragraphe, 'title' => $title,'subtitle' => $subtitle, 'paragraph' => $paragraph, 'img' => $img));
-           }else if(substr($value,-9,4)== "/img"){
-            if(substr($value, -5)==0) {
-              $img0 = $myCustomClient->createShareableLink($value);
-              $img0[strlen($img0)-1]='1';
-              $req->execute(array( 'challengeUid' => $challengeUid, 'nom' => $nom, 'name' => $name, 'img0' => $img0, 'dropbox_link' => $dropbox_link));
-          }else{
-            $position= intval(substr($value, -5,1));
-            convert($convert,$convert_en,$position);
-            $img=$myCustomClient->createShareableLink($value);
-            $img[strlen($img)-1]='1';
-            $reqI->execute(array( 'challengeUid' => $challengeUid, 'position' => $position,'titre' => $titre,'soustitre' => $soustitre, 'paragraphe' => $paragraphe, 'title' => $title,'subtitle' => $subtitle, 'paragraph' => $paragraph, 'img' => $img));
-            }
-          }
-          else{
-             $urlGallery= $myCustomClient->createShareableLink($value);
-           $urlGallery[strlen($urlGallery)-1]='1';
-           $reqG->execute(array( 'challengeUid' => $challengeUid, 'urlGallery' => $urlGallery));
-          }
-        }
-    }
+  else{
+    $urlGallery= $myCustomClient->createShareableLink($value);
+    $urlGallery[strlen($urlGallery)-1]='1';
+    $reqG->execute(array( 'challengeUid' => $challengeUid, 'urlGallery' => $urlGallery));
+  }
 }
 $reponse = $bdd->query('SELECT count(*) AS count FROM challenge WHERE challenge_uid='.$id);
 while ($donnees = $reponse->fetch()){
@@ -150,20 +119,25 @@ while ($donnees = $reponse->fetch()){
 }
 $reponse->closeCursor();
 $reponse = $bdd->query('SELECT count(*) AS count FROM challenge_contenu WHERE challenge_uid='.$id);
-while ($donnees = $reponse->fetch()){
-    $isImgs= htmlspecialchars($donnees['count']) ;
-    $max=max(count($convert),count($convert_en));
-    if ($isImgs< $max) {
-      $reponse->closeCursor();
-      for ($position=1; $position < $max; $position++) { 
-        $reponse = $bdd->query('SELECT count(*) AS count FROM challenge_contenu WHERE challenge_uid='.$id.' AND position='.$position);
-        if (htmlspecialchars($donnees['count'])== 0) {
-          convert($convert,$convert_en,$position);
-          $img = 'http://www.recontact.me/img/lost.jpg';
-          $reqI->execute(array( 'challengeUid' => $challengeUid, 'position' => $position,'titre' => $titre,'soustitre' => $soustitre, 'paragraphe' => $paragraphe, 'title' => $title,'subtitle' => $subtitle, 'paragraph' => $paragraph, 'img' => $img));
-        }
+$out= TRUE;
+while ($donnees = $reponse->fetch() AND $out){
+  $isImgs= htmlspecialchars($donnees['count']) ;
+  $max=max(count($convert),count($convert_en));
+  $calcul = 3 * $nbImgs +1 ;
+    if ($calcul< $max) {
+    $reponse->closeCursor();
+    for ($position=1; $position < $max; $position++) { 
+      $reponse = $bdd->query('SELECT count(*) AS count FROM challenge_contenu WHERE challenge_uid='.$id.' AND position='.$position);
+      if (htmlspecialchars($donnees['count'])== 0) {
+        require("lib/ajax/verifconvert.php");
+        $img = 'http://www.recontact.me/img/lost.jpg';
+        $reqI->execute(array( 'challengeUid' => $challengeUid, 'position' => $position,'titre' => $titre,'soustitre' => $soustitre, 'paragraphe' => $paragraphe, 'title' => $title,'subtitle' => $subtitle, 'paragraph' => $paragraph, 'img' => $img));
       }
     }
+    $out=false;
+  }else{
+    $out=false;
+  }
 }
 $reponse->closeCursor();
 
