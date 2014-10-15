@@ -24,10 +24,7 @@ var interpolateTime=function(start,finish,position){var diff=finish.getTime()-st
 				iconEl.id += 'imgIconEl';
                 var imgIconEl = new Image();
                 imgIconEl.src = images[current.data('bg') - 1]; 
-                imgIconEl.onload = function (){
-                    this.width = this.width * 2;
-                    this.height = this.height * 2;
-                }
+                imgIconEl.className = 'centreImgTime';
                 iconEl.appendChild(imgIconEl);
 				
 	iconEl.className+='mode-icon mode-icon'+current.data('bg');controllerContainer.append(iconEl);setTimeout(function(){bgEl.className+=' show';},20);setTimeout(function(){iconEl.className+=' show';},300);}
