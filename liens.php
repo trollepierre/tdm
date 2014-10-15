@@ -25,5 +25,7 @@
 	</p>	
 </div>
 
+<?php require("w/7comments.php");?>
+<div class="espace"> . </div>
 <?php require("w/8footer.php");?>
 <?php require("w/9end.php");?>
