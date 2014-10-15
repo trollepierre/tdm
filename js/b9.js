@@ -13,180 +13,23 @@ function footerBgRotating(interval){var current=1;setInterval(function(){setFoot
 footerBgRotating(4000);$document.on('mouseenter','.dot-with-circle',function(){var $this=$(this);var descriptionNumber=$this.data('hover');$('.description'+descriptionNumber).addClass('current');});$document.on('mouseleave','.dot-with-circle',function(){setTimeout(function(){$('.description').removeClass('current');},200);});var done=false;var windowHeight=Math.round($(window).height());$('.timeline-bg').height(windowHeight);$('.mode').css('padding-top',windowHeight*0.42+300);$('.mode').css('padding-bottom',windowHeight*0.22+000);$('.mode').last().css('padding-bottom',windowHeight*0.43+200);$('.clocks').css('top',windowHeight*0.5-68);$('.vertical-line1').css('height',windowHeight*0.50-78);$('.vertical-line2').css('height',windowHeight*0.50-78);$('.vertical-line2').css('top',windowHeight*0.50+78);$('.timeline-controller').css('top',windowHeight*0.5-266);var timeline=$('.timeline');$(window).scroll(function(){var scrollTop=$(window).scrollTop();if(timeline.position().top+timeline.height()+$('.scroller ul').height()<scrollTop+window.innerHeight){$('.timeline').removeClass('fixed');$('.timeline').addClass('done');$('.vertical-line1').css('top','auto');$('.vertical-line1').css('bottom',windowHeight*0.5+78);$('.vertical-line2').css('top','auto');$('.vertical-line2').css('bottom',0);$('.clocks').css('top','auto');$('.clocks').css('bottom',windowHeight*0.5-68);$('.timeline-controller').css('top','auto');$('.timeline-controller').css('bottom',windowHeight*0.5-266);}else if(timeline.position().top+$(window).height()<scrollTop+$(window).height()){$('.timeline').addClass('fixed');$('.timeline').removeClass('done');$('.vertical-line1').css('top',0);$('.vertical-line1').css('bottom','auto');$('.vertical-line2').css('top',windowHeight*0.50+78);$('.vertical-line2').css('bottom','auto');$('.clocks').css('top',windowHeight*0.5-68);$('.clocks').css('bottom','auto');$('.timeline-controller').css('top',windowHeight*0.5-266);$('.timeline-controller').css('bottom','auto');}else{$('.timeline').removeClass('fixed');$('.timeline').removeClass('done');}});if($('.timeline').length){function formatAMPM(date){if(typeof date!=='undefined'){var hours=date.getHours();var minutes=date.getMinutes();}else{var hours=0;var minutes=0;}
 var ampm=hours>=12?'':'';hours=hours%12;hours=hours?hours:0;minutes=minutes<10?'0'+minutes:minutes;var strTime="<div class='time'><span class='hours'>"+hours+"</span><span class='colon'></span><span class='minutes'>"+minutes+"</span></div><span class='forenoon'>"+ampm+"</span>";return strTime;}
 var interpolateTime=function(start,finish,position){var diff=finish.getTime()-start.getTime();return new Date(start.getTime()+diff*position);};var initializeTimeline=function(){var dates=[new Date(2013,11,5,1,0,0),new Date(2013,11,5,2,0,0),new Date(2013,11,5,3,0,0),new Date(2013,11,5,4,0,0),new Date(2013, 11, 5, 5, 0, 0),new Date(2013, 11, 5, 6, 0, 0),new Date(2013, 11, 5, 7, 0, 0),new Date(2013, 11, 5, 8, 0, 0),new Date(2013, 11, 5, 9, 0, 0),new Date(2013, 11, 5, 10, 0, 0),];var timeline=$('.timeline');var timelineTop=timeline.offset().top;var timelineHeight=timeline[0].scrollHeight;var timelineBottom=timelineTop+timelineHeight;var timelineSections=$('.mode');var positions=timelineSections.map(function(){return $(this).position().top;});var $time=$('.clocks');var lastSection=timelineSections.last();var lastSectionPosition=lastSection.position().top;$(window).scroll(function(){var scrollTop=$(window).scrollTop();if(scrollTop>timelineTop-window.innerHeight&&scrollTop<timelineBottom){var a=positions.filter(function(i,item){return scrollTop-timelineTop>item;});var currentIndex=a.length-1;var nextIndex=currentIndex+1;var current=timelineSections.eq(currentIndex);var next=timelineSections.eq(nextIndex);var controllerContainer=$('.timeline-controller');if(!$('.timeline-bg').hasClass('timeline-bg'+current.data('bg'))&&scrollTop>timelineTop){var prevBg=timeline.find('.timeline-bg');var prevIcon=controllerContainer.find('.mode-icon');prevIcon.removeClass('show');setTimeout(function(){prevIcon.remove();},350);setTimeout(function(){prevBg.remove();},850);var bgEl=document.createElement('div');bgEl.className+='timeline-bg timeline-bg'+current.data('bg');timeline.append(bgEl);var iconEl=document.createElement('div');
-// 
+/**/ 
 				var images;
-				if (!(window.images)) {
-				    alert(window.images);
-				    images = ['http://www.recontact.me/img/dest_img/southAmerica.jpg',  'http://www.google.com/intl/en_ALL/images/logo.gif', 'http://www.recontact.me/img/dest_img/southAmerica.jpg'];
+					if (window.images) {
+				    images = window.images;
 				} else {
-				   	images = window.images;
-			    	iconEl.id += 'imgIconEl';
-                	var imgIconEl = new Image();
-                	imgIconEl.src = images[current.data('bg') - 1];
-					imgIconEl.id +='imagesNico' ;
-					var urlDeLImage = images[current.data('bg') - 1];
-					imgIconEl.onload = function (){
-//1 Créer un canvas
-	var tagName ='canvasName';
-	var canvas = document.createElement(tagName);
-						// if (this.status == 200) {  //CETTE CONDITION NE MARCHE PAS 
-							// Note: .response instead of .responseText
-       						console.log ("got image");
-       						// var blob = this.response; => pas besoin
-       						// console.log("about to parse blob:" + _.pairs(this.response));
-//2) Rotationner le canvas en fonction de l'exif
-      					    //Dans ta fonction loadImage.parseMetaData, tu dois mettre en paramètre l'url de l'image à la place de blob
-      					    loadImage.parseMetaData(urlDeLImage, function (data) {
-						    	// console.log("EXIF:" + _.pairs(data))  // CE TRUC NE MARCHE PAS
-						    	var ori ="initial";
-	   							if (data.exif)
-						    		{
-						    	        ori = data.exif.get('Orientation');
-						    alert("troll : Ori vient d etre defini");
-						    	    }
-						    	    console.log("ori is:" + ori);
-						    	}
-						    );
-      					    	alert("troll : Avez-vous recu le mess annoncant que Ori vient d etre defini ????");
-							var loadingImage = loadImage(
-						    urlDeLImage,
-						    function (img) {
-						        console.log("in loadingImage");
-						        alert("troll : Image loaded");
-//			3) Dessiner l'image dans le canvas
-							//Pour dessiner une image dans le canvas, voici la doc: https://developer.mozilla.org/en/docs/Web/API/CanvasRenderingContext2D
-
-// recopiage ***********************************************************************************
-/**
- * Module dependencies.
- */
-
-var rotate = require('rotate');
-var flip = require('flip');
-
-/**
- * Expose `orient`.
- */
-
-module.exports = orient;
-
-/**
- * Orientations.
- */
-
-var orientations = [
-  { op: 'none', degrees: 0 },
-  { op: 'flip-x', degrees: 0 },
-  { op: 'none', degrees: 180 },
-  { op: 'flip-y', degrees: 0 },
-  { op: 'flip-x', degrees: 90 },
-  { op: 'none', degrees: 90 },
-  { op: 'flip-x', degrees: -90 },
-  { op: 'none', degrees: -90 }
-];
-
-/**
- * Rotate `img` with orientation `n` when necessary.
- *
- * The `img` dimensions are updated as necessary to
- * reflect the rotation applied.
- *
- * @param {Image} img
- * @param {Number} n
- * @return {String} data uri
- */
-
-function orient(img, n) {
-  var o = orientations[n - 1];
-
-  // canvas
-  var canvas = document.createElement('canvas');
-  var ctx = canvas.getContext('2d');
-
-  // dims
-  if (rotated(n)) {
-    canvas.height = img.width;
-    canvas.width = img.height;
-  } else {
-    canvas.width = img.width;
-    canvas.height = img.height;
-  }
-
-  // flip
-  if ('flip-x' == o.op) flip(canvas, true, false);
-  if ('flip-y' == o.op) flip(canvas, false, true);
-
-  // rotate
-  if (o.degrees) {
-    rotate(ctx, {
-      degrees: o.degrees,
-      x: canvas.width / 2,
-      y: canvas.height / 2
-    });
-
-    if (rotated(n)) {
-      var d = canvas.width - canvas.height;
-      ctx.translate(d / 2, -d / 2);
-    }
-  }
-
-  ctx.drawImage(img, 0, 0);
-  return canvas.toDataURL('image/jpeg');
-}
-
-/**
- * Check if we need to change dims.
- */
-
-function rotated(n) {
-  return !! ~[5,6,7,8].indexOf(n);
-}
-//fin recopiage ****************************************************************************
-
-// var canvas = document.getElementById('mycanvas');
-								var ctx = canvas.getContext('2d');
-// CanvasRenderingContext2D.drawImage(img,dx,dy);
-// https://developer.mozilla.org/en/docs/Web/API/CanvasRenderingContext2D#drawImage()
-								var n = ori;
-								orient(img,n);
-								CanvasRenderingContext2D.drawImage(img,canvas.height,canvas.width);
-// Draws the specified image. This method is available in multiple formats, providing a great deal of flexibility in its use.
-								alert('troll : le canvas est happy');
-						        document.body.appendChild(img);
-						    },
-					        {	maxWidth: 600,
-						        orientation: 3, 
-			//4) Ajouter le canvas
-						        canvas: true,
-						        crossOrigin:'anonymous'
-						        }
-						    );
-						    if (!loadingImage) {
-						            // Alternative code ...
-						    }
-							alert('troll : fin de loading - Pourquoi ce message arrive avant Image loaded???	');
-						}
-                    /*	this.width = this.width * 2;
-                    	this.height = this.height * 2;*/
-                	}
-                	/*var imageUrl = images[current.data('bg') - 1];
-                	loadImage(
-				    	imageUrl,
-				    	function (imgIconEl) {
-				        	if(imgIconEl.type === "error") {
-				            	console.log("Error loading image " + imageUrl);
-				        	} else {
-				            	//document.body.appendChild(img);
-				            	iconEl.appendChild(imgIconEl);
-				        	}
-				    	},
-				    	{maxWidth: 600
-				   		}
-					);*/
-				//}				
-                
-// 
-						alert("troll : Pourquoi ce message arrive en premier");
+					// alert(window.images);
+				    images = ['http://www.recontact.me/img/dest_img/southAmerica.jpg',  'http://www.google.com/intl/en_ALL/images/logo.gif', 'http://www.recontact.me/img/dest_img/southAmerica.jpg'];
+				}
+				iconEl.id += 'imgIconEl';
+                var imgIconEl = new Image();
+                imgIconEl.src = images[current.data('bg') - 1]; 
+                imgIconEl.onload = function (){
+                    this.width = this.width * 2;
+                    this.height = this.height * 2;
+                }
+                iconEl.appendChild(imgIconEl);
+				
 	iconEl.className+='mode-icon mode-icon'+current.data('bg');controllerContainer.append(iconEl);setTimeout(function(){bgEl.className+=' show';},20);setTimeout(function(){iconEl.className+=' show';},300);}
 if(currentIndex<0){$time.html(formatAMPM(dates[0]));return;}
 if(scrollTop-50>lastSectionPosition+timelineTop){$time.html('0');$time.addClass('0');return;}
