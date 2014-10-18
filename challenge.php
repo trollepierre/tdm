@@ -7,6 +7,11 @@
     $id = (isset($_GET['id'])) ? htmlspecialchars($_GET['id']) : $count ;    
     $reponse->closeCursor();
     require("w/0fonctions.php");
+    ?>
+    <script type="text/javascript">
+        <?php RemplirWindowImage('challenge'); ?>
+    </script>
+<?php    
     require("w/1head.php");
     echo '<style type="text/css">';
     IconBackgroundA('challenge');
@@ -15,6 +20,15 @@
 </head>
 
 <body class="home page page-id-4 page-template page-template-page-home-php custom-background">
+       <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&appId=661854923873753&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <?php require("w/2lightbox.php");?>
 <?php require("w/4headerScroller.php");?>
 
@@ -28,7 +42,17 @@
     <div class='timeline' style="">
         <div class='timeline-bg timeline-bg1 show'></div>
         <div class='timeline-controller'>
-            <div class='mode-icon mode-icon1 show' ></div>
+            <div class='mode-icon mode-icon1 show' >
+                  <?php 
+    include("lib/creerBdd.php");
+    global $id;
+    $reponse = $bdd->query('SELECT img_link FROM article_contenu WHERE article_uid = '.$id.' AND position = 1');
+    // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
+    while ($donnees = $reponse->fetch()){
+      echo '<img class="centreImgTime" src="'.htmlspecialchars($donnees['img_link']).'">';
+    }
+    $reponse->closeCursor();
+    ?></div>
         </div>
         <div class='inside'>
             <div class='clocks'>
@@ -44,26 +68,7 @@
      <div id="lesAutresPhotos"></div>
     <div class="carousel" >
         <div class="ourArticles">
-            <a href="challenge.php">
-                <h1> <?php echo VLAD; ?> </h1>
-            </a>
-        </div>
-
- <div class="flex-slider carousel">
-            <ul class="slides">
-                <?php 
-                include("lib/creerBdd.php");
-                $reponse = $bdd->query('SELECT nom, name,challenge_uid,img_link FROM challenge ORDER BY challenge_uid');
-                while ($donnees = $reponse->fetch()){
-                    $nome = ($lang==='fr') ? 'nom' : 'name' ;
-                    ImgCarroussel(htmlspecialchars($donnees[$nome]),htmlspecialchars($donnees['challenge_uid']),'challenge', htmlspecialchars($donnees['img_link']));
-                }
-                $reponse->closeCursor();
-                ?>
-            </ul>
-        </div>
-        <div class="ourArticles">
-           <a href=
+            <a class="discover" title="<?php echo ALTVLAPDD; ?>" href=
                 <?php 
                 include("lib/creerBdd.php");
                  global $id;
@@ -78,6 +83,7 @@
                  <h1> <?php echo VLAPDD; ?> </h1>
             </a>
         </div>
+
         <div class="flex-slider carousel">
             <ul class="slides">
             <?php
@@ -91,7 +97,29 @@
             ?>   
             </ul>
         </div>
+        <div class="ourArticles">
+           <a href="challenges.php" class="discover" title="<?php echo ALTVLAD; ?>">
+                <h1> <?php echo VLAD; ?> </h1>
+            </a>
+        </div>
+ <div class="flex-slider carousel">
+            <ul class="slides">
+                <?php 
+                include("lib/creerBdd.php");
+                $reponse = $bdd->query('SELECT nom, name,challenge_uid,img_link FROM challenge ORDER BY challenge_uid DESC');
+                while ($donnees = $reponse->fetch()){
+                    $nome = ($lang==='fr') ? 'nom' : 'name' ;
+                    ImgCarroussel(htmlspecialchars($donnees[$nome]),htmlspecialchars($donnees['challenge_uid']),'challenge', htmlspecialchars($donnees['img_link']));
+                }
+                $reponse->closeCursor();
+                ?>
+            </ul>
+        </div>
     </div>
+     <div class="fbCenter">
+        <div class="fb-comments" data-href="https://www.facebook.com/recontact.me" data-width="600px" data-numposts="5" data-colorscheme="light"></div>
+    </div>
+    <div class="espace">. </div>
     <div id="caracteristiques"></div><!--INDISPENSABLE : WHY?-->
     <div class="galery" id="gallery"></div>
 <?php require("w/8footer.php");?>

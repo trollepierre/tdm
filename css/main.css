@@ -22,6 +22,25 @@ body {
     background:#1c1c1d;
 }
 
+.fbCenter{
+   width: 600px;
+   margin: auto;
+}
+.centreImgTime{
+margin: auto;
+position: absolute;
+top:0;
+bottom:0;
+left:0;
+right: 0;
+}
+
+.espace{
+    margin-bottom: 15px;
+}
+.discover:hover{
+    color: #2a6496;
+}
 #header{
  height: 200px;
 }
@@ -875,6 +894,15 @@ font-size: 50px;
     font-weight: bold;
 }
 
+.timeline .timeline-controller .mode-icon{
+            height:600px;
+            width:468px;
+            background-size: auto 530px;
+            background-repeat: no-repeat;
+            background-position: center;
+            top:0px;
+            left:0px;  
+}
 
 .timeline .modes[title="article"]{
     font-size: inherit;

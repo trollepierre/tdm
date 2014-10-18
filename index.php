@@ -1,19 +1,24 @@
 <?php require("w/0fonctions.php");
+?>
+ <script type="text/javascript">
+         <?php /*RemplirWindowImage('challenge');*/ ?>
+    </script>
+<?php
       require("w/1head.php");
 ?>
 
 <style type="text/css">
     <?php  IconBackground(); ?>
+    .ns-effect-cornerexpand .icon{
+    padding-top: 10px;
+    }
 </style>
 </head>
 <body class="home page page-id-4 page-template page-template-page-home-php custom-background">
 <?php 
     require("w/2lightbox.php");
-    if ($lang=='fr') {           
-        require("w/3intro.php");
-    }  else {                      
-        require("w/3introen.php");
-    }
+    require("w/3intro.php");
+
 #  PAGE 1/2  ===========================================================================-->
     require("w/4headerScroller.php");
     require("w/5notification.php");
@@ -31,7 +36,11 @@
     <div class='timeline' style="">
         <div class='timeline-bg timeline-bg1 show'></div>
         <div class='timeline-controller'>
-            <div class='mode-icon mode-icon1 show'></div>
+            <div class='mode-icon mode-icon1 show'>
+                <img src = <?php 
+                echo '"<img class="centreImgTime" src="http://www.recontact.me/img/dest_img/southAmerica.jpg"">';
+                ?>>
+            </div>
         </div>
 
         <div class='inside'>
@@ -51,7 +60,7 @@
     <div id="lesArticles"></div>
       <div class="carousel">
         <div class="ourArticles" >
-            <a href="article.php">
+            <a href="article.php" class="discover" title="<?php echo ALTDAOA; ?>">
                 <h1 class="paddingZero"> <?php echo DAOA; ?></h1>
             </a>
         </div>
@@ -73,7 +82,7 @@ while ($donnees = $reponse->fetch())
     
      <div class="carousel" >
         <div class="ourArticles">
-            <a href="challenge.php">
+            <a href="challenge.php" class="discover"  title="<?php echo ALTDAOC; ?>">
                 <h1> <?php echo DAOC; ?> </h1>
             </a>
         </div>

@@ -32,11 +32,13 @@ function RemplirWindowImage($article){
   $reponse = $bdd->query('SELECT img_link FROM '.$article.'_contenu WHERE '.$article.'_uid = '.$id.' ORDER BY position');
   // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
   $images = array();
-  while ($donness = $reponse->fetch())
+  echo 'window.images = [' ;
+  while ($donnees = $reponse->fetch())
     {
-      $images[] = htmlspecialchars($donnees['img_link']);
+      echo '"'.htmlspecialchars($donnees['img_link']).'",';
     }
-  echo 'window.image = ' . json_encode($images) . ';';
+    echo "];";
+  // echo "window.images = " . json_encode($images) . ";";
   // window.images = ["http://image1", "http://........."];
     $reponse->closeCursor();
 }
@@ -80,7 +82,7 @@ require("destination/destination_img.php");
           height: 532px;
           width: 416px;
           border: 1px solid black;
-          
+          background:url("http://www.recontact.me/img/dest_img/'.$value.'.jpg");
           background-size: auto 530px;
           background-repeat: no-repeat;
           background-position: center;
@@ -160,21 +162,20 @@ global $id;
 $reponse = $bdd->query('SELECT position, img_link FROM '.$article.'_contenu WHERE '.$article.'_uid = '.$id.' ORDER BY position');
 
 $color = (strcmp($article, 'article')) ? '#ff0000' : '#009bd3'  ;
-$nbArticles=count($contentArticles)+1; 
+
 
 // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
 while ($donnees = $reponse->fetch())
   {
-    echo '.timeline .timeline-controller .mode-icon'. htmlspecialchars($donnees['position']).'{
-            height:600px;
-            width:468px;
-           /*background:url("'.htmlspecialchars($donnees['img_link']).'");*/
-            background-size: auto 530px;
-            background-repeat: no-repeat;
-            background-position: center;
-            top:0px;
-            left:0px;  
+    echo '#imagesNico{
+            max-height:100%;
+            margin:auto;
+            // padding-top:100px;
+            vertical-align:center;
             }
+          .mode-icon{
+             vertical-align : center;
+          }
             .timeline .timeline-bg.timeline-bg'.htmlspecialchars($donnees['position']).'{
             background:'.$color.';
             }'
