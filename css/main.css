@@ -22,6 +22,10 @@ body {
     background:#1c1c1d;
 }
 
+.fbCenter{
+   width: 600px;
+   margin: auto;
+}
 .centreImgTime{
 margin: auto;
 position: absolute;
