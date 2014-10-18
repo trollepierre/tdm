@@ -17,15 +17,15 @@ var interpolateTime=function(start,finish,position){var diff=finish.getTime()-st
 				var images;
 					if (window.images) {
 				    images = window.images;
-				} else {
-					// alert(window.images);
-				    images = ['http://www.recontact.me/img/dest_img/southAmerica.jpg',  'http://www.recontact.me/img/dest_img/oceania.jpg', 'http://www.recontact.me/img/dest_img/asia.jpg'];
-				}
 				iconEl.id += 'imgIconEl';
                 var imgIconEl = new Image();
                 imgIconEl.src = images[current.data('bg') - 1]; 
                 imgIconEl.className = 'centreImgTime';
                 iconEl.appendChild(imgIconEl);
+				} else {
+					// alert(window.images);
+				    // images = ['http://www.recontact.me/img/dest_img/southAmerica.jpg',  'http://www.recontact.me/img/dest_img/oceania.jpg', 'http://www.recontact.me/img/dest_img/asia.jpg'];
+				}
 				
 	iconEl.className+='mode-icon mode-icon'+current.data('bg');controllerContainer.append(iconEl);setTimeout(function(){bgEl.className+=' show';},20);setTimeout(function(){iconEl.className+=' show';},300);}
 if(currentIndex<0){$time.html(formatAMPM(dates[0]));return;}

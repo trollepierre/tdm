@@ -893,7 +893,6 @@ font-size: 50px;
 .timeline .timeline-controller .mode-icon{
             height:600px;
             width:468px;
-           /*background:url("'.htmlspecialchars($donnees['img_link']).'");*/
             background-size: auto 530px;
             background-repeat: no-repeat;
             background-position: center;
