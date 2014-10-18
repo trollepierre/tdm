@@ -103,7 +103,7 @@ define('PIERRE', "This is Pierre
 				<br/> Great traveler and entrepreneur. 
 				</p><p>
 				 To live is more important than following the paths society built for us.");
-	define('BENOIT', 'Benoit Alias Jack. 
+	define('BENOIT', 'Benoit aka Jack. 
 				<br/> Practising scoutism since the youngest age, he wants to live adventures and discoveries. 
 				</p><p> This world trip will be awesome !');
 	define('NUAGE','Destination cloud');
