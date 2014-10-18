@@ -36,7 +36,11 @@
     <div class='timeline' style="">
         <div class='timeline-bg timeline-bg1 show'></div>
         <div class='timeline-controller'>
-            <div class='mode-icon mode-icon1 show'></div>
+            <div class='mode-icon mode-icon1 show'>
+                <img src = <?php 
+                echo '"<img class="centreImgTime" src="http://www.recontact.me/img/dest_img/southAmerica.jpg"">';
+                ?>
+            </div>
         </div>
 
         <div class='inside'>
