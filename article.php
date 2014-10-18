@@ -89,7 +89,7 @@
             </ul>
         </div>
         <div class="ourArticles">
-             <a href="article.php" class="discover" title="<?php echo ALTVLAA; ?>">
+             <a href="articles.php" class="discover" title="<?php echo ALTVLAA; ?>">
                 <h1> <?php echo VLAA; ?> </h1>
             </a>
         </div>

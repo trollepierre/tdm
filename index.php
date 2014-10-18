@@ -39,7 +39,7 @@
             <div class='mode-icon mode-icon1 show'>
                 <img src = <?php 
                 echo '"<img class="centreImgTime" src="http://www.recontact.me/img/dest_img/southAmerica.jpg"">';
-                ?>
+                ?>>
             </div>
         </div>
 

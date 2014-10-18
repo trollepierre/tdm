@@ -139,7 +139,7 @@
                 </a>
             </li>
             <li>
-                <a href="http://www.recontact.me#lesArticles"  title="<?php echo ALTARTICLES; ?>">
+                <a href="http://www.recontact.me/articles.php"  title="<?php echo ALTARTICLES; ?>">
                     <?php echo ARTICLES; ?>
                 </a>
             </li>

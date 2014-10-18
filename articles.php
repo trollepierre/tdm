@@ -59,41 +59,21 @@
                 </div>
             </div>
             <div class='modes' id="dest">
-<?php 
-include("lib/creerBdd.php");
-    global $id;
-    $nom = ($lang="fr") ? "nom" : "name" ;
-    $reponse = $bdd->query('SELECT article_uid,'.$nom.' FROM article ORDER BY article_uid');
-    // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
-    while ($donnees = $reponse->fetch()){
-      echo ' <p class="mode mode'.htmlspecialchars($donnees['article_uid']).'" data-bg="'.htmlspecialchars($donnees['article_uid']).'">
-           <br/>        <span class="titreArticle">     '.htmlspecialchars($donnees[$nom]).'      </span>
-          </p>';
-    }
-    $reponse->closeCursor();
-    ?>
-<?php
-/*
-include("lib/creerBdd.php");
-global $id;
-global $lang;
-$titre = ($lang==='fr') ? 'titre' : 'title' ;
-$soustitre = ($lang==='fr') ? 'soustitre' : 'subtitle' ;
-$paragraphe = ($lang==='fr') ? 'paragraphe' : 'paragraph' ;
-$reponse = $bdd->query('SELECT position, titre, soustitre, paragraphe, title, subtitle, paragraph FROM '.$article.'_contenu WHERE '.$article.'_uid = '.$id.' ORDER BY position');
-while ($donnees = $reponse->fetch())
-  {
-    echo ' <p class="mode mode'.htmlspecialchars($donnees['position']).'" data-bg="'.htmlspecialchars($donnees['position']).'">
-           <br/>        <span class="titreArticle">     '.htmlspecialchars($donnees[$titre]).'      </span>
-           <br/>        <span class="sstitreArticle">   '.htmlspecialchars($donnees[$soustitre]).'  </span>
-           <br/> <br/>  <span style="display:block; text-align:justify;  font-size: 20px; font-weight: normal;font-family: inherit;">     '.slashN(htmlspecialchars($donnees[$paragraphe])).' </span> 
-           </p>';
-    }
-    $reponse->closeCursor();
-}/**/
-
-//111
-?>
+              <?php 
+              include("lib/creerBdd.php");
+                  global $id;
+                  $nom = ($lang==="fr") ? "nom" : "name" ;
+                  $voirlarticle = ($lang==="fr") ? 'Voir l\'article' : 'See the article' ;
+                  $reponse = $bdd->query('SELECT article_uid,'.$nom.' FROM article ORDER BY article_uid');
+                  // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
+                  while ($donnees = $reponse->fetch()){
+                    echo '<p class="mode mode'.htmlspecialchars($donnees['article_uid']).'" data-bg="'.htmlspecialchars($donnees['article_uid']).'">
+                         <br/>        <span class="titreArticle">     '.htmlspecialchars($donnees[$nom]).'      </span>
+                          <br/> <br/> <a class="btn btn-lg btn-primary"  href="article.php?id='.htmlspecialchars($donnees['article_uid']).'"> <span style="display:block; font-size: 30px; font-weight: normal;font-family: inherit;"> '.$voirlarticle.'</span> </a>
+                        </p>';
+                  }
+                  $reponse->closeCursor();
+                  ?>
             </div>
         </div>
     </div>
