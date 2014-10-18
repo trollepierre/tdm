@@ -5,13 +5,15 @@
         <?php 
         include("lib/creerBdd.php");
   global $id;
-  $reponse = $bdd->query('SELECT img_link FROM article ORDER BY article_uid');
+  $reponse = $bdd->query('SELECT img_link FROM article ORDER BY article_uid ASC');
   // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
   $images = array();
   echo 'window.images = [' ;
+  $compteur=0;
   while ($donnees = $reponse->fetch())
     {
-      echo '"'.htmlspecialchars($donnees['img_link']).'",';
+     $compteur++;
+     echo '"'.htmlspecialchars($donnees['img_link']).'",';
     }
     echo "];";
     $reponse->closeCursor();
@@ -44,7 +46,7 @@
     <?php 
     include("lib/creerBdd.php");
     global $id;
-    $reponse = $bdd->query('SELECT img_link FROM article WHERE article_uid = 1');
+    $reponse = $bdd->query('SELECT img_link FROM article WHERE article_uid = '.$compteur);
     // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
     while ($donnees = $reponse->fetch()){
       echo '<img class="centreImgTime" src="'.htmlspecialchars($donnees['img_link']).'">';
@@ -64,7 +66,7 @@
                   global $id;
                   $nom = ($lang==="fr") ? "nom" : "name" ;
                   $voirlarticle = ($lang==="fr") ? 'Voir l\'article' : 'See the article' ;
-                  $reponse = $bdd->query('SELECT article_uid,'.$nom.' FROM article ORDER BY article_uid');
+                  $reponse = $bdd->query('SELECT article_uid,'.$nom.' FROM article ORDER BY article_uid DESC');
                   // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
                   while ($donnees = $reponse->fetch()){
                     echo '<p class="mode mode'.htmlspecialchars($donnees['article_uid']).'" data-bg="'.htmlspecialchars($donnees['article_uid']).'">
