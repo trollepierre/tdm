@@ -71,7 +71,7 @@ $convert_en = explode("*", $data); //create array separate by *
 $name = $convert_en[0];
 
 $query = "jpg";
-$returnSearchFileName=$myCustomClient->searchFileNames($basePath, $query);
+$returnSearchFileName1=$myCustomClient->searchFileNames($basePath, $query);
 $query = "mp4";
 $returnSearchFileName2=$myCustomClient->searchFileNames($basePath, $query);
 $returnSearchFileName= array_merge($returnSearchFileName1,$returnSearchFileName2);
@@ -121,7 +121,7 @@ $reponse->closeCursor();
 $reponse = $bdd->query('SELECT count(*) AS count FROM challenge_contenu WHERE challenge_uid='.$id);
 $out= TRUE;
 while ($donnees = $reponse->fetch() AND $out){
-  $isImgs= htmlspecialchars($donnees['count']) ;
+  $nbImgs= htmlspecialchars($donnees['count']) ;
   $max=max(count($convert),count($convert_en));
   $calcul = 3 * $nbImgs +1 ;
     if ($calcul< $max) {
