@@ -5,12 +5,14 @@
         <?php 
         include("lib/creerBdd.php");
   global $id;
-  $reponse = $bdd->query('SELECT img_link FROM challenge ORDER BY challenge_uid');
+  $reponse = $bdd->query('SELECT img_link FROM challenge ORDER BY challenge_uid deSC');
   // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
   $images = array();
   echo 'window.images = [' ;
+  $compteur =0;
   while ($donnees = $reponse->fetch())
     {
+      $compteur++;
       echo '"'.htmlspecialchars($donnees['img_link']).'",';
     }
     echo "];";
@@ -44,7 +46,7 @@
     <?php 
     include("lib/creerBdd.php");
     global $id;
-    $reponse = $bdd->query('SELECT img_link FROM challenge WHERE challenge_uid = 1');
+    $reponse = $bdd->query('SELECT img_link FROM challenge WHERE challenge_uid = '.$compteur);
     // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
     while ($donnees = $reponse->fetch()){
       echo '<img class="centreImgTime" src="'.htmlspecialchars($donnees['img_link']).'">';
@@ -64,10 +66,11 @@
                   global $id;
                   $nom = ($lang==="fr") ? "nom" : "name" ;
                   $voirlchallenge = ($lang==="fr") ? 'Voir le défi' : 'See the challenge' ;
-                  $reponse = $bdd->query('SELECT challenge_uid,'.$nom.' FROM challenge ORDER BY challenge_uid');
+                  $reponse = $bdd->query('SELECT challenge_uid,'.$nom.' FROM challenge ORDER BY challenge_uid DESC');
                   // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
                   while ($donnees = $reponse->fetch()){
-                    echo '<p class="mode mode'.htmlspecialchars($donnees['challenge_uid']).'" data-bg="'.htmlspecialchars($donnees['challenge_uid']).'">
+                    $cu = $compteur - htmlspecialchars($donnees['challenge_uid']) + 1;
+                    echo '<p class="mode mode'.$cu.'" data-bg="'.$cu.'">
                          <br/>        <span class="titreArticle">     '.htmlspecialchars($donnees[$nom]).'      </span>
                           <br/> <br/> <a class="btn btn-lg btn-primary"  href="challenge.php?id='.htmlspecialchars($donnees['challenge_uid']).'"> <span style="display:block; font-size: 30px; font-weight: normal;font-family: inherit;"> '.$voirlchallenge.'</span> </a>
                         </p>';

@@ -83,16 +83,16 @@
 	
 	define('DAOA','Discover all our Articles');
 	define('DAOC','Discover all our Challenges');
-	define('VLAPDLA',"These are the other pictures of this article");
-	define('VLAA',"These are the other articles");
-	define('VLAPDD',"These are the other pictures of this challenge");
-	define('VLAD',"These are the other challenges");
+	define('VLAPDLA',"Photo gallery of this article");
+	define('VLAA',"List of articles");
+	define('VLAPDD',"Photo gallery of of this challenge");
+	define('VLAD',"List of challenges");
 	define('ALTDAOA','Click here to go to the Articles page');
 	define('ALTDAOC','Click here to go to the Challenges page');
-	define('ALTVLAPDLA',"Click here to see the other pictures of this article on Dropbox");
-	define('ALTVLAA',"Click here to see the other articles");
-	define('ALTVLAPDD',"Click here to see the other pictures of this challenge on Dropbox");
-	define('ALTVLAD',"Click here to see the other challenges");
+	define('ALTVLAPDLA',"Click here to see the photo gallery of this article on Dropbox");
+	define('ALTVLAA',"Click here to see all the articles");
+	define('ALTVLAPDD',"Click here to see the photo gallery of this challenge on Dropbox");
+	define('ALTVLAD',"Click here to see all the challenges");
 		
 
 	define('QDDM',"Which destinations discover next (work in progress)?");

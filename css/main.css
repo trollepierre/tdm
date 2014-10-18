@@ -38,7 +38,7 @@ right: 0;
 .espace{
     margin-bottom: 15px;
 }
-.discover:hover{
+.discover:hover, .article-name:hover{
     color: #2a6496;
 }
 #header{
