@@ -118,7 +118,7 @@ while ($donnees = $reponse->fetch())
 
     </div>
     <div class="fbCenter">
-        <div class="fb-comments" data-href="https://www.facebook.com/recontact.me" data-width="600px" data-numposts="5" data-colorscheme="light"></div>
+        <div class="fb-comments" data-href="http://www.recontact.me/article.php?id=<?php echo $id; ?>" data-width="600px" data-numposts="5" data-colorscheme="light"></div>
     </div>
 <div class="espace"> . </div>
     <div id="caracteristiques"></div><!--INDISPENSABLE : WHY?-->
