@@ -49,7 +49,7 @@
     $reponse = $bdd->query('SELECT img_link FROM article_contenu WHERE article_uid = '.$id.' AND position = 1');
     // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
     while ($donnees = $reponse->fetch()){
-      echo '<img class="centreImgTime" src="'.htmlspecialchars($donnees['img_link']).'">';
+      echo '<img style="border : 1px solid black;" class="centreImgTime" src="'.htmlspecialchars($donnees['img_link']).'">';
     }
     $reponse->closeCursor();
     ?></div>

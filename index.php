@@ -10,7 +10,7 @@
 <style type="text/css">
     <?php  IconBackground(); ?>
     .ns-effect-cornerexpand .icon{
-    padding-top: 10px;
+    padding-top: 13px;
     }
 </style>
 </head>

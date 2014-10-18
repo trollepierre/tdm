@@ -21,6 +21,7 @@ var interpolateTime=function(start,finish,position){var diff=finish.getTime()-st
                 var imgIconEl = new Image();
                 imgIconEl.src = images[current.data('bg') - 1]; 
                 imgIconEl.className = 'centreImgTime';
+                imgIconEl.style.border = "1px solid black";
                 iconEl.appendChild(imgIconEl);
 				} else {
 					// alert(window.images);
