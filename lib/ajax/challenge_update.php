@@ -117,6 +117,24 @@ while ($donnees = $reponse->fetch()){
       $req->execute(array( 'challengeUid' => $challengeUid, 'nom' => $nom, 'name' => $name, 'img0' => $img0, 'dropbox_link' => $dropbox_link));
     }
 }
+
+//YOUTUBE
+$file="lib/you.txt";
+$query = ".txt";
+$returnSearchFileName=$myCustomClient->searchFileNames($basePath, $query);
+foreach ($returnSearchFileName as $idFake => $texte) {
+  foreach ($texte as $key => $value) {
+    if($key=='path'){
+      $file=$myCustomClient->createTemporaryDirectLink($value)[0];
+    }
+  }
+}
+$data = file_get_contents($file); 
+$convert = explode("*", $data); //create array separate by *
+foreach ($convert as $key => $urlGallery) {
+  $reqG->execute(array( 'articleUid' => $articleUid, 'urlGallery' => $urlGallery));
+}
+
 $reponse->closeCursor();
 $reponse = $bdd->query('SELECT count(*) AS count FROM challenge_contenu WHERE challenge_uid='.$id);
 $out= TRUE;

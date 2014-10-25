@@ -121,12 +121,11 @@ foreach ($returnSearchFileName as $idFake => $texte) {
     }
   }
 }
-$urlGallery = file_get_contents($file); 
-print_r($urlGallery);
-
-$reqG->execute(array( 'articleUid' => $articleUid, 'urlGallery' => $urlGallery));
-
-print_r("reussi");
+$data = file_get_contents($file); 
+$convert = explode("*", $data); //create array separate by *
+foreach ($convert as $key => $urlGallery) {
+  $reqG->execute(array( 'articleUid' => $articleUid, 'urlGallery' => $urlGallery));
+}
 
 $reponse = $bdd->query('SELECT count(*) AS count FROM article WHERE article_uid='.$id);
 while ($donnees = $reponse->fetch()){
