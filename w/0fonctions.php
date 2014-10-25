@@ -16,12 +16,13 @@ function Carroussel($dropbox_link, $imglink){
   $convert=$convert[count($convert)-1];
   $nomImage = substr($convert, 0, -5);
   $imglink2 = $dropbox_link . '#lh:null-'.$nomImage;
-  if (substr($imglink, -8,3) === "mp4" ) {
+  if (substr($imglink, 0,15) === "http://youtu.be" ) {
     $imglink = "http://www.recontact.me/img/btn-play.png";
+    $imglink2 = $imglink;
   }
   echo    '<li>
                 <a class="article-name" href="'.$imglink2.'">
-                    <img src="'.$imglink.'" alt="One Picture" /> <br/>
+                    <img src="'.$imglink.'" alt="One Picture" target="_blank"/> <br/>
                 </a>
             </li>';     
 }

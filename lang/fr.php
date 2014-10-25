@@ -83,8 +83,8 @@
 	//Discover all our Challenges
 	define('PYC','Propose ton défi');
 	define('VTEC','Voir les défis proposés');
-	define('DAOA','Découvre nos articles');
-	define('DAOC','Découvre nos défis réalisés');
+	define('DAOA','Les  articles');
+	define('DAOC','Les défis réalisés');
 	define('VLAPDLA',"Galerie photo de l'article");
 	define('VLAA',"Liste des articles");
 	define('VLAPDD',"Galerie photo du défi");

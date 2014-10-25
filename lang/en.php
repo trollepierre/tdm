@@ -81,8 +81,8 @@
 	define('PYC','Propose your challenge');
 	define('VTEC','View the existing challenges');
 	
-	define('DAOA','Discover all our Articles');
-	define('DAOC','Discover all our Challenges');
+	define('DAOA','The Articles');
+	define('DAOC','The Challenges');
 	define('VLAPDLA',"Photo gallery of this article");
 	define('VLAA',"List of articles");
 	define('VLAPDD',"Photo gallery of of this challenge");
