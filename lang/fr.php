@@ -61,6 +61,8 @@
 	define('UAE', 'Emirats Arabes Unis');
 	define('ARTICLES', 'Articles');
 	define('ALTARTICLES', 'Retrouve tous nos articles');
+	define('CHALLENGES', 'Défis');
+	define('ALTCHALLENGES', 'Retrouve tous nos défis');
 	define('ALTAVION','Voir notre itinéraire');
 	define('ALTHOME',"Retourne à la page d'accueil");
 	define('ALTPAYPAL',"Aide-nous !");
@@ -68,6 +70,7 @@
 	define('ALTCHAL',"Voir notre dernier défi");
 	define('ALTART',"Voir notre dernier article");
 	define('ALTPROP',"Propose un défi");
+	define('ADDCHAL',"Ajoutez un défi");
 
 	define('GALLERY', 'Galerie');
 

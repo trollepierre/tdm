@@ -59,6 +59,8 @@
 	define('UAE', 'United Arab Emirates');
 	define('ARTICLES', 'Articles');
 	define('ALTARTICLES', 'Find all our articles');
+	define('CHALLENGES', 'Challenges');
+	define('ALTCHALLENGES', 'Find all our challenges');
 	define('GALLERY', 'Gallery');
 	define('CONTACT', 'Contact');
 	define('ALTCONTACT','Send us a message');
@@ -69,7 +71,7 @@
 	define('ALTCHAL',"Get a look to our last challenge");
 	define('ALTART',"Get a look to our last article");
 	define('ALTPROP',"Propose a challenge");
-	
+	define('ADDCHAL',"Add a challenge");
 //CONTACT.php
 	define('SUJET','Subject');
 	define('FIRSTNAME','First Name');

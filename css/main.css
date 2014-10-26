@@ -26,6 +26,14 @@ body {
    width: 600px;
    margin: auto;
 }
+.AddCenter{
+    margin: auto;
+    color: black;
+    font-size: 30px;
+    text-align: center;
+    
+}
+
 .centreImgTime{
 margin: auto;
 position: absolute;
