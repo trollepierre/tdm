@@ -110,6 +110,23 @@ foreach ($returnSearchFileName as $idFake => $image) {
   }
 }
 
+//YOUTUBE
+$file="lib/you.txt";
+$query = ".txt";
+$returnSearchFileName=$myCustomClient->searchFileNames($basePath, $query);
+foreach ($returnSearchFileName as $idFake => $texte) {
+  foreach ($texte as $key => $value) {
+    if($key=='path'){
+      $file=$myCustomClient->createTemporaryDirectLink($value)[0];
+    }
+  }
+}
+$data = file_get_contents($file); 
+$convert = explode("*", $data); //create array separate by *
+foreach ($convert as $key => $urlGallery) {
+  $reqG->execute(array( 'articleUid' => $articleUid, 'urlGallery' => $urlGallery));
+}
+
 $reponse = $bdd->query('SELECT count(*) AS count FROM article WHERE article_uid='.$id);
 while ($donnees = $reponse->fetch()){
     $isImg= htmlspecialchars($donnees['count']) ;

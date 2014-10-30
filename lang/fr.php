@@ -3,8 +3,8 @@
 	define('TITLE', 'Un tour du monde en un an');
 	
 //notification
-	define('MESSAGENOTIFICATION', "Cliquer ici pour avoir un petit aperçu de l\'itinéraire en");
-	define('MESSAGENOTIFICATIONHOME', "Cliquer ici pour avoir un aperçu de l\'itinéraire complet");
+	define('MESSAGENOTIFICATION', "Aperçu de l\'itinéraire en");
+	define('MESSAGENOTIFICATIONHOME', "Aperçu de l\'itinéraire complet");
 
 //Lightbox
 	define('CHALLENGE', 'Challenge');
@@ -61,6 +61,8 @@
 	define('UAE', 'Emirats Arabes Unis');
 	define('ARTICLES', 'Articles');
 	define('ALTARTICLES', 'Retrouve tous nos articles');
+	define('CHALLENGES', 'Défis');
+	define('ALTCHALLENGES', 'Retrouve tous nos défis');
 	define('ALTAVION','Voir notre itinéraire');
 	define('ALTHOME',"Retourne à la page d'accueil");
 	define('ALTPAYPAL',"Aide-nous !");
@@ -68,6 +70,7 @@
 	define('ALTCHAL',"Voir notre dernier défi");
 	define('ALTART',"Voir notre dernier article");
 	define('ALTPROP',"Propose un défi");
+	define('ADDCHAL',"Ajoute un défi");
 
 	define('GALLERY', 'Galerie');
 
@@ -83,8 +86,8 @@
 	//Discover all our Challenges
 	define('PYC','Propose ton défi');
 	define('VTEC','Voir les défis proposés');
-	define('DAOA','Découvre nos articles');
-	define('DAOC','Découvre nos défis réalisés');
+	define('DAOA','Les  articles');
+	define('DAOC','Les défis réalisés');
 	define('VLAPDLA',"Galerie photo de l'article");
 	define('VLAA',"Liste des articles");
 	define('VLAPDD',"Galerie photo du défi");

@@ -218,3 +218,6 @@ lib/alwaysdata.php
 lib/app-info.json
 z dev.txt
 .htaccess
+lib/en.txt
+lib/fr.txt
+lib/you.txt

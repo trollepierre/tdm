@@ -34,7 +34,7 @@ echo '
 } ?>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css?1">
     <link rel="stylesheet" type="text/css" href="css/demo_notif.css" />
     <link rel="stylesheet" type="text/css" href="css/ns-default_notif.css" />
     <link rel="stylesheet" type="text/css" href="css/ns-style-other_notif.css" />

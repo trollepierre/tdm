@@ -16,11 +16,12 @@ function Carroussel($dropbox_link, $imglink){
   $convert=$convert[count($convert)-1];
   $nomImage = substr($convert, 0, -5);
   $imglink2 = $dropbox_link . '#lh:null-'.$nomImage;
-  if (substr($imglink, -8,3) === "mp4" ) {
+  if (substr($imglink, 0,15) === "http://youtu.be" ) {
     $imglink = "http://www.recontact.me/img/btn-play.png";
+    $imglink2 = $imglink;
   }
   echo    '<li>
-                <a class="article-name" href="'.$imglink2.'">
+                <a class="article-name" href="'.$imglink2.'" target="_blank">
                     <img src="'.$imglink.'" alt="One Picture" /> <br/>
                 </a>
             </li>';     
@@ -38,8 +39,6 @@ function RemplirWindowImage($article){
       echo '"'.htmlspecialchars($donnees['img_link']).'",';
     }
     echo "];";
-  // echo "window.images = " . json_encode($images) . ";";
-  // window.images = ["http://image1", "http://........."];
     $reponse->closeCursor();
 }
 
@@ -47,11 +46,10 @@ function DestinationTime(){
    require("destination/destination_img.php");
   foreach ($DESTINATION_TEXT as $key => $value) {
    $id2=$key+1;
-    echo    '<p class="mode mode'.$id2.'" data-bg="'.$id2.'">'.$INTRO[$key].''.$value.'
+    echo    '<p class="mode mode'.$id2.'" data-bg="'.$id2.'">'.$INTRO[$key].'
                 <br />
-                <a class="btn btn-lg btn-primary" href="destination.php?dest='.$LINK[$key].'" role="button">'.$DISCOVER.''.$value.'</a>
-                <br />'.$WITHPIERREANDBEN.'  
-                <!--et <a class="btn btn-lg btn-primary" href="contact.php" role="button">'.$VOUS.'</a>-->
+                <a class="btn btn-lg btn-danger" href="destination.php?dest='.$LINK[$key].'" role="button">'.$value.'</a>
+                
             </p>';
           }
 }
@@ -183,53 +181,4 @@ while ($donnees = $reponse->fetch())
   }
 $reponse->closeCursor();
 }
-
-// /*/* function:  generates thumbnail */
-// function make_thumb($src,$dest,$desired_width) {
-//   /* read the source image */
-//   $source_image = imagecreatefromjpeg($src);
-//   $width = imagesx($source_image);
-//   $height = imagesy($source_image);
-//   /* find the "desired height" of this thumbnail, relative to the desired width  */
-//   $desired_height = floor($height*($desired_width/$width));
-//   /* create a new, "virtual" image */
-//   $virtual_image = imagecreatetruecolor($desired_width,$desired_height);
-//   /* copy source image at a resized size */
-//   imagecopyresized($virtual_image,$source_image,0,0,0,0,$desired_width,$desired_height,$width,$height);
-//   /* create the physical thumbnail image to its destination */
-//   imagejpeg($virtual_image,$dest);
-// }
-
-//  function:  returns files from dir 
-// function get_files($images_dir,$exts = array('jpg')) {
-//   $files = array();
-//   if($handle = opendir($images_dir)) {
-//     while(false !== ($file = readdir($handle))) {
-//       $extension = strtolower(get_file_extension($file));
-//       if($extension && in_array($extension,$exts)) {
-//         $files[] = $file;
-//       }
-//     }
-//     closedir($handle);
-//   }
-//   return $files;
-// }
-
-// /* function:  returns a file's extension */
-// function get_file_extension($file_name) {
-//   return substr(strrchr($file_name,'.'),1);
-// }
-
-// /* function:  returns nb of dir from dir */
-// function get_nb_dir($images_dir) {
-//  $count_file = -2;
-//   if($handle = opendir($images_dir)) {
-//     while(false !== ($file = readdir($handle))) {
-//       $count_file ++;
-//     }
-//     closedir($handle);
-//   }
-//   return $count_file ;
-// }
-//**/
 ?>

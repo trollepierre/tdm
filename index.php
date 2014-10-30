@@ -37,7 +37,7 @@
         <div class='timeline-bg timeline-bg1 show'></div>
         <div class='timeline-controller'>
             <div class='mode-icon mode-icon1 show'>
-                <img src = <?php 
+                 <?php 
                 echo '"<img class="centreImgTime" src="http://www.recontact.me/img/dest_img/southAmerica.jpg"">';
                 ?>>
             </div>
@@ -60,7 +60,7 @@
     <div id="lesArticles"></div>
       <div class="carousel">
         <div class="ourArticles" >
-            <a href="articles.php" class="discover" title="<?php echo ALTDAOA; ?>">
+            <a href="articles.php"  class="discover btn btn-xs btn-primary" role="button" title="<?php echo ALTDAOA; ?>">
                 <h1 class="paddingZero"> <?php echo DAOA; ?></h1>
             </a>
         </div>
@@ -82,7 +82,7 @@ while ($donnees = $reponse->fetch())
     
      <div class="carousel" >
         <div class="ourArticles">
-            <a href="challenges.php" class="discover"  title="<?php echo ALTDAOC; ?>">
+            <a href="challenges.php"  class="discover btn btn-xs btn-primary" role="button" title="<?php echo ALTDAOC; ?>">
                 <h1> <?php echo DAOC; ?> </h1>
             </a>
         </div>

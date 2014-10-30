@@ -4,20 +4,30 @@
     <div class="menu">
         <ul>
             <li>
-                 <form class="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"  title="<?php echo ALTPAYPAL; ?>">
+                 <form class="paypal" action="http://www.recontact.me" method="post" target="_top"  title="<?php echo ALTHOME; ?>">
                     <input type="hidden" name="cmd" value="_s-xclick">
                     <input type="hidden" name="hosted_button_id" value="C753VV9DE7LH8">
                         <?php if ($lang=='fr' ) { 
-                            echo '<input type="image" src="http://www.recontact.me/img/paypal-ribbon_fr.png" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">      ';
+                            echo '<input type="image" src="http://www.recontact.me/img/paypal-ribbon_fr.png" name="submit" alt="<?php echo ALTHOME; ?>">      ';
                          }else{ 
-                            echo '<input type="image" src="http://www.recontact.me/img/paypal-ribbon_en.png" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">';
+                            echo '<input type="image" src="http://www.recontact.me/img/paypal-ribbon_en.png" name="submit" alt="<?php echo ALTHOME; ?>">';
                         } ?>
                     <img alt="" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
                 </form>
             </li>
             <li>
-                <a href="http://www.recontact.me"  title="<?php echo ALTHOME; ?>">
-                    <?php echo HOME; ?>
+                <a href="http://www.recontact.me/articles.php"  title="<?php echo ALTARTICLES; ?>">
+                    <?php echo ARTICLES; ?>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.recontact.me/challenges.php"  title="<?php echo ALTCHALLENGES; ?>">
+                    <?php echo CHALLENGES; ?>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.recontact.me/destinations.php" title="<?php echo ALTAVION; ?>">
+                    <img alt="nos destinations" class="logo" src="img/avion.png" />
                 </a>
             </li>
              <li class="dropdown">
@@ -133,16 +143,6 @@
                 </ul>
             </li>
 
-            <li>
-                <a href="http://www.recontact.me/destinations.php" title="<?php echo ALTAVION; ?>">
-                    <img alt="nos destinations" class="logo" src="img/avion.png" />
-                </a>
-            </li>
-            <li>
-                <a href="http://www.recontact.me/articles.php"  title="<?php echo ALTARTICLES; ?>">
-                    <?php echo ARTICLES; ?>
-                </a>
-            </li>
             <li>
                 <a href="http://www.recontact.me/contact.php" title="<?php echo ALTCONTACT; ?>">
                     <?php echo CONTACT; ?>
