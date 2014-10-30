@@ -3,8 +3,8 @@
 	define('TITLE', 'One year around the world.');
 
 //notification
-	define('MESSAGENOTIFICATION', "Click here to get a small overview of the road in");
-	define('MESSAGENOTIFICATIONHOME', "Click here to get an overview of the whole road");
+	define('MESSAGENOTIFICATION', "Overview of the road in");
+	define('MESSAGENOTIFICATIONHOME', "Overview of the whole road");
 
 //Lightbox
 	define('CHALLENGE', 'Challenge');

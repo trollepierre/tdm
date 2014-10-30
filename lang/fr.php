@@ -3,8 +3,8 @@
 	define('TITLE', 'Un tour du monde en un an');
 	
 //notification
-	define('MESSAGENOTIFICATION', "Cliquer ici pour avoir un petit aperçu de l\'itinéraire en");
-	define('MESSAGENOTIFICATIONHOME', "Cliquer ici pour avoir un aperçu de l\'itinéraire complet");
+	define('MESSAGENOTIFICATION', "Aperçu de l\'itinéraire en");
+	define('MESSAGENOTIFICATIONHOME', "Aperçu de l\'itinéraire complet");
 
 //Lightbox
 	define('CHALLENGE', 'Challenge');
@@ -70,7 +70,7 @@
 	define('ALTCHAL',"Voir notre dernier défi");
 	define('ALTART',"Voir notre dernier article");
 	define('ALTPROP',"Propose un défi");
-	define('ADDCHAL',"Ajoutez un défi");
+	define('ADDCHAL',"Ajoute un défi");
 
 	define('GALLERY', 'Galerie');
 

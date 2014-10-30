@@ -68,7 +68,7 @@
     <div id="lesAutresPhotos"></div>
     <div class="carousel" >
         <div class="ourArticles">
-           <a  class="discover"  title="<?php echo ALTVLAPDLA; ?>" href=
+           <a  class="discover btn btn-xs btn-primary" role="button" target="_blank" title="<?php echo ALTVLAPDLA; ?>" href=
                 <?php 
                 include("lib/creerBdd.php");
                  global $id;
@@ -97,7 +97,7 @@
             </ul>
         </div>
         <div class="ourArticles">
-             <a href="articles.php" class="discover" title="<?php echo ALTVLAA; ?>">
+             <a href="articles.php"  class="discover btn btn-xs btn-primary" role="button" title="<?php echo ALTVLAA; ?>">
                 <h1> <?php echo VLAA; ?> </h1>
             </a>
         </div>

@@ -46,10 +46,10 @@
                   <?php 
     include("lib/creerBdd.php");
     global $id;
-    $reponse = $bdd->query('SELECT img_link FROM article_contenu WHERE article_uid = '.$id.' AND position = 1');
+    $reponse = $bdd->query('SELECT img_link FROM challenge_contenu WHERE challenge_uid = '.$id.' AND position = 1');
     // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
     while ($donnees = $reponse->fetch()){
-      echo '<img class="centreImgTime" src="'.htmlspecialchars($donnees['img_link']).'">';
+      echo '<img style="border : 1px solid black;" class="centreImgTime" src="'.htmlspecialchars($donnees['img_link']).'">';
     }
     $reponse->closeCursor();
     ?></div>
@@ -68,7 +68,7 @@
      <div id="lesAutresPhotos"></div>
     <div class="carousel" >
         <div class="ourArticles">
-            <a class="discover" title="<?php echo ALTVLAPDD; ?>" href=
+            <a class="discover btn btn-xs btn-danger" role="button" target="_blank" title="<?php echo ALTVLAPDD; ?>" href=
                 <?php 
                 include("lib/creerBdd.php");
                  global $id;
@@ -98,7 +98,7 @@
             </ul>
         </div>
         <div class="ourArticles">
-           <a href="challenges.php" class="discover" title="<?php echo ALTVLAD; ?>">
+           <a href="challenges.php"  class="discover btn btn-xs btn-danger" role="button"  title="<?php echo ALTVLAD; ?>">
                 <h1> <?php echo VLAD; ?> </h1>
             </a>
         </div>

@@ -46,8 +46,13 @@ right: 0;
 .espace{
     margin-bottom: 15px;
 }
-.discover:hover, .article-name:hover{
-    color: #2a6496;
+.discover:hover{
+   text-decoration: underline; 
+}
+
+.article-name:hover{
+    color: #ff0000;
+    text-decoration: underline;
 }
 #header{
  height: 200px;
@@ -711,7 +716,10 @@ font-size: 50px;
 }
 
 .timeline.fixed .timeline-controller{
-    position:fixed
+    position:fixed;
+    width:50%;
+    left:inherit;
+
 }
 
 .timeline.fixed .clocks{
@@ -725,8 +733,9 @@ font-size: 50px;
 .timeline.done .timeline-controller{
     top:auto;
     bottom:154px;
-    left:50.5%;
-    margin-left: -557px;
+    /*left:50.5%;*/
+    /*margin-left: -557px;*/
+    width: 50%;
 }
 
 .timeline.done .clocks{
@@ -767,9 +776,15 @@ font-size: 50px;
     transition:opacity 0.8s ease-out
 }
 
-/*rose*/
-.timeline .timeline-bg.timeline-bg1 {
-    background:#FF9bd3;
+
+/*bleu ciel*/
+.timeline .timeline-bg{
+    background:#009bd3;
+}
+
+/*jaune*/
+.timeline .timeline-bg.timeline-bg6{
+    background:#ffff00;
 }
 
 /*bleu ciel*/
@@ -791,12 +806,12 @@ font-size: 50px;
     background:#ff0000;
 }
 /*vert pomme*/
-.timeline .timeline-bg.timeline-bg6{
+.timeline .timeline-bg.timeline-bg1{
     background:#00ff00;
 }
-/*jaune*/
-.timeline .timeline-bg.timeline-bg7{
-    background:#ffff00;
+/*rose*/
+.timeline .timeline-bg.timeline-bg7 {
+    background:#FF9bd3;
 }
 
 /*bleu fonce*/
@@ -816,9 +831,12 @@ font-size: 50px;
 .timeline .timeline-controller{
     height:532px;
     width:418px;
+   
+   width:50%;
     position:absolute;
     top:132px;
-    left:50%;margin-left:-548px;
+    /*left:50%;*/
+    /*margin-left:-548px;*/
     -webkit-transform:translate3d(0, 0, 0);
     -moz-transform:translate3d(0, 0, 0);
     -ms-transform:translate3d(0, 0, 0);
@@ -849,7 +867,12 @@ font-size: 50px;
     background-repeat: no-repeat;
     background-position: center;
     top:0px;
-    left:0px
+    left:0px;
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right: 0;
 }
 
 
@@ -910,6 +933,13 @@ font-size: 50px;
             background-position: center;
             top:0px;
             left:0px;  
+            margin-left: 25%;
+            margin: auto;
+            position: absolute;
+            top:0;
+            bottom:0;
+            left:0;
+            right: 0;
 }
 
 .timeline .modes[title="article"]{
