@@ -797,7 +797,7 @@ font-size: 50px;
 }
 
 /*gris blanc*/
-.timeline .timeline-bg.timeline-bg4{
+.timeline .timeline-bg.timeline-bg1{
     background:#bbbbbb;
 }
 
@@ -806,8 +806,8 @@ font-size: 50px;
     background:#ff0000;
 }
 /*vert pomme*/
-.timeline .timeline-bg.timeline-bg1{
-    background:#00ff00;
+.timeline .timeline-bg.timeline-bg4{
+    background:#00dd11;
 }
 /*rose*/
 .timeline .timeline-bg.timeline-bg7 {
