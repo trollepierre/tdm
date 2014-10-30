@@ -1,6 +1,11 @@
 <?php   
     require("w/0fonctions.php");
 ?>
+    <style type="text/css">
+        .clocks{
+        z-index: -2;
+        }
+    </style>
     <script type="text/javascript">
         <?php 
         include("lib/creerBdd.php");
