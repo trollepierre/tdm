@@ -132,7 +132,7 @@ foreach ($returnSearchFileName as $idFake => $texte) {
 $data = file_get_contents($file); 
 $convert = explode("*", $data); //create array separate by *
 foreach ($convert as $key => $urlGallery) {
-  $reqG->execute(array( 'articleUid' => $articleUid, 'urlGallery' => $urlGallery));
+  $reqG->execute(array( 'challengeUid' => $challengeUid, 'urlGallery' => $urlGallery));
 }
 
 $reponse->closeCursor();
