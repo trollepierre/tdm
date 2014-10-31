@@ -172,7 +172,9 @@ if ($error > 2) {
   }
   $reponse->closeCursor(); // Termine le traitement de la requête
 }
-
+include("lib/creerBdd.php");
+        $reponse = $bdd->query('SELECT count(*) AS count FROM article WHERE article_uid='.$id);
+ 
 while ($donnees = $reponse->fetch()){
     if ($count > 1){
        $bdd->exec('DELETE FROM challenge_galerie WHERE challenge_uid='.$id);
