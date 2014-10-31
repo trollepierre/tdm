@@ -77,7 +77,6 @@ $returnSearchFileName1=$myCustomClient->searchFileNames($basePath, $query);
 $query = "mp4";
 $returnSearchFileName2=$myCustomClient->searchFileNames($basePath, $query);
 $returnSearchFileName= array_merge($returnSearchFileName1,$returnSearchFileName2);
-$error = (count($returnSearchFileName)==0) ? ($error+1) : 0 ;
 $urlGallery = array( );
 $url = array( );
 
@@ -116,6 +115,7 @@ while ($donnees = $reponse->fetch()){
       $req->execute(array( 'challengeUid' => $challengeUid, 'nom' => $nom, 'name' => $name, 'img0' => $img0, 'dropbox_link' => $dropbox_link));
     }
 }
+$error = (count($returnSearchFileName)==0) ? ($error+1) : 0 ;
 
 //YOUTUBE
 $file="lib/you.txt";

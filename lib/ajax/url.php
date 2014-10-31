@@ -77,7 +77,7 @@ $returnSearchFileName1=$myCustomClient->searchFileNames($basePath, $query);
 $query = "mp4";
 $returnSearchFileName2=$myCustomClient->searchFileNames($basePath, $query);
 $returnSearchFileName= array_merge($returnSearchFileName1,$returnSearchFileName2);
-$error = (count($returnSearchFileName)==0) ? ($error+1) : 0 ;
+
 $urlGallery = array( );
 $url = array( );
 
@@ -107,6 +107,7 @@ foreach ($returnSearchFileName as $idFake => $image) {
     $reqG->execute(array( 'articleUid' => $articleUid, 'urlGallery' => $urlGallery));
   }
 }
+$error = (count($returnSearchFileName)==0) ? ($error+1) : 0 ;
 
 //YOUTUBE
 $file="lib/you.txt";
