@@ -164,11 +164,11 @@ echo 'Synchronisation OK !';
 if ($error > 2) {
   echo 'Synchronisation NOK : '.$error;
   include("lib/creerBdd.php");
-  $reponse = $bdd->query('SELECT article_uid FROM article WHERE article_uid='.$id);
+  $reponse = $bdd->query('SELECT challenge_uid FROM challenge WHERE challenge_uid='.$id);
   while ($donnees = $reponse->fetch()){
-    $bdd->exec('DELETE FROM article_galerie WHERE article_uid='.$id);
-    $bdd->exec('DELETE FROM article_contenu WHERE article_uid='.$id);
-    $bdd->exec('DELETE FROM article WHERE article_uid='.$id);
+    $bdd->exec('DELETE FROM challenge_galerie WHERE challenge_uid='.$id);
+    $bdd->exec('DELETE FROM challenge_contenu WHERE challenge_uid='.$id);
+    $bdd->exec('DELETE FROM challenge WHERE challenge_uid='.$id);
   }
   $reponse->closeCursor(); // Termine le traitement de la requête
 }
