@@ -174,7 +174,7 @@ if ($error > 2) {
   $reponse->closeCursor(); // Termine le traitement de la requête
 }
 
-sleep(rand(10,600));
+sleep(rand(0,30));
 include("lib/creerBdd.php");
         $reponse = $bdd->query('SELECT count(*) AS count FROM article WHERE article_uid='.$id);
  
@@ -184,10 +184,10 @@ while ($donnees = $reponse->fetch()){
     $bdd->exec('DELETE FROM article_contenu WHERE article_uid='.$id);
     $bdd->exec('DELETE FROM article WHERE article_uid='.$id);
     $reponse->closeCursor(); // Termine le traitement de la requête
-    sleep(rand(10,120));
+    sleep(rand(0,30));
     header('Location: lib/ajax/url.php?id='.$id);
     }else{
-      sleep(660);
+      sleep(30);
       $reponse->closeCursor(); // Termine le traitement de la requête
       include("lib/creerBdd.php");
       $reponse = $bdd->query('SELECT count(*) AS count FROM article WHERE article_uid='.$id);

@@ -173,7 +173,7 @@ if ($error > 2) {
   $reponse->closeCursor(); // Termine le traitement de la requête
 }
 
-sleep(rand(10,600));
+sleep(rand(0,30));
 include("lib/creerBdd.php");
         $reponse = $bdd->query('SELECT count(*) AS count FROM challenge WHERE challenge_uid='.$id);
  
@@ -183,10 +183,10 @@ while ($donnees = $reponse->fetch()){
     $bdd->exec('DELETE FROM challenge_contenu WHERE challenge_uid='.$id);
     $bdd->exec('DELETE FROM challenge WHERE challenge_uid='.$id);
     $reponse->closeCursor(); // Termine le traitement de la requête
-    sleep(rand(10,120));
+    sleep(rand(0,30));
     header('Location: lib/ajax/challenge_update.php?id='.$id);
     }else{
-      sleep(660);
+      sleep(30);
       $reponse->closeCursor(); // Termine le traitement de la requête
       include("lib/creerBdd.php");
       $reponse = $bdd->query('SELECT count(*) AS count FROM challenge WHERE challenge_uid='.$id);
