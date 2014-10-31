@@ -1,5 +1,5 @@
 <?php
-
+$error=0;
 chdir("../..");
 use \Dropbox as dbx;
 
@@ -9,10 +9,10 @@ use \Dropbox as dbx;
         include("lib/creerBdd.php");
         $reponse = $bdd->query('SELECT count(*) AS count FROM article');
         while ($donnees = $reponse->fetch()){
-            $id= htmlspecialchars($donnees['count']) ;
+            $id= htmlspecialchars($donnees['count'])+1 ;
         }
         $reponse->closeCursor();
-    }
+    }   
 $articleUid=$id;
 
 include("lib/creerBdd.php");
@@ -54,6 +54,7 @@ foreach ($returnSearchFileName as $idFake => $texte) {
 $data = file_get_contents($file); 
 $convert = explode("*", $data); //create array separate by *
 $nom = $convert[0];
+$error = (count($returnSearchFileName)==0) ? ($error+1) : 0 ;
 
 //English
 $file="lib/en.txt";
@@ -69,17 +70,14 @@ foreach ($returnSearchFileName as $idFake => $texte) {
 $data = file_get_contents($file); 
 $convert_en = explode("*", $data); //create array separate by *
 $name = $convert_en[0];
-// print_r($convert);
+$error = (count($returnSearchFileName)==0) ? ($error+1) : 0 ;
 
 $query = "jpg";
 $returnSearchFileName1=$myCustomClient->searchFileNames($basePath, $query);
 $query = "mp4";
 $returnSearchFileName2=$myCustomClient->searchFileNames($basePath, $query);
 $returnSearchFileName= array_merge($returnSearchFileName1,$returnSearchFileName2);
-// print_r($returnSearchFileName2);
-
-//on récup le path de chaque file récupéré
-// et on en fait une url publique;
+$error = (count($returnSearchFileName)==0) ? ($error+1) : 0 ;
 $urlGallery = array( );
 $url = array( );
 
@@ -157,10 +155,21 @@ while ($donnees = $reponse->fetch() AND $out){
     }else{
       $out=false;
     }
-}/**/
+}
 $reponse->closeCursor();
 $req->closeCursor(); 
 $reqI->closeCursor(); 
 $reqG->closeCursor(); 
 echo 'Synchronisation OK !';
+if ($error > 2) {
+  echo 'Synchronisation NOK : '.$error;
+  include("lib/creerBdd.php");
+  $reponse = $bdd->query('SELECT article_uid FROM article WHERE article_uid='.$id);
+  while ($donnees = $reponse->fetch()){
+    $bdd->exec('DELETE FROM article_galerie WHERE article_uid='.$id);
+    $bdd->exec('DELETE FROM article_contenu WHERE article_uid='.$id);
+    $bdd->exec('DELETE FROM article WHERE article_uid='.$id);
+  }
+  $reponse->closeCursor(); // Termine le traitement de la requête
+}
 ?>
