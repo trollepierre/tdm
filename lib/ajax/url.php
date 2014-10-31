@@ -173,4 +173,19 @@ if ($error > 2) {
   }
   $reponse->closeCursor(); // Termine le traitement de la requête
 }
+include("lib/creerBdd.php");
+        $reponse = $bdd->query('SELECT count(*) AS count FROM article WHERE article_uid='.$id);
+       
+while ($donnees = $reponse->fetch()){
+    if ($count > 1){
+       $bdd->exec('DELETE FROM article_galerie WHERE article_uid='.$id);
+    $bdd->exec('DELETE FROM article_contenu WHERE article_uid='.$id);
+    $bdd->exec('DELETE FROM article WHERE article_uid='.$id);
+    $reponse->closeCursor(); // Termine le traitement de la requête
+    sleep(60);
+    header('Location: lib/ajax/url.php?id='.$id);
+    }
+  }
+
+
 ?>

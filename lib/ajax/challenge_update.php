@@ -172,4 +172,16 @@ if ($error > 2) {
   }
   $reponse->closeCursor(); // Termine le traitement de la requête
 }
+
+while ($donnees = $reponse->fetch()){
+    if ($count > 1){
+       $bdd->exec('DELETE FROM challenge_galerie WHERE challenge_uid='.$id);
+    $bdd->exec('DELETE FROM challenge_contenu WHERE challenge_uid='.$id);
+    $bdd->exec('DELETE FROM challenge WHERE challenge_uid='.$id);
+    $reponse->closeCursor(); // Termine le traitement de la requête
+    sleep(60);
+    header('Location: lib/ajax/challenge_update.php?id='.$id);
+    }
+  }
+
 ?>
