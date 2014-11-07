@@ -33,7 +33,7 @@ final class Curl
         // Force SSL and use our own certificate list.
         $this->set(CURLOPT_SSL_VERIFYPEER, true);   // Enforce certificate validation
         $this->set(CURLOPT_SSL_VERIFYHOST, 2);      // Enforce hostname validation
-        $this->set(CURLOPT_SSLVERSION, 3);          // Enforce SSL v3.
+        $this->set(CURLOPT_SSLVERSION, 1);          // Enforce TLS
 
         // Limit the set of ciphersuites used.
         global $sslCiphersuiteList;
