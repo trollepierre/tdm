@@ -20,7 +20,7 @@
 		<div class="form-group">  
 			<label class="control-label" for="email">N°</label>  
 			<div class="controls">  
-				<input type="email" class="form-control" id="email" name="email">  
+				<input type="text" class="form-control" id="email" name="email">  
 			</div>  
 		</div> 
 		
