@@ -33,7 +33,7 @@
 <?php
 }else
 {// the user has submitted the form
-	if ((isset($_POST["email"]))&&(isset($_POST["firstname"]))&&(isset($_POST["lastname"]))&&(isset($_POST["subject"]))&&(isset($_POST["message"]))) 
+	if ((isset($_POST["email"]))&&(isset($_POST["firstname"]))) 
 	{ // Check if the "from" input field is filled out
 		$mail = htmlentities($email);  // virer les saloperies de code
 		$irstname = htmlentities($firstname);  // virer les saloperies de code
