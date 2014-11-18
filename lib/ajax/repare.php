@@ -49,7 +49,8 @@
 		$ir="challenge_update";
 		}
 		header('Location: lib/ajax/'.$ir.'.php?id='.$mail);
-		
+	}
+}
 ?>
 
 </div>
