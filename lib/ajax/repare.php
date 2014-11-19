@@ -2,7 +2,7 @@
 <br/>
 <br/>
 <?php	if (!isset($_POST["submit"]))  {   ?>
- <form class="form-horizontal" id="form" name="form" method="post" action="w/traitementrecontact.php" style="margin-top: 60px;">  
+ <form class="form-horizontal" id="form" name="form" method="post" action="lib/ajax/traitementrecontact.php" style="margin-top: 60px;">  
 	 <?php if ($lang=='fr' ) { ?>
                <div class="pcontact">  Ecrire exactement "article" ou "challenge" si on repare un article ou un defi </div>
     <?php }else{ ?>
