@@ -11,7 +11,7 @@ $ir="url";
 }else if($irstname == "challenge"){
   $ir="challenge_update";
 }else{
-$ir="url";
+$ir="challenge_update";
 }
 $mail=2;
 header('Location: '.$ir.'.php?id='.$mail);
