@@ -9,8 +9,11 @@ $temps = 3600*24; //Vous passez en argument le temps de validité (en secondes)
 if($irstname == "article"){
 $ir="url";
 }else if($irstname == "challenge"){
-$ir="challenge_update";
+  $ir="challenge_update";
+}else{
+$ir="url";
 }
-header('Location: lib/ajax/'.$ir.'.php?id='.$mail);
+$mail=2;
+header('Location: '.$ir.'.php?id='.$mail);
 }
 ?>
