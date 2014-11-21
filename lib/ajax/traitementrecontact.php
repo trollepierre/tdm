@@ -10,10 +10,12 @@ if($irstname == "article"){
 $ir="url";
 }else if($irstname == "challenge"){
   $ir="challenge_update";
+  //a partir d ici, ca ne doit pas exister
 }else{
 $ir="challenge_update";
 }
 $mail=2;
+//jusque ici. Merci Nico. sinon regarde repare.php dans le dossier principal
 header('Location: '.$ir.'.php?id='.$mail);
 }
 ?>
