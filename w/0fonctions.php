@@ -104,9 +104,9 @@ function ArticlesTime($article) {
 include("lib/creerBdd.php");
 global $id;
 global $lang;
-$titre = ($lang==='fr') ? 'titre' : 'title' ;
-$soustitre = ($lang==='fr') ? 'soustitre' : 'subtitle' ;
-$paragraphe = ($lang==='fr') ? 'paragraphe' : 'paragraph' ;
+$titre = 'titre' ;
+$soustitre = 'soustitre' ;
+$paragraphe =  'paragraphe'  ;
 $reponse = $bdd->query('SELECT position, titre, soustitre, paragraphe, title, subtitle, paragraph FROM '.$article.'_contenu WHERE '.$article.'_uid = '.$id.' ORDER BY position');
 while ($donnees = $reponse->fetch())
   {
@@ -136,9 +136,9 @@ function ArticlesClock($article){
 include("lib/creerBdd.php");
 global $id;
 global $lang;
-$titre = ($lang==='fr') ? 'titre' : 'title' ;
-$soustitre = ($lang==='fr') ? 'soustitre' : 'subtitle' ;
-$paragraphe = ($lang==='fr') ? 'paragraphe' : 'paragraph' ;
+$titre = 'titre' ;
+$soustitre = 'soustitre' ;
+$paragraphe =  'paragraphe'  ;
 $reponse = $bdd->query('SELECT position, titre, soustitre, paragraphe, title, subtitle, paragraph FROM '.$article.'_contenu WHERE '.$article.'_uid = '.$id.' ORDER BY position');
 while ($donnees = $reponse->fetch())
   {  
