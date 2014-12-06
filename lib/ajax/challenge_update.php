@@ -197,4 +197,12 @@ while ($donnees = $reponse->fetch()){
       }
     }
   }
+  include("lib/creerBdd.php");
+$reponse = $bdd->query('SELECT challenge_uid FROM challenge WHERE challenge_uid='.$id);
+while ($donnees = $reponse->fetch()){
+    $bdd->exec('DELETE FROM challenge_galerie WHERE challenge_uid='.$id);
+   
+    }
+$reponse->closeCursor(); // Termine le traitement de la requête
+
 ?>
