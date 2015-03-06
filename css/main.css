@@ -1650,6 +1650,9 @@ header ul ul li a, header ul ul li a:visited {
 }
 
 @media screen and (max-width: 980px){
+.notification-shape {
+	display:none;
+}
 
 .ourArticles{  font-size: 30px;} /* par Pierre*/
 .carousel{ padding-top: 5px;}
