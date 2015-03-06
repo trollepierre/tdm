@@ -1,7 +1,8 @@
  <?php
 //Header
-	define('TITLE', 'Recontact Me! Blog of the world trip of Pierre and Benoît: Follow their adventure in South America,  New Zealand, Australia, Thailand, Cambodia, Vietnam, China, Nepal, India');
-
+	define('TITLE', 'Recontact Me! Blog of the world trip of Pierre and Benoît: Follow their adventure in South America,  New Zealand, Australia, Thailand, Cambodia, Vietnam, China, Nepal, India');		
+	define('DESCRIPTIONSEO', 'Articles and challenges realised during the voyage in South America,  New Zealand, Australia, Thailand, Cambodia, Vietnam, China, Nepal, India');
+	
 //notification
 	define('MESSAGENOTIFICATION', "Overview of the road in");
 	define('MESSAGENOTIFICATIONHOME', "Overview of the whole road");
