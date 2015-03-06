@@ -1,6 +1,6 @@
  <?php
 //Header
-	define('TITLE', 'Un tour du monde en un an');
+	define('TITLE', 'Recontact Me ! Blog du tour du monde de Pierre et Benoît : Suivez leur aventure en Amérique du Sud, Nouvelle Zélande, Australie, Thaïlande, Cambodge, Viêtnam, Chine, Népal, Inde');
 	
 //notification
 	define('MESSAGENOTIFICATION', "Aperçu de l\'itinéraire en");
