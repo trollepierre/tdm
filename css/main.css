@@ -1654,6 +1654,10 @@ header ul ul li a, header ul ul li a:visited {
 	display:none;
 }
 
+.play { /* virer la video*/
+	display:none;
+}
+
 .ourArticles{  font-size: 30px;} /* par Pierre*/
 .carousel{ padding-top: 5px;}
    #beno{display: none;}
