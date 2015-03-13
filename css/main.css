@@ -1654,9 +1654,9 @@ header ul ul li a, header ul ul li a:visited {
 	display:none;
 }
 
-.play { /* virer la video*/
+.intro .play {
 	display:none;
-}
+} /* virer la video*/
 
 .ourArticles{  font-size: 30px;} /* par Pierre*/
 .carousel{ padding-top: 5px;}
