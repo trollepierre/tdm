@@ -1642,6 +1642,10 @@ header ul ul li a, header ul ul li a:visited {
 @media screen and (max-width: 1024px){
     .mobile-media { display: block;}
     .fancybox-media {display: none;}
+    .intro .play {
+	display:none;
+} /* virer la video*/
+
 
 
 header ul ul li a, header ul ul li a:visited {
@@ -1741,7 +1745,10 @@ header ul ul li a, header ul ul li a:visited {
 }
 
 @media screen and (max-width: 650px){
-    
+    .intro .play {
+	display:none;
+} /* virer la video*/
+ 
 header ul ul li a, header ul ul li a:visited {
     font-size: 10px;
 }
