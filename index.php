@@ -111,7 +111,6 @@ while ($donnees = $reponse->fetch())
 <li><img alt="Aguas Calientes, Tupiza Tours, Bolivia" src="img/gallery/H2.jpg" /></li>
 <li><img alt="Salar de Uyuni, Bolivia" src="img/gallery/H3.jpg" /></li>
 <li><img alt="Death Road, La Paz, Bolivia" src="img/gallery/H4.jpg" /></li>
-<li><img alt="Machu Picchu, Peru" src="img/gallery/H5.jpg" /></li>
 <li><img alt="Cañon del Colca, Cabanaconde, Peru" src="img/gallery/H6.jpg" /></li>
 <li><img alt="Kuelap, Peru" src="img/gallery/H7.jpg" /></li>
 <li><img alt="Rotoroa lake, Nelson Lakes Park, New Zealand" src="img/gallery/H8.jpg" /></li>
