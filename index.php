@@ -107,12 +107,16 @@ while ($donnees = $reponse->fetch())
             <div class="slider">
                 <div class="flexslider">
                     <ul class="slides">
-                        <li><img alt="Pangong Tso Lake, India" src="img/gallery/H8.jpg" /></li>
-                        <li><img alt="Canebière Marseille, France" src="img/gallery/H9.jpg" /></li>
-                        <li><img alt="Hunder, Kashmir, India" src="img/gallery/H1.jpg" /></li>
-                        <li><img alt="Nubra Valley, Kashmir, India" src="img/gallery/H2.jpg" /></li>
-                        <li><img alt="Bibliothèque F. Mitterrand, Paris, France" src="img/gallery/H11.jpg" /></li>
-                        <li><img alt="Passerelle Simone de Beauvoir, Paris, France" src="img/gallery/H23.jpg" /></li>
+                        <li><img alt="Pedra Da Gavea, Rio de Janeiro, Brazil" src="img/gallery/H1.jpg" /></li>
+<li><img alt="Aguas Calientes, Tupiza Tours, Bolivia" src="img/gallery/H2.jpg" /></li>
+<li><img alt="Salar de Uyuni, Bolivia" src="img/gallery/H3.jpg" /></li>
+<li><img alt="Death Road, La Paz, Bolivia" src="img/gallery/H4.jpg" /></li>
+<li><img alt="Machu Picchu, Peru" src="img/gallery/H5.jpg" /></li>
+<li><img alt="Cañon del Colca, Cabanaconde, Peru" src="img/gallery/H6.jpg" /></li>
+<li><img alt="Kuelap, Peru" src="img/gallery/H7.jpg" /></li>
+<li><img alt="Rotoroa lake, Nelson Lakes Park, New Zealand" src="img/gallery/H8.jpg" /></li>
+<li><img alt="Cascade Saddle, New Zealand" src="img/gallery/H9.jpg" /></li>
+<li><img alt="Mount Cook, New Zealand" src="img/gallery/H10.jpg" /></li>
                     </ul>
                 </div>
             </div>
