@@ -1655,6 +1655,9 @@ header ul ul li a, header ul ul li a:visited {
 	display:none;
 }
 
+#nav1, #nav4, #nav5, #nav7{
+	display:none;
+}
 
 .ourArticles{  font-size: 30px;} /* par Pierre*/
 .carousel{ padding-top: 5px;}
