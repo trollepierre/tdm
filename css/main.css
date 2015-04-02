@@ -1664,9 +1664,12 @@ header ul ul li a, header ul ul li a:visited {
    #beno{display: none;}
     #piro{display: none;}
     .fixed-top #left-border {width: 100%;}
-    /*.timeline{display:none;}
+    /*remis par pierre*/
+    .timeline{display:none;}
     .mobile-content{
-        display:block;}*/
+        display:block;
+    	
+    }/*jusque ici                      ddddddddddddddddddddddddddddddddddddddddddddddddd    */
     .timeline .timeline-controller{
         display: none;
     }    
