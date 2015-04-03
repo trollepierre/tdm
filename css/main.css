@@ -1670,13 +1670,14 @@ header ul ul li a, header ul ul li a:visited {
         display:block;
     	
     }/*jusque ici                      ddddddddddddddddddddddddddddddddddddddddddddddddd    */
-    .clocks{
-        display: none !important;
-    }
+    
    
     .timeline .timeline-controller{
         display: none;
-    }    
+    }  
+    .clocks{
+        display: none !important;
+    }
     .modes{
         width: 100% !important;
     }
