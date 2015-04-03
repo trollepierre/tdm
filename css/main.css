@@ -1673,14 +1673,14 @@ header ul ul li a, header ul ul li a:visited {
     .clocks{
         display: none !important;
     }
-    /* laisse l image  
+   
     .timeline .timeline-controller{
         display: none;
     }    
     .modes{
         width: 100% !important;
     }
-    */
+    
     .mode{
         width: 70% !important;
     }
