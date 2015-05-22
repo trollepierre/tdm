@@ -124,7 +124,7 @@ function slashN($paragraphe){ //Séparateur de # en <br/>
   $convert = explode("#", $paragraphe); //create array separate by #
   foreach ($convert as $key => $value) {
     $resultat .= $value;
-    $resultat .= '<br/><br/>';
+    $resultat .= '<br/>';
   }
   return $resultat;
 }
