@@ -43,7 +43,7 @@
     $reponse = $bdd->query('SELECT img_link FROM article WHERE article_uid = '.$compteur);
     // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
   $comptIntermed = 0;
-    while ($donnees = $reponse->fetch() && $comptIntermed < 3){
+    while ($donnees = $reponse->fetch() && $comptIntermed <10){
       echo '<img class="centreImgTime" src="'.htmlspecialchars($donnees['img_link']).'">';
       $comptIntermed ++;
     }
@@ -68,7 +68,7 @@
                   $reponse = $bdd->query('SELECT article_uid,'.$nom.' FROM article ORDER BY article_uid DESC');
                   // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
                     $comptIntermed = 0;
-                   while ($donnees = $reponse->fetch()&& $comptIntermed < 3){
+                   while ($donnees = $reponse->fetch()&& $comptIntermed < 10){
                     $comptIntermed ++;
                     $au=$compteur + 1 - htmlspecialchars($donnees['article_uid']);
                     echo '<p class="mode mode'.$au.'" data-bg="'.$au.'">
