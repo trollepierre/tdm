@@ -38,9 +38,9 @@
         <div class='timeline-controller'>
             <div class='mode-icon mode-icon1 show'>
                   <?php 		                
--                echo '"<img class="centreImgTime" src="http://www.recontact.me/img/dest_img/southAmerica.jpg"">';		
-include("lib/creerBdd.php");
--                ?>
+               echo '"<img class="centreImgTime" src="http://www.recontact.me/img/dest_img/southAmerica.jpg"">';		
+
+               ?>
             </div>
         </div>
 
@@ -53,9 +53,9 @@ include("lib/creerBdd.php");
 
             <div class='modes' id="dest">
                  <?php 
--                DestinationTime();		
-include("lib/creerBdd.php");
--                ?>
+                DestinationTime();		
+
+                ?>
             </div>
         </div>
     </div>
