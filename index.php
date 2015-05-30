@@ -1,14 +1,29 @@
 <?php require("w/0fonctions.php");
 ?>
  <script type="text/javascript">
-         <?php /*RemplirWindowImage('challenge');*/ ?>
+         <?php 
+        include("lib/creerBdd.php");
+  global $id;
+  $reponse = $bdd->query('SELECT img_link FROM article ORDER BY article_uid DESC');
+  // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
+  $images = array();
+  echo 'window.images = [' ;
+  $compteur=0;
+  while ($donnees = $reponse->fetch())
+    {
+     $compteur++;
+     echo '"'.htmlspecialchars($donnees['img_link']).'",';
+    }
+    echo "];";
+    $reponse->closeCursor();
+     ?>
     </script>
 <?php
       require("w/1head.php");
 ?>
 
 <style type="text/css">
-    <?php  IconBackground(); ?>
+    <?php // IconBackground(); ?>
     .ns-effect-cornerexpand .icon{
     padding-top: 13px;
     }
@@ -28,7 +43,7 @@
         <div class="flexslider">
             <ul class="slides">
                 <?php 
-                DestinationClock();
+               // DestinationClock();
                 ?>
             </ul>
         </div>
@@ -37,10 +52,16 @@
         <div class='timeline-bg timeline-bg1 show'></div>
         <div class='timeline-controller'>
             <div class='mode-icon mode-icon1 show'>
-                  <?php 		                
-               echo '"<img class="centreImgTime" src="http://www.recontact.me/img/dest_img/southAmerica.jpg"">';		
-
-               ?>
+                 <?php 
+    include("lib/creerBdd.php");
+    global $id;
+    $reponse = $bdd->query('SELECT img_link FROM article WHERE article_uid = '.$compteur);
+    // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
+    while ($donnees = $reponse->fetch()){
+      echo '<img class="centreImgTime" src="'.htmlspecialchars($donnees['img_link']).'">';
+    }
+    $reponse->closeCursor();
+    ?>
             </div>
         </div>
 
@@ -52,10 +73,22 @@
             </div>
 
             <div class='modes' id="dest">
-                 <?php 
-                DestinationTime();		
-
-                ?>
+               <?php 
+              include("lib/creerBdd.php");
+                  global $id;
+                  $nom = ($lang==="fr") ? "nom" : "name" ;
+                  $voirlarticle = ($lang==="fr") ? 'Voir l\'article' : 'See the article' ;
+                  $reponse = $bdd->query('SELECT article_uid,'.$nom.' FROM article ORDER BY article_uid DESC');
+                  // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
+                  while ($donnees = $reponse->fetch()){
+                    $au=$compteur + 1 - htmlspecialchars($donnees['article_uid']);
+                    echo '<p class="mode mode'.$au.'" data-bg="'.$au.'">
+                         <br/>        <span class="titreArticle">     '.htmlspecialchars($donnees[$nom]).'      </span>
+                          <br/> <br/> <a class="btn btn-lg btn-primary"  href="article.php?id='.htmlspecialchars($donnees['article_uid']).'"> <span style="display:block; font-size: 30px; font-weight: normal;font-family: inherit;"> '.$voirlarticle.'</span> </a>
+                        </p>';
+                  }
+                  $reponse->closeCursor();
+                  ?>
             </div>
         </div>
     </div>
