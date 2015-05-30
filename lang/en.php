@@ -88,7 +88,7 @@
 	define('DAOC','The Challenges');
 	define('VLAPDLA',"Photo gallery of this article");
 	define('VLAA',"List of articles");
-	define('VLAPDD',"Photo gallery of of this challenge");
+	define('VLAPDD',"Photo gallery of this challenge");
 	define('VLAD',"List of challenges");
 	define('ALTDAOA','Click here to go to the Articles page');
 	define('ALTDAOC','Click here to go to the Challenges page');
