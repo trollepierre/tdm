@@ -57,8 +57,10 @@
     global $id;
     $reponse = $bdd->query('SELECT img_link FROM article WHERE article_uid = '.$compteur);
     // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
-    while ($donnees = $reponse->fetch()){
+    $compt  =0  ;
+    while ($donnees = $reponse->fetch() && $compt < 3){
       echo '<img class="centreImgTime" src="'.htmlspecialchars($donnees['img_link']).'">';
+      $compt++;
     }
     $reponse->closeCursor();
     ?>
@@ -80,8 +82,10 @@
                   $voirlarticle = ($lang==="fr") ? 'Voir l\'article' : 'See the article' ;
                   $reponse = $bdd->query('SELECT article_uid,'.$nom.' FROM article ORDER BY article_uid DESC');
                   // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
-                  while ($donnees = $reponse->fetch()){
+                  $compt =0;
+                  while ($donnees = $reponse->fetch() && $compt  <3){
                     $au=$compteur + 1 - htmlspecialchars($donnees['article_uid']);
+                    $compt++;
                     echo '<p class="mode mode'.$au.'" data-bg="'.$au.'">
                          <br/>        <span class="titreArticle">     '.htmlspecialchars($donnees[$nom]).'      </span>
                           <br/> <br/> <a class="btn btn-lg btn-primary"  href="article.php?id='.htmlspecialchars($donnees['article_uid']).'"> <span style="display:block; font-size: 30px; font-weight: normal;font-family: inherit;"> '.$voirlarticle.'</span> </a>
