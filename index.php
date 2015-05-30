@@ -42,7 +42,7 @@
     global $id;
     $reponse = $bdd->query('SELECT img_link FROM article WHERE article_uid = '.$compteur);
     // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
-    global $comptIntermed = 0;
+  $comptIntermed = 0;
     while ($donnees = $reponse->fetch() && $comptIntermed < 3){
       echo '<img class="centreImgTime" src="'.htmlspecialchars($donnees['img_link']).'">';
       $comptIntermed ++;
@@ -67,7 +67,7 @@
                   $voirlarticle = ($lang==="fr") ? 'Voir l\'article' : 'See the article' ;
                   $reponse = $bdd->query('SELECT article_uid,'.$nom.' FROM article ORDER BY article_uid DESC');
                   // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
-                   global $comptIntermed = 0;
+                    $comptIntermed = 0;
                    while ($donnees = $reponse->fetch()&& $comptIntermed < 3){
                     $comptIntermed ++;
                     $au=$compteur + 1 - htmlspecialchars($donnees['article_uid']);
