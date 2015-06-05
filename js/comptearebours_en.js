@@ -7,7 +7,7 @@ function compte_a_rebours()
     var prefixe = "Departure in: ";
     if (total_secondes < 0)
     {
-        prefixe = "Pierre is in Hanoi, Vietnam. <br/> Benoît is on Borneo, Malaysia. ; "// <br/> Departure since: "  On modifie le préfixe si la différence est négatif
+        prefixe = "Pierre is in Hanoi, Vietnam. <br/> Benoît is on Borneo, Malaysia.  ";// <br/> Departure since: "  On modifie le préfixe si la différence est négatif
         total_secondes = Math.abs(total_secondes); // On ne garde que la valeur absolue
     }
     if (total_secondes > 0)
