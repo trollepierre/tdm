@@ -2,12 +2,14 @@ function compte_a_rebours()
 {
     var compte_a_rebours = document.getElementById("compte_a_rebours");
     var date_actuelle = new Date();
-    var date_evenement = new Date("Nov 1 9:40:00 2014");
+    var date_evenement = new Date("Nov 1 12:00:00 2015");
     var total_secondes = (date_evenement - date_actuelle) / 1000;
-    var prefixe = "Départ dans : ";
+    var prefixe =" Pierre et Benoît roulent vers Fressin. Actuellement à Budapest, Hongrie.";
+Arrivée prévue dans : ";
     if (total_secondes < 0)
     {
-        prefixe = "Pierre est à Kunming, Chine. <br/> Benoît est en vadrouille en Birmanie. ";//<br/> Départ il y a : "; // On modifie le préfixe si la différence est négatif
+        prefixe = "Pierre et Benoît roulent vers Fressin. Actuellement à Budapest, Hongrie.";
+<br/> Arrivée il y a : "; // On modifie le préfixe si la différence est négatif
         total_secondes = Math.abs(total_secondes); // On ne garde que la valeur absolue
         
     }
@@ -70,8 +72,7 @@ function compte_a_rebours()
             et = "";
         }
 
-        compte_a_rebours.innerHTML = prefixe ;
-        //+ jours + ' ' + mot_jour + ' ' + heures + ' ' + mot_heure + ' ' + minutes + ' ' + mot_minute + ' ' + et + ' ' + secondes + ' ' + mot_seconde;
+        compte_a_rebours.innerHTML = prefixe + jours + ' ' + mot_jour + ' ' + heures + ' ' + mot_heure + ' ' + minutes + ' ' + mot_minute + ' ' + et + ' ' + secondes + ' ' + mot_seconde;
     }
     else
     {
