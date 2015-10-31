@@ -2,9 +2,9 @@ function compte_a_rebours()
 {
     var compte_a_rebours = document.getElementById("compte_a_rebours");
     var date_actuelle = new Date();
-    var date_evenement = new Date("Nov 1 12:00:00 2015");
+    var date_evenement = new Date("Oct 31 13:00:00 2015");
     var total_secondes = (date_evenement - date_actuelle) / 1000;
-    var prefixe = "Pierre and Benoît are cycling into Fressin, North France. Now in Budapest, Hungary. <br/> Expected arrival in: ";
+    var prefixe = "Pierre and Benoît are arrived in Fressin, France. <br/> Expected arrival in: ";
     if (total_secondes < 0)
     {
         prefixe = "Arrived in Fressin <br/> since: "  ;//On modifie le préfixe si la différence est négatif
