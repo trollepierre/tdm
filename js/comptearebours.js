@@ -8,8 +8,7 @@ function compte_a_rebours()
 
     if (total_secondes < 0)
     {
-        prefixe = "Pierre et Benoît sont arrivés à Fressin. 
-<br/> Arrivée il y a : "; // On modifie le préfixe si la différence est négatif
+        prefixe = "Pierre et Benoît sont arrivés à Fressin. <br/> Arrivée il y a : "; // On modifie le préfixe si la différence est négatif
         total_secondes = Math.abs(total_secondes); // On ne garde que la valeur absolue
         
     }
