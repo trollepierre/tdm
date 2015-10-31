@@ -2,13 +2,13 @@ function compte_a_rebours()
 {
     var compte_a_rebours = document.getElementById("compte_a_rebours");
     var date_actuelle = new Date();
-    var date_evenement = new Date("Nov 1 12:00:00 2015");
+    var date_evenement = new Date("Oct 31 13:00:00 2015");
     var total_secondes = (date_evenement - date_actuelle) / 1000;
-    var prefixe =" Pierre et Benoît roulent vers Fressin. Actuellement à Budapest, Hongrie.";
-Arrivée prévue dans : ";
+    var prefixe ="Pierre et Benoît sont arrivés à Fressin. ";
+
     if (total_secondes < 0)
     {
-        prefixe = "Pierre et Benoît roulent vers Fressin. Actuellement à Budapest, Hongrie.";
+        prefixe = "Pierre et Benoît sont arrivés à Fressin. ";
 <br/> Arrivée il y a : "; // On modifie le préfixe si la différence est négatif
         total_secondes = Math.abs(total_secondes); // On ne garde que la valeur absolue
         
