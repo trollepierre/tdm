@@ -67,36 +67,9 @@
     </div>
      <div id="lesAutresPhotos"></div>
     <div class="carousel" >
-        <div class="ourArticles">
-            <a class="discover btn btn-xs btn-danger" role="button" target="_blank" title="<?php echo ALTVLAPDD; ?>" href=
-                <?php 
-                include("lib/creerBdd.php");
-                 global $id;
-                  $reponse = $bdd->query('SELECT dropbox_link FROM challenge WHERE challenge_uid = '.$id.' ORDER BY id');
-                while ($donnees = $reponse->fetch()){
-                    $dropbox_link=htmlspecialchars($donnees['dropbox_link']);
-                    echo '"'.$dropbox_link.'"';
-                }
-                $reponse->closeCursor();
-                ?>
-                >
-                 <h1> <?php echo VLAPDD; ?> </h1>
-            </a>
-        </div>
+        
 
-        <div class="flex-slider carousel">
-            <ul class="slides">
-            <?php
-            include("lib/creerBdd.php");
-            global $id;
-            $reponse = $bdd->query('SELECT img_link FROM challenge_galerie WHERE challenge_uid = '.$id.' ORDER BY id');
-            while ($donnees = $reponse->fetch()){
-                  Carroussel($dropbox_link, htmlspecialchars($donnees['img_link']));
-            }
-            $reponse->closeCursor();
-            ?>   
-            </ul>
-        </div>
+        
         <div class="ourArticles">
            <a href="challenges.php"  class="discover btn btn-xs btn-danger" role="button"  title="<?php echo ALTVLAD; ?>">
                 <h1> <?php echo VLAD; ?> </h1>

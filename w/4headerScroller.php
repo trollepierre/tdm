@@ -4,7 +4,7 @@
     <div class="menu">
         <ul>
             <li>
-                 <form class="paypal" action="http://www.recontact.me" method="post" target="_top"  title="<?php echo ALTHOME; ?>">
+                 <form class="paypal" id="nav1" action="http://www.recontact.me" method="post" target="_top"  title="<?php echo ALTHOME; ?>">
                     <input type="hidden" name="cmd" value="_s-xclick">
                     <input type="hidden" name="hosted_button_id" value="C753VV9DE7LH8">
                         <?php if ($lang=='fr' ) { 
@@ -16,22 +16,22 @@
                 </form>
             </li>
             <li>
-                <a href="http://www.recontact.me/articles.php"  title="<?php echo ALTARTICLES; ?>">
+                <a href="http://www.recontact.me/articles.php" id="nav2"  title="<?php echo ALTARTICLES; ?>">
                     <?php echo ARTICLES; ?>
                 </a>
             </li>
             <li>
-                <a href="http://www.recontact.me/challenges.php"  title="<?php echo ALTCHALLENGES; ?>">
+                <a href="http://www.recontact.me/challenges.php"  id="nav3" title="<?php echo ALTCHALLENGES; ?>">
                     <?php echo CHALLENGES; ?>
                 </a>
             </li>
             <li>
-                <a href="http://www.recontact.me/destinations.php" title="<?php echo ALTAVION; ?>">
+                <a href="http://www.recontact.me/destinations.php"  id="nav4" title="<?php echo ALTAVION; ?>">
                     <img alt="nos destinations" class="logo" src="img/avion.png" />
                 </a>
             </li>
              <li class="dropdown">
-                <a href="" class="dropdown-toggle" data-toggle="dropdown"  title="<?php echo ALTDEST; ?>">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown"  id="nav5" title="<?php echo ALTDEST; ?>">
                     <?php echo DESTINATION; ?><b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
@@ -144,7 +144,7 @@
             </li>
 
             <li>
-                <a href="http://www.recontact.me/contact.php" title="<?php echo ALTCONTACT; ?>">
+                <a href="http://www.recontact.me/contact.php"  id="nav7" title="<?php echo ALTCONTACT; ?>">
                     <?php echo CONTACT; ?>
                 </a>
             </li>

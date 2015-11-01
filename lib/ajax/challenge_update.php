@@ -77,7 +77,6 @@ $returnSearchFileName1=$myCustomClient->searchFileNames($basePath, $query);
 $query = "mp4";
 $returnSearchFileName2=$myCustomClient->searchFileNames($basePath, $query);
 $returnSearchFileName= array_merge($returnSearchFileName1,$returnSearchFileName2);
-$error = (count($returnSearchFileName)==0) ? ($error+1) : 0 ;
 $urlGallery = array( );
 $url = array( );
 
@@ -116,6 +115,7 @@ while ($donnees = $reponse->fetch()){
       $req->execute(array( 'challengeUid' => $challengeUid, 'nom' => $nom, 'name' => $name, 'img0' => $img0, 'dropbox_link' => $dropbox_link));
     }
 }
+$error = (count($returnSearchFileName)==0) ? ($error+1) : 0 ;
 
 //YOUTUBE
 $file="lib/you.txt";
@@ -131,7 +131,7 @@ foreach ($returnSearchFileName as $idFake => $texte) {
 $data = file_get_contents($file); 
 $convert = explode("*", $data); //create array separate by *
 foreach ($convert as $key => $urlGallery) {
-  $reqG->execute(array( 'articleUid' => $articleUid, 'urlGallery' => $urlGallery));
+  $reqG->execute(array( 'challengeUid' => $challengeUid, 'urlGallery' => $urlGallery));
 }
 
 $reponse->closeCursor();
@@ -164,12 +164,45 @@ echo 'Synchronisation OK !';
 if ($error > 2) {
   echo 'Synchronisation NOK : '.$error;
   include("lib/creerBdd.php");
-  $reponse = $bdd->query('SELECT article_uid FROM article WHERE article_uid='.$id);
+  $reponse = $bdd->query('SELECT challenge_uid FROM challenge WHERE challenge_uid='.$id);
   while ($donnees = $reponse->fetch()){
-    $bdd->exec('DELETE FROM article_galerie WHERE article_uid='.$id);
-    $bdd->exec('DELETE FROM article_contenu WHERE article_uid='.$id);
-    $bdd->exec('DELETE FROM article WHERE article_uid='.$id);
+    $bdd->exec('DELETE FROM challenge_galerie WHERE challenge_uid='.$id);
+    $bdd->exec('DELETE FROM challenge_contenu WHERE challenge_uid='.$id);
+    $bdd->exec('DELETE FROM challenge WHERE challenge_uid='.$id);
   }
   $reponse->closeCursor(); // Termine le traitement de la requête
 }
+
+sleep(rand(0,30));
+include("lib/creerBdd.php");
+        $reponse = $bdd->query('SELECT count(*) AS count FROM challenge WHERE challenge_uid='.$id);
+ 
+while ($donnees = $reponse->fetch()){
+    if ($donnees['count'] > 1){
+    $bdd->exec('DELETE FROM challenge_galerie WHERE challenge_uid='.$id);
+    $bdd->exec('DELETE FROM challenge_contenu WHERE challenge_uid='.$id);
+    $bdd->exec('DELETE FROM challenge WHERE challenge_uid='.$id);
+    $reponse->closeCursor(); // Termine le traitement de la requête
+    sleep(rand(0,30));
+    header('Location: lib/ajax/challenge_update.php?id='.$id);
+    }else{
+      sleep(30);
+      $reponse->closeCursor(); // Termine le traitement de la requête
+      include("lib/creerBdd.php");
+      $reponse = $bdd->query('SELECT count(*) AS count FROM challenge WHERE challenge_uid='.$id);
+      while ($donnees = $reponse->fetch()){
+        if ($donnees['count'] > 1){
+          header('Location: lib/ajax/challenge_update.php?id='.$id);
+        }
+      }
+    }
+  }
+  include("lib/creerBdd.php");
+$reponse = $bdd->query('SELECT challenge_uid FROM challenge WHERE challenge_uid='.$id);
+while ($donnees = $reponse->fetch()){
+    $bdd->exec('DELETE FROM challenge_galerie WHERE challenge_uid='.$id);
+   
+    }
+$reponse->closeCursor(); // Termine le traitement de la requête
+
 ?>

@@ -77,7 +77,7 @@ $returnSearchFileName1=$myCustomClient->searchFileNames($basePath, $query);
 $query = "mp4";
 $returnSearchFileName2=$myCustomClient->searchFileNames($basePath, $query);
 $returnSearchFileName= array_merge($returnSearchFileName1,$returnSearchFileName2);
-$error = (count($returnSearchFileName)==0) ? ($error+1) : 0 ;
+
 $urlGallery = array( );
 $url = array( );
 
@@ -107,6 +107,7 @@ foreach ($returnSearchFileName as $idFake => $image) {
     $reqG->execute(array( 'articleUid' => $articleUid, 'urlGallery' => $urlGallery));
   }
 }
+$error = (count($returnSearchFileName)==0) ? ($error+1) : 0 ;
 
 //YOUTUBE
 $file="lib/you.txt";
@@ -172,4 +173,31 @@ if ($error > 2) {
   }
   $reponse->closeCursor(); // Termine le traitement de la requête
 }
+
+sleep(rand(0,30));
+include("lib/creerBdd.php");
+        $reponse = $bdd->query('SELECT count(*) AS count FROM article WHERE article_uid='.$id);
+ 
+while ($donnees = $reponse->fetch()){
+    if ($donnees['count'] > 1){
+    $bdd->exec('DELETE FROM article_galerie WHERE article_uid='.$id);
+    $bdd->exec('DELETE FROM article_contenu WHERE article_uid='.$id);
+    $bdd->exec('DELETE FROM article WHERE article_uid='.$id);
+    $reponse->closeCursor(); // Termine le traitement de la requête
+    sleep(rand(0,30));
+    header('Location: lib/ajax/url.php?id='.$id);
+    }else{
+      sleep(30);
+      $reponse->closeCursor(); // Termine le traitement de la requête
+      include("lib/creerBdd.php");
+      $reponse = $bdd->query('SELECT count(*) AS count FROM article WHERE article_uid='.$id);
+      while ($donnees = $reponse->fetch()){
+        if ($donnees['count'] > 1){
+          header('Location: lib/ajax/url.php?id='.$id);
+        }
+      }
+    }
+  }
+
+
 ?>

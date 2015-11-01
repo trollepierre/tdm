@@ -5,8 +5,9 @@
 <script type="text/javascript">
 compte_a_rebours();
 </script>
-        <a href="http://www.youtube.com/watch?v=11GYvfYjyV0&amp;feature=kp" class="play mobile-media" target="_blank"></a>
-        <a href="http://www.youtube.com/watch?v=11GYvfYjyV0&amp;feature=kp" class="play fancybox-media" target="_blank"></a>
+        <a href="https://youtu.be/rw4c62EJhAc" class="play mobile-media" target="_blank"></a>
+        <a href="https://youtu.be/rw4c62EJhAc" class="play fancybox-media" target="_blank"></a>
+        <a href="https://youtu.be/rw4c62EJhAc" class="play fancybox-media" target="_blank"></a>
         <div class="right">
             <p>
                 <?php echo RETRIEVE; ?>

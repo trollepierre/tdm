@@ -6,6 +6,9 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=" <?php echo DESCRIPTIONSEO; ?> "/>
+    <meta name="robots" content=" index, follow "/>
+    
     <title><?php echo TITLE; ?></title>
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="xmlrpc.php">

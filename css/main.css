@@ -1642,6 +1642,7 @@ header ul ul li a, header ul ul li a:visited {
 @media screen and (max-width: 1024px){
     .mobile-media { display: block;}
     .fancybox-media {display: none;}
+    
 
 
 header ul ul li a, header ul ul li a:visited {
@@ -1650,24 +1651,35 @@ header ul ul li a, header ul ul li a:visited {
 }
 
 @media screen and (max-width: 980px){
+.notification-shape {
+	display:none;
+}
+
+ #nav4, #nav1{
+	display:none;
+}
 
 .ourArticles{  font-size: 30px;} /* par Pierre*/
 .carousel{ padding-top: 5px;}
    #beno{display: none;}
     #piro{display: none;}
     .fixed-top #left-border {width: 100%;}
-    /*.timeline{display:none;}
+    /*vieux carroussel
+    .timeline{display:none;}
     .mobile-content{
-        display:block;}*/
+        display:block;
+    	
+    }/*jusque ici                      ddddddddddddddddddddddddddddddddddddddddddddddddd    */
     .timeline .timeline-controller{
         display: none;
-    }    
+    }  
     .clocks{
         display: none !important;
-    }    
+    }
     .modes{
         width: 100% !important;
     }
+    
     .mode{
         width: 70% !important;
     }
@@ -1734,7 +1746,10 @@ header ul ul li a, header ul ul li a:visited {
 }
 
 @media screen and (max-width: 650px){
-    
+    .intro .play {
+	display:none;
+} /* virer la video*/
+ 
 header ul ul li a, header ul ul li a:visited {
     font-size: 10px;
 }
