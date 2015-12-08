@@ -54,7 +54,7 @@ if(isset($_SESSION['token']) && isset($_SESSION['token_time']) && isset($_POST['
  
 			// Préparation du mail contenant le lien d'activation
 			// $destinataire = "benoit@recontact.me";
-			$destinataire .= ', ' . 'contact@recontact.me' ;
+			$destinataire .= ', ' . 'trolle.pierre@gmail.com' ;
 			$sujet = "Activez votre compte" ;
 			$entete = "From: contact@recontact.me" ;
 	
