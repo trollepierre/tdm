@@ -53,10 +53,9 @@ if(isset($_SESSION['token']) && isset($_SESSION['token_time']) && isset($_POST['
  			// header('Location: ../index.php?bug=OK8');
  
 			// Préparation du mail contenant le lien d'activation
-			// $destinataire = "benoit@recontact.me";
-			$destinataire .= ', ' . 'trolle.pierre@gmail.com' ;
+			$destinataire .= ', ' . 'recontactme@gmail.com' ;
 			$sujet = "Activez votre compte" ;
-			$entete = "From: contact@recontact.me" ;
+			$entete = "From: recontactme@gmail.com" ;
 	
 			// Le lien d'activation est composé du login(log) et de la clé(cle)
 			$contenu = "Super ".$irstname." ! Tu as rejoint la communauté des gens qui suivent notre voyage !
