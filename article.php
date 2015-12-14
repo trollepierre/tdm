@@ -7,12 +7,12 @@
     $id = (isset($_GET['id'])) ? htmlspecialchars($_GET['id']) : $count ;    
     $reponse->closeCursor();
     require("w/0fonctions.php");
+    require("w/1head.php");
 ?>
     <script type="text/javascript">
         <?php RemplirWindowImage('article'); ?>
     </script>
 <?php    
-    require("w/1head.php");
     echo '<style type="text/css">';
     IconBackgroundA('article');
 ?>

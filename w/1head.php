@@ -14,7 +14,7 @@
     <link rel="pingback" href="xmlrpc.php">
 
     <link rel="icon" href="img/terre.ico" type="image/x-icon">
-    <link rel="canonical" href="http://www.recontact.fr/" />
+    <link rel="canonical" href="http://www.recontact.me/" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="One year around the world" />

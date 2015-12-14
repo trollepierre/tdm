@@ -1,6 +1,9 @@
 <?php   
     require("w/0fonctions.php");
 ?>
+<?php    
+    require("w/1head.php");
+?>
     <style type="text/css">
         .clocks{
         z-index: -2;
@@ -14,7 +17,7 @@
   // Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
   $images = array();
   echo 'window.images = [' ;
-  $compteur=0;
+  $compteur=1;
   while ($donnees = $reponse->fetch())
     {
      $compteur++;
@@ -24,12 +27,6 @@
     $reponse->closeCursor();
      ?>
     </script>
-<?php    
-    require("w/1head.php");
-    echo '<style type="text/css">';
-    // IconBackgroundA('article');
-?>
-    </style>
    
 </head>
 
