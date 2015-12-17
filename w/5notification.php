@@ -72,7 +72,7 @@
 					effect : 'cornerexpand',
 					type : 'notice',
 					//ttl est le temps pendant lequel la notification reste active (en millième de seconde)
-					ttl: 20000000,
+					ttl: 20000,
 					onClose : function() {
 						setTimeout(function() {
 							path.animate( { 'path' : pathConfig.from }, 300, mina.easeinout );
