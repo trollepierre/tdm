@@ -74,7 +74,7 @@
                     $au=$compteur + 1 - htmlspecialchars($donnees['article_uid']);
                     echo '<p class="mode mode'.$au.'" data-bg="'.$au.'">
                          <br/>        <span class="titreArticle">     '.htmlspecialchars($donnees[$nom]).'      </span>
-                          <br/> <br/> <a class="btn btn-lg btn-primary"  href="article.php?id='.htmlspecialchars($donnees['article_uid']).'"> <span style="display:block; font-size: 30px; font-weight: normal;font-family: inherit;"> '.$voirlarticle.'</span> </a>
+                          <br/> <br/> <a class="btn btn-lg btn-primary"  href="/'.htmlspecialchars($donnees['article_uid']).'"> <span style="display:block; font-size: 30px; font-weight: normal;font-family: inherit;"> '.$voirlarticle.'</span> </a>
                         </p>';
                   }
                   $reponse->closeCursor();
