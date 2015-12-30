@@ -81,7 +81,7 @@ $reponse->closeCursor();
       
       echo '<p class="mode mode'.$au.'" data-bg="'.$au.'">
       <br/>        <span class="titreArticle">     '.htmlspecialchars($donnees[$nom]).'      </span>
-      <br/> <br/> <a class="btn btn-lg btn-primary"  href="/'.htmlspecialchars($donnees['article_uid']).'"> <span style="display:block; font-size: 30px; font-weight: normal;font-family: inherit;"> '.$voirlarticle.'</span> </a>
+      <br/> <br/> <a class="btn btn-lg btn-primary"  href="article.php?id='.htmlspecialchars($donnees['article_uid']).'"> <span style="display:block; font-size: 30px; font-weight: normal;font-family: inherit;"> '.$voirlarticle.'</span> </a>
       </p>';
     }
     $reponse->closeCursor();
@@ -104,7 +104,7 @@ $reponse->closeCursor();
       while ($donnees = $reponse->fetch())
       {
        $nome = ($lang==='fr') ? 'nom' : 'name' ;
-       ImgCarroussel(htmlspecialchars($donnees[$nome]),htmlspecialchars($donnees['article_uid']),'a', htmlspecialchars($donnees['img_link']));
+       ImgCarroussel(htmlspecialchars($donnees[$nome]),htmlspecialchars($donnees['article_uid']),'article', htmlspecialchars($donnees['img_link']));
      }
      $reponse->closeCursor();
      ?>
@@ -126,7 +126,7 @@ $reponse->closeCursor();
      while ($donnees = $reponse->fetch())
      {
        $nome = ($lang==='fr') ? 'nom' : 'name' ;
-       ImgCarroussel(htmlspecialchars($donnees[$nome]),htmlspecialchars($donnees['challenge_uid']),'c', htmlspecialchars($donnees['img_link']));
+       ImgCarroussel(htmlspecialchars($donnees[$nome]),htmlspecialchars($donnees['challenge_uid']),'challenge', htmlspecialchars($donnees['img_link']));
      }
      $reponse->closeCursor();
      ?>

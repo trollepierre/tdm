@@ -109,7 +109,7 @@ $reponse = $bdd->query('SELECT nom, name,article_uid,img_link FROM article ORDER
 while ($donnees = $reponse->fetch())
     {
        $nome = ($lang==='fr') ? 'nom' : 'name' ;
-        ImgCarroussel(htmlspecialchars($donnees[$nome]),htmlspecialchars($donnees['article_uid']),'a', htmlspecialchars($donnees['img_link']));
+        ImgCarroussel(htmlspecialchars($donnees[$nome]),htmlspecialchars($donnees['article_uid']),'article', htmlspecialchars($donnees['img_link']));
     }
     $reponse->closeCursor();
                 ?>

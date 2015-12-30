@@ -82,7 +82,7 @@
                 $reponse = $bdd->query('SELECT nom, name,challenge_uid,img_link FROM challenge ORDER BY challenge_uid DESC');
                 while ($donnees = $reponse->fetch()){
                     $nome = ($lang==='fr') ? 'nom' : 'name' ;
-                    ImgCarroussel(htmlspecialchars($donnees[$nome]),htmlspecialchars($donnees['challenge_uid']),'c', htmlspecialchars($donnees['img_link']));
+                    ImgCarroussel(htmlspecialchars($donnees[$nome]),htmlspecialchars($donnees['challenge_uid']),'challenge', htmlspecialchars($donnees['img_link']));
                 }
                 $reponse->closeCursor();
                 ?>

@@ -4,7 +4,7 @@
 */
 function ImgCarroussel($name,$idArticles,$type,$imglink){
     echo    '<li>
-                <a class="article-name" href="/'.$type.$idArticles.'" title="'.$type.'">
+                <a class="article-name" href="'.$type.'.php?id='.$idArticles.'" title="'.$type.'">
                     <img src="'.$imglink.'" alt="Picture of one '.$type.'" /> <br/>
                     '.$name.'
                 </a>
