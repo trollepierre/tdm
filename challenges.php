@@ -86,7 +86,7 @@
                     $cu = $compteur - htmlspecialchars($donnees['challenge_uid']) + 1;
                     echo '<p class="mode mode'.$cu.'" data-bg="'.$cu.'">
                          <br/>        <span class="titreArticle">     '.htmlspecialchars($donnees[$nom]).'      </span>
-                          <br/> <br/> <a class="btn btn-lg btn-primary"  href="challenge.php?id='.htmlspecialchars($donnees['challenge_uid']).'"> <span style="display:block; font-size: 30px; font-weight: normal;font-family: inherit;"> '.$voirlchallenge.'</span> </a>
+                          <br/> <br/> <a class="btn btn-lg btn-primary"  href="/c'.htmlspecialchars($donnees['challenge_uid']).'"> <span style="display:block; font-size: 30px; font-weight: normal;font-family: inherit;"> '.$voirlchallenge.'</span> </a>
                         </p>';
                   }
                   $reponse->closeCursor();
