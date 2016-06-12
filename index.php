@@ -139,15 +139,16 @@ $reponse->closeCursor();
     <div class="slider">
       <div class="flexslider">
         <ul class="slides">
-          <li><img alt="Pedra Da Gavea, Rio de Janeiro, Brazil" src="img/gallery/H1.jpg" /></li>
-          <li><img alt="Aguas Calientes, Tupiza Tours, Bolivia" src="img/gallery/H2.jpg" /></li>
-          <li><img alt="Salar de Uyuni, Bolivia" src="img/gallery/H3.jpg" /></li>
-          <li><img alt="Death Road, La Paz, Bolivia" src="img/gallery/H4.jpg" /></li>
-          <li><img alt="Cañon del Colca, Cabanaconde, Peru" src="img/gallery/H6.jpg" /></li>
-          <li><img alt="Kuelap, Peru" src="img/gallery/H7.jpg" /></li>
-          <li><img alt="Rotoroa lake, Nelson Lakes Park, New Zealand" src="img/gallery/H8.jpg" /></li>
-          <li><img alt="Cascade Saddle, New Zealand" src="img/gallery/H9.jpg" /></li>
-          <li><img alt="Mount Cook, New Zealand" src="img/gallery/H10.jpg" /></li>
+          <li><img alt="Pedra Da Gavea, Rio de Janeiro, Brazil" src="https://www.dropbox.com/s/hvif42n3l17rgog/H1.jpg?dl=1" /></li>
+          <li><img alt="Aguas Calientes, Tupiza Tours, Bolivia" src="https://www.dropbox.com/s/xlwjnz50oj6igc3/H2.jpg?dl=1" /></li>
+          <li><img alt="Salar de Uyuni, Bolivia" src="https://www.dropbox.com/s/w5yhhma435scqqm/H3.jpg?dl=1" /></li>
+          <li><img alt="Death Road, La Paz, Bolivia" src="https://www.dropbox.com/s/f9d3taiq7692c5t/H4.jpg?dl=1" /></li>
+          <li><img alt="Machu Picchu, Cuzco, Peru" src="https://www.dropbox.com/s/jiv0yfhr1svilbq/H5.jpg?dl=1" /></li>
+          <li><img alt="Cañon del Colca, Cabanaconde, Peru" src="https://www.dropbox.com/s/o25hln4wil9kwat/H6.jpg?dl=1" /></li>
+          <li><img alt="Kuelap, Peru" src="https://www.dropbox.com/s/jrn4g6ql75u13z3/H7.jpg?dl=1" /></li>
+          <li><img alt="Rotoroa lake, Nelson Lakes Park, New Zealand" src="https://www.dropbox.com/s/q8h0ofbx1gf20lu/H8.jpg?dl=1" /></li>
+          <li><img alt="Cascade Saddle, New Zealand" src="https://www.dropbox.com/s/fhd7gt6l42vdc6j/H9.jpg?dl=1" /></li>
+          <li><img alt="Mount Cook, New Zealand" src="https://www.dropbox.com/s/odqibwa2rk9ly61/H10.jpg?dl=1" /></li>
         </ul>
       </div>
     </div>
