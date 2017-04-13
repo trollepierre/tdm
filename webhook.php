@@ -2,7 +2,7 @@
 use \Dropbox as dbx;
 
 function verify(){
-	echo $_GET['challenge'];
+	echo htmlspecialchars($_GET['challenge']);
 }
 
 function webhook(){
