@@ -2,7 +2,7 @@
 use \Dropbox as dbx;
 
 function verify(){
-    echo $_GET['challenge'];
+    echo htmlspecialchars($_GET['challenge']);
 }
 
 function webhook(){
@@ -44,7 +44,7 @@ function delta($myCustomClient ,$cursortxt, $url, $pathPrefix){
     file_put_contents($cursortxt,$deltaPage["cursor"]);
 
     if($numAdds+$numRemoves>0){
-        header('Location: lib/ajax/'.$url.'.php?id='.$id);
+        header('Location: ../lib/ajax/'.$url.'.php?id='.$id);
     }
 }
 
@@ -52,18 +52,18 @@ function delta($myCustomClient ,$cursortxt, $url, $pathPrefix){
 function process_user(){
     #'''Call /delta for the given user ID and process any changes.'''
 // creation d'un client dropbox
-    include("lib/dropboxAPI.php");
+    include("../lib/dropboxAPI.php");
     $myCustomClient = new dbx\Client($accessToken, $clientIdentifier);
 
     //Articles
     $pathPrefix="/Chargements appareil photo/ArticleTdm";
-    $cursortxt = "lib/cursor.txt";
+    $cursortxt = "../lib/cursor.txt";
     $url="url";
     delta($myCustomClient ,$cursortxt, $url, $pathPrefix);
 
     //Challenge
     $pathPrefix="/Chargements appareil photo/ChallengeTdm";
-    $cursortxt = "lib/cursorC.txt";
+    $cursortxt = "../lib/cursorC.txt";
     $url="challenge_update";
     delta($myCustomClient , $cursortxt, $url, $pathPrefix);
 }
